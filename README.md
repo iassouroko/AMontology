@@ -1,5 +1,4 @@
 # AMontology
-NIST's OWL ontology of additive manufacturing
 
 This repository contains an OWL ontology of concepts of additive manufacturing produced as part of NIST's [Systems Integration  for Additive Manufacturing](http://www.nist.gov/el/msid/lifecycle/sifam.cfm) project. 
 
