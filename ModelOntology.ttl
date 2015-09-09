@@ -1,0 +1,1288 @@
+@prefix : <http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology> .
+
+<http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology> rdf:type owl:Ontology .
+
+
+#################################################################
+#
+#    Annotation properties
+#
+#################################################################
+
+
+###  http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl
+
+<http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> rdf:type owl:AnnotationProperty .
+
+
+
+###  http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg
+
+<http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> rdf:type owl:AnnotationProperty .
+
+
+
+###  http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl
+
+<http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> rdf:type owl:AnnotationProperty .
+
+
+
+###  http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg
+
+<http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> rdf:type owl:AnnotationProperty .
+
+
+
+###  http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg
+
+<http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> rdf:type owl:AnnotationProperty .
+
+
+
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#describesModelComponentOutput
+
+:describesModelComponentOutput rdf:type owl:ObjectProperty ;
+                               
+                               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "describesModelComponentOutputed" ;
+                               
+                               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "describesModelComponentOutput" ;
+                               
+                               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "describesModelComponentOutputs" ;
+                               
+                               rdfs:domain :FunctionalityOfModelComponent .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#describesModelOutput
+
+:describesModelOutput rdf:type owl:ObjectProperty ;
+                      
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "describesModelOutputs" ;
+                      
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "describesModelOutput" ;
+                      
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "describesModelOutputed" ;
+                      
+                      rdfs:domain :FunctionOfModel .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#hasAssumption
+
+:hasAssumption rdf:type owl:ObjectProperty ;
+               
+               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "has_assumptions" ;
+               
+               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "has_assumptioned" ;
+               
+               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "has_assumption" ;
+               
+               rdfs:range :AssumptionOfModelComponent ;
+               
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( :Model
+                                           :ModelComponent
+                                         )
+                           ] .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#hasBoundaryCondition
+
+:hasBoundaryCondition rdf:type owl:ObjectProperty ;
+                      
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasBoundaryConditioned" ;
+                      
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasBoundaryCondition" ;
+                      
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasBoundaryConditions" ;
+                      
+                      rdfs:domain [ rdf:type owl:Class ;
+                                    owl:unionOf ( :Model
+                                                  :ModelComponent
+                                                )
+                                  ] .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#hasComponent
+
+:hasComponent rdf:type owl:ObjectProperty ;
+              
+              <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "has_component" ;
+              
+              <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "has_componented" ;
+              
+              <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "has_components" ;
+              
+              rdfs:domain :Model ;
+              
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              
+              rdfs:range [ rdf:type owl:Class ;
+                           owl:unionOf ( :Model
+                                         :ModelComponent
+                                       )
+                         ] .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#hasConstraint
+
+:hasConstraint rdf:type owl:ObjectProperty ;
+               
+               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "has_constraint" ;
+               
+               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "has_constrainted" ;
+               
+               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "has_constraints" ;
+               
+               rdfs:range :LimitationOfModelComponent ;
+               
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( :Model
+                                           :ModelComponent
+                                         )
+                           ] .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#hasFunction
+
+:hasFunction rdf:type owl:ObjectProperty ;
+             
+             <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "has_functioned" ;
+             
+             <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "has_function" ;
+             
+             <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "has_functions" ;
+             
+             rdfs:domain :Model ;
+             
+             owl:inverseOf :isFunctionOf ;
+             
+             rdfs:range [ rdf:type owl:Class ;
+                          owl:unionOf ( :FunctionOfModel
+                                        :FunctionalityOfModelComponent
+                                      )
+                        ] .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#hasFunctionality
+
+:hasFunctionality rdf:type owl:ObjectProperty ;
+                  
+                  <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasFunctionalitied" ;
+                  
+                  <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasFunctionality" ;
+                  
+                  <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasFunctionalities" ;
+                  
+                  rdfs:range :FunctionalityOfModelComponent ;
+                  
+                  rdfs:domain :ModelComponent .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#hasInputParameter
+
+:hasInputParameter rdf:type owl:ObjectProperty ;
+                   
+                   rdfs:subPropertyOf :hasParameter ;
+                   
+                   rdfs:domain [ rdf:type owl:Class ;
+                                 owl:unionOf ( :Model
+                                               :ModelComponent
+                                             )
+                               ] .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#hasMathematicalRepresentation
+
+:hasMathematicalRepresentation rdf:type owl:ObjectProperty ;
+                               
+                               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasRepresentationed" ;
+                               
+                               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasRepresentations" ;
+                               
+                               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasRepresentation" ;
+                               
+                               rdfs:domain [ rdf:type owl:Class ;
+                                             owl:unionOf ( :Model
+                                                           :ModelComponent
+                                                         )
+                                           ] .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#hasOutputParameter
+
+:hasOutputParameter rdf:type owl:ObjectProperty ;
+                    
+                    rdfs:subPropertyOf :hasParameter ;
+                    
+                    rdfs:domain [ rdf:type owl:Class ;
+                                  owl:unionOf ( :Model
+                                                :ModelComponent
+                                              )
+                                ] .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#hasParameter
+
+:hasParameter rdf:type owl:ObjectProperty ;
+              
+              <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "has_parametered" ;
+              
+              <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "has_parameter" ;
+              
+              <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "has_parameters" ;
+              
+              rdfs:domain :ModelComponent .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#isConstrainedBy
+
+:isConstrainedBy rdf:type owl:ObjectProperty ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "isConstrainedBy" ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "isConstrainedBies" ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "isConstrainedBied" ;
+                 
+                 owl:inverseOf :hasConstraint .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#isDeterminedBy
+
+:isDeterminedBy rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#isFunctionOf
+
+:isFunctionOf rdf:type owl:ObjectProperty ;
+              
+              <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "isFunctionOfed" ;
+              
+              <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "isFunctionOfs" ;
+              
+              <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "isFunctionOf" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#isImplementedBy
+
+:isImplementedBy rdf:type owl:ObjectProperty ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "isImplementedBy" ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "isImplementedBied" ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "isImplementedBies" ;
+                 
+                 rdfs:domain :ModelComponent ;
+                 
+                 rdfs:subPropertyOf :hasFunction .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#AnalyticalSolution
+
+:AnalyticalSolution rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :Solution ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "AnalyticalSolution" ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "AnalyticalSolutions" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#AssumptionOfModelComponent
+
+:AssumptionOfModelComponent rdf:type owl:Class ;
+                            
+                            rdfs:subClassOf :ModelAssumption ;
+                            
+                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Model_component_assumption" ;
+                            
+                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Model_component_assumptions" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#BellLikeRadialModel
+
+:BellLikeRadialModel rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :HeatSourceModel .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#BottomBoundaryCondition
+
+:BottomBoundaryCondition rdf:type owl:Class ;
+                         
+                         rdfs:subClassOf :BoundaryCondition ;
+                         
+                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "BottomBoundaryCondition" ;
+                         
+                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "BottomBoundaryConditions" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#BoundaryCondition
+
+:BoundaryCondition rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :ElementOfModel ;
+                   
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "BoundaryCondition" ;
+                   
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "BoundaryConditions" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#CellularAutomataEquations
+
+:CellularAutomataEquations rdf:type owl:Class ;
+                           
+                           rdfs:subClassOf :GoverningEquation .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#Consolidation
+
+:Consolidation rdf:type owl:Class ;
+               
+               rdfs:subClassOf :PhysicalAssumption .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ConsolidationByMeltingModel
+
+:ConsolidationByMeltingModel rdf:type owl:Class ;
+                             
+                             rdfs:subClassOf :ConsolidationModel .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ConsolidationBySinteringModel
+
+:ConsolidationBySinteringModel rdf:type owl:Class ;
+                               
+                               rdfs:subClassOf :ConsolidationModel .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ConsolidationModel
+
+:ConsolidationModel rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :PhysicsBasedModel ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasMathematicalRepresentation ;
+                                      owl:someValuesFrom :DensityVariationEquation
+                                    ] ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ConsolidationModel" ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ConsolidationModels" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ConsolidationModelVariable
+
+:ConsolidationModelVariable rdf:type owl:Class ;
+                            
+                            rdfs:subClassOf :ModelVariable .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#CoordinatesSystem
+
+:CoordinatesSystem rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :GeometricAssumption .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#CylindricalModel
+
+:CylindricalModel rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :HeatSourceModel .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#DensityVariationEquation
+
+:DensityVariationEquation rdf:type owl:Class ;
+                          
+                          rdfs:subClassOf :GoverningEquation ;
+                          
+                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "DensityVariationEquation" ;
+                          
+                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "DensityVariationEquations" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#Deterministic
+
+:Deterministic rdf:type owl:Class ;
+               
+               rdfs:subClassOf :StatisticalAssumption .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ElementOfModel
+
+:ElementOfModel rdf:type owl:Class ;
+                
+                rdfs:subClassOf :ModelEntity ;
+                
+                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ElementOfModel" ;
+                
+                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ElementOfModels" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#EmpiricalParameter
+
+:EmpiricalParameter rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :ModelComponentInputParameter ;
+                    
+                    rdfs:comment "Values of this type of parameter are approximated with experiments" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#FiniteDifferenceMethod
+
+:FiniteDifferenceMethod rdf:type owl:Class ;
+                        
+                        rdfs:subClassOf :NumericalSolution ;
+                        
+                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "FiniteDifferenceMethods" ;
+                        
+                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "FiniteDifferenceMethod" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#FiniteElementMethod
+
+:FiniteElementMethod rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :NumericalSolution ;
+                     
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "FiniteElementMethods" ;
+                     
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "FiniteElementMethod" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#Fluid
+
+:Fluid rdf:type owl:Class ;
+       
+       rdfs:subClassOf :PhysicalAssumption .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#FluidFlowModel
+
+:FluidFlowModel rdf:type owl:Class ;
+                
+                rdfs:subClassOf :FluidMechanicsModel ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasMathematicalRepresentation ;
+                                  owl:someValuesFrom :NavierStokesEquations
+                                ] .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#FluidMechanicsModel
+
+:FluidMechanicsModel rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :PhysicsBasedModel ;
+                     
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "FluidMechanicsModel" ;
+                     
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "FluidMechanicsModels" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#FluidMechanicsModelVariable
+
+:FluidMechanicsModelVariable rdf:type owl:Class ;
+                             
+                             rdfs:subClassOf :ModelVariable .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#FunctionOfModel
+
+:FunctionOfModel rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :ElementOfModel ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :isDeterminedBy ;
+                                   owl:someValuesFrom :ModelOutputParameter
+                                 ] ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Function" ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Functions" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#FunctionalityOfModelComponent
+
+:FunctionalityOfModelComponent rdf:type owl:Class ;
+                               
+                               rdfs:subClassOf :FunctionOfModel ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :isDeterminedBy ;
+                                                 owl:someValuesFrom :ModelComponentOutputParameter
+                                               ] ;
+                               
+                               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Model_component_functionality" ;
+                               
+                               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Model_component_functionalities" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#GaussianModel
+
+:GaussianModel rdf:type owl:Class ;
+               
+               rdfs:subClassOf :HeatSourceModel .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#GeometricAssumption
+
+:GeometricAssumption rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :AssumptionOfModelComponent .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#GeometryOfShape
+
+:GeometryOfShape rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :GeometricAssumption .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#GoverningEquation
+
+:GoverningEquation rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :ModelComponent ;
+                   
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Governing_equations" ;
+                   
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Governing_equation" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#GreensFunction
+
+:GreensFunction rdf:type owl:Class ;
+                
+                rdfs:subClassOf :AnalyticalSolution .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#HeatSourceModel
+
+:HeatSourceModel rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :ThermalModel ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasMathematicalRepresentation ;
+                                   owl:someValuesFrom :IrradiationEquation
+                                 ] ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "IrradiationModels" ;
+                 
+                 rdfs:comment """Irradiation model is a representation of the irradiation produced by the heat source --> 
+IrradiationModel = HeatSourceModel""" ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "IrradiationModel" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#HeatTransferEquation
+
+:HeatTransferEquation rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :GoverningEquation ;
+                      
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "RadiationTransferEquation" ;
+                      
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "RadiationTransferEquations" ;
+                      
+                      rdfs:comment """Heat Transfer Equation is also designated in the literature as Energy Conservation Equation 
+Heat Transfer Equation is a type of Transport Equation""" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#HeatTransferModel
+
+:HeatTransferModel rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :ThermalModel ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasMathematicalRepresentation ;
+                                     owl:someValuesFrom :HeatTransferEquation
+                                   ] .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#HookesLaw
+
+:HookesLaw rdf:type owl:Class ;
+           
+           rdfs:subClassOf :NonGoverningEquation .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#IrradiationAbsorptionModel
+
+:IrradiationAbsorptionModel rdf:type owl:Class ;
+                            
+                            rdfs:subClassOf :ThermalModel ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty :hasMathematicalRepresentation ;
+                                              owl:someValuesFrom :RadiationTransferEquation
+                                            ] ;
+                            
+                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "RadiationTransferModels" ;
+                            
+                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "RadiationTransferModel" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#IrradiationEquation
+
+:IrradiationEquation rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :NonGoverningEquation .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#LambertBeerLaw
+
+:LambertBeerLaw rdf:type owl:Class ;
+                
+                rdfs:subClassOf :NonGoverningEquation .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#LatticeBoltzmanMethod
+
+:LatticeBoltzmanMethod rdf:type owl:Class ;
+                       
+                       rdfs:subClassOf :NumericalSolution .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#LengthScale
+
+:LengthScale rdf:type owl:Class ;
+             
+             rdfs:subClassOf :PhysicalAssumption .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#LimitationOfModelComponent
+
+:LimitationOfModelComponent rdf:type owl:Class ;
+                            
+                            rdfs:subClassOf :ModelConstraint ;
+                            
+                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Model_component_limitations" ;
+                            
+                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Model_component_limitation" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#MassTransferEquation
+
+:MassTransferEquation rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :GoverningEquation .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#Material
+
+:Material rdf:type owl:Class ;
+          
+          rdfs:subClassOf :PhysicalAssumption .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#Mechanical
+
+:Mechanical rdf:type owl:Class ;
+            
+            rdfs:subClassOf :PhysicalAssumption .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#MechanicalAnalysis
+
+:MechanicalAnalysis rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :FiniteElementMethod ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "MechanicalAnalyses" ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "MechanicalAnalysis" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#Microstructural
+
+:Microstructural rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :PhysicalAssumption .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#MicrostructuralModel
+
+:MicrostructuralModel rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :PhysicsBasedModel ;
+                      
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "MicrostructuralModel" ;
+                      
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "MicrostructuralModels" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#MicrostructuralModelVariable
+
+:MicrostructuralModelVariable rdf:type owl:Class ;
+                              
+                              rdfs:subClassOf :ModelVariable .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#Model
+
+:Model rdf:type owl:Class ;
+       
+       owl:equivalentClass :ModelComponent ;
+       
+       rdfs:subClassOf :ModelEntity ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasParameter ;
+                         owl:someValuesFrom [ rdf:type owl:Class ;
+                                              owl:intersectionOf ( :ModelInputParameter
+                                                                   :ModelOutputParameter
+                                                                 )
+                                            ]
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasComponent ;
+                         owl:someValuesFrom :ModelComponent
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasFunction ;
+                         owl:someValuesFrom :FunctionOfModel
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasAssumption ;
+                         owl:someValuesFrom :ModelAssumption
+                       ] ;
+       
+       rdfs:comment "This entity defines different types of models" ;
+       
+       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Model" ;
+       
+       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Models" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ModelAssumption
+
+:ModelAssumption rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :ElementOfModel .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ModelComponent
+
+:ModelComponent rdf:type owl:Class ;
+                
+                rdfs:subClassOf :ElementOfModel ;
+                
+                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Model_component" ;
+                
+                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Model_components" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ModelComponentInputParameter
+
+:ModelComponentInputParameter rdf:type owl:Class ;
+                              
+                              rdfs:subClassOf :ModelInputParameter .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ModelComponentOutputParameter
+
+:ModelComponentOutputParameter rdf:type owl:Class ;
+                               
+                               rdfs:subClassOf :ModelOutputParameter .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ModelConstraint
+
+:ModelConstraint rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :ElementOfModel .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ModelEntity
+
+:ModelEntity rdf:type owl:Class ;
+             
+             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "AM_model" ;
+             
+             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "AM_models" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ModelInputParameter
+
+:ModelInputParameter rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :ElementOfModel ;
+                     
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "InputParameters" ;
+                     
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "InputParameter" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ModelOutputParameter
+
+:ModelOutputParameter rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :ElementOfModel ;
+                      
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "OutputParameters" ;
+                      
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "OutputParameter" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ModelVariable
+
+:ModelVariable rdf:type owl:Class ;
+               
+               rdfs:subClassOf :ElementOfModel ;
+               
+               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ModelVariable" ;
+               
+               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ModelVariables" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ModifiedCylindricalModel
+
+:ModifiedCylindricalModel rdf:type owl:Class ;
+                          
+                          rdfs:subClassOf :HeatSourceModel .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#NavierStokesEquations
+
+:NavierStokesEquations rdf:type owl:Class ;
+                       
+                       rdfs:subClassOf :GoverningEquation ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasOutputParameter ;
+                                         owl:someValuesFrom :SolutionOfNavierStokesEquations
+                                       ] ;
+                       
+                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "NavierStokesEquation" ;
+                       
+                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "NavierStokesEquations" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#NonGoverningEquation
+
+:NonGoverningEquation rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :ModelComponent .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#NumberOfDimensions
+
+:NumberOfDimensions rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :GeometricAssumption .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#NumericalSoftware
+
+:NumericalSoftware rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :Software ;
+                   
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "FiniteElementAnalysisSoftwares" ;
+                   
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "FiniteElementAnalysisSoftware" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#NumericalSolution
+
+:NumericalSolution rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :Solution ;
+                   
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Numerical" ;
+                   
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Numericals" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#PhaseFieldEquation
+
+:PhaseFieldEquation rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :GoverningEquation .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#PhysicalAssumption
+
+:PhysicalAssumption rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :AssumptionOfModelComponent .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#PhysicsBasedModel
+
+:PhysicsBasedModel rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :Model ;
+                   
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Physics_baseds" ;
+                   
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Physics_based" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#PointSourceModel
+
+:PointSourceModel rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :HeatSourceModel .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#RadiationTransferEquation
+
+:RadiationTransferEquation rdf:type owl:Class ;
+                           
+                           rdfs:subClassOf :GoverningEquation ;
+                           
+                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "IrradiationAbsorptionEquation" ;
+                           
+                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "IrradiationAbsorptionEquations" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#SideBoundaryCondition
+
+:SideBoundaryCondition rdf:type owl:Class ;
+                       
+                       rdfs:subClassOf :BoundaryCondition .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#SinteringActivationEnergy
+
+:SinteringActivationEnergy rdf:type owl:Class ;
+                           
+                           rdfs:subClassOf :EmpiricalParameter .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#Software
+
+:Software rdf:type owl:Class ;
+          
+          rdfs:subClassOf :ModelEntity ;
+          
+          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Softwares" ;
+          
+          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Software" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#SolidMechanicsModel
+
+:SolidMechanicsModel rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :StructuralModel ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasMathematicalRepresentation ;
+                                       owl:someValuesFrom :HookesLaw
+                                     ] .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#SolidificationModel
+
+:SolidificationModel rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :MicrostructuralModel .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#Solution
+
+:Solution rdf:type owl:Class ;
+          
+          rdfs:subClassOf :ModelEntity ;
+          
+          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Solutions" ;
+          
+          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Solution" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#SolutionOfModelEquation
+
+:SolutionOfModelEquation rdf:type owl:Class ;
+                         
+                         rdfs:subClassOf :ElementOfModel .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#SolutionOfNavierStokesEquations
+
+:SolutionOfNavierStokesEquations rdf:type owl:Class ;
+                                 
+                                 rdfs:subClassOf :SolutionOfModelEquation .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#StatisticalAssumption
+
+:StatisticalAssumption rdf:type owl:Class ;
+                       
+                       rdfs:subClassOf :AssumptionOfModelComponent .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#Stochastic
+
+:Stochastic rdf:type owl:Class ;
+            
+            rdfs:subClassOf :StatisticalAssumption .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#StructuralModel
+
+:StructuralModel rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :PhysicsBasedModel ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "StructuralModels" ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "StructuralModel" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#StructuralModelVariable
+
+:StructuralModelVariable rdf:type owl:Class ;
+                         
+                         rdfs:subClassOf :ModelVariable .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#SurfaceTensionEquation
+
+:SurfaceTensionEquation rdf:type owl:Class ;
+                        
+                        rdfs:subClassOf :GoverningEquation ;
+                        
+                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SurfaceTensionEquation" ;
+                        
+                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SurfaceTensionEquations" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#Symmetry
+
+:Symmetry rdf:type owl:Class ;
+          
+          rdfs:subClassOf :GeometricAssumption .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#Thermal
+
+:Thermal rdf:type owl:Class ;
+         
+         rdfs:subClassOf :PhysicalAssumption .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ThermalAnalysis
+
+:ThermalAnalysis rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :FiniteElementMethod ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ThermalAnalysis" ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ThermalAnalyses" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ThermalConductivityEquation
+
+:ThermalConductivityEquation rdf:type owl:Class ;
+                             
+                             rdfs:subClassOf :NonGoverningEquation ;
+                             
+                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ThermalConductivityEquation" ;
+                             
+                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ThermalConductivityEquations" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ThermalModel
+
+:ThermalModel rdf:type owl:Class ;
+              
+              rdfs:subClassOf :PhysicsBasedModel ;
+              
+              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ThermalModels" ;
+              
+              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ThermalModel" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ThermalModelVariable
+
+:ThermalModelVariable rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :ModelVariable .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#TimeScale
+
+:TimeScale rdf:type owl:Class ;
+           
+           rdfs:subClassOf :PhysicalAssumption .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#TopBoundaryCondition
+
+:TopBoundaryCondition rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :BoundaryCondition ;
+                      
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "TopBoundaryCondition" ;
+                      
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "TopBoundaryConditions" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ViscosityActivationEnergy
+
+:ViscosityActivationEnergy rdf:type owl:Class ;
+                           
+                           rdfs:subClassOf :EmpiricalParameter .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#FrenkelModel
+
+:FrenkelModel rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#MackenzieAndSuttleworthModel
+
+:MackenzieAndSuttleworthModel rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#VolumetricHeatGenerationModel
+
+:VolumetricHeatGenerationModel rdf:type owl:NamedIndividual .
+
+
+
+
+###  Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net
+
