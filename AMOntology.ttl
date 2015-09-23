@@ -4,14 +4,14 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix model: <http://siam.nist.gov/AM-Model-Ontology#> .
+@prefix model: <http://siam.nist.gov/Model-Ontology#> .
 @prefix process: <http://siam.nist.gov/AM-ProcessOntology#> .
 @base <http://siam.nist.gov/AM-Ontology> .
 
 <http://siam.nist.gov/AM-Ontology> rdf:type owl:Ontology ;
                                    
                                    owl:imports <http://siam.nist.gov/AM-Process-Ontology> .
-                                               <http://siam.nist.gov/AM-Model-Ontology> .
+                                               <http://siam.nist.gov/Model-Ontology> .
 
 
 #################################################################
