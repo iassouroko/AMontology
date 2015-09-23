@@ -1,12 +1,12 @@
-@prefix : <http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#> .
+@prefix : <http://siam.nist.gov/AM-Model-Ontology#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology> .
+@base <http://siam.nist.gov/AM-Model-Ontology> .
 
-<http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology> rdf:type owl:Ontology .
+<http://siam.nist.gov/AM-Model-Ontology> rdf:type owl:Ontology .
 
 
 #################################################################
@@ -25,6 +25,12 @@
 ###  http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg
 
 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> rdf:type owl:AnnotationProperty .
+
+
+
+###  http://attempto.ifi.uzh.ch/ace_lexicon#PN_sg
+
+<http://attempto.ifi.uzh.ch/ace_lexicon#PN_sg> rdf:type owl:AnnotationProperty .
 
 
 
@@ -55,21 +61,21 @@
 #################################################################
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#describesModelComponentOutput
+###  http://siam.nist.gov/AM-Model-Ontology#describesModelComponentOutput
 
 :describesModelComponentOutput rdf:type owl:ObjectProperty ;
-                               
-                               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "describesModelComponentOutputed" ;
                                
                                <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "describesModelComponentOutput" ;
                                
                                <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "describesModelComponentOutputs" ;
                                
+                               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "describesModelComponentOutputed" ;
+                               
                                rdfs:domain :FunctionalityOfModelComponent .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#describesModelOutput
+###  http://siam.nist.gov/AM-Model-Ontology#describesModelOutput
 
 :describesModelOutput rdf:type owl:ObjectProperty ;
                       
@@ -83,7 +89,7 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#hasAssumption
+###  http://siam.nist.gov/AM-Model-Ontology#hasAssumption
 
 :hasAssumption rdf:type owl:ObjectProperty ;
                
@@ -103,13 +109,13 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#hasBoundaryCondition
+###  http://siam.nist.gov/AM-Model-Ontology#hasBoundaryCondition
 
 :hasBoundaryCondition rdf:type owl:ObjectProperty ;
                       
-                      <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasBoundaryConditioned" ;
-                      
                       <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasBoundaryCondition" ;
+                      
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasBoundaryConditioned" ;
                       
                       <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasBoundaryConditions" ;
                       
@@ -121,15 +127,15 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#hasComponent
+###  http://siam.nist.gov/AM-Model-Ontology#hasComponent
 
 :hasComponent rdf:type owl:ObjectProperty ;
+              
+              <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "has_components" ;
               
               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "has_component" ;
               
               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "has_componented" ;
-              
-              <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "has_components" ;
               
               rdfs:domain :Model ;
               
@@ -143,15 +149,15 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#hasConstraint
+###  http://siam.nist.gov/AM-Model-Ontology#hasConstraint
 
 :hasConstraint rdf:type owl:ObjectProperty ;
                
                <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "has_constraint" ;
                
-               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "has_constrainted" ;
-               
                <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "has_constraints" ;
+               
+               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "has_constrainted" ;
                
                rdfs:range :LimitationOfModelComponent ;
                
@@ -163,19 +169,17 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#hasFunction
+###  http://siam.nist.gov/AM-Model-Ontology#hasFunction
 
 :hasFunction rdf:type owl:ObjectProperty ;
-             
-             <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "has_functioned" ;
              
              <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "has_function" ;
              
              <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "has_functions" ;
              
-             rdfs:domain :Model ;
+             <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "has_functioned" ;
              
-             owl:inverseOf :isFunctionOf ;
+             rdfs:domain :Model ;
              
              rdfs:range [ rdf:type owl:Class ;
                           owl:unionOf ( :FunctionOfModel
@@ -185,15 +189,15 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#hasFunctionality
+###  http://siam.nist.gov/AM-Model-Ontology#hasFunctionality
 
 :hasFunctionality rdf:type owl:ObjectProperty ;
                   
-                  <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasFunctionalitied" ;
+                  <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasFunctionalities" ;
                   
                   <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasFunctionality" ;
                   
-                  <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasFunctionalities" ;
+                  <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasFunctionalitied" ;
                   
                   rdfs:range :FunctionalityOfModelComponent ;
                   
@@ -201,9 +205,15 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#hasInputParameter
+###  http://siam.nist.gov/AM-Model-Ontology#hasInputParameter
 
 :hasInputParameter rdf:type owl:ObjectProperty ;
+                   
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasInputParameter" ;
+                   
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasInputParameters" ;
+                   
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasInputParametered" ;
                    
                    rdfs:subPropertyOf :hasParameter ;
                    
@@ -215,15 +225,15 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#hasMathematicalRepresentation
+###  http://siam.nist.gov/AM-Model-Ontology#hasMathematicalRepresentation
 
 :hasMathematicalRepresentation rdf:type owl:ObjectProperty ;
                                
-                               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasRepresentationed" ;
+                               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasRepresentation" ;
                                
                                <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasRepresentations" ;
                                
-                               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasRepresentation" ;
+                               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasRepresentationed" ;
                                
                                rdfs:domain [ rdf:type owl:Class ;
                                              owl:unionOf ( :Model
@@ -233,9 +243,15 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#hasOutputParameter
+###  http://siam.nist.gov/AM-Model-Ontology#hasOutputParameter
 
 :hasOutputParameter rdf:type owl:ObjectProperty ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasOutputParameters" ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasOutputParameter" ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasOutputParametered" ;
                     
                     rdfs:subPropertyOf :hasParameter ;
                     
@@ -247,65 +263,69 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#hasParameter
+###  http://siam.nist.gov/AM-Model-Ontology#hasParameter
 
 :hasParameter rdf:type owl:ObjectProperty ;
-              
-              <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "has_parametered" ;
               
               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "has_parameter" ;
               
               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "has_parameters" ;
               
+              <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "has_parametered" ;
+              
               rdfs:domain :ModelComponent .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#isConstrainedBy
+###  http://siam.nist.gov/AM-Model-Ontology#isConstrainedBy
 
 :isConstrainedBy rdf:type owl:ObjectProperty ;
                  
                  <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "isConstrainedBy" ;
                  
-                 <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "isConstrainedBies" ;
-                 
                  <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "isConstrainedBied" ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "isConstrainedBies" ;
                  
                  owl:inverseOf :hasConstraint .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#isDeterminedBy
+###  http://siam.nist.gov/AM-Model-Ontology#isDeterminedBy
 
-:isDeterminedBy rdf:type owl:ObjectProperty .
+:isDeterminedBy rdf:type owl:ObjectProperty ;
+                
+                <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "isDeterminedBied" ;
+                
+                <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "isDeterminedBies" ;
+                
+                <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "isDeterminedBy" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#isFunctionOf
+###  http://siam.nist.gov/AM-Model-Ontology#isFunctionOf
 
 :isFunctionOf rdf:type owl:ObjectProperty ;
               
-              <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "isFunctionOfed" ;
-              
               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "isFunctionOfs" ;
+              
+              <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "isFunctionOfed" ;
               
               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "isFunctionOf" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#isImplementedBy
+###  http://siam.nist.gov/AM-Model-Ontology#isImplementedBy
 
 :isImplementedBy rdf:type owl:ObjectProperty ;
-                 
-                 <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "isImplementedBy" ;
                  
                  <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "isImplementedBied" ;
                  
                  <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "isImplementedBies" ;
                  
-                 rdfs:domain :ModelComponent ;
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "isImplementedBy" ;
                  
-                 rdfs:subPropertyOf :hasFunction .
+                 rdfs:domain :ModelComponent .
 
 
 
@@ -318,7 +338,19 @@
 #################################################################
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#AnalyticalSolution
+###  http://siam.nist.gov/AM-Model-Ontology#AmorphousGlassTransitionTemperature
+
+:AmorphousGlassTransitionTemperature rdf:type owl:Class ;
+                                     
+                                     rdfs:subClassOf :PhaseTransformationParameter ;
+                                     
+                                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "AmorphousGlassTransitionTemperature1s" ;
+                                     
+                                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "AmorphousGlassTransitionTemperature1" .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#AnalyticalSolution
 
 :AnalyticalSolution rdf:type owl:Class ;
                     
@@ -330,7 +362,7 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#AssumptionOfModelComponent
+###  http://siam.nist.gov/AM-Model-Ontology#AssumptionOfModelComponent
 
 :AssumptionOfModelComponent rdf:type owl:Class ;
                             
@@ -342,71 +374,131 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#BellLikeRadialModel
+###  http://siam.nist.gov/AM-Model-Ontology#BellLikeRadialModel
 
 :BellLikeRadialModel rdf:type owl:Class ;
                      
-                     rdfs:subClassOf :HeatSourceModel .
+                     rdfs:subClassOf :HeatSourceModel ;
+                     
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "BellLikeRadialModels" ;
+                     
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "BellLikeRadialModel" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#BottomBoundaryCondition
+###  http://siam.nist.gov/AM-Model-Ontology#BottomBoundaryCondition
 
 :BottomBoundaryCondition rdf:type owl:Class ;
                          
                          rdfs:subClassOf :BoundaryCondition ;
                          
-                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "BottomBoundaryCondition" ;
+                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "BottomBoundaryConditions" ;
                          
-                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "BottomBoundaryConditions" .
+                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "BottomBoundaryCondition" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#BoundaryCondition
+###  http://siam.nist.gov/AM-Model-Ontology#BoundaryCondition
 
 :BoundaryCondition rdf:type owl:Class ;
                    
                    rdfs:subClassOf :ElementOfModel ;
                    
-                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "BoundaryCondition" ;
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "BoundaryConditions" ;
                    
-                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "BoundaryConditions" .
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "BoundaryCondition" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#CellularAutomataEquations
+###  http://siam.nist.gov/AM-Model-Ontology#BulkMaterialDensity
+
+:BulkMaterialDensity rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :ModelDependentMaterialProperty ;
+                     
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "BulkMaterialDensities" ;
+                     
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "BulkMaterialDensity" .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#BulkMaterialRadiativeProperty
+
+:BulkMaterialRadiativeProperty rdf:type owl:Class ;
+                               
+                               rdfs:subClassOf :ModelDependentMaterialProperty ;
+                               
+                               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "BulkMaterialRadiativeProperties" ;
+                               
+                               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "BulkMaterialRadiativeProperty" .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#BulkMaterialThermalConductivity
+
+:BulkMaterialThermalConductivity rdf:type owl:Class ;
+                                 
+                                 rdfs:subClassOf :ModelDependentMaterialProperty ;
+                                 
+                                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ThermalConductivityInSolid1" ;
+                                 
+                                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ThermalConductivityInSolid1s" ;
+                                 
+                                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "BulkMaterialThermalConductivity1" ;
+                                 
+                                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "BulkMaterialThermalConductivity1s" .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#CellularAutomataEquations
 
 :CellularAutomataEquations rdf:type owl:Class ;
                            
-                           rdfs:subClassOf :GoverningEquation .
+                           rdfs:subClassOf :GoverningEquation ;
+                           
+                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "CellularAutomataEquations" ;
+                           
+                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "CellularAutomataEquationses" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#Consolidation
+###  http://siam.nist.gov/AM-Model-Ontology#ConsolidationAssumption
 
-:Consolidation rdf:type owl:Class ;
-               
-               rdfs:subClassOf :PhysicalAssumption .
+:ConsolidationAssumption rdf:type owl:Class ;
+                         
+                         rdfs:subClassOf :PhysicalAssumption ;
+                         
+                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Consolidations" ;
+                         
+                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Consolidation" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ConsolidationByMeltingModel
+###  http://siam.nist.gov/AM-Model-Ontology#ConsolidationByMeltingModel
 
 :ConsolidationByMeltingModel rdf:type owl:Class ;
                              
-                             rdfs:subClassOf :ConsolidationModel .
+                             rdfs:subClassOf :ConsolidationModel ;
+                             
+                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ConsolidationByMeltingModels" ;
+                             
+                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ConsolidationByMeltingModel" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ConsolidationBySinteringModel
+###  http://siam.nist.gov/AM-Model-Ontology#ConsolidationBySinteringModel
 
 :ConsolidationBySinteringModel rdf:type owl:Class ;
                                
-                               rdfs:subClassOf :ConsolidationModel .
+                               rdfs:subClassOf :ConsolidationModel ;
+                               
+                               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ConsolidationBySinteringModels" ;
+                               
+                               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ConsolidationBySinteringModel" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ConsolidationModel
+###  http://siam.nist.gov/AM-Model-Ontology#ConsolidationModel
 
 :ConsolidationModel rdf:type owl:Class ;
                     
@@ -422,31 +514,67 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ConsolidationModelVariable
+###  http://siam.nist.gov/AM-Model-Ontology#ConsolidationModelVariable
 
 :ConsolidationModelVariable rdf:type owl:Class ;
                             
-                            rdfs:subClassOf :ModelVariable .
+                            rdfs:subClassOf :ModelVariable ;
+                            
+                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ConsolidationModelVariable" ;
+                            
+                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ConsolidationModelVariables" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#CoordinatesSystem
+###  http://siam.nist.gov/AM-Model-Ontology#CoordinatesSystem
 
 :CoordinatesSystem rdf:type owl:Class ;
                    
-                   rdfs:subClassOf :GeometricAssumption .
+                   rdfs:subClassOf :GeometricAssumption ;
+                   
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "CoordinatesSystem" ;
+                   
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "CoordinatesSystems" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#CylindricalModel
+###  http://siam.nist.gov/AM-Model-Ontology#CrystallineLatentHeat
+
+:CrystallineLatentHeat rdf:type owl:Class ;
+                       
+                       rdfs:subClassOf :PhaseTransformationParameter ;
+                       
+                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "CrystallineLatentHeat1s" ;
+                       
+                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "CrystallineLatentHeat1" .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#CrystallineMeltingTemperature
+
+:CrystallineMeltingTemperature rdf:type owl:Class ;
+                               
+                               rdfs:subClassOf :PhaseTransformationParameter ;
+                               
+                               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "CrystallineMeltingTemperature1" ;
+                               
+                               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "CrystallineMeltingTemperature1s" .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#CylindricalModel
 
 :CylindricalModel rdf:type owl:Class ;
                   
-                  rdfs:subClassOf :HeatSourceModel .
+                  rdfs:subClassOf :HeatSourceModel ;
+                  
+                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "CylindricalModels" ;
+                  
+                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "CylindricalModel" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#DensityVariationEquation
+###  http://siam.nist.gov/AM-Model-Ontology#DensityVariationEquation
 
 :DensityVariationEquation rdf:type owl:Class ;
                           
@@ -458,37 +586,69 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#Deterministic
+###  http://siam.nist.gov/AM-Model-Ontology#Deterministic
 
 :Deterministic rdf:type owl:Class ;
                
-               rdfs:subClassOf :StatisticalAssumption .
+               rdfs:subClassOf :StatisticalAssumption ;
+               
+               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Deterministic" ;
+               
+               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Deterministics" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ElementOfModel
+###  http://siam.nist.gov/AM-Model-Ontology#ElasticModulus
+
+:ElasticModulus rdf:type owl:Class ;
+                
+                rdfs:subClassOf :ModelDependentMaterialProperty ;
+                
+                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ElasticModulus" ;
+                
+                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ElasticModuluses" .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#ElementOfModel
 
 :ElementOfModel rdf:type owl:Class ;
                 
                 rdfs:subClassOf :ModelEntity ;
                 
-                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ElementOfModel" ;
+                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ElementOfModels" ;
                 
-                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ElementOfModels" .
+                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ElementOfModel" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#EmpiricalParameter
+###  http://siam.nist.gov/AM-Model-Ontology#EmpiricalParameter
 
 :EmpiricalParameter rdf:type owl:Class ;
                     
                     rdfs:subClassOf :ModelComponentInputParameter ;
                     
-                    rdfs:comment "Values of this type of parameter are approximated with experiments" .
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "EmpiricalParameter" ;
+                    
+                    rdfs:comment "Values of this type of parameter are approximated with experiments" ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "EmpiricalParameters" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#FiniteDifferenceMethod
+###  http://siam.nist.gov/AM-Model-Ontology#EquilibriumPartitionCoefficient
+
+:EquilibriumPartitionCoefficient rdf:type owl:Class ;
+                                 
+                                 rdfs:subClassOf :ModelDependentMaterialProperty ;
+                                 
+                                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "EquilibriumPartitionCoefficient1" ;
+                                 
+                                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "EquilibriumPartitionCoefficient1s" .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#FiniteDifferenceMethod
 
 :FiniteDifferenceMethod rdf:type owl:Class ;
                         
@@ -500,7 +660,7 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#FiniteElementMethod
+###  http://siam.nist.gov/AM-Model-Ontology#FiniteElementMethod
 
 :FiniteElementMethod rdf:type owl:Class ;
                      
@@ -512,15 +672,19 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#Fluid
+###  http://siam.nist.gov/AM-Model-Ontology#FluidAssumption
 
-:Fluid rdf:type owl:Class ;
-       
-       rdfs:subClassOf :PhysicalAssumption .
+:FluidAssumption rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :PhysicalAssumption ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Fluid" ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Fluids" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#FluidFlowModel
+###  http://siam.nist.gov/AM-Model-Ontology#FluidFlowModel
 
 :FluidFlowModel rdf:type owl:Class ;
                 
@@ -528,11 +692,15 @@
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty :hasMathematicalRepresentation ;
                                   owl:someValuesFrom :NavierStokesEquations
-                                ] .
+                                ] ;
+                
+                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "FluidFlowModels" ;
+                
+                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "FluidFlowModel" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#FluidMechanicsModel
+###  http://siam.nist.gov/AM-Model-Ontology#FluidMechanicsModel
 
 :FluidMechanicsModel rdf:type owl:Class ;
                      
@@ -544,15 +712,19 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#FluidMechanicsModelVariable
+###  http://siam.nist.gov/AM-Model-Ontology#FluidMechanicsModelVariable
 
 :FluidMechanicsModelVariable rdf:type owl:Class ;
                              
-                             rdfs:subClassOf :ModelVariable .
+                             rdfs:subClassOf :ModelVariable ;
+                             
+                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "FluidMechanicsModelVariable" ;
+                             
+                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "FluidMechanicsModelVariables" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#FunctionOfModel
+###  http://siam.nist.gov/AM-Model-Ontology#FunctionOfModel
 
 :FunctionOfModel rdf:type owl:Class ;
                  
@@ -568,7 +740,7 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#FunctionalityOfModelComponent
+###  http://siam.nist.gov/AM-Model-Ontology#FunctionalityOfModelComponent
 
 :FunctionalityOfModelComponent rdf:type owl:Class ;
                                
@@ -578,57 +750,81 @@
                                                  owl:someValuesFrom :ModelComponentOutputParameter
                                                ] ;
                                
-                               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Model_component_functionality" ;
+                               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Model_component_functionalities" ;
                                
-                               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Model_component_functionalities" .
+                               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Model_component_functionality" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#GaussianModel
+###  http://siam.nist.gov/AM-Model-Ontology#GaussianModel
 
 :GaussianModel rdf:type owl:Class ;
                
-               rdfs:subClassOf :HeatSourceModel .
+               rdfs:subClassOf :HeatSourceModel ;
+               
+               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "GaussianModel" ;
+               
+               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "GaussianModels" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#GeometricAssumption
+###  http://siam.nist.gov/AM-Model-Ontology#GeometricAssumption
 
 :GeometricAssumption rdf:type owl:Class ;
                      
-                     rdfs:subClassOf :AssumptionOfModelComponent .
+                     rdfs:subClassOf :AssumptionOfModelComponent ;
+                     
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "GeometricAssumption" ;
+                     
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "GeometricAssumptions" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#GeometryOfShape
+###  http://siam.nist.gov/AM-Model-Ontology#GeometryOfShape
 
 :GeometryOfShape rdf:type owl:Class ;
                  
-                 rdfs:subClassOf :GeometricAssumption .
+                 rdfs:subClassOf :GeometricAssumption ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "GeometryOfShape" ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "GeometryOfShapes" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#GoverningEquation
+###  http://siam.nist.gov/AM-Model-Ontology#GoverningEquation
 
 :GoverningEquation rdf:type owl:Class ;
                    
                    rdfs:subClassOf :ModelComponent ;
                    
-                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Governing_equations" ;
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Governing_equation" ;
                    
-                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Governing_equation" .
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Governing_equations" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#GreensFunction
+###  http://siam.nist.gov/AM-Model-Ontology#GreensFunction
 
 :GreensFunction rdf:type owl:Class ;
                 
-                rdfs:subClassOf :AnalyticalSolution .
+                rdfs:subClassOf :AnalyticalSolution ;
+                
+                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "GreensFunction" ;
+                
+                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "GreensFunctions" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#HeatSourceModel
+###  http://siam.nist.gov/AM-Model-Ontology#HeatSourceAssumption
+
+:HeatSourceAssumption rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :PhysicalAssumption .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#HeatSourceModel
 
 :HeatSourceModel rdf:type owl:Class ;
                  
@@ -638,31 +834,31 @@
                                    owl:someValuesFrom :IrradiationEquation
                                  ] ;
                  
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "IrradiationModel" ;
+                 
                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "IrradiationModels" ;
                  
                  rdfs:comment """Irradiation model is a representation of the irradiation produced by the heat source --> 
-IrradiationModel = HeatSourceModel""" ;
-                 
-                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "IrradiationModel" .
+IrradiationModel = HeatSourceModel""" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#HeatTransferEquation
+###  http://siam.nist.gov/AM-Model-Ontology#HeatTransferEquation
 
 :HeatTransferEquation rdf:type owl:Class ;
                       
                       rdfs:subClassOf :GoverningEquation ;
                       
-                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "RadiationTransferEquation" ;
-                      
                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "RadiationTransferEquations" ;
+                      
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "RadiationTransferEquation" ;
                       
                       rdfs:comment """Heat Transfer Equation is also designated in the literature as Energy Conservation Equation 
 Heat Transfer Equation is a type of Transport Equation""" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#HeatTransferModel
+###  http://siam.nist.gov/AM-Model-Ontology#HeatTransferModel
 
 :HeatTransferModel rdf:type owl:Class ;
                    
@@ -670,19 +866,27 @@ Heat Transfer Equation is a type of Transport Equation""" .
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty :hasMathematicalRepresentation ;
                                      owl:someValuesFrom :HeatTransferEquation
-                                   ] .
+                                   ] ;
+                   
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "HeatTransferModels" ;
+                   
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "HeatTransferModel" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#HookesLaw
+###  http://siam.nist.gov/AM-Model-Ontology#HookesLaw
 
 :HookesLaw rdf:type owl:Class ;
            
-           rdfs:subClassOf :NonGoverningEquation .
+           rdfs:subClassOf :NonGoverningEquation ;
+           
+           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "HookesLaw" ;
+           
+           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "HookesLaws" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#IrradiationAbsorptionModel
+###  http://siam.nist.gov/AM-Model-Ontology#IrradiationAbsorptionModel
 
 :IrradiationAbsorptionModel rdf:type owl:Class ;
                             
@@ -698,39 +902,79 @@ Heat Transfer Equation is a type of Transport Equation""" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#IrradiationEquation
+###  http://siam.nist.gov/AM-Model-Ontology#IrradiationEquation
 
 :IrradiationEquation rdf:type owl:Class ;
                      
-                     rdfs:subClassOf :NonGoverningEquation .
+                     rdfs:subClassOf :NonGoverningEquation ;
+                     
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "IrradiationEquations" ;
+                     
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "IrradiationEquation" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#LambertBeerLaw
+###  http://siam.nist.gov/AM-Model-Ontology#LambertBeerLaw
 
 :LambertBeerLaw rdf:type owl:Class ;
                 
-                rdfs:subClassOf :NonGoverningEquation .
+                rdfs:subClassOf :NonGoverningEquation ;
+                
+                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "LambertBeerLaws" ;
+                
+                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "LambertBeerLaw" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#LatticeBoltzmanMethod
+###  http://siam.nist.gov/AM-Model-Ontology#LatentHeatOfFusion
+
+:LatentHeatOfFusion rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :CrystallineLatentHeat ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "LatentHeatOfFusion1s" ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "LatentHeatOfFusion1" .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#LatentHeatOfVaporisation
+
+:LatentHeatOfVaporisation rdf:type owl:Class ;
+                          
+                          rdfs:subClassOf :CrystallineLatentHeat ;
+                          
+                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "LatentHeatOfVaporisation1" ;
+                          
+                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "LatentHeatOfVaporisation1s" .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#LatticeBoltzmanMethod
 
 :LatticeBoltzmanMethod rdf:type owl:Class ;
                        
-                       rdfs:subClassOf :NumericalSolution .
+                       rdfs:subClassOf :NumericalSolution ;
+                       
+                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "LatticeBoltzmanMethod" ;
+                       
+                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "LatticeBoltzmanMethods" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#LengthScale
+###  http://siam.nist.gov/AM-Model-Ontology#LengthScaleAssumption
 
-:LengthScale rdf:type owl:Class ;
-             
-             rdfs:subClassOf :PhysicalAssumption .
+:LengthScaleAssumption rdf:type owl:Class ;
+                       
+                       rdfs:subClassOf :PhysicalAssumption ;
+                       
+                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "LengthScale" ;
+                       
+                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "LengthScales" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#LimitationOfModelComponent
+###  http://siam.nist.gov/AM-Model-Ontology#LimitationOfModelComponent
 
 :LimitationOfModelComponent rdf:type owl:Class ;
                             
@@ -742,51 +986,151 @@ Heat Transfer Equation is a type of Transport Equation""" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#MassTransferEquation
+###  http://siam.nist.gov/AM-Model-Ontology#LiquidMassDiffusionCoefficient
+
+:LiquidMassDiffusionCoefficient rdf:type owl:Class ;
+                                
+                                rdfs:subClassOf :ModelDependentMaterialProperty ;
+                                
+                                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "LiquidMassDiffusionCoefficient1" ;
+                                
+                                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "LiquidMassDiffusionCoefficient1s" .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#LiquidSolidSurfaceEnergy
+
+:LiquidSolidSurfaceEnergy rdf:type owl:Class ;
+                          
+                          rdfs:subClassOf :SurfaceEnergy ;
+                          
+                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "LiquidSolidSurfaceEnergy1s" ;
+                          
+                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "LiquidSolidSurfaceEnergy1" .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#LiquidSurfaceRadiationCoefficient
+
+:LiquidSurfaceRadiationCoefficient rdf:type owl:Class ;
+                                   
+                                   rdfs:subClassOf :SurfaceRadiationCoefficient ;
+                                   
+                                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "LiquidSurfaceRadiationCoefficient1" ;
+                                   
+                                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "LiquidSurfaceRadiationCoefficient1s" .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#LiquidVaporSurfaceEnergy
+
+:LiquidVaporSurfaceEnergy rdf:type owl:Class ;
+                          
+                          rdfs:subClassOf :SurfaceEnergy ;
+                          
+                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "LiquidVaporSurfaceEnergy1s" ;
+                          
+                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "LiquidVaporSurfaceEnergy1" .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#LiquidusSlope
+
+:LiquidusSlope rdf:type owl:Class ;
+               
+               rdfs:subClassOf :ModelDependentMaterialProperty ;
+               
+               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "LiquidusSlope1" ;
+               
+               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "LiquidusSlope1s" .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#LiquidusTemperature
+
+:LiquidusTemperature rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :CrystallineMeltingTemperature ;
+                     
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "LiquidusTemperature1" ;
+                     
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "LiquidusTemperature1s" .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#MassTransferEquation
 
 :MassTransferEquation rdf:type owl:Class ;
                       
-                      rdfs:subClassOf :GoverningEquation .
+                      rdfs:subClassOf :GoverningEquation ;
+                      
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "MassTransferEquations" ;
+                      
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "MassTransferEquation" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#Material
+###  http://siam.nist.gov/AM-Model-Ontology#MaterialAssumption
 
-:Material rdf:type owl:Class ;
-          
-          rdfs:subClassOf :PhysicalAssumption .
-
-
-
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#Mechanical
-
-:Mechanical rdf:type owl:Class ;
-            
-            rdfs:subClassOf :PhysicalAssumption .
+:MaterialAssumption rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :PhysicalAssumption ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Materials" ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Material" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#MechanicalAnalysis
+###  http://siam.nist.gov/AM-Model-Ontology#MechanicalAnalysis
 
 :MechanicalAnalysis rdf:type owl:Class ;
                     
                     rdfs:subClassOf :FiniteElementMethod ;
                     
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "MechanicalAnalyses" ;
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "MechanicalAnalysis" ;
                     
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "MechanicalAnalysis" .
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "MechanicalAnalyses" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#Microstructural
+###  http://siam.nist.gov/AM-Model-Ontology#MechanicalAssumption
 
-:Microstructural rdf:type owl:Class ;
-                 
-                 rdfs:subClassOf :PhysicalAssumption .
+:MechanicalAssumption rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :PhysicalAssumption ;
+                      
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Mechanical" ;
+                      
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Mechanicals" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#MicrostructuralModel
+###  http://siam.nist.gov/AM-Model-Ontology#MeltingTemperature
+
+:MeltingTemperature rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :CrystallineMeltingTemperature ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "MeltingTemperature1s" ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "MeltingTemperature1" .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#MicrostructuralAssumption
+
+:MicrostructuralAssumption rdf:type owl:Class ;
+                           
+                           rdfs:subClassOf :PhysicalAssumption ;
+                           
+                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Microstructural" ;
+                           
+                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Microstructurals" .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#MicrostructuralModel
 
 :MicrostructuralModel rdf:type owl:Class ;
                       
@@ -798,15 +1142,19 @@ Heat Transfer Equation is a type of Transport Equation""" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#MicrostructuralModelVariable
+###  http://siam.nist.gov/AM-Model-Ontology#MicrostructuralModelVariable
 
 :MicrostructuralModelVariable rdf:type owl:Class ;
                               
-                              rdfs:subClassOf :ModelVariable .
+                              rdfs:subClassOf :ModelVariable ;
+                              
+                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "MicrostructuralModelVariables" ;
+                              
+                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "MicrostructuralModelVariable" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#Model
+###  http://siam.nist.gov/AM-Model-Ontology#Model
 
 :Model rdf:type owl:Class ;
        
@@ -814,43 +1162,47 @@ Heat Transfer Equation is a type of Transport Equation""" .
        
        rdfs:subClassOf :ModelEntity ,
                        [ rdf:type owl:Restriction ;
-                         owl:onProperty :hasParameter ;
-                         owl:someValuesFrom [ rdf:type owl:Class ;
-                                              owl:intersectionOf ( :ModelInputParameter
-                                                                   :ModelOutputParameter
-                                                                 )
-                                            ]
-                       ] ,
-                       [ rdf:type owl:Restriction ;
                          owl:onProperty :hasComponent ;
                          owl:someValuesFrom :ModelComponent
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasAssumption ;
+                         owl:someValuesFrom :ModelAssumption
                        ] ,
                        [ rdf:type owl:Restriction ;
                          owl:onProperty :hasFunction ;
                          owl:someValuesFrom :FunctionOfModel
                        ] ,
                        [ rdf:type owl:Restriction ;
-                         owl:onProperty :hasAssumption ;
-                         owl:someValuesFrom :ModelAssumption
+                         owl:onProperty :hasParameter ;
+                         owl:someValuesFrom [ rdf:type owl:Class ;
+                                              owl:intersectionOf ( :ModelInputParameter
+                                                                   :ModelOutputParameter
+                                                                 )
+                                            ]
                        ] ;
        
-       rdfs:comment "This entity defines different types of models" ;
-       
        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Model" ;
+       
+       rdfs:comment "This entity defines different types of models" ;
        
        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Models" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ModelAssumption
+###  http://siam.nist.gov/AM-Model-Ontology#ModelAssumption
 
 :ModelAssumption rdf:type owl:Class ;
                  
-                 rdfs:subClassOf :ElementOfModel .
+                 rdfs:subClassOf :ElementOfModel ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ModelAssumptions" ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ModelAssumption" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ModelComponent
+###  http://siam.nist.gov/AM-Model-Ontology#ModelComponent
 
 :ModelComponent rdf:type owl:Class ;
                 
@@ -862,31 +1214,55 @@ Heat Transfer Equation is a type of Transport Equation""" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ModelComponentInputParameter
+###  http://siam.nist.gov/AM-Model-Ontology#ModelComponentInputParameter
 
 :ModelComponentInputParameter rdf:type owl:Class ;
                               
-                              rdfs:subClassOf :ModelInputParameter .
+                              rdfs:subClassOf :ModelInputParameter ;
+                              
+                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ModelComponentInputParameters" ;
+                              
+                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ModelComponentInputParameter" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ModelComponentOutputParameter
+###  http://siam.nist.gov/AM-Model-Ontology#ModelComponentOutputParameter
 
 :ModelComponentOutputParameter rdf:type owl:Class ;
                                
-                               rdfs:subClassOf :ModelOutputParameter .
+                               rdfs:subClassOf :ModelOutputParameter ;
+                               
+                               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ModelComponentOutputParameters" ;
+                               
+                               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ModelComponentOutputParameter" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ModelConstraint
+###  http://siam.nist.gov/AM-Model-Ontology#ModelConstraint
 
 :ModelConstraint rdf:type owl:Class ;
                  
-                 rdfs:subClassOf :ElementOfModel .
+                 rdfs:subClassOf :ElementOfModel ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ModelConstraint" ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ModelConstraints" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ModelEntity
+###  http://siam.nist.gov/AM-Model-Ontology#ModelDependentMaterialProperty
+
+:ModelDependentMaterialProperty rdf:type owl:Class ;
+                                
+                                rdfs:subClassOf :ModelComponentInputParameter ;
+                                
+                                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ModelDependentMaterialProperties" ;
+                                
+                                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ModelDependentMaterialProperty" .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#ModelEntity
 
 :ModelEntity rdf:type owl:Class ;
              
@@ -896,7 +1272,7 @@ Heat Transfer Equation is a type of Transport Equation""" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ModelInputParameter
+###  http://siam.nist.gov/AM-Model-Ontology#ModelInputParameter
 
 :ModelInputParameter rdf:type owl:Class ;
                      
@@ -908,19 +1284,19 @@ Heat Transfer Equation is a type of Transport Equation""" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ModelOutputParameter
+###  http://siam.nist.gov/AM-Model-Ontology#ModelOutputParameter
 
 :ModelOutputParameter rdf:type owl:Class ;
                       
                       rdfs:subClassOf :ElementOfModel ;
                       
-                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "OutputParameters" ;
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "OutputParameter" ;
                       
-                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "OutputParameter" .
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "OutputParameters" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ModelVariable
+###  http://siam.nist.gov/AM-Model-Ontology#ModelVariable
 
 :ModelVariable rdf:type owl:Class ;
                
@@ -932,15 +1308,19 @@ Heat Transfer Equation is a type of Transport Equation""" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ModifiedCylindricalModel
+###  http://siam.nist.gov/AM-Model-Ontology#ModifiedCylindricalModel
 
 :ModifiedCylindricalModel rdf:type owl:Class ;
                           
-                          rdfs:subClassOf :HeatSourceModel .
+                          rdfs:subClassOf :HeatSourceModel ;
+                          
+                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ModifiedCylindricalModels" ;
+                          
+                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ModifiedCylindricalModel" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#NavierStokesEquations
+###  http://siam.nist.gov/AM-Model-Ontology#NavierStokesEquations
 
 :NavierStokesEquations rdf:type owl:Class ;
                        
@@ -950,29 +1330,37 @@ Heat Transfer Equation is a type of Transport Equation""" .
                                          owl:someValuesFrom :SolutionOfNavierStokesEquations
                                        ] ;
                        
-                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "NavierStokesEquation" ;
+                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "NavierStokesEquations" ;
                        
-                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "NavierStokesEquations" .
+                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "NavierStokesEquation" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#NonGoverningEquation
+###  http://siam.nist.gov/AM-Model-Ontology#NonGoverningEquation
 
 :NonGoverningEquation rdf:type owl:Class ;
                       
-                      rdfs:subClassOf :ModelComponent .
+                      rdfs:subClassOf :ModelComponent ;
+                      
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "NonGoverningEquation" ;
+                      
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "NonGoverningEquations" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#NumberOfDimensions
+###  http://siam.nist.gov/AM-Model-Ontology#NumberOfDimensions
 
 :NumberOfDimensions rdf:type owl:Class ;
                     
-                    rdfs:subClassOf :GeometricAssumption .
+                    rdfs:subClassOf :GeometricAssumption ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "NumberOfDimensionses" ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "NumberOfDimensions" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#NumericalSoftware
+###  http://siam.nist.gov/AM-Model-Ontology#NumericalSoftware
 
 :NumericalSoftware rdf:type owl:Class ;
                    
@@ -984,55 +1372,103 @@ Heat Transfer Equation is a type of Transport Equation""" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#NumericalSolution
+###  http://siam.nist.gov/AM-Model-Ontology#NumericalSolution
 
 :NumericalSolution rdf:type owl:Class ;
                    
                    rdfs:subClassOf :Solution ;
                    
-                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Numerical" ;
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Numericals" ;
                    
-                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Numericals" .
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Numerical" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#PhaseFieldEquation
+###  http://siam.nist.gov/AM-Model-Ontology#PhaseFieldEquation
 
 :PhaseFieldEquation rdf:type owl:Class ;
                     
-                    rdfs:subClassOf :GoverningEquation .
+                    rdfs:subClassOf :GoverningEquation ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PhaseFieldEquation" ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PhaseFieldEquations" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#PhysicalAssumption
+###  http://siam.nist.gov/AM-Model-Ontology#PhaseTransformationParameter
+
+:PhaseTransformationParameter rdf:type owl:Class ;
+                              
+                              rdfs:subClassOf :ModelDependentMaterialProperty ;
+                              
+                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PhaseTransformationParameter1s" ;
+                              
+                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PhaseTransformationParameter1" .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#PhysicalAssumption
 
 :PhysicalAssumption rdf:type owl:Class ;
                     
-                    rdfs:subClassOf :AssumptionOfModelComponent .
+                    rdfs:subClassOf :AssumptionOfModelComponent ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PhysicalAssumptions" ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PhysicalAssumption" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#PhysicsBasedModel
+###  http://siam.nist.gov/AM-Model-Ontology#PhysicsBasedModel
 
 :PhysicsBasedModel rdf:type owl:Class ;
                    
                    rdfs:subClassOf :Model ;
                    
-                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Physics_baseds" ;
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Physics_based" ;
                    
-                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Physics_based" .
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Physics_baseds" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#PointSourceModel
+###  http://siam.nist.gov/AM-Model-Ontology#PointSourceModel
 
 :PointSourceModel rdf:type owl:Class ;
                   
-                  rdfs:subClassOf :HeatSourceModel .
+                  rdfs:subClassOf :HeatSourceModel ;
+                  
+                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PointSourceModels" ;
+                  
+                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PointSourceModel" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#RadiationTransferEquation
+###  http://siam.nist.gov/AM-Model-Ontology#PoissonsRatio
+
+:PoissonsRatio rdf:type owl:Class ;
+               
+               rdfs:subClassOf :ModelDependentMaterialProperty ;
+               
+               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PoissonsRatio1" ;
+               
+               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PoissonsRatio1s" .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#PowderSurfaceRadiationCoefficient
+
+:PowderSurfaceRadiationCoefficient rdf:type owl:Class ;
+                                   
+                                   rdfs:subClassOf :SurfaceRadiationCoefficient ;
+                                   
+                                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PowderSurfaceRadiationCoefficient1s" ;
+                                   
+                                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PowderSurfaceRadiationCoefficient1" .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#RadiationTransferEquation
 
 :RadiationTransferEquation rdf:type owl:Class ;
                            
@@ -1044,35 +1480,55 @@ Heat Transfer Equation is a type of Transport Equation""" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#SideBoundaryCondition
+###  http://siam.nist.gov/AM-Model-Ontology#SideBoundaryCondition
 
 :SideBoundaryCondition rdf:type owl:Class ;
                        
-                       rdfs:subClassOf :BoundaryCondition .
+                       rdfs:subClassOf :BoundaryCondition ;
+                       
+                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SideBoundaryCondition" ;
+                       
+                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SideBoundaryConditions" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#SinteringActivationEnergy
+###  http://siam.nist.gov/AM-Model-Ontology#SinteringActivationEnergy
 
 :SinteringActivationEnergy rdf:type owl:Class ;
                            
-                           rdfs:subClassOf :EmpiricalParameter .
+                           rdfs:subClassOf :EmpiricalParameter ;
+                           
+                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SinteringActivationEnergy" ;
+                           
+                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SinteringActivationEnergies" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#Software
+###  http://siam.nist.gov/AM-Model-Ontology#Software
 
 :Software rdf:type owl:Class ;
           
           rdfs:subClassOf :ModelEntity ;
           
-          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Softwares" ;
+          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Software" ;
           
-          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Software" .
+          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Softwares" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#SolidMechanicsModel
+###  http://siam.nist.gov/AM-Model-Ontology#SolidMassDiffusionCoefficient
+
+:SolidMassDiffusionCoefficient rdf:type owl:Class ;
+                               
+                               rdfs:subClassOf :ModelDependentMaterialProperty ;
+                               
+                               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SolidMassDiffusionCoefficient1" ;
+                               
+                               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SolidMassDiffusionCoefficient1s" .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#SolidMechanicsModel
 
 :SolidMechanicsModel rdf:type owl:Class ;
                      
@@ -1080,63 +1536,147 @@ Heat Transfer Equation is a type of Transport Equation""" .
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty :hasMathematicalRepresentation ;
                                        owl:someValuesFrom :HookesLaw
-                                     ] .
+                                     ] ;
+                     
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SolidMechanicsModel" ;
+                     
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SolidMechanicsModels" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#SolidificationModel
+###  http://siam.nist.gov/AM-Model-Ontology#SolidSurfaceRadiationCoefficient
+
+:SolidSurfaceRadiationCoefficient rdf:type owl:Class ;
+                                  
+                                  rdfs:subClassOf :SurfaceRadiationCoefficient ;
+                                  
+                                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SolidSurfaceRadiationCoefficient1" ;
+                                  
+                                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SolidSurfaceRadiationCoefficient1s" .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#SolidificationModel
 
 :SolidificationModel rdf:type owl:Class ;
                      
-                     rdfs:subClassOf :MicrostructuralModel .
+                     rdfs:subClassOf :MicrostructuralModel ;
+                     
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SolidificationModel" ;
+                     
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SolidificationModels" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#Solution
+###  http://siam.nist.gov/AM-Model-Ontology#SolidusTemperature
+
+:SolidusTemperature rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :CrystallineMeltingTemperature ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SolidusTemperature1" ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SolidusTemperature1s" .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#SoluteComposition
+
+:SoluteComposition rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :ModelDependentMaterialProperty ;
+                   
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SoluteComposition1" ;
+                   
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SoluteComposition1s" .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#Solution
 
 :Solution rdf:type owl:Class ;
           
           rdfs:subClassOf :ModelEntity ;
           
-          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Solutions" ;
+          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Solution" ;
           
-          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Solution" .
+          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Solutions" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#SolutionOfModelEquation
+###  http://siam.nist.gov/AM-Model-Ontology#SolutionOfModelEquation
 
 :SolutionOfModelEquation rdf:type owl:Class ;
                          
-                         rdfs:subClassOf :ElementOfModel .
+                         rdfs:subClassOf :ElementOfModel ;
+                         
+                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SolutionOfModelEquation" ;
+                         
+                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SolutionOfModelEquations" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#SolutionOfNavierStokesEquations
+###  http://siam.nist.gov/AM-Model-Ontology#SolutionOfNavierStokesEquations
 
 :SolutionOfNavierStokesEquations rdf:type owl:Class ;
                                  
-                                 rdfs:subClassOf :SolutionOfModelEquation .
+                                 rdfs:subClassOf :SolutionOfModelEquation ;
+                                 
+                                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SolutionOfNavierStokesEquations" ;
+                                 
+                                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SolutionOfNavierStokesEquationses" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#StatisticalAssumption
+###  http://siam.nist.gov/AM-Model-Ontology#SolventComposition
+
+:SolventComposition rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :ModelDependentMaterialProperty ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SolventComposition1s" ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SolventComposition1" .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#SpecificHeat
+
+:SpecificHeat rdf:type owl:Class ;
+              
+              rdfs:subClassOf :ModelDependentMaterialProperty ;
+              
+              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SpecificHeat1s" ;
+              
+              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SpecificHeat1" .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#StatisticalAssumption
 
 :StatisticalAssumption rdf:type owl:Class ;
                        
-                       rdfs:subClassOf :AssumptionOfModelComponent .
+                       rdfs:subClassOf :AssumptionOfModelComponent ;
+                       
+                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "StatisticalAssumption" ;
+                       
+                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "StatisticalAssumptions" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#Stochastic
+###  http://siam.nist.gov/AM-Model-Ontology#Stochastic
 
 :Stochastic rdf:type owl:Class ;
             
-            rdfs:subClassOf :StatisticalAssumption .
+            rdfs:subClassOf :StatisticalAssumption ;
+            
+            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Stochastic" ;
+            
+            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Stochastics" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#StructuralModel
+###  http://siam.nist.gov/AM-Model-Ontology#StructuralModel
 
 :StructuralModel rdf:type owl:Class ;
                  
@@ -1148,15 +1688,79 @@ Heat Transfer Equation is a type of Transport Equation""" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#StructuralModelVariable
+###  http://siam.nist.gov/AM-Model-Ontology#StructuralModelVariable
 
 :StructuralModelVariable rdf:type owl:Class ;
                          
-                         rdfs:subClassOf :ModelVariable .
+                         rdfs:subClassOf :ModelVariable ;
+                         
+                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "StructuralModelVariables" ;
+                         
+                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "StructuralModelVariable" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#SurfaceTensionEquation
+###  http://siam.nist.gov/AM-Model-Ontology#SubstrateThermalConductivity
+
+:SubstrateThermalConductivity rdf:type owl:Class ;
+                              
+                              rdfs:subClassOf :ModelDependentMaterialProperty ;
+                              
+                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SubstrateThermalConductivity1" ;
+                              
+                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SubstrateThermalConductivity1s" .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#SurfaceConvectionCoefficient
+
+:SurfaceConvectionCoefficient rdf:type owl:Class ;
+                              
+                              rdfs:subClassOf :EmpiricalParameter ;
+                              
+                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SurfaceConvectionCoefficient1s" ;
+                              
+                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SurfaceConvectionCoefficient1" .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#SurfaceEnergy
+
+:SurfaceEnergy rdf:type owl:Class ;
+               
+               rdfs:subClassOf :ModelDependentMaterialProperty ;
+               
+               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SurfaceEnergy1" ;
+               
+               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SurfaceEnergy1s" .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#SurfaceRadiationCoefficient
+
+:SurfaceRadiationCoefficient rdf:type owl:Class ;
+                             
+                             rdfs:subClassOf :ModelDependentMaterialProperty ;
+                             
+                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SurfaceRadiationCoefficient1s" ;
+                             
+                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SurfaceRadiationCoefficient1" .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#SurfaceTensionCoefficient
+
+:SurfaceTensionCoefficient rdf:type owl:Class ;
+                           
+                           rdfs:subClassOf :ModelDependentMaterialProperty ;
+                           
+                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SurfaceTensionCoefficient1s" ;
+                           
+                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SurfaceTensionCoefficient1" .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#SurfaceTensionEquation
 
 :SurfaceTensionEquation rdf:type owl:Class ;
                         
@@ -1168,35 +1772,43 @@ Heat Transfer Equation is a type of Transport Equation""" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#Symmetry
+###  http://siam.nist.gov/AM-Model-Ontology#Symmetry
 
 :Symmetry rdf:type owl:Class ;
           
-          rdfs:subClassOf :GeometricAssumption .
+          rdfs:subClassOf :GeometricAssumption ;
+          
+          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Symmetry" ;
+          
+          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Symmetries" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#Thermal
-
-:Thermal rdf:type owl:Class ;
-         
-         rdfs:subClassOf :PhysicalAssumption .
-
-
-
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ThermalAnalysis
+###  http://siam.nist.gov/AM-Model-Ontology#ThermalAnalysis
 
 :ThermalAnalysis rdf:type owl:Class ;
                  
                  rdfs:subClassOf :FiniteElementMethod ;
                  
-                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ThermalAnalysis" ;
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ThermalAnalyses" ;
                  
-                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ThermalAnalyses" .
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ThermalAnalysis" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ThermalConductivityEquation
+###  http://siam.nist.gov/AM-Model-Ontology#ThermalAssumption
+
+:ThermalAssumption rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :PhysicalAssumption ;
+                   
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Thermals" ;
+                   
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Thermal" .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#ThermalConductivityEquation
 
 :ThermalConductivityEquation rdf:type owl:Class ;
                              
@@ -1208,7 +1820,31 @@ Heat Transfer Equation is a type of Transport Equation""" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ThermalModel
+###  http://siam.nist.gov/AM-Model-Ontology#ThermalConductivityInGas
+
+:ThermalConductivityInGas rdf:type owl:Class ;
+                          
+                          rdfs:subClassOf :ModelDependentMaterialProperty ;
+                          
+                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ThermalConductivityInGas1s" ;
+                          
+                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ThermalConductivityInGas1" .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#ThermalExpansionCoefficient
+
+:ThermalExpansionCoefficient rdf:type owl:Class ;
+                             
+                             rdfs:subClassOf :ModelDependentMaterialProperty ;
+                             
+                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ThermalExpansionCoefficient1" ;
+                             
+                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ThermalExpansionCoefficient1s" .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#ThermalModel
 
 :ThermalModel rdf:type owl:Class ;
               
@@ -1220,39 +1856,75 @@ Heat Transfer Equation is a type of Transport Equation""" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ThermalModelVariable
+###  http://siam.nist.gov/AM-Model-Ontology#ThermalModelVariable
 
 :ThermalModelVariable rdf:type owl:Class ;
                       
-                      rdfs:subClassOf :ModelVariable .
+                      rdfs:subClassOf :ModelVariable ;
+                      
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ThermalModelVariables" ;
+                      
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ThermalModelVariable" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#TimeScale
+###  http://siam.nist.gov/AM-Model-Ontology#TimeScaleAssumption
 
-:TimeScale rdf:type owl:Class ;
-           
-           rdfs:subClassOf :PhysicalAssumption .
+:TimeScaleAssumption rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :PhysicalAssumption ;
+                     
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "TimeScale" ;
+                     
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "TimeScales" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#TopBoundaryCondition
+###  http://siam.nist.gov/AM-Model-Ontology#TopBoundaryCondition
 
 :TopBoundaryCondition rdf:type owl:Class ;
                       
                       rdfs:subClassOf :BoundaryCondition ;
                       
-                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "TopBoundaryCondition" ;
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "TopBoundaryConditions" ;
                       
-                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "TopBoundaryConditions" .
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "TopBoundaryCondition" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#ViscosityActivationEnergy
+###  http://siam.nist.gov/AM-Model-Ontology#VaporSolidSurfaceEnergy
+
+:VaporSolidSurfaceEnergy rdf:type owl:Class ;
+                         
+                         rdfs:subClassOf :SurfaceEnergy ;
+                         
+                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "VaporSolidSurfaceEnergy1s" ;
+                         
+                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "VaporSolidSurfaceEnergy1" .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#ViscosityActivationEnergy
 
 :ViscosityActivationEnergy rdf:type owl:Class ;
                            
-                           rdfs:subClassOf :EmpiricalParameter .
+                           rdfs:subClassOf :EmpiricalParameter ;
+                           
+                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ViscosityActivationEnergy" ;
+                           
+                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ViscosityActivationEnergies" .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#YoungsModulus
+
+:YoungsModulus rdf:type owl:Class ;
+               
+               rdfs:subClassOf :ModelDependentMaterialProperty ;
+               
+               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "YoungsModulus1" ;
+               
+               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "YoungsModulus1s" .
 
 
 
@@ -1265,21 +1937,11 @@ Heat Transfer Equation is a type of Transport Equation""" .
 #################################################################
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#FrenkelModel
+###  http://siam.nist.gov/AM-Model-Ontology#FrenkelModel
 
-:FrenkelModel rdf:type owl:NamedIndividual .
-
-
-
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#MackenzieAndSuttleworthModel
-
-:MackenzieAndSuttleworthModel rdf:type owl:NamedIndividual .
-
-
-
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#VolumetricHeatGenerationModel
-
-:VolumetricHeatGenerationModel rdf:type owl:NamedIndividual .
+:FrenkelModel rdf:type owl:NamedIndividual ;
+              
+              <http://attempto.ifi.uzh.ch/ace_lexicon#PN_sg> "FrenkelModel" .
 
 
 

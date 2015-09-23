@@ -1,12 +1,12 @@
-@prefix : <http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#> .
+@prefix : <http://siam.nist.gov/AM-Process-Ontology#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology> .
+@base <http://siam.nist.gov/AM-Process-Ontology> .
 
-<http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology> rdf:type owl:Ontology .
+<http://siam.nist.gov/AM-Process-Ontology> rdf:type owl:Ontology .
 
 
 #################################################################
@@ -61,13 +61,25 @@
 #################################################################
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#dependsOn
+###  http://siam.nist.gov/AM-Process-Ontology#appliedTo
 
-:dependsOn rdf:type owl:ObjectProperty .
+:appliedTo rdf:type owl:ObjectProperty .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#hasDescription
+###  http://siam.nist.gov/AM-Process-Ontology#dependsOn
+
+:dependsOn rdf:type owl:ObjectProperty ;
+           
+           <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "dependsOn" ;
+           
+           <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "dependsOned" ;
+           
+           <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "dependsOns" .
+
+
+
+###  http://siam.nist.gov/AM-Process-Ontology#hasDescription
 
 :hasDescription rdf:type owl:ObjectProperty ;
                 
@@ -81,55 +93,47 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#hasDeterminingFactor
+###  http://siam.nist.gov/AM-Process-Ontology#hasDeterminingFactor
 
 :hasDeterminingFactor rdf:type owl:ObjectProperty ;
                       
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasDeterminingFactors" ;
+                      
                       <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasDeterminingFactored" ;
                       
-                      <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasDeterminingFactor" ;
-                      
-                      <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasDeterminingFactors" .
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasDeterminingFactor" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#hasEnvironmentParameter
+###  http://siam.nist.gov/AM-Process-Ontology#hasEnvironmentParameter
 
 :hasEnvironmentParameter rdf:type owl:ObjectProperty ;
+                         
+                         <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasEnvironmentParametered" ;
                          
                          <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasEnvironmentParameter" ;
                          
                          <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasEnvironmentParameters" ;
                          
-                         <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasEnvironmentParametered" ;
-                         
                          rdfs:subPropertyOf :hasProcessParameter .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#hasFusionMechanism
+###  http://siam.nist.gov/AM-Process-Ontology#hasFusionMechanism
 
 :hasFusionMechanism rdf:type owl:ObjectProperty ;
-                    
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasFusionMechanismed" ;
                     
                     <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasFusionMechanism" ;
                     
                     <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasFusionMechanisms" ;
                     
-                    rdfs:domain :PowderBedFusion ;
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasFusionMechanismed" ;
                     
-                    rdfs:range [ rdf:type owl:Class ;
-                                 owl:unionOf ( :ChemicallyInducedBinding
-                                               :FullMelting
-                                               :LiquidPhaseSintering
-                                               :SolidStateSintering
-                                             )
-                               ] .
+                    rdfs:domain :PowderBedFusion .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#hasHeatAbsorptionDeterminingFactor
+###  http://siam.nist.gov/AM-Process-Ontology#hasHeatAbsorptionDeterminingFactor
 
 :hasHeatAbsorptionDeterminingFactor rdf:type owl:ObjectProperty ;
                                     
@@ -137,11 +141,11 @@
    Energy_density, Power_wavelength, Pulse_duration, Scanning_speed, Absorption_factor,      
    Heat_conduction, Powder_oxidation_rate""" ;
                                     
-                                    <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "has_HA_DeterminingFactored" ;
-                                    
                                     <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "has_HA_DeterminingFactors" ;
                                     
                                     <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "has_HA_DeterminingFactor" ;
+                                    
+                                    <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "has_HA_DeterminingFactored" ;
                                     
                                     rdfs:domain :IrradiationAbsorptionByPowderBed ;
                                     
@@ -149,15 +153,15 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#hasHeatSource
+###  http://siam.nist.gov/AM-Process-Ontology#hasHeatSource
 
 :hasHeatSource rdf:type owl:ObjectProperty ;
-               
-               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasHeatSourced" ;
                
                <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasHeatSources" ;
                
                <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasHeatSource" ;
+               
+               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasHeatSourced" ;
                
                rdfs:domain :AdditiveManufacturing ;
                
@@ -171,15 +175,15 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#hasHeatSourceProperty
+###  http://siam.nist.gov/AM-Process-Ontology#hasHeatSourceProperty
 
 :hasHeatSourceProperty rdf:type owl:ObjectProperty ;
+                       
+                       <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasHeatSourceProperties" ;
                        
                        <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasHeatSourcePropertied" ;
                        
                        <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasHeatSourceProperty" ;
-                       
-                       <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasHeatSourceProperties" ;
                        
                        rdfs:domain :HeatSource ;
                        
@@ -187,7 +191,7 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#hasInputParameter
+###  http://siam.nist.gov/AM-Process-Ontology#hasInputParameter
 
 :hasInputParameter rdf:type owl:ObjectProperty ;
                    
@@ -201,45 +205,45 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#hasMaterial
+###  http://siam.nist.gov/AM-Process-Ontology#hasMaterial
 
 :hasMaterial rdf:type owl:ObjectProperty ;
+             
+             <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasMaterials" ;
              
              <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasMaterialed" ;
              
              <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasMaterial" ;
              
-             <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasMaterials" ;
-             
              rdfs:range :AdditiveManufacturingMaterial .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#hasMaterialProperty
+###  http://siam.nist.gov/AM-Process-Ontology#hasMaterialProperty
 
 :hasMaterialProperty rdf:type owl:ObjectProperty ;
                      
                      <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasMaterialProperty" ;
                      
-                     <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasMaterialProperties" ;
-                     
                      <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasMaterialPropertied" ;
                      
-                     rdfs:range :MaterialProperty ;
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasMaterialProperties" ;
+                     
+                     rdfs:range :ProcessDependentMaterialProperty ;
                      
                      rdfs:subPropertyOf :hasProperty .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#hasMeltPoolDeterminingFactor
+###  http://siam.nist.gov/AM-Process-Ontology#hasMeltPoolDeterminingFactor
 
 :hasMeltPoolDeterminingFactor rdf:type owl:ObjectProperty ;
+                              
+                              <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "has_determining_factored" ;
                               
                               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "has_determining_factors" ;
                               
                               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "has_determining_factor" ;
-                              
-                              <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "has_determining_factored" ;
                               
                               rdfs:range :CoolingTime ;
                               
@@ -252,13 +256,13 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#hasPowderBedFusionResource
+###  http://siam.nist.gov/AM-Process-Ontology#hasPowderBedFusionResource
 
 :hasPowderBedFusionResource rdf:type owl:ObjectProperty ;
                             
-                            <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasPowderBedFusionResourced" ;
-                            
                             <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasPowderBedFusionResource" ;
+                            
+                            <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasPowderBedFusionResourced" ;
                             
                             <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasPowderBedFusionResources" ;
                             
@@ -278,15 +282,15 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#hasPowderLayerProperty
+###  http://siam.nist.gov/AM-Process-Ontology#hasPowderLayerProperty
 
 :hasPowderLayerProperty rdf:type owl:ObjectProperty ;
                         
-                        <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasPowderLayerProperties" ;
+                        <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasPowderLayerProperty" ;
                         
                         <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasPowderLayerPropertied" ;
                         
-                        <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasPowderLayerProperty" ;
+                        <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasPowderLayerProperties" ;
                         
                         rdfs:domain :PowderLayer ;
                         
@@ -296,135 +300,175 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#hasProcessParameter
+###  http://siam.nist.gov/AM-Process-Ontology#hasProcessParameter
 
 :hasProcessParameter rdf:type owl:ObjectProperty ;
+                     
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "has_parametered" ;
                      
                      <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "has_parameter" ;
                      
                      <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "has_parameters" ;
                      
-                     <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "has_parametered" ;
-                     
                      rdfs:range :AdditiveManufacturingParameter .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#hasProcessResource
+###  http://siam.nist.gov/AM-Process-Ontology#hasProcessResource
 
 :hasProcessResource rdf:type owl:ObjectProperty ;
                     
                     <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasResource" ;
                     
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasResourced" ;
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasResources" ;
                     
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasResources" .
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasResourced" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#hasProperty
+###  http://siam.nist.gov/AM-Process-Ontology#hasProperty
 
 :hasProperty rdf:type owl:ObjectProperty ;
              
-             <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasProperty" ;
-             
              <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasPropertied" ;
              
-             <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasProperties" .
+             <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasProperties" ;
+             
+             <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasProperty" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#hasShape
+###  http://siam.nist.gov/AM-Process-Ontology#hasShape
 
 :hasShape rdf:type owl:ObjectProperty ;
           
           <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "has_shaped" ;
           
-          <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "has_shapes" ;
-          
           <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "has_shape" ;
+          
+          <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "has_shapes" ;
           
           rdfs:range :MeltPoolShape .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#hasVariable
+###  http://siam.nist.gov/AM-Process-Ontology#hasVariable
 
 :hasVariable rdf:type owl:ObjectProperty ;
+             
+             <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasVariabled" ;
              
              <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasVariable" ;
              
              <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasVariables" ;
              
-             <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasVariabled" ;
-             
              rdfs:range :AdditiveManufacturingVariable .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#isControlledBy
+###  http://siam.nist.gov/AM-Process-Ontology#isControlledBy
 
-:isControlledBy rdf:type owl:ObjectProperty .
+:isControlledBy rdf:type owl:ObjectProperty ;
+                
+                <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "isControlledBied" ;
+                
+                <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "isControlledBies" ;
+                
+                <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "isControlledBy" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#isDefinedBy
+###  http://siam.nist.gov/AM-Process-Ontology#isDefinedBy
 
-:isDefinedBy rdf:type owl:ObjectProperty .
+:isDefinedBy rdf:type owl:ObjectProperty ;
+             
+             <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "isDefinedBy" ;
+             
+             <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "isDefinedBies" ;
+             
+             <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "isDefinedBied" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#isDescribedBy
+###  http://siam.nist.gov/AM-Process-Ontology#isDescribedBy
 
 :isDescribedBy rdf:type owl:ObjectProperty ;
                
-               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "isDescribedBy" ;
+               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "isDescribedBies" ;
                
                <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "isDescribedBied" ;
                
-               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "isDescribedBies" ;
+               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "isDescribedBy" ;
                
                owl:inverseOf :hasDescription .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#isDeterminedBy
+###  http://siam.nist.gov/AM-Process-Ontology#isDeterminedBy
 
 :isDeterminedBy rdf:type owl:ObjectProperty ;
-                
-                <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "isDeterminedBies" ;
                 
                 <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "isDeterminedBied" ;
                 
                 <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "isDeterminedBy" ;
                 
+                <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "isDeterminedBies" ;
+                
                 owl:inverseOf :hasDeterminingFactor .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#isFunctionOf
+###  http://siam.nist.gov/AM-Process-Ontology#isFunctionOf
 
-:isFunctionOf rdf:type owl:ObjectProperty .
+:isFunctionOf rdf:type owl:ObjectProperty ;
+              
+              <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "isFunctionOf" ;
+              
+              <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "isFunctionOfs" ;
+              
+              <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "isFunctionOfed" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#isQuantifiedWith
+###  http://siam.nist.gov/AM-Process-Ontology#isQuantifiedWith
 
-:isQuantifiedWith rdf:type owl:ObjectProperty .
+:isQuantifiedWith rdf:type owl:ObjectProperty ;
+                  
+                  <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "isQuantifiedWith" ;
+                  
+                  <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "isQuantifiedWithed" ;
+                  
+                  <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "isQuantifiedWiths" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#usesThermalEnergy
+###  http://siam.nist.gov/AM-Process-Ontology#uses
+
+:uses rdf:type owl:ObjectProperty .
+
+
+
+###  http://siam.nist.gov/AM-Process-Ontology#usesThermalEnergy
 
 :usesThermalEnergy rdf:type owl:ObjectProperty ;
-                   
-                   <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "usesThermalEnergies" ;
                    
                    <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "usesThermalEnergy" ;
                    
                    <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "usesThermalEnergied" ;
                    
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "usesThermalEnergies" ;
+                   
                    rdfs:domain :AdditiveManufacturing .
+
+
+
+###  http://siam.nist.gov/AM-Model-Ontology#isDeterminedBy
+
+<http://siam.nist.gov/AM-Model-Ontology#isDeterminedBy> <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "isDeterminedBy" ;
+                                                                                                       
+                                                                                                       <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "isDeterminedBies" ;
+                                                                                                       
+                                                                                                       <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "isDeterminedBied" .
 
 
 
@@ -437,7 +481,7 @@
 #################################################################
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#AdditiveManufacturing
+###  http://siam.nist.gov/AM-Process-Ontology#AdditiveManufacturing
 
 :AdditiveManufacturing rdf:type owl:Class ;
                        
@@ -455,31 +499,31 @@
                        
                        rdfs:subClassOf :AdditiveManufacturing ;
                        
-                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Process_entity" ;
-                       
-                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Process_entities" ;
+                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "AM_entities" ;
                        
                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "AM_entity" ;
                        
-                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "AM_entities" .
+                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Process_entities" ;
+                       
+                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Process_entity" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#AdditiveManufacturingMaterial
+###  http://siam.nist.gov/AM-Process-Ontology#AdditiveManufacturingMaterial
 
 :AdditiveManufacturingMaterial rdf:type owl:Class ;
                                
                                rdfs:subClassOf :ElementOfAdditiveManufacturing ;
                                
+                               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Material_entities" ;
+                               
                                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Material_entity" ;
                                
-                               rdfs:comment "Material used for AM process is defined here" ;
-                               
-                               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Material_entities" .
+                               rdfs:comment "Material used for AM process is defined here" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#AdditiveManufacturingParameter
+###  http://siam.nist.gov/AM-Process-Ontology#AdditiveManufacturingParameter
 
 :AdditiveManufacturingParameter rdf:type owl:Class ;
                                 
@@ -491,7 +535,7 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#AdditiveManufacturingVariable
+###  http://siam.nist.gov/AM-Process-Ontology#AdditiveManufacturingVariable
 
 :AdditiveManufacturingVariable rdf:type owl:Class ;
                                
@@ -503,112 +547,125 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#AmorphousGlassTransitionTemperature
-
-:AmorphousGlassTransitionTemperature rdf:type owl:Class ;
-                                     
-                                     rdfs:subClassOf :PhaseTransformationParameter .
-
-
-
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#AmorphousMaterialSintering
+###  http://siam.nist.gov/AM-Process-Ontology#AmorphousMaterialSintering
 
 :AmorphousMaterialSintering rdf:type owl:Class ;
                             
-                            rdfs:subClassOf :ConsolidationBySintering ;
+                            rdfs:subClassOf :ConsolidationBySintering ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty :uses ;
+                                              owl:someValuesFrom :SolidStateSintering
+                                            ] ;
                             
-                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "AmorphousMaterialSintering" ;
+                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "AmorphousMaterialSinterings" ;
                             
-                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "AmorphousMaterialSinterings" .
+                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "AmorphousMaterialSintering" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#AmorphousThermoplastics
+###  http://siam.nist.gov/AM-Process-Ontology#AmorphousThermoplastics
 
 :AmorphousThermoplastics rdf:type owl:Class ;
                          
-                         rdfs:subClassOf :Polymer .
+                         rdfs:subClassOf :Polymer ;
+                         
+                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "AmorphousThermoplasticses" ;
+                         
+                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "AmorphousThermoplastics" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#BeamRadius
+###  http://siam.nist.gov/AM-Process-Ontology#BeamRadius
 
 :BeamRadius rdf:type owl:Class ;
             
             rdfs:subClassOf :PredefinedInputParameter ;
             
-            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "BeamDiameters" ;
+            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "BeamDiameter" ;
             
-            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "BeamDiameter" .
+            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "BeamDiameters" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#BeamWavelength
+###  http://siam.nist.gov/AM-Process-Ontology#BeamWavelength
 
 :BeamWavelength rdf:type owl:Class ;
                 
                 rdfs:subClassOf :PredefinedInputParameter ;
                 
-                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PowerWavelengths" ;
+                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PowerWavelength" ;
                 
-                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PowerWavelength" .
+                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PowerWavelengths" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#BedEmissivity
+###  http://siam.nist.gov/AM-Process-Ontology#BedEmissivity
 
 :BedEmissivity rdf:type owl:Class ;
                
                rdfs:subClassOf :PowderBedProperty ;
                
-               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "BedEmissivity" ;
+               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "BedEmissivities" ;
                
-               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "BedEmissivities" .
+               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "BedEmissivity" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#BedRadiation
+###  http://siam.nist.gov/AM-Process-Ontology#BedRadiation
 
 :BedRadiation rdf:type owl:Class ;
               
-              rdfs:subClassOf :HeatTransferInPowderBed ,
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty :isFunctionOf ;
-                                owl:someValuesFrom [ rdf:type owl:Class ;
-                                                     owl:intersectionOf ( :BedEmissivity
-                                                                          :ChamberTemperature
-                                                                          :TemperatureDistribution
-                                                                        )
-                                                   ]
-                              ] .
+              owl:equivalentClass [ rdf:type owl:Class ;
+                                    owl:intersectionOf ( :HeatTransferInPowderBed
+                                                         [ rdf:type owl:Class ;
+                                                           owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty :isFunctionOf ;
+                                                                                  owl:someValuesFrom :BedEmissivity
+                                                                                ]
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty :isFunctionOf ;
+                                                                                  owl:someValuesFrom :ChamberTemperature
+                                                                                ]
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty :isFunctionOf ;
+                                                                                  owl:someValuesFrom :TemperatureDistribution
+                                                                                ]
+                                                                              )
+                                                         ]
+                                                       )
+                                  ] ;
+              
+              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "BedRadiations" ;
+              
+              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "BedRadiation" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#BinderJetting
+###  http://siam.nist.gov/AM-Process-Ontology#BinderJetting
 
 :BinderJetting rdf:type owl:Class ;
                
                rdfs:subClassOf :AdditiveManufacturing ;
                
-               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "BinderJetting" ;
+               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "BinderJettings" ;
                
-               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "BinderJettings" .
+               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "BinderJetting" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#BuildChamber
+###  http://siam.nist.gov/AM-Process-Ontology#BuildChamber
 
 :BuildChamber rdf:type owl:Class ;
               
               rdfs:subClassOf :PowderBedFusionResource ;
               
-              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "BuildChambers" ;
+              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "BuildChamber" ;
               
-              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "BuildChamber" .
+              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "BuildChambers" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#BuildPlatform
+###  http://siam.nist.gov/AM-Process-Ontology#BuildPlatform
 
 :BuildPlatform rdf:type owl:Class ;
                
@@ -620,43 +677,7 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#BulkMaterialDensity
-
-:BulkMaterialDensity rdf:type owl:Class ;
-                     
-                     rdfs:subClassOf :MaterialProperty ,
-                                     [ rdf:type owl:Restriction ;
-                                       owl:onProperty :dependsOn ;
-                                       owl:someValuesFrom :TemperatureDistribution
-                                     ] ;
-                     
-                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "BulkMaterialDensity" ;
-                     
-                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "BulkMaterialDensities" .
-
-
-
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#BulkMaterialRadiativeProperty
-
-:BulkMaterialRadiativeProperty rdf:type owl:Class ;
-                               
-                               rdfs:subClassOf :MaterialProperty .
-
-
-
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#BulkMaterialThermalConductivity
-
-:BulkMaterialThermalConductivity rdf:type owl:Class ;
-                                 
-                                 rdfs:subClassOf :MaterialProperty ,
-                                                 [ rdf:type owl:Restriction ;
-                                                   owl:onProperty :dependsOn ;
-                                                   owl:someValuesFrom :TemperatureDistribution
-                                                 ] .
-
-
-
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#BuoyancyEffects
+###  http://siam.nist.gov/AM-Process-Ontology#BuoyancyEffects
 
 :BuoyancyEffects rdf:type owl:Class ;
                  
@@ -664,95 +685,91 @@
                  
                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "BuoyancyEffectses" ;
                  
-                 rdfs:comment "Buoyancy Effect is a Volumetric Phenomenon" ;
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "BuoyancyEffects" ;
                  
-                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "BuoyancyEffects" .
+                 rdfs:comment "Buoyancy Effect is a Volumetric Phenomenon" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#CapillaryEffect
+###  http://siam.nist.gov/AM-Process-Ontology#CapillaryEffect
 
 :CapillaryEffect rdf:type owl:Class ;
                  
                  rdfs:subClassOf :SurfaceTensionEffects ;
                  
-                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "CapillaryEffect" ;
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "CapillaryEffects" ;
                  
-                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "CapillaryEffects" .
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "CapillaryEffect" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#Ceramics
+###  http://siam.nist.gov/AM-Process-Ontology#Ceramics
 
 :Ceramics rdf:type owl:Class ;
           
-          rdfs:subClassOf :AdditiveManufacturingMaterial .
+          rdfs:subClassOf :AdditiveManufacturingMaterial ;
+          
+          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Ceramicses" ;
+          
+          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Ceramics" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#ChamberTemperature
+###  http://siam.nist.gov/AM-Process-Ontology#ChamberTemperature
 
 :ChamberTemperature rdf:type owl:Class ;
                     
                     rdfs:subClassOf :PredefinedInputParameter ;
                     
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ChamberTemperatures" ;
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ChamberTemperature" ;
                     
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ChamberTemperature" .
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ChamberTemperatures" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#ChemicallyInducedBinding
-
-:ChemicallyInducedBinding rdf:type owl:Class ;
-                          
-                          rdfs:subClassOf :FusionMechanism ;
-                          
-                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ChemicallyInducedBinding" ;
-                          
-                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ChemicallyInducedBindings" .
-
-
-
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#Consolidation
+###  http://siam.nist.gov/AM-Process-Ontology#Consolidation
 
 :Consolidation rdf:type owl:Class ;
                
                rdfs:subClassOf :PhysicalPhenomenon ;
                
-               rdfs:comment "Consolidation physical process is characterized with density variation process within melting or sintering." ;
-               
                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Consolidations" ;
+               
+               rdfs:comment "Consolidation physical process is characterized with density variation process within melting or sintering." ;
                
                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Consolidation" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#ConsolidationByMelting
+###  http://siam.nist.gov/AM-Process-Ontology#ConsolidationByMelting
 
 :ConsolidationByMelting rdf:type owl:Class ;
                         
-                        rdfs:subClassOf :Consolidation ;
+                        rdfs:subClassOf :Consolidation ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :uses ;
+                                          owl:someValuesFrom :FullMelting
+                                        ] ;
                         
-                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ConsolidationByMelting" ;
+                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ConsolidationByMeltings" ;
                         
-                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ConsolidationByMeltings" .
+                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ConsolidationByMelting" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#ConsolidationBySintering
+###  http://siam.nist.gov/AM-Process-Ontology#ConsolidationBySintering
 
 :ConsolidationBySintering rdf:type owl:Class ;
                           
                           rdfs:subClassOf :Consolidation ;
                           
-                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ConsolidationBySintering" ;
+                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ConsolidationBySinterings" ;
                           
-                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ConsolidationBySinterings" .
+                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ConsolidationBySintering" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#ControllableInputParameter
+###  http://siam.nist.gov/AM-Process-Ontology#ControllableInputParameter
 
 :ControllableInputParameter rdf:type owl:Class ;
                             
@@ -764,7 +781,7 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#Cooling
+###  http://siam.nist.gov/AM-Process-Ontology#Cooling
 
 :Cooling rdf:type owl:Class ;
          
@@ -776,7 +793,7 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#CoolingRate
+###  http://siam.nist.gov/AM-Process-Ontology#CoolingRate
 
 :CoolingRate rdf:type owl:Class ;
              
@@ -792,7 +809,7 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#CoolingTime
+###  http://siam.nist.gov/AM-Process-Ontology#CoolingTime
 
 :CoolingTime rdf:type owl:Class ;
              
@@ -808,35 +825,27 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#CrystallineLatentHeat
-
-:CrystallineLatentHeat rdf:type owl:Class ;
-                       
-                       rdfs:subClassOf :PhaseTransformationParameter .
-
-
-
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#CrystallineMaterialSintering
+###  http://siam.nist.gov/AM-Process-Ontology#CrystallineMaterialSintering
 
 :CrystallineMaterialSintering rdf:type owl:Class ;
                               
-                              rdfs:subClassOf :ConsolidationBySintering ;
+                              rdfs:subClassOf :ConsolidationBySintering ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :uses ;
+                                                owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                     owl:unionOf ( :LiquidPhaseSintering
+                                                                                   :SolidStateSintering
+                                                                                 )
+                                                                   ]
+                                              ] ;
                               
-                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "CrystallineMaterialSintering" ;
+                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "CrystallineMaterialSinterings" ;
                               
-                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "CrystallineMaterialSinterings" .
+                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "CrystallineMaterialSintering" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#CrystallineMeltingTemperature
-
-:CrystallineMeltingTemperature rdf:type owl:Class ;
-                               
-                               rdfs:subClassOf :PhaseTransformationParameter .
-
-
-
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#CylindricalIrradiation
+###  http://siam.nist.gov/AM-Process-Ontology#CylindricalIrradiation
 
 :CylindricalIrradiation rdf:type owl:Class ;
                         
@@ -848,88 +857,67 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#DeformationInPart
+###  http://siam.nist.gov/AM-Process-Ontology#DeformationInPart
 
 :DeformationInPart rdf:type owl:Class ;
                    
                    rdfs:subClassOf :Structural ;
                    
-                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Deformations" ;
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Deformation" ;
                    
-                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Deformation" .
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Deformations" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#DendriteArmSpacingDistribution
+###  http://siam.nist.gov/AM-Process-Ontology#DendriteArmSpacingDistribution
 
 :DendriteArmSpacingDistribution rdf:type owl:Class ;
                                 
                                 rdfs:subClassOf :SolidificationCharacteristic ;
                                 
-                                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "DendriteArmSpacingDistributions" ;
+                                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "DendriteArmSpacingDistribution" ;
                                 
-                                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "DendriteArmSpacingDistribution" .
+                                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "DendriteArmSpacingDistributions" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#DendriteOrientationDistribution
+###  http://siam.nist.gov/AM-Process-Ontology#DendriteOrientationDistribution
 
 :DendriteOrientationDistribution rdf:type owl:Class ;
                                  
                                  rdfs:subClassOf :SolidificationCharacteristic ;
                                  
-                                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "DendriteOrientationDistributions" ;
+                                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "DendriteOrientationDistribution" ;
                                  
-                                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "DendriteOrientationDistribution" .
+                                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "DendriteOrientationDistributions" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#DendriticGrainSizeDistribution
-
-:DendriticGrainSizeDistribution rdf:type owl:Class ;
-                                
-                                rdfs:subClassOf :SolidificationCharacteristic ;
-                                
-                                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "DendriticGrainSizeDistribution" ;
-                                
-                                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "DendriticGrainSizeDistributions" .
-
-
-
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#DensityDistribution
+###  http://siam.nist.gov/AM-Process-Ontology#DensityDistribution
 
 :DensityDistribution rdf:type owl:Class ;
                      
-                     rdfs:subClassOf :DerivedVariable .
+                     rdfs:subClassOf :DerivedVariable ;
+                     
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "DensityDistribution" ;
+                     
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "DensityDistributions" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#DerivedVariable
+###  http://siam.nist.gov/AM-Process-Ontology#DerivedVariable
 
 :DerivedVariable rdf:type owl:Class ;
                  
                  rdfs:subClassOf :AdditiveManufacturingVariable ;
                  
-                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Deriveds" ;
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Derived" ;
                  
-                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Derived" .
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Deriveds" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#DirectMetalLaserMelting
-
-:DirectMetalLaserMelting rdf:type owl:Class ;
-                         
-                         rdfs:subClassOf :ConsolidationByMelting ,
-                                         :PowderBedFusion ;
-                         
-                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "DirectMetalLaserMelting" ;
-                         
-                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "DirectMetalLaserMeltings" .
-
-
-
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#DirectedEnergyDeposition
+###  http://siam.nist.gov/AM-Process-Ontology#DirectedEnergyDeposition
 
 :DirectedEnergyDeposition rdf:type owl:Class ;
                           
@@ -941,7 +929,7 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#DispenserPlatform
+###  http://siam.nist.gov/AM-Process-Ontology#DispenserPlatform
 
 :DispenserPlatform rdf:type owl:Class ;
                    
@@ -953,35 +941,19 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#ElasticDeformation
+###  http://siam.nist.gov/AM-Process-Ontology#ElasticDeformation
 
 :ElasticDeformation rdf:type owl:Class ;
                     
                     rdfs:subClassOf :DeformationInPart ;
                     
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ElasticDeformations" ;
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ElasticDeformation" ;
                     
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ElasticDeformation" .
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ElasticDeformations" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#ElasticModulus
-
-:ElasticModulus rdf:type owl:Class ;
-                
-                rdfs:subClassOf :MaterialProperty ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty :dependsOn ;
-                                  owl:someValuesFrom :TemperatureDistribution
-                                ] ;
-                
-                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ElasticModulus" ;
-                
-                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ElasticModuluses" .
-
-
-
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#ElectronBeam
+###  http://siam.nist.gov/AM-Process-Ontology#ElectronBeam
 
 :ElectronBeam rdf:type owl:Class ;
               
@@ -989,13 +961,13 @@
               
               owl:disjointWith :LaserBeam ;
               
-              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Electron_beam" ;
+              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Electron_beams" ;
               
-              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Electron_beams" .
+              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Electron_beam" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#ElectronBeamMelting
+###  http://siam.nist.gov/AM-Process-Ontology#ElectronBeamMelting
 
 :ElectronBeamMelting rdf:type owl:Class ;
                      
@@ -1007,7 +979,7 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#ElementOfAdditiveManufacturing
+###  http://siam.nist.gov/AM-Process-Ontology#ElementOfAdditiveManufacturing
 
 :ElementOfAdditiveManufacturing rdf:type owl:Class ;
                                 
@@ -1017,41 +989,45 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#ElementOfPowderBed
+###  http://siam.nist.gov/AM-Process-Ontology#ElementOfPowderBed
 
 :ElementOfPowderBed rdf:type owl:Class ;
                     
                     rdfs:subClassOf :PowderBedFusionResource ;
                     
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Powder_bed_components" ;
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Powder_bed_component" ;
                     
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Powder_bed_component" .
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Powder_bed_components" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#ElementOfPowderBedFusion
+###  http://siam.nist.gov/AM-Process-Ontology#ElementOfPowderBedFusion
 
 :ElementOfPowderBedFusion rdf:type owl:Class ;
                           
                           rdfs:subClassOf :ElementOfAdditiveManufacturing ;
                           
-                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ElementOfPowderBedFusions" ;
+                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ElementOfPowderBedFusion" ;
                           
-                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ElementOfPowderBedFusion" .
+                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ElementOfPowderBedFusions" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#EmpiricalParameter
+###  http://siam.nist.gov/AM-Process-Ontology#EmpiricalParameter
 
 :EmpiricalParameter rdf:type owl:Class ;
                     
                     rdfs:subClassOf :PredefinedInputParameter ;
                     
-                    rdfs:comment "Approximated with experiments" .
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "EmpiricalParameter" ;
+                    
+                    rdfs:comment "Approximated with experiments" ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "EmpiricalParameters" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#FluidFlowInMeltPool
+###  http://siam.nist.gov/AM-Process-Ontology#FluidFlowInMeltPool
 
 :FluidFlowInMeltPool rdf:type owl:Class ;
                      
@@ -1063,95 +1039,91 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#FluidMechanics
+###  http://siam.nist.gov/AM-Process-Ontology#FluidMechanics
 
 :FluidMechanics rdf:type owl:Class ;
                 
                 rdfs:subClassOf :PhysicalPhenomenon ;
                 
-                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "FluidMechanicses" ;
+                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "FluidMechanics" ;
                 
-                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "FluidMechanics" .
+                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "FluidMechanicses" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#FluidVelocity
+###  http://siam.nist.gov/AM-Process-Ontology#FluidVelocity
 
 :FluidVelocity rdf:type owl:Class ;
                
-               rdfs:subClassOf :DerivedVariable .
+               rdfs:subClassOf :DerivedVariable ;
+               
+               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "FluidVelocities" ;
+               
+               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "FluidVelocity" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#FormationOfMeltPool
+###  http://siam.nist.gov/AM-Process-Ontology#FormationOfMeltPool
 
 :FormationOfMeltPool rdf:type owl:Class ;
                      
                      rdfs:subClassOf :PowderBedFusionProcesses ;
                      
-                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Melt_pool_formations" ;
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Melt_pool_formation" ;
                      
-                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Melt_pool_formation" .
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Melt_pool_formations" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#FullMelting
+###  http://siam.nist.gov/AM-Process-Ontology#FullMelting
 
 :FullMelting rdf:type owl:Class ;
              
              rdfs:subClassOf :FusionMechanism ;
              
-             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "FullMelting" ;
+             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "FullMeltings" ;
              
-             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "FullMeltings" .
+             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "FullMelting" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#Fusion
+###  http://siam.nist.gov/AM-Process-Ontology#Fusion
 
 :Fusion rdf:type owl:Class ;
         
         rdfs:subClassOf :PhaseTransformation ;
         
-        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Fusions" ;
+        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Fusion" ;
         
-        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Fusion" .
+        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Fusions" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#FusionMechanism
+###  http://siam.nist.gov/AM-Process-Ontology#FusionMechanism
 
 :FusionMechanism rdf:type owl:Class ;
                  
-                 owl:equivalentClass [ rdf:type owl:Class ;
-                                       owl:unionOf ( :ChemicallyInducedBinding
-                                                     :FullMelting
-                                                     :LiquidPhaseSintering
-                                                     :SolidStateSintering
-                                                   )
-                                     ] ;
-                 
                  rdfs:subClassOf :ElementOfPowderBedFusion ;
                  
-                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "FusionMechanism" ;
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "FusionMechanisms" ;
                  
-                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "FusionMechanisms" .
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "FusionMechanism" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#GasComposition
+###  http://siam.nist.gov/AM-Process-Ontology#GasComposition
 
 :GasComposition rdf:type owl:Class ;
                 
                 rdfs:subClassOf :PredefinedInputParameter ;
                 
-                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "GasCompositions" ;
+                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "GasComposition" ;
                 
-                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "GasComposition" .
+                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "GasCompositions" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#GasPressure
+###  http://siam.nist.gov/AM-Process-Ontology#GasPressure
 
 :GasPressure rdf:type owl:Class ;
              
@@ -1163,47 +1135,43 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#GaussianIrradiation
+###  http://siam.nist.gov/AM-Process-Ontology#GaussianIrradiation
 
 :GaussianIrradiation rdf:type owl:Class ;
                      
                      rdfs:subClassOf :SurfaceIrradiation ;
                      
-                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "GaussianIrradiation" ;
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "GaussianIrradiations" ;
                      
-                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "GaussianIrradiations" .
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "GaussianIrradiation" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#GrainMorphology
+###  http://siam.nist.gov/AM-Process-Ontology#GrainSizeDistribution
 
-:GrainMorphology rdf:type owl:Class ;
-                 
-                 rdfs:subClassOf :DerivedVariable ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty :dependsOn ;
-                                   owl:someValuesFrom [ rdf:type owl:Class ;
-                                                        owl:intersectionOf ( :CoolingRate
-                                                                             :ThermalGradientDistribution
-                                                                           )
-                                                      ]
-                                 ] ;
-                 
-                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "GrainMorphologies" ;
-                 
-                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "GrainMorphology" .
+:GrainSizeDistribution rdf:type owl:Class ;
+                       
+                       rdfs:subClassOf :SolidificationCharacteristic ;
+                       
+                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "DendriticGrainSizeDistribution" ;
+                       
+                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "DendriticGrainSizeDistributions" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#HardMetal
+###  http://siam.nist.gov/AM-Process-Ontology#HardMetal
 
 :HardMetal rdf:type owl:Class ;
            
-           rdfs:subClassOf :AdditiveManufacturingMaterial .
+           rdfs:subClassOf :AdditiveManufacturingMaterial ;
+           
+           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "HardMetals" ;
+           
+           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "HardMetal" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#HeatConduction
+###  http://siam.nist.gov/AM-Process-Ontology#HeatConduction
 
 :HeatConduction rdf:type owl:Class ;
                 
@@ -1213,13 +1181,13 @@
                                   owl:someValuesFrom :ThermalConductivity
                                 ] ;
                 
-                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Conduction" ;
+                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "HeatConductions" ;
                 
-                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Conductions" .
+                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "HeatConduction" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#HeatSource
+###  http://siam.nist.gov/AM-Process-Ontology#HeatSource
 
 :HeatSource rdf:type owl:Class ;
             
@@ -1231,13 +1199,13 @@
             
             rdfs:subClassOf :PowderBedFusionResource ;
             
-            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Energy_sources" ;
+            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "EnergySource" ;
             
-            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Energy_source" .
+            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "EnergySources" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#HeatSourcePosition
+###  http://siam.nist.gov/AM-Process-Ontology#HeatSourcePosition
 
 :HeatSourcePosition rdf:type owl:Class ;
                     
@@ -1245,11 +1213,15 @@
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty :isDeterminedBy ;
                                       owl:someValuesFrom :HeatSourceVelocity
-                                    ] .
+                                    ] ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "HeatSourcePositions" ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "HeatSourcePosition" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#HeatSourcePower
+###  http://siam.nist.gov/AM-Process-Ontology#HeatSourcePower
 
 :HeatSourcePower rdf:type owl:Class ;
                  
@@ -1261,7 +1233,7 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#HeatSourceVelocity
+###  http://siam.nist.gov/AM-Process-Ontology#HeatSourceVelocity
 
 :HeatSourceVelocity rdf:type owl:Class ;
                     
@@ -1275,33 +1247,36 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#HeatTransferInPowderBed
+###  http://siam.nist.gov/AM-Process-Ontology#HeatTransferInPowderBed
 
 :HeatTransferInPowderBed rdf:type owl:Class ;
                          
-                         rdfs:subClassOf :Thermal ,
-                                         [ rdf:type owl:Class ;
-                                           owl:unionOf ( [ rdf:type owl:Class ;
-                                                           owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                                  owl:onProperty :isFunctionOf ;
-                                                                                  owl:someValuesFrom :BedRadiation
-                                                                                ]
-                                                                                [ rdf:type owl:Restriction ;
-                                                                                  owl:onProperty :isFunctionOf ;
-                                                                                  owl:someValuesFrom :HeatConduction
-                                                                                ]
-                                                                                [ rdf:type owl:Restriction ;
-                                                                                  owl:onProperty :isFunctionOf ;
-                                                                                  owl:someValuesFrom :SurfaceConvection
-                                                                                ]
-                                                                              )
-                                                         ]
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty :isFunctionOf ;
-                                                           owl:allValuesFrom :HeatConduction
-                                                         ]
-                                                       )
-                                         ] ;
+                         owl:equivalentClass [ rdf:type owl:Class ;
+                                               owl:intersectionOf ( :Thermal
+                                                                    [ rdf:type owl:Class ;
+                                                                      owl:unionOf ( [ rdf:type owl:Class ;
+                                                                                      owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                             owl:onProperty :isFunctionOf ;
+                                                                                                             owl:someValuesFrom :BedRadiation
+                                                                                                           ]
+                                                                                                           [ rdf:type owl:Restriction ;
+                                                                                                             owl:onProperty :isFunctionOf ;
+                                                                                                             owl:someValuesFrom :HeatConduction
+                                                                                                           ]
+                                                                                                           [ rdf:type owl:Restriction ;
+                                                                                                             owl:onProperty :isFunctionOf ;
+                                                                                                             owl:someValuesFrom :SurfaceConvection
+                                                                                                           ]
+                                                                                                         )
+                                                                                    ]
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :isFunctionOf ;
+                                                                                      owl:allValuesFrom :HeatConduction
+                                                                                    ]
+                                                                                  )
+                                                                    ]
+                                                                  )
+                                             ] ;
                          
                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "HeatTransfers" ;
                          
@@ -1309,76 +1284,84 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#HeatingByHeatSource
+###  http://siam.nist.gov/AM-Process-Ontology#HeatingByHeatSource
 
 :HeatingByHeatSource rdf:type owl:Class ;
                      
                      rdfs:subClassOf :PowderBedFusionProcesses ;
                      
-                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Scanning" ;
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Scannings" ;
                      
-                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Scannings" .
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Scanning" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#InitialPowderDensity
+###  http://siam.nist.gov/AM-Process-Ontology#InitialPowderDensity
 
 :InitialPowderDensity rdf:type owl:Class ;
                       
-                      rdfs:subClassOf :MaterialProperty .
+                      rdfs:subClassOf :ProcessDependentMaterialProperty ;
+                      
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "InitialPowderDensity" ;
+                      
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "InitialPowderDensities" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#InputParameter
+###  http://siam.nist.gov/AM-Process-Ontology#InputParameter
 
 :InputParameter rdf:type owl:Class ;
                 
                 rdfs:subClassOf :AdditiveManufacturingParameter ;
                 
-                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Input_parameter" ;
+                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Input_parameters" ;
                 
-                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Input_parameters" .
+                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Input_parameter" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#InterfaceCurvature
+###  http://siam.nist.gov/AM-Process-Ontology#InterfaceCurvature
 
 :InterfaceCurvature rdf:type owl:Class ;
                     
-                    rdfs:subClassOf :DerivedVariable .
+                    rdfs:subClassOf :DerivedVariable ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "InterfaceCurvatures" ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "InterfaceCurvature" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#Irradiation
+###  http://siam.nist.gov/AM-Process-Ontology#Irradiation
 
 :Irradiation rdf:type owl:Class ;
              
              rdfs:subClassOf :Thermal ;
              
-             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Irradiations" ;
+             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Irradiation" ;
              
-             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Irradiation" .
+             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Irradiations" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#IrradiationAbsorptionByPowderBed
+###  http://siam.nist.gov/AM-Process-Ontology#IrradiationAbsorptionByPowderBed
 
 :IrradiationAbsorptionByPowderBed rdf:type owl:Class ;
                                   
                                   rdfs:subClassOf :PowderBedFusionProcesses ,
                                                   :Thermal ;
                                   
-                                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "HeatAbsorption" ;
-                                  
                                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "HeatAbsorptions" ;
                                   
                                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Heating" ;
                                   
-                                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Heatings" .
+                                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Heatings" ;
+                                  
+                                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "HeatAbsorption" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#LaserBeam
+###  http://siam.nist.gov/AM-Process-Ontology#LaserBeam
 
 :LaserBeam rdf:type owl:Class ;
            
@@ -1390,43 +1373,19 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#LaserSolidForming
+###  http://siam.nist.gov/AM-Process-Ontology#LaserSolidForming
 
 :LaserSolidForming rdf:type owl:Class ;
                    
                    rdfs:subClassOf :AdditiveManufacturing ;
                    
-                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "LaserSolidFormings" ;
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "LaserSolidForming" ;
                    
-                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "LaserSolidForming" .
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "LaserSolidFormings" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#LatentHeatOfFusion
-
-:LatentHeatOfFusion rdf:type owl:Class ;
-                    
-                    rdfs:subClassOf :CrystallineLatentHeat ;
-                    
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "LatentHeatOfFusion" ;
-                    
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "LatentHeatOfFusions" .
-
-
-
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#LatentHeatOfVaporization
-
-:LatentHeatOfVaporization rdf:type owl:Class ;
-                          
-                          rdfs:subClassOf :CrystallineLatentHeat ;
-                          
-                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "LatentHeatOfVaporization" ;
-                          
-                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "LatentHeatOfVaporizations" .
-
-
-
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#LiquidPhaseSintering
+###  http://siam.nist.gov/AM-Process-Ontology#LiquidPhaseSintering
 
 :LiquidPhaseSintering rdf:type owl:Class ;
                       
@@ -1438,55 +1397,7 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#LiquidSolidSurfaceEnergy
-
-:LiquidSolidSurfaceEnergy rdf:type owl:Class ;
-                          
-                          rdfs:subClassOf :SurfaceEnergy ;
-                          
-                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "LiquidSolidSurfaceEnergies" ;
-                          
-                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "LiquidSolidSurfaceEnergy" .
-
-
-
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#LiquidSurfaceRadiationCoefficient
-
-:LiquidSurfaceRadiationCoefficient rdf:type owl:Class ;
-                                   
-                                   rdfs:subClassOf :SurfaceRadiationCoefficient ;
-                                   
-                                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "LiquidSurfaceRadiationCoefficient" ;
-                                   
-                                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "LiquidSurfaceRadiationCoefficients" .
-
-
-
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#LiquidVaporSurfaceEnergy
-
-:LiquidVaporSurfaceEnergy rdf:type owl:Class ;
-                          
-                          rdfs:subClassOf :SurfaceEnergy ;
-                          
-                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "LiquidVaporSurfaceEnergies" ;
-                          
-                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "LiquidVaporSurfaceEnergy" .
-
-
-
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#LiquidusTemperature
-
-:LiquidusTemperature rdf:type owl:Class ;
-                     
-                     rdfs:subClassOf :CrystallineMeltingTemperature ;
-                     
-                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "LiquidusTemperatures" ;
-                     
-                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "LiquidusTemperature" .
-
-
-
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#MarangoniEffect
+###  http://siam.nist.gov/AM-Process-Ontology#MarangoniEffect
 
 :MarangoniEffect rdf:type owl:Class ;
                  
@@ -1498,7 +1409,7 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#MaterialExtrusion
+###  http://siam.nist.gov/AM-Process-Ontology#MaterialExtrusion
 
 :MaterialExtrusion rdf:type owl:Class ;
                    
@@ -1510,31 +1421,19 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#MaterialJetting
+###  http://siam.nist.gov/AM-Process-Ontology#MaterialJetting
 
 :MaterialJetting rdf:type owl:Class ;
                  
                  rdfs:subClassOf :AdditiveManufacturing ;
                  
-                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "MaterialJettings" ;
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "MaterialJetting" ;
                  
-                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "MaterialJetting" .
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "MaterialJettings" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#MaterialProperty
-
-:MaterialProperty rdf:type owl:Class ;
-                  
-                  rdfs:subClassOf :PredefinedInputParameter ;
-                  
-                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Material_properties" ;
-                  
-                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Material_propertieses" .
-
-
-
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#MeltPoolDepth
+###  http://siam.nist.gov/AM-Process-Ontology#MeltPoolDepth
 
 :MeltPoolDepth rdf:type owl:Class ;
                
@@ -1547,7 +1446,7 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#MeltPoolShape
+###  http://siam.nist.gov/AM-Process-Ontology#MeltPoolShape
 
 :MeltPoolShape rdf:type owl:Class ;
                
@@ -1559,7 +1458,7 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#MeltPoolSize
+###  http://siam.nist.gov/AM-Process-Ontology#MeltPoolSize
 
 :MeltPoolSize rdf:type owl:Class ;
               
@@ -1571,68 +1470,56 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#MeltPoolTemperature
+###  http://siam.nist.gov/AM-Process-Ontology#MeltPoolTemperature
 
 :MeltPoolTemperature rdf:type owl:Class ;
                      
                      rdfs:subClassOf :ObservableVariable ;
                      
-                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Melt_pool_temperatures" ;
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Melt_pool_temperature" ;
                      
-                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Melt_pool_temperature" .
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Melt_pool_temperatures" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#MeltPoolWidth
+###  http://siam.nist.gov/AM-Process-Ontology#MeltPoolWidth
 
 :MeltPoolWidth rdf:type owl:Class ;
                
                rdfs:subClassOf :MeltPoolShape ,
                                :MeltPoolSize ;
                
-               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "MeltPoolWidth" ;
+               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "MeltPoolWidths" ;
                
-               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "MeltPoolWidths" .
+               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "MeltPoolWidth" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#MeltingOfPowderParticles
+###  http://siam.nist.gov/AM-Process-Ontology#MeltingOfPowderParticles
 
 :MeltingOfPowderParticles rdf:type owl:Class ;
                           
                           rdfs:subClassOf :PowderBedFusionProcesses ;
                           
-                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Meltings" ;
+                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Melting" ;
                           
-                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Melting" .
+                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Meltings" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#MeltingTemperature
-
-:MeltingTemperature rdf:type owl:Class ;
-                    
-                    rdfs:subClassOf :CrystallineMeltingTemperature ;
-                    
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "MeltingTemperature" ;
-                    
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "MeltingTemperatures" .
-
-
-
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#Metal
+###  http://siam.nist.gov/AM-Process-Ontology#Metal
 
 :Metal rdf:type owl:Class ;
        
        rdfs:subClassOf :AdditiveManufacturingMaterial ;
        
-       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Metals" ;
+       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Metal" ;
        
-       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Metal" .
+       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Metals" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#Microstructural
+###  http://siam.nist.gov/AM-Process-Ontology#Microstructural
 
 :Microstructural rdf:type owl:Class ;
                  
@@ -1644,7 +1531,7 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#MicrostructureDistribution
+###  http://siam.nist.gov/AM-Process-Ontology#MicrostructureDistribution
 
 :MicrostructureDistribution rdf:type owl:Class ;
                             
@@ -1656,7 +1543,7 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#MicrostructureEvolution
+###  http://siam.nist.gov/AM-Process-Ontology#MicrostructureEvolution
 
 :MicrostructureEvolution rdf:type owl:Class ;
                          
@@ -1668,47 +1555,59 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#NonOxideCeramic
+###  http://siam.nist.gov/AM-Process-Ontology#NonOxideCeramic
 
 :NonOxideCeramic rdf:type owl:Class ;
                  
-                 rdfs:subClassOf :Ceramics .
+                 rdfs:subClassOf :Ceramics ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "NonOxideCeramic" ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "NonOxideCeramics" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#ObservableVariable
+###  http://siam.nist.gov/AM-Process-Ontology#ObservableVariable
 
 :ObservableVariable rdf:type owl:Class ;
                     
                     rdfs:subClassOf :AdditiveManufacturingVariable ;
                     
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Observables" ;
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Observable" ;
                     
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Observable" .
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Observables" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#OpticalProperty
+###  http://siam.nist.gov/AM-Process-Ontology#OpticalProperty
 
 :OpticalProperty rdf:type owl:Class ;
                  
-                 rdfs:subClassOf :PowderBedProperty .
+                 rdfs:subClassOf :PowderBedProperty ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "OpticalProperties" ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "OpticalProperty" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#OxideCeramic
+###  http://siam.nist.gov/AM-Process-Ontology#OxideCeramic
 
 :OxideCeramic rdf:type owl:Class ;
               
-              rdfs:subClassOf :Ceramics .
+              rdfs:subClassOf :Ceramics ;
+              
+              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "OxideCeramic" ;
+              
+              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "OxideCeramics" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#PackingDensity
+###  http://siam.nist.gov/AM-Process-Ontology#PackingDensity
 
 :PackingDensity rdf:type owl:Class ;
                 
-                rdfs:subClassOf :MaterialProperty ;
+                rdfs:subClassOf :ProcessDependentMaterialProperty ;
                 
                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PackingDensities" ;
                 
@@ -1716,15 +1615,19 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#ParticleSize
+###  http://siam.nist.gov/AM-Process-Ontology#ParticleSize
 
 :ParticleSize rdf:type owl:Class ;
               
-              rdfs:subClassOf :MaterialProperty .
+              rdfs:subClassOf :ProcessDependentMaterialProperty ;
+              
+              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ParticleSizes" ;
+              
+              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ParticleSize" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#PhaseTransformation
+###  http://siam.nist.gov/AM-Process-Ontology#PhaseTransformation
 
 :PhaseTransformation rdf:type owl:Class ;
                      
@@ -1736,27 +1639,19 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#PhaseTransformationParameter
-
-:PhaseTransformationParameter rdf:type owl:Class ;
-                              
-                              rdfs:subClassOf :MaterialProperty .
-
-
-
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#PhysicalPhenomenon
+###  http://siam.nist.gov/AM-Process-Ontology#PhysicalPhenomenon
 
 :PhysicalPhenomenon rdf:type owl:Class ;
                     
                     rdfs:subClassOf :ElementOfAdditiveManufacturing ;
                     
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Physical_phenomenons" ;
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Physical_phenomenon" ;
                     
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Physical_phenomenon" .
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Physical_phenomenons" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#PlasticDeformation
+###  http://siam.nist.gov/AM-Process-Ontology#PlasticDeformation
 
 :PlasticDeformation rdf:type owl:Class ;
                     
@@ -1768,7 +1663,7 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#PointSourceIrradiation
+###  http://siam.nist.gov/AM-Process-Ontology#PointSourceIrradiation
 
 :PointSourceIrradiation rdf:type owl:Class ;
                         
@@ -1780,115 +1675,125 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#PoissonsRatio
-
-:PoissonsRatio rdf:type owl:Class ;
-               
-               rdfs:subClassOf :MaterialProperty ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty :dependsOn ;
-                                 owl:someValuesFrom :TemperatureDistribution
-                               ] ;
-               
-               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PoissonsRatio" ;
-               
-               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PoissonsRatios" .
-
-
-
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#PolyMethylmetacrylate
+###  http://siam.nist.gov/AM-Process-Ontology#PolyMethylmetacrylate
 
 :PolyMethylmetacrylate rdf:type owl:Class ;
                        
-                       rdfs:subClassOf :AmorphousThermoplastics .
+                       rdfs:subClassOf :AmorphousThermoplastics ;
+                       
+                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PolyMethylmetacrylates" ;
+                       
+                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PolyMethylmetacrylate" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#Polyamide
+###  http://siam.nist.gov/AM-Process-Ontology#Polyamide
 
 :Polyamide rdf:type owl:Class ;
            
-           rdfs:subClassOf :SemiChrystallineThermoplastics .
+           rdfs:subClassOf :SemiChrystallineThermoplastics ;
+           
+           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Polyamides" ;
+           
+           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Polyamide" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#Polycarbonate
+###  http://siam.nist.gov/AM-Process-Ontology#Polycarbonate
 
 :Polycarbonate rdf:type owl:Class ;
                
-               rdfs:subClassOf :AmorphousThermoplastics .
+               rdfs:subClassOf :AmorphousThermoplastics ;
+               
+               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Polycarbonate" ;
+               
+               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Polycarbonates" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#Polyethylene
+###  http://siam.nist.gov/AM-Process-Ontology#Polyethylene
 
 :Polyethylene rdf:type owl:Class ;
               
-              rdfs:subClassOf :SemiChrystallineThermoplastics .
+              rdfs:subClassOf :SemiChrystallineThermoplastics ;
+              
+              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Polyethylene" ;
+              
+              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Polyethylenes" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#Polymer
+###  http://siam.nist.gov/AM-Process-Ontology#Polymer
 
 :Polymer rdf:type owl:Class ;
          
          rdfs:subClassOf :AdditiveManufacturingMaterial ;
          
-         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Polymers" ;
+         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Polymer" ;
          
-         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Polymer" .
+         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Polymers" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#Polypropylene
+###  http://siam.nist.gov/AM-Process-Ontology#Polypropylene
 
 :Polypropylene rdf:type owl:Class ;
                
-               rdfs:subClassOf :SemiChrystallineThermoplastics .
+               rdfs:subClassOf :SemiChrystallineThermoplastics ;
+               
+               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Polypropylene" ;
+               
+               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Polypropylenes" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#Polystyrene
+###  http://siam.nist.gov/AM-Process-Ontology#Polystyrene
 
 :Polystyrene rdf:type owl:Class ;
              
-             rdfs:subClassOf :AmorphousThermoplastics .
+             rdfs:subClassOf :AmorphousThermoplastics ;
+             
+             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Polystyrene" ;
+             
+             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Polystyrenes" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#PowderBed
+###  http://siam.nist.gov/AM-Process-Ontology#PowderBed
 
 :PowderBed rdf:type owl:Class ;
            
            rdfs:subClassOf :PowderBedFusionResource ;
            
-           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Powder_bed" ;
+           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Powder_beds" ;
            
-           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Powder_beds" .
+           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Powder_bed" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#PowderBedFusion
+###  http://siam.nist.gov/AM-Process-Ontology#PowderBedFusion
 
 :PowderBedFusion rdf:type owl:Class ;
                  
                  owl:equivalentClass [ rdf:type owl:Class ;
-                                       owl:unionOf ( :DirectMetalLaserMelting
-                                                     :ElectronBeamMelting
+                                       owl:unionOf ( :ElectronBeamMelting
                                                      :SelectiveLaserSintering
                                                      [ rdf:type owl:Class ;
                                                        owl:intersectionOf ( :SelectiveLaserMelting
-                                                                            [ rdf:type owl:Restriction ;
-                                                                              owl:onProperty :hasFusionMechanism ;
-                                                                              owl:someValuesFrom :FusionMechanism
-                                                                            ]
-                                                                            [ rdf:type owl:Restriction ;
-                                                                              owl:onProperty :hasHeatSource ;
-                                                                              owl:someValuesFrom :HeatSource
-                                                                            ]
-                                                                            [ rdf:type owl:Restriction ;
-                                                                              owl:onProperty :hasProcessResource ;
-                                                                              owl:someValuesFrom :PowderBedFusionResource
+                                                                            [ rdf:type owl:Class ;
+                                                                              owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                     owl:onProperty :hasFusionMechanism ;
+                                                                                                     owl:someValuesFrom :FusionMechanism
+                                                                                                   ]
+                                                                                                   [ rdf:type owl:Restriction ;
+                                                                                                     owl:onProperty :hasHeatSource ;
+                                                                                                     owl:someValuesFrom :HeatSource
+                                                                                                   ]
+                                                                                                   [ rdf:type owl:Restriction ;
+                                                                                                     owl:onProperty :hasProcessResource ;
+                                                                                                     owl:someValuesFrom :PowderBedFusionResource
+                                                                                                   ]
+                                                                                                 )
                                                                             ]
                                                                           )
                                                      ]
@@ -1897,85 +1802,97 @@
                  
                  rdfs:subClassOf :AdditiveManufacturing ;
                  
-                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PowderBedFusions" ;
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PowderBedFusion" ;
                  
-                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PowderBedFusion" .
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PowderBedFusions" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#PowderBedFusionProcesses
+###  http://siam.nist.gov/AM-Process-Ontology#PowderBedFusionProcesses
 
 :PowderBedFusionProcesses rdf:type owl:Class ;
                           
                           rdfs:subClassOf :ElementOfPowderBedFusion ;
                           
-                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PowderBedFusionPhases" ;
+                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PowderBedFusionPhase" ;
                           
-                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PowderBedFusionPhase" .
+                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PowderBedFusionPhases" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#PowderBedFusionResource
+###  http://siam.nist.gov/AM-Process-Ontology#PowderBedFusionResource
 
 :PowderBedFusionResource rdf:type owl:Class ;
                          
                          rdfs:subClassOf :ElementOfPowderBedFusion ;
                          
-                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "AM_resource" ;
+                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "AMResources" ;
                          
-                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "AM_resources" .
+                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "AMResource" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#PowderBedGeometry
+###  http://siam.nist.gov/AM-Process-Ontology#PowderBedGeometry
 
 :PowderBedGeometry rdf:type owl:Class ;
                    
-                   rdfs:subClassOf :PowderBedProperty .
+                   rdfs:subClassOf :PowderBedProperty ;
+                   
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PowderBedGeometry" ;
+                   
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PowderBedGeometries" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#PowderBedProperty
+###  http://siam.nist.gov/AM-Process-Ontology#PowderBedProperty
 
 :PowderBedProperty rdf:type owl:Class ;
                    
-                   rdfs:subClassOf :ElementOfPowderBed .
+                   rdfs:subClassOf :ElementOfPowderBed ;
+                   
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PowderBedProperties" ;
+                   
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PowderBedProperty" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#PowderInitialTemperature
+###  http://siam.nist.gov/AM-Process-Ontology#PowderInitialTemperature
 
 :PowderInitialTemperature rdf:type owl:Class ;
                           
-                          rdfs:subClassOf :ObservableVariable .
+                          rdfs:subClassOf :ObservableVariable ;
+                          
+                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PowderInitialTemperature" ;
+                          
+                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PowderInitialTemperatures" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#PowderLayer
+###  http://siam.nist.gov/AM-Process-Ontology#PowderLayer
 
 :PowderLayer rdf:type owl:Class ;
              
              rdfs:subClassOf :ElementOfPowderBed ;
              
-             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Layer" ;
+             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Layers" ;
              
-             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Layers" .
+             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Layer" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#PowderLayerThickness
+###  http://siam.nist.gov/AM-Process-Ontology#PowderLayerThickness
 
 :PowderLayerThickness rdf:type owl:Class ;
                       
                       rdfs:subClassOf :PredefinedInputParameter ;
                       
-                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PowderLayerThicknesses" ;
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PowderLayerThickness" ;
                       
-                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PowderLayerThickness" .
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PowderLayerThicknesses" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#PowderParticles
+###  http://siam.nist.gov/AM-Process-Ontology#PowderParticles
 
 :PowderParticles rdf:type owl:Class ;
                  
@@ -1987,11 +1904,11 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#PowderParticlesComposition
+###  http://siam.nist.gov/AM-Process-Ontology#PowderParticlesComposition
 
 :PowderParticlesComposition rdf:type owl:Class ;
                             
-                            rdfs:subClassOf :MaterialProperty ;
+                            rdfs:subClassOf :ProcessDependentMaterialProperty ;
                             
                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PowderParticlesCompositions" ;
                             
@@ -1999,19 +1916,11 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#PowderReflectivity
-
-:PowderReflectivity rdf:type owl:Class ;
-                    
-                    rdfs:subClassOf :BulkMaterialRadiativeProperty .
-
-
-
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#PowderSizeDistribution
+###  http://siam.nist.gov/AM-Process-Ontology#PowderSizeDistribution
 
 :PowderSizeDistribution rdf:type owl:Class ;
                         
-                        rdfs:subClassOf :MaterialProperty ;
+                        rdfs:subClassOf :ProcessDependentMaterialProperty ;
                         
                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PowderSizeDistribution" ;
                         
@@ -2019,103 +1928,107 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#PowderSurfaceRadiationCoefficient
-
-:PowderSurfaceRadiationCoefficient rdf:type owl:Class ;
-                                   
-                                   rdfs:subClassOf :SurfaceRadiationCoefficient ;
-                                   
-                                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PowderSurfaceRadiationCoefficient" ;
-                                   
-                                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PowderSurfaceRadiationCoefficients" .
-
-
-
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#PredefinedInputParameter
+###  http://siam.nist.gov/AM-Process-Ontology#PredefinedInputParameter
 
 :PredefinedInputParameter rdf:type owl:Class ;
                           
                           rdfs:subClassOf :InputParameter ;
                           
-                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Predefineds" ;
+                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Predefined" ;
                           
-                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Predefined" .
+                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Predefineds" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#PulseDuration
+###  http://siam.nist.gov/AM-Process-Ontology#ProcessDependentMaterialProperty
+
+:ProcessDependentMaterialProperty rdf:type owl:Class ;
+                                  
+                                  rdfs:subClassOf :PredefinedInputParameter ;
+                                  
+                                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Material_properties" ;
+                                  
+                                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Material_propertieses" .
+
+
+
+###  http://siam.nist.gov/AM-Process-Ontology#PulseDuration
 
 :PulseDuration rdf:type owl:Class ;
                
                rdfs:subClassOf :PredefinedInputParameter ;
                
-               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PulseDurations" ;
+               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PulseDuration" ;
                
-               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PulseDuration" .
+               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PulseDurations" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#RadiativeProperty
+###  http://siam.nist.gov/AM-Process-Ontology#RadiativeProperty
 
 :RadiativeProperty rdf:type owl:Class ;
                    
                    rdfs:subClassOf :PowderBedProperty ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty :dependsOn ;
+                                     owl:onProperty :isDeterminedBy ;
                                      owl:someValuesFrom :TemperatureDistribution
-                                   ] .
+                                   ] ;
+                   
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "RadiativeProperty" ;
+                   
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "RadiativeProperties" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#RecoatingBlade
+###  http://siam.nist.gov/AM-Process-Ontology#RecoatingBlade
 
 :RecoatingBlade rdf:type owl:Class ;
                 
                 rdfs:subClassOf :PowderBedFusionResource ;
                 
-                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Recoating_blades" ;
+                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Recoating_blade" ;
                 
-                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Recoating_blade" .
+                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Recoating_blades" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#ResidualStressDistribution
+###  http://siam.nist.gov/AM-Process-Ontology#ResidualStressDistribution
 
 :ResidualStressDistribution rdf:type owl:Class ;
                             
                             rdfs:subClassOf :StressDistribution ;
                             
-                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Stress_distributions" ;
+                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Stress_distribution" ;
                             
-                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Stress_distribution" .
+                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Stress_distributions" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#ResolidificationOfMeltPool
+###  http://siam.nist.gov/AM-Process-Ontology#ResolidificationOfMeltPool
 
 :ResolidificationOfMeltPool rdf:type owl:Class ;
                             
                             rdfs:subClassOf :PowderBedFusionProcesses ;
                             
-                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Resolidification_of_melt_pool" ;
+                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Resolidification_of_melt_pools" ;
                             
-                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Resolidification_of_melt_pools" .
+                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Resolidification_of_melt_pool" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#ScanTrackQuality
+###  http://siam.nist.gov/AM-Process-Ontology#ScanTrackQuality
 
 :ScanTrackQuality rdf:type owl:Class ;
                   
                   rdfs:subClassOf :ObservableVariable ;
                   
-                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Scan_track_qualities" ;
+                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Scan_track_quality" ;
                   
-                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Scan_track_quality" .
+                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Scan_track_qualities" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#ScaningTrackPattern
+###  http://siam.nist.gov/AM-Process-Ontology#ScaningTrackPattern
 
 :ScaningTrackPattern rdf:type owl:Class ;
                      
@@ -2127,11 +2040,26 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#SelectiveLaserMelting
+###  http://siam.nist.gov/AM-Process-Ontology#SelectiveLaserMelting
 
 :SelectiveLaserMelting rdf:type owl:Class ;
                        
-                       rdfs:subClassOf :PowderBedFusion ;
+                       rdfs:subClassOf :PowderBedFusion ,
+                                       [ rdf:type owl:Class ;
+                                         owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :appliedTo ;
+                                                                owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                     owl:intersectionOf ( :HardMetal
+                                                                                                          :Metal
+                                                                                                        )
+                                                                                   ]
+                                                              ]
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :hasFusionMechanism ;
+                                                                owl:someValuesFrom :FullMelting
+                                                              ]
+                                                            )
+                                       ] ;
                        
                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SelectiveLaserMeltings" ;
                        
@@ -2139,11 +2067,27 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#SelectiveLaserSintering
+###  http://siam.nist.gov/AM-Process-Ontology#SelectiveLaserSintering
 
 :SelectiveLaserSintering rdf:type owl:Class ;
                          
-                         rdfs:subClassOf :PowderBedFusion ;
+                         rdfs:subClassOf :PowderBedFusion ,
+                                         [ rdf:type owl:Class ;
+                                           owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty :appliedTo ;
+                                                                  owl:someValuesFrom :AdditiveManufacturingMaterial
+                                                                ]
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty :hasFusionMechanism ;
+                                                                  owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                       owl:intersectionOf ( :FullMelting
+                                                                                                            :LiquidPhaseSintering
+                                                                                                            :SolidStateSintering
+                                                                                                          )
+                                                                                     ]
+                                                                ]
+                                                              )
+                                         ] ;
                          
                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SelectiveLaserSintering" ;
                          
@@ -2151,15 +2095,19 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#SemiChrystallineThermoplastics
+###  http://siam.nist.gov/AM-Process-Ontology#SemiChrystallineThermoplastics
 
 :SemiChrystallineThermoplastics rdf:type owl:Class ;
                                 
-                                rdfs:subClassOf :Polymer .
+                                rdfs:subClassOf :Polymer ;
+                                
+                                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SemiChrystallineThermoplastics" ;
+                                
+                                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SemiChrystallineThermoplasticses" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#SheetLamination
+###  http://siam.nist.gov/AM-Process-Ontology#SheetLamination
 
 :SheetLamination rdf:type owl:Class ;
                  
@@ -2171,51 +2119,55 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#SilicateCeramic
+###  http://siam.nist.gov/AM-Process-Ontology#SilicateCeramic
 
 :SilicateCeramic rdf:type owl:Class ;
                  
-                 rdfs:subClassOf :Ceramics .
+                 rdfs:subClassOf :Ceramics ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SilicateCeramic" ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SilicateCeramics" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#SolidStateSintering
+###  http://siam.nist.gov/AM-Process-Ontology#SinteringRate
+
+:SinteringRate rdf:type owl:Class ;
+               
+               rdfs:subClassOf :DerivedVariable ;
+               
+               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SinteringRates" ;
+               
+               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SinteringRate" .
+
+
+
+###  http://siam.nist.gov/AM-Process-Ontology#SolidStateSintering
 
 :SolidStateSintering rdf:type owl:Class ;
                      
                      rdfs:subClassOf :FusionMechanism ;
                      
-                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SolidStateSintering" ;
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SolidStateSinterings" ;
                      
-                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SolidStateSinterings" .
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SolidStateSintering" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#SolidSurfaceRadiationCoefficient
-
-:SolidSurfaceRadiationCoefficient rdf:type owl:Class ;
-                                  
-                                  rdfs:subClassOf :SurfaceRadiationCoefficient ;
-                                  
-                                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SolidSurfaceRadiationCoefficients" ;
-                                  
-                                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SolidSurfaceRadiationCoefficient" .
-
-
-
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#SolidificationCharacteristic
+###  http://siam.nist.gov/AM-Process-Ontology#SolidificationCharacteristic
 
 :SolidificationCharacteristic rdf:type owl:Class ;
                               
                               rdfs:subClassOf :DerivedVariable ;
                               
-                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SolidificationCharacteristic" ;
+                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SolidificationCharacteristics" ;
                               
-                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SolidificationCharacteristics" .
+                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SolidificationCharacteristic" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#SolidificationRate
+###  http://siam.nist.gov/AM-Process-Ontology#SolidificationRate
 
 :SolidificationRate rdf:type owl:Class ;
                     
@@ -2227,35 +2179,7 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#SolidusTemperature
-
-:SolidusTemperature rdf:type owl:Class ;
-                    
-                    rdfs:subClassOf :CrystallineMeltingTemperature ;
-                    
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SolidusTemperature" ;
-                    
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SolidusTemperatures" .
-
-
-
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#SpecificHeat
-
-:SpecificHeat rdf:type owl:Class ;
-              
-              rdfs:subClassOf :MaterialProperty ,
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty :dependsOn ;
-                                owl:someValuesFrom :TemperatureDistribution
-                              ] ;
-              
-              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SpecificHeats" ;
-              
-              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SpecificHeat" .
-
-
-
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#StainlessSteel
+###  http://siam.nist.gov/AM-Process-Ontology#StainlessSteel
 
 :StainlessSteel rdf:type owl:Class ;
                 
@@ -2267,55 +2191,63 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#StressDistribution
+###  http://siam.nist.gov/AM-Process-Ontology#StrainDistribution
 
-:StressDistribution rdf:type owl:Class ;
+:StrainDistribution rdf:type owl:Class ;
                     
                     rdfs:subClassOf :DerivedVariable .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#Structural
+###  http://siam.nist.gov/AM-Process-Ontology#StressDistribution
+
+:StressDistribution rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :DerivedVariable ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "StressDistributions" ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "StressDistribution" .
+
+
+
+###  http://siam.nist.gov/AM-Process-Ontology#Structural
 
 :Structural rdf:type owl:Class ;
             
             rdfs:subClassOf :PhysicalPhenomenon ;
             
-            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Structurals" ;
+            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Structural" ;
             
-            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Structural" .
+            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Structurals" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#SubstrateTemperature
+###  http://siam.nist.gov/AM-Process-Ontology#SubstrateTemperature
 
 :SubstrateTemperature rdf:type owl:Class ;
                       
-                      rdfs:subClassOf :DerivedVariable .
+                      rdfs:subClassOf :DerivedVariable ;
+                      
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SubstrateTemperature" ;
+                      
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SubstrateTemperatures" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#SubstrateThermalConductivity
-
-:SubstrateThermalConductivity rdf:type owl:Class ;
-                              
-                              rdfs:subClassOf :MaterialProperty ;
-                              
-                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SubstrateThermalConductivity" ;
-                              
-                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SubstrateThermalConductivities" .
-
-
-
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#SuperAlloy
+###  http://siam.nist.gov/AM-Process-Ontology#SuperAlloy
 
 :SuperAlloy rdf:type owl:Class ;
             
-            rdfs:subClassOf :Metal .
+            rdfs:subClassOf :Metal ;
+            
+            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SuperAlloys" ;
+            
+            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SuperAlloy" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#SurfaceBallingSize
+###  http://siam.nist.gov/AM-Process-Ontology#SurfaceBallingSize
 
 :SurfaceBallingSize rdf:type owl:Class ;
                     
@@ -2327,81 +2259,59 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#SurfaceConvection
+###  http://siam.nist.gov/AM-Process-Ontology#SurfaceConvection
 
 :SurfaceConvection rdf:type owl:Class ;
                    
-                   rdfs:subClassOf :HeatTransferInPowderBed .
+                   rdfs:subClassOf :HeatTransferInPowderBed ;
+                   
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SurfaceConvections" ;
+                   
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SurfaceConvection" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#SurfaceEnergy
-
-:SurfaceEnergy rdf:type owl:Class ;
-               
-               rdfs:subClassOf :MaterialProperty ;
-               
-               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SurfaceEnergies" ;
-               
-               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SurfaceEnergy" .
-
-
-
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#SurfaceIrradiation
+###  http://siam.nist.gov/AM-Process-Ontology#SurfaceIrradiation
 
 :SurfaceIrradiation rdf:type owl:Class ;
                     
                     rdfs:subClassOf :Irradiation ;
                     
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SurfaceIrradiations" ;
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SurfaceIrradiation" ;
                     
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SurfaceIrradiation" .
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SurfaceIrradiations" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#SurfaceRadiationCoefficient
-
-:SurfaceRadiationCoefficient rdf:type owl:Class ;
-                             
-                             rdfs:subClassOf :MaterialProperty ;
-                             
-                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SurfaceRadiationCoefficient" ;
-                             
-                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SurfaceRadiationCoefficients" .
-
-
-
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#SurfaceTensionCoefficient
-
-:SurfaceTensionCoefficient rdf:type owl:Class ;
-                           
-                           rdfs:subClassOf :MaterialProperty .
-
-
-
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#SurfaceTensionEffects
+###  http://siam.nist.gov/AM-Process-Ontology#SurfaceTensionEffects
 
 :SurfaceTensionEffects rdf:type owl:Class ;
                        
-                       rdfs:subClassOf :FluidMechanics ,
-                                       [ rdf:type owl:Restriction ;
-                                         owl:onProperty :isDeterminedBy ;
-                                         owl:someValuesFrom [ rdf:type owl:Class ;
-                                                              owl:intersectionOf ( :CapillaryEffect
-                                                                                   :MarangoniEffect
-                                                                                 )
-                                                            ]
-                                       ] ;
+                       owl:equivalentClass [ rdf:type owl:Class ;
+                                             owl:intersectionOf ( :FluidMechanics
+                                                                  [ rdf:type owl:Class ;
+                                                                    owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                           owl:onProperty :isDeterminedBy ;
+                                                                                           owl:someValuesFrom :CapillaryEffect
+                                                                                         ]
+                                                                                         [ rdf:type owl:Restriction ;
+                                                                                           owl:onProperty :isDeterminedBy ;
+                                                                                           owl:someValuesFrom :MarangoniEffect
+                                                                                         ]
+                                                                                       )
+                                                                  ]
+                                                                )
+                                           ] ;
                        
-                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Wetting" ;
+                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Wettings/Dewettings" ;
                        
-                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Wettings" ;
+                       rdfs:comment "Surface Effect concept is intended to include Wetting/Dewetting phenomena" ;
                        
-                       rdfs:comment "Surface Effect concept is intended to include Wetrtind and dewetting phenomena" .
+                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Wetting/Dewetting" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#TemperatureDistribution
+###  http://siam.nist.gov/AM-Process-Ontology#TemperatureDistribution
 
 :TemperatureDistribution rdf:type owl:Class ;
                          
@@ -2413,31 +2323,37 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#Thermal
+###  http://siam.nist.gov/AM-Process-Ontology#Thermal
 
 :Thermal rdf:type owl:Class ;
          
          rdfs:subClassOf :PhysicalPhenomenon ;
          
-         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Thermals" ;
+         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Thermal" ;
          
-         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Thermal" .
+         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Thermals" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#ThermalConductivity
+###  http://siam.nist.gov/AM-Process-Ontology#ThermalConductivity
 
 :ThermalConductivity rdf:type owl:Class ;
                      
-                     rdfs:subClassOf :DerivedVariable ,
-                                     [ rdf:type owl:Restriction ;
-                                       owl:onProperty :dependsOn ;
-                                       owl:someValuesFrom [ rdf:type owl:Class ;
-                                                            owl:intersectionOf ( :DensityDistribution
-                                                                                 :TemperatureDistribution
-                                                                               )
-                                                          ]
-                                     ] ;
+                     owl:equivalentClass [ rdf:type owl:Class ;
+                                           owl:intersectionOf ( :DerivedVariable
+                                                                [ rdf:type owl:Class ;
+                                                                  owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <http://siam.nist.gov/AM-Model-Ontology#isDeterminedBy> ;
+                                                                                         owl:someValuesFrom :DensityDistribution
+                                                                                       ]
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <http://siam.nist.gov/AM-Model-Ontology#isDeterminedBy> ;
+                                                                                         owl:someValuesFrom :TemperatureDistribution
+                                                                                       ]
+                                                                                     )
+                                                                ]
+                                                              )
+                                         ] ;
                      
                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ThermalConductivities" ;
                      
@@ -2445,43 +2361,7 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#ThermalConductivityInGas
-
-:ThermalConductivityInGas rdf:type owl:Class ;
-                          
-                          rdfs:subClassOf :MaterialProperty ,
-                                          [ rdf:type owl:Restriction ;
-                                            owl:onProperty :dependsOn ;
-                                            owl:someValuesFrom :TemperatureDistribution
-                                          ] .
-
-
-
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#ThermalConductivityInSolid
-
-:ThermalConductivityInSolid rdf:type owl:Class ;
-                            
-                            rdfs:subClassOf :MaterialProperty ,
-                                            [ rdf:type owl:Restriction ;
-                                              owl:onProperty :dependsOn ;
-                                              owl:someValuesFrom :TemperatureDistribution
-                                            ] .
-
-
-
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#ThermalExpansionCoefficient
-
-:ThermalExpansionCoefficient rdf:type owl:Class ;
-                             
-                             rdfs:subClassOf :MaterialProperty ;
-                             
-                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "CoefficientOfThermalExpansions" ;
-                             
-                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "CoefficientOfThermalExpansion" .
-
-
-
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#ThermalGradientDistribution
+###  http://siam.nist.gov/AM-Process-Ontology#ThermalGradientDistribution
 
 :ThermalGradientDistribution rdf:type owl:Class ;
                              
@@ -2491,25 +2371,25 @@
                                                owl:someValuesFrom :TemperatureDistribution
                                              ] ;
                              
-                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Thermal_gradient" ;
+                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Thermal_gradients" ;
                              
-                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Thermal_gradients" .
+                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Thermal_gradient" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#ThermalLoadingInPart
+###  http://siam.nist.gov/AM-Process-Ontology#ThermalLoadingInPart
 
 :ThermalLoadingInPart rdf:type owl:Class ;
                       
                       rdfs:subClassOf :Structural ;
                       
-                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ThermalLoading" ;
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ThermalLoadings" ;
                       
-                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ThermalLoadings" .
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ThermalLoading" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#ThermalShrinkage
+###  http://siam.nist.gov/AM-Process-Ontology#ThermalShrinkage
 
 :ThermalShrinkage rdf:type owl:Class ;
                   
@@ -2521,67 +2401,67 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#TitaniumAlloy
+###  http://siam.nist.gov/AM-Process-Ontology#TitaniumAlloy
 
 :TitaniumAlloy rdf:type owl:Class ;
                
-               rdfs:subClassOf :Metal .
+               rdfs:subClassOf :Metal ;
+               
+               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "TitaniumAlloy" ;
+               
+               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "TitaniumAlloys" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#VaporSolidSurfaceEnergy
-
-:VaporSolidSurfaceEnergy rdf:type owl:Class ;
-                         
-                         rdfs:subClassOf :SurfaceEnergy ;
-                         
-                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "VaporSolidSurfaceEnergy" ;
-                         
-                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "VaporSolidSurfaceEnergies" .
-
-
-
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#Vaporization
+###  http://siam.nist.gov/AM-Process-Ontology#Vaporization
 
 :Vaporization rdf:type owl:Class ;
               
               rdfs:subClassOf :PhaseTransformation ;
               
-              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Vaporizations" ;
+              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Vaporization" ;
               
-              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Vaporization" .
+              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Vaporizations" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#VatPhotopolymerization
+###  http://siam.nist.gov/AM-Process-Ontology#VatPhotopolymerization
 
 :VatPhotopolymerization rdf:type owl:Class ;
                         
                         rdfs:subClassOf :AdditiveManufacturing ;
                         
-                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "VatPhotopolymerizations" ;
+                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "VatPhotopolymerization" ;
                         
-                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "VatPhotopolymerization" .
+                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "VatPhotopolymerizations" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#Viscosity
+###  http://siam.nist.gov/AM-Process-Ontology#Viscosity
 
 :Viscosity rdf:type owl:Class ;
            
-           rdfs:subClassOf :DerivedVariable .
+           rdfs:subClassOf :DerivedVariable ;
+           
+           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Viscosity" ;
+           
+           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Viscosities" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#VolumetricHeatGeneration
+###  http://siam.nist.gov/AM-Process-Ontology#VolumetricHeatGeneration
 
 :VolumetricHeatGeneration rdf:type owl:Class ;
                           
-                          rdfs:subClassOf :VolumetricIrradiation .
+                          rdfs:subClassOf :VolumetricIrradiation ;
+                          
+                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "VolumetricHeatGenerations" ;
+                          
+                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "VolumetricHeatGeneration" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#VolumetricIrradiation
+###  http://siam.nist.gov/AM-Process-Ontology#VolumetricIrradiation
 
 :VolumetricIrradiation rdf:type owl:Class ;
                        
@@ -2593,11 +2473,15 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#WC-COCementedCarbide
+###  http://siam.nist.gov/AM-Process-Ontology#WC-COCementedCarbide
 
 :WC-COCementedCarbide rdf:type owl:Class ;
                       
-                      rdfs:subClassOf :HardMetal .
+                      rdfs:subClassOf :HardMetal ;
+                      
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "WC-COCementedCarbide" ;
+                      
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "WC-COCementedCarbides" .
 
 
 
@@ -2610,19 +2494,19 @@
 #################################################################
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#DirectMetalLaserSinteringOf_316StainlessSteel
+###  http://siam.nist.gov/AM-Process-Ontology#Jiang-ResidualStressesAndDefromationDistributionInDMLS
 
-:DirectMetalLaserSinteringOf_316StainlessSteel rdf:type owl:NamedIndividual ;
-                                               
-                                               <http://attempto.ifi.uzh.ch/ace_lexicon#PN_sg> "DirectMetalLaserSinteringOf_316StainlessSteel" .
+:Jiang-ResidualStressesAndDefromationDistributionInDMLS rdf:type owl:NamedIndividual ;
+                                                        
+                                                        <http://attempto.ifi.uzh.ch/ace_lexicon#PN_sg> "DirectMetalLaserSinteringOf_316StainlessSteel" .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#316316StainlessSteel
+###  http://siam.nist.gov/AM-Process-Ontology#316316Jiang-316StainlessSteel
 
-<http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-amProcess-ontology#316316StainlessSteel> rdf:type owl:NamedIndividual ;
-                                                                                                                 
-                                                                                                                 <http://attempto.ifi.uzh.ch/ace_lexicon#PN_sg> "StainlessSteel" .
+<http://siam.nist.gov/AM-Process-Ontology#316316Jiang-316StainlessSteel> rdf:type owl:NamedIndividual ;
+                                                                         
+                                                                         <http://attempto.ifi.uzh.ch/ace_lexicon#PN_sg> "StainlessSteel" .
 
 
 
@@ -2636,25 +2520,9 @@
 
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Consolidation
-                :FluidMechanics
-                :Microstructural
-                :Structural
-                :Thermal
-              )
-] .
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :ChemicallyInducedBinding
-                :FullMelting
-                :LiquidPhaseSintering
-                :SolidStateSintering
-              )
-] .
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :DirectMetalLaserMelting
-                :ElectronBeamMelting
-                :SelectiveLaserMelting
-                :SelectiveLaserSintering
+  owl:members ( :BedRadiation
+                :HeatConduction
+                :SurfaceConvection
               )
 ] .
 [ rdf:type owl:AllDisjointClasses ;
@@ -2666,6 +2534,14 @@
                 :PowderBedFusion
                 :SheetLamination
                 :VatPhotopolymerization
+              )
+] .
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Consolidation
+                :FluidMechanics
+                :Microstructural
+                :Structural
+                :Thermal
               )
 ] .
 
