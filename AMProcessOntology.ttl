@@ -3,7 +3,13 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix qudt: <http://qudt.org/1.1/schema/qudt#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vaem: <http://www.linkedmodel.org/1.2/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/1.0/schema/voag#> .
+@prefix dtype: <http://www.linkedmodel.org/1.0/schema/dtype#> .
+@prefix quantity: <http://qudt.org/1.1/schema/quantity#> .
+@prefix dimension: <http://qudt.org/1.1/schema/dimension#> .
 @base <http://siam.nist.gov/AM-Process-Ontology> .
 
 <http://siam.nist.gov/AM-Process-Ontology> rdf:type owl:Ontology .
@@ -89,7 +95,9 @@
                 
                 <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "describesed" ;
                 
-                rdfs:domain :PhysicalPhenomenon .
+                rdfs:domain :PhysicalPhenomenon ;
+                
+                owl:inverseOf :isDescribedBy .
 
 
 
@@ -245,11 +253,10 @@
                               
                               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "has_determining_factor" ;
                               
-                              rdfs:range :CoolingTime ;
-                              
                               rdfs:domain :FormationOfMeltPool ;
                               
-                              rdfs:range :MeltPoolSize ,
+                              rdfs:range :LocalSolidificationTime ,
+                                         :MeltPoolSize ,
                                          :TemperatureDistribution ;
                               
                               rdfs:subPropertyOf :hasDeterminingFactor .
@@ -398,9 +405,7 @@
                
                <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "isDescribedBied" ;
                
-               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "isDescribedBy" ;
-               
-               owl:inverseOf :hasDescription .
+               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "isDescribedBy" .
 
 
 
@@ -462,9 +467,9 @@
 
 
 
-###  http://siam.nist.gov/AM-Model-Ontology#isDeterminedBy
+###  http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#isDeterminedBy
 
-<http://siam.nist.gov/AM-Model-Ontology#isDeterminedBy> <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "isDeterminedBy" ;
+<http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#isDeterminedBy> <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "isDeterminedBy" ;
                                                                                                        
                                                                                                        <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "isDeterminedBies" ;
                                                                                                        
@@ -479,6 +484,12 @@
 #    Classes
 #
 #################################################################
+
+
+###  http://siam.nist.gov/AM-Process-Ontology#AMProcessEntity
+
+:AMProcessEntity rdf:type owl:Class .
+
 
 
 ###  http://siam.nist.gov/AM-Process-Ontology#AdditiveManufacturing
@@ -497,7 +508,8 @@
                                                          )
                                            ] ;
                        
-                       rdfs:subClassOf :AdditiveManufacturing ;
+                       rdfs:subClassOf :AMProcessEntity ,
+                                       :AdditiveManufacturing ;
                        
                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "AM_entities" ;
                        
@@ -809,22 +821,6 @@
 
 
 
-###  http://siam.nist.gov/AM-Process-Ontology#CoolingTime
-
-:CoolingTime rdf:type owl:Class ;
-             
-             rdfs:subClassOf :DerivedVariable ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty :isDeterminedBy ;
-                               owl:someValuesFrom :TemperatureDistribution
-                             ] ;
-             
-             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Cooling_time" ;
-             
-             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Cooling_times" .
-
-
-
 ###  http://siam.nist.gov/AM-Process-Ontology#CrystallineMaterialSintering
 
 :CrystallineMaterialSintering rdf:type owl:Class ;
@@ -913,6 +909,8 @@
                  
                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Derived" ;
                  
+                 rdfs:comment "Quantity of interest that has a physical meaning and is not observed directly. Mapping between measurements and derived variables doesn't have to be given by the instantied model." ;
+                 
                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Deriveds" .
 
 
@@ -982,6 +980,8 @@
 ###  http://siam.nist.gov/AM-Process-Ontology#ElementOfAdditiveManufacturing
 
 :ElementOfAdditiveManufacturing rdf:type owl:Class ;
+                                
+                                rdfs:subClassOf :AMProcessEntity ;
                                 
                                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ElementOfAdditiveManufacturingProcess" ;
                                 
@@ -1328,7 +1328,9 @@
                     
                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "InterfaceCurvatures" ;
                     
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "InterfaceCurvature" .
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "InterfaceCurvature" ;
+                    
+                    rdfs:comment "is usually accounted for when studying balling" .
 
 
 
@@ -1397,6 +1399,22 @@
 
 
 
+###  http://siam.nist.gov/AM-Process-Ontology#LocalSolidificationTime
+
+:LocalSolidificationTime rdf:type owl:Class ;
+                         
+                         rdfs:subClassOf :DerivedVariable ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :isDeterminedBy ;
+                                           owl:someValuesFrom :TemperatureDistribution
+                                         ] ;
+                         
+                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Cooling_time" ;
+                         
+                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Cooling_times" .
+
+
+
 ###  http://siam.nist.gov/AM-Process-Ontology#MarangoniEffect
 
 :MarangoniEffect rdf:type owl:Class ;
@@ -1433,6 +1451,14 @@
 
 
 
+###  http://siam.nist.gov/AM-Process-Ontology#MeltPoolArea
+
+:MeltPoolArea rdf:type owl:Class ;
+              
+              rdfs:subClassOf :MeltPoolSize .
+
+
+
 ###  http://siam.nist.gov/AM-Process-Ontology#MeltPoolDepth
 
 :MeltPoolDepth rdf:type owl:Class ;
@@ -1443,6 +1469,14 @@
                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Melt_pool_depth" ;
                
                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Melt_pool_depths" .
+
+
+
+###  http://siam.nist.gov/AM-Process-Ontology#MeltPoolLength
+
+:MeltPoolLength rdf:type owl:Class ;
+                
+                rdfs:subClassOf :MeltPoolSize .
 
 
 
@@ -1860,7 +1894,7 @@
 
 :PowderInitialTemperature rdf:type owl:Class ;
                           
-                          rdfs:subClassOf :ObservableVariable ;
+                          rdfs:subClassOf :PredefinedInputParameter ;
                           
                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PowderInitialTemperature" ;
                           
@@ -2013,18 +2047,6 @@
                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Resolidification_of_melt_pools" ;
                             
                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Resolidification_of_melt_pool" .
-
-
-
-###  http://siam.nist.gov/AM-Process-Ontology#ScanTrackQuality
-
-:ScanTrackQuality rdf:type owl:Class ;
-                  
-                  rdfs:subClassOf :ObservableVariable ;
-                  
-                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Scan_track_quality" ;
-                  
-                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Scan_track_qualities" .
 
 
 
@@ -2343,11 +2365,11 @@
                                            owl:intersectionOf ( :DerivedVariable
                                                                 [ rdf:type owl:Class ;
                                                                   owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                                         owl:onProperty <http://siam.nist.gov/AM-Model-Ontology#isDeterminedBy> ;
+                                                                                         owl:onProperty <http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#isDeterminedBy> ;
                                                                                          owl:someValuesFrom :DensityDistribution
                                                                                        ]
                                                                                        [ rdf:type owl:Restriction ;
-                                                                                         owl:onProperty <http://siam.nist.gov/AM-Model-Ontology#isDeterminedBy> ;
+                                                                                         owl:onProperty <http://www.semanticweb.org/ina3/ontologies/2014/10/untitled-ontology-6-model-ontology#isDeterminedBy> ;
                                                                                          owl:someValuesFrom :TemperatureDistribution
                                                                                        ]
                                                                                      )
@@ -2520,9 +2542,11 @@
 
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :BedRadiation
-                :HeatConduction
-                :SurfaceConvection
+  owl:members ( :Consolidation
+                :FluidMechanics
+                :Microstructural
+                :Structural
+                :Thermal
               )
 ] .
 [ rdf:type owl:AllDisjointClasses ;
@@ -2537,11 +2561,9 @@
               )
 ] .
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Consolidation
-                :FluidMechanics
-                :Microstructural
-                :Structural
-                :Thermal
+  owl:members ( :BedRadiation
+                :HeatConduction
+                :SurfaceConvection
               )
 ] .
 
