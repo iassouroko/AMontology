@@ -95,7 +95,7 @@
                 
                 <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "describesed" ;
                 
-                rdfs:domain :PhysicalPhenomenon ;
+                rdfs:domain :PhysicalProcess ;
                 
                 owl:inverseOf :isDescribedBy .
 
@@ -154,8 +154,6 @@
                                     <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "has_HA_DeterminingFactor" ;
                                     
                                     <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "has_HA_DeterminingFactored" ;
-                                    
-                                    rdfs:domain :IrradiationAbsorptionByPowderBed ;
                                     
                                     rdfs:subPropertyOf :hasDeterminingFactor .
 
@@ -252,12 +250,6 @@
                               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "has_determining_factors" ;
                               
                               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "has_determining_factor" ;
-                              
-                              rdfs:domain :FormationOfMeltPool ;
-                              
-                              rdfs:range :LocalSolidificationTime ,
-                                         :MeltPoolSize ,
-                                         :TemperatureDistribution ;
                               
                               rdfs:subPropertyOf :hasDeterminingFactor .
 
@@ -761,7 +753,7 @@
 
 :Consolidation rdf:type owl:Class ;
                
-               rdfs:subClassOf :PhysicalPhenomenon ;
+               rdfs:subClassOf :PhysicalProcess ;
                
                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Consolidations" ;
                
@@ -810,20 +802,6 @@
                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Controllables" ;
                             
                             rdfs:comment "Input parameters that can be varied during the process." .
-
-
-
-###  http://siam.nist.gov/AM-Process-Ontology#Cooling
-
-:Cooling rdf:type owl:Class ;
-         
-         rdfs:subClassOf :PowderBedFusionProcesses ;
-         
-         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Coolings" ;
-         
-         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Cooling" ;
-         
-         rdfs:comment "After solidification, more heat is lost making the temperature decrease." .
 
 
 
@@ -1081,7 +1059,7 @@
 
 :FluidMechanics rdf:type owl:Class ;
                 
-                rdfs:subClassOf :PhysicalPhenomenon ;
+                rdfs:subClassOf :PhysicalProcess ;
                 
                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "FluidMechanics" ;
                 
@@ -1100,20 +1078,6 @@
                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "FluidVelocity" ;
                
                rdfs:comment "Velocity of in the fluid region of the powder bed. It is not measured but it can be approximated with multi-physics models." .
-
-
-
-###  http://siam.nist.gov/AM-Process-Ontology#FormationOfMeltPool
-
-:FormationOfMeltPool rdf:type owl:Class ;
-                     
-                     rdfs:subClassOf :PowderBedFusionProcesses ;
-                     
-                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Melt_pool_formation" ;
-                     
-                     rdfs:comment "Liquid metal forms a liquid region, known as the melt pool." ;
-                     
-                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Melt_pool_formations" .
 
 
 
@@ -1414,8 +1378,7 @@
 
 :IrradiationAbsorptionByPowderBed rdf:type owl:Class ;
                                   
-                                  rdfs:subClassOf :PowderBedFusionProcesses ,
-                                                  :Thermal ;
+                                  rdfs:subClassOf :Thermal ;
                                   
                                   rdfs:comment "Part of the irradiation is absorbed by the powder bed, heating it up." ;
                                   
@@ -1605,31 +1568,17 @@
 
 
 
-###  http://siam.nist.gov/AM-Process-Ontology#MeltingOfPowderParticles
+###  http://siam.nist.gov/AM-Process-Ontology#MetalAlloy
 
-:MeltingOfPowderParticles rdf:type owl:Class ;
-                          
-                          rdfs:subClassOf :PowderBedFusionProcesses ;
-                          
-                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Melting" ;
-                          
-                          rdfs:comment "Absorbed heat increases the powder bed temperature above melting temperature." ;
-                          
-                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Meltings" .
-
-
-
-###  http://siam.nist.gov/AM-Process-Ontology#Metal
-
-:Metal rdf:type owl:Class ;
-       
-       rdfs:subClassOf :AdditiveManufacturingMaterial ;
-       
-       rdfs:comment "A material that is typically hard, opaque, shiny, and has good electrical and thermal conductivity." ;
-       
-       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Metal" ;
-       
-       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Metals" .
+:MetalAlloy rdf:type owl:Class ;
+            
+            rdfs:subClassOf :AdditiveManufacturingMaterial ;
+            
+            rdfs:comment "A material that is typically hard, opaque, shiny, and has good electrical and thermal conductivity." ;
+            
+            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Metal" ;
+            
+            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Metals" .
 
 
 
@@ -1637,7 +1586,7 @@
 
 :Microstructural rdf:type owl:Class ;
                  
-                 rdfs:subClassOf :PhysicalPhenomenon ;
+                 rdfs:subClassOf :PhysicalProcess ;
                  
                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Microstructural" ;
                  
@@ -1675,7 +1624,7 @@
 
 :NickelAlloy rdf:type owl:Class ;
              
-             rdfs:subClassOf :Metal ;
+             rdfs:subClassOf :MetalAlloy ;
              
              rdfs:comment "Superalloys with nickel as principal element. Some examples are alloys 625 and 718." ;
              
@@ -1779,15 +1728,17 @@
 
 
 
-###  http://siam.nist.gov/AM-Process-Ontology#PhysicalPhenomenon
+###  http://siam.nist.gov/AM-Process-Ontology#PhysicalProcess
 
-:PhysicalPhenomenon rdf:type owl:Class ;
-                    
-                    rdfs:subClassOf :ElementOfAdditiveManufacturing ;
-                    
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Physical_phenomenon" ;
-                    
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Physical_phenomenons" .
+:PhysicalProcess rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :ElementOfAdditiveManufacturing ;
+                 
+                 rdfs:comment "Individual stages of the multi-physics multi-scale process that characterizes PBF processes." ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Physical_phenomenon" ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Physical_phenomenons" .
 
 
 
@@ -1964,20 +1915,6 @@
 
 
 
-###  http://siam.nist.gov/AM-Process-Ontology#PowderBedFusionProcesses
-
-:PowderBedFusionProcesses rdf:type owl:Class ;
-                          
-                          rdfs:subClassOf :ElementOfPowderBedFusion ;
-                          
-                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PowderBedFusionPhase" ;
-                          
-                          rdfs:comment "Individual stages of the multi-physics multi-scale process that characterizes PBF processes. THIS IS INCOMPLETE AS IT ONLY ACCOUNTS FOR METALS, WHAT ABOUT OTHER MATERIALS? SINTERING?" ;
-                          
-                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PowderBedFusionPhases" .
-
-
-
 ###  http://siam.nist.gov/AM-Process-Ontology#PowderBedFusionResource
 
 :PowderBedFusionResource rdf:type owl:Class ;
@@ -2006,7 +1943,7 @@
 
 :PowderBedProperty rdf:type owl:Class ;
                    
-                   rdfs:subClassOf :ElementOfPowderBed ;
+                   rdfs:subClassOf :ProcessDependentMaterialProperty ;
                    
                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PowderBedProperties" ;
                    
@@ -2178,20 +2115,6 @@
 
 
 
-###  http://siam.nist.gov/AM-Process-Ontology#ResolidificationOfMeltPool
-
-:ResolidificationOfMeltPool rdf:type owl:Class ;
-                            
-                            rdfs:subClassOf :PowderBedFusionProcesses ;
-                            
-                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Resolidification_of_melt_pools" ;
-                            
-                            rdfs:comment "After the heat source is removed, heat is removed from the melt pool making it solidify." ;
-                            
-                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Resolidification_of_melt_pool" .
-
-
-
 ###  http://siam.nist.gov/AM-Process-Ontology#ScaningTrackPattern
 
 :ScaningTrackPattern rdf:type owl:Class ;
@@ -2216,7 +2139,7 @@
                                                                 owl:onProperty :appliedTo ;
                                                                 owl:someValuesFrom [ rdf:type owl:Class ;
                                                                                      owl:intersectionOf ( :HardMetal
-                                                                                                          :Metal
+                                                                                                          :MetalAlloy
                                                                                                         )
                                                                                    ]
                                                               ]
@@ -2367,7 +2290,7 @@
 
 :StainlessSteel rdf:type owl:Class ;
                 
-                rdfs:subClassOf :Metal ;
+                rdfs:subClassOf :MetalAlloy ;
                 
                 rdfs:comment "Steel alloy with a minimum of 10.5% of chromium content by mass, to protect it from corrosion." ;
                 
@@ -2405,7 +2328,7 @@
 
 :Structural rdf:type owl:Class ;
             
-            rdfs:subClassOf :PhysicalPhenomenon ;
+            rdfs:subClassOf :PhysicalProcess ;
             
             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Structural" ;
             
@@ -2511,7 +2434,7 @@
 
 :Thermal rdf:type owl:Class ;
          
-         rdfs:subClassOf :PhysicalPhenomenon ;
+         rdfs:subClassOf :PhysicalProcess ;
          
          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Thermal" ;
          
@@ -2593,7 +2516,7 @@
 
 :TitaniumAlloy rdf:type owl:Class ;
                
-               rdfs:subClassOf :Metal ;
+               rdfs:subClassOf :MetalAlloy ;
                
                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "TitaniumAlloy" ;
                
@@ -2716,9 +2639,32 @@
 
 
 [ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :FullMelting
+                :LiquidPhaseSintering
+                :SolidStateSintering
+              )
+] .
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :BinderJetting
+                :DirectedEnergyDeposition
+                :MaterialExtrusion
+                :MaterialJetting
+                :PowderBedFusion
+                :SheetLamination
+                :VatPhotopolymerization
+              )
+] .
+[ rdf:type owl:AllDisjointClasses ;
   owl:members ( :BedRadiation
                 :HeatConduction
                 :SurfaceConvection
+              )
+] .
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Ceramics
+                :HardMetal
+                :MetalAlloy
+                :Polymer
               )
 ] .
 [ rdf:type owl:AllDisjointClasses ;
