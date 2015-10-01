@@ -5,7 +5,7 @@ This repository contains an OWL ontology of concepts of additive manufacturing p
 
 ## Contacts
 * Paul Witherell: paul.witherell@nist.gov, 301-975-3385
-* Filipe Lopez: felipe.lopez@nist.gov, 301-975-5858
+* Felipe Lopez: felipe.lopez@nist.gov, 301-975-5858
 * Ibrahim Assouroko: ibrahim.assouroko@nist.gov, 301-975-2285
 
 
