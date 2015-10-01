@@ -346,7 +346,9 @@
                                      
                                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "AmorphousGlassTransitionTemperature1" ;
                                      
-                                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "AmorphousGlassTransitionTemperature1s" .
+                                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "AmorphousGlassTransitionTemperature1s" ;
+                                     
+                                     rdfs:comment "Glass transition temperature. Only present in amorphous materials." .
 
 
 
@@ -355,6 +357,8 @@
 :AnalyticalSolution rdf:type owl:Class ;
                     
                     rdfs:subClassOf :Solution ;
+                    
+                    rdfs:comment "Types of analytical solutions/" ;
                     
                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "AnalyticalSolution" ;
                     
@@ -367,6 +371,8 @@
 :AssumptionOfModelComponent rdf:type owl:Class ;
                             
                             rdfs:subClassOf :ModelAssumption ;
+                            
+                            rdfs:comment "Set of simplifying assumptions of each model component. They can be of three kinds: geometric, physical and statistical." ;
                             
                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Model_component_assumptions" ;
                             
@@ -390,7 +396,7 @@
 
 :BottomBoundaryCondition rdf:type owl:Class ;
                          
-                         rdfs:subClassOf :BoundaryCondition ;
+                         rdfs:subClassOf :ThermalBoundaryCondition ;
                          
                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "BottomBoundaryConditions" ;
                          
@@ -402,11 +408,19 @@
 
 :BoundaryCondition rdf:type owl:Class ;
                    
-                   rdfs:subClassOf :ElementOfModel ;
+                   rdfs:subClassOf :BoundaryOrInitialCondition ;
                    
-                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "BoundaryConditions" ;
-                   
-                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "BoundaryCondition" .
+                   rdfs:comment "Boundary conditions are required for the solution of partial differential equations. There is one boundary condition required per degree of the equation for each dimension." .
+
+
+
+###  http://siam.nist.gov/Model-Ontology#BoundaryOrInitialCondition
+
+:BoundaryOrInitialCondition rdf:type owl:Class ;
+                            
+                            rdfs:subClassOf :ElementOfModel ;
+                            
+                            rdfs:comment "Is a model element that gives information about the variable of interest on certain regions of the design space. A model requires one boundary condition per degree of the partial derivative on each dimension. Boundary conditions are required for the solution of partial differential equations." .
 
 
 
@@ -418,6 +432,8 @@
                      
                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "BulkMaterialDensity" ;
                      
+                     rdfs:comment "Density of fully-dense material. It is usually assumed as a function of temperature." ;
+                     
                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "BulkMaterialDensities" .
 
 
@@ -427,6 +443,8 @@
 :BulkMaterialRadiativeProperty rdf:type owl:Class ;
                                
                                rdfs:subClassOf :ModelDependentMaterialProperty ;
+                               
+                               rdfs:comment "Radiative properties of a material: absorptivity, emissivity, and transmissivity. They depend on temperature and wavelength." ;
                                
                                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "BulkMaterialRadiativeProperty" ;
                                
@@ -445,31 +463,23 @@
                                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "BulkMaterialThermalConductivity1s" ,
                                                                                 "ThermalConductivityInSolid1s" ;
                                  
+                                 rdfs:comment "Thermal conductivity of bulk material. It is often modeled as a function of temperature." ;
+                                 
                                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ThermalConductivityInSolid1" .
 
 
 
-###  http://siam.nist.gov/Model-Ontology#CellularAutomataEquations
+###  http://siam.nist.gov/Model-Ontology#CellularAutomataEquation
 
-:CellularAutomataEquations rdf:type owl:Class ;
-                           
-                           rdfs:subClassOf :GoverningEquation ;
-                           
-                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "CellularAutomataEquationses" ;
-                           
-                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "CellularAutomataEquations" .
-
-
-
-###  http://siam.nist.gov/Model-Ontology#ConsolidationAssumption
-
-:ConsolidationAssumption rdf:type owl:Class ;
-                         
-                         rdfs:subClassOf :PhysicalAssumption ;
-                         
-                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Consolidation" ;
-                         
-                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Consolidations" .
+:CellularAutomataEquation rdf:type owl:Class ;
+                          
+                          rdfs:subClassOf :ProcessEquation ;
+                          
+                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "CellularAutomataEquations" ;
+                          
+                          rdfs:comment "A cellular automaton (CA) is a discrete model that describes interactions between different cells in a grid, each of them in one of a finite number of states." ;
+                          
+                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "CellularAutomataEquationses" .
 
 
 
@@ -480,6 +490,8 @@
                              rdfs:subClassOf :ConsolidationModel ;
                              
                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ConsolidationByMeltingModels" ;
+                             
+                             rdfs:comment "Equations that describe consolidation in which the loose material is heated above the melting point to become fully-dense. Melting is only possible for crystalline or semi-crystalline materials, as amorphous polymers degrade at high temperatures." ;
                              
                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ConsolidationByMeltingModel" .
 
@@ -493,7 +505,19 @@
                                
                                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ConsolidationBySinteringModel" ;
                                
+                               rdfs:comment "Equation that describe consolidation in which the loose material is heated below the melting point. In these cases, the driving force for sintering is often given by viscosity-controlled reduction of surface tension." ;
+                               
                                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ConsolidationBySinteringModels" .
+
+
+
+###  http://siam.nist.gov/Model-Ontology#ConsolidationInitialCondition
+
+:ConsolidationInitialCondition rdf:type owl:Class ;
+                               
+                               rdfs:subClassOf :InitialCondition ;
+                               
+                               rdfs:comment "Initial condition for consolidation model. It may be described as the initial distribution of porosity (or density) in the powder bed before the process." .
 
 
 
@@ -509,7 +533,9 @@
                     
                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ConsolidationModel" ;
                     
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ConsolidationModels" .
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ConsolidationModels" ;
+                    
+                    rdfs:comment "They describe thermally-activated consolidation processes. In this case two different kinds of consolidation models are included: sintering and melting models." .
 
 
 
@@ -521,7 +547,23 @@
                             
                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ConsolidationModelVariable" ;
                             
+                            rdfs:comment "Internal variables used by consolidation models." ;
+                            
                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ConsolidationModelVariables" .
+
+
+
+###  http://siam.nist.gov/Model-Ontology#ConstitutiveEquation
+
+:ConstitutiveEquation rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :ModelComponent ;
+                      
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "NonGoverningEquation" ;
+                      
+                      rdfs:comment "Mathematical form of the equation describing a physical relationship between a set of variables that does not change with time." ;
+                      
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "NonGoverningEquations" .
 
 
 
@@ -533,7 +575,9 @@
                    
                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "CoordinatesSystems" ;
                    
-                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "CoordinatesSystem" .
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "CoordinatesSystem" ;
+                   
+                   rdfs:comment "Location of the system of coordinates." .
 
 
 
@@ -545,7 +589,9 @@
                        
                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "CrystallineLatentHeat1s" ;
                        
-                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "CrystallineLatentHeat1" .
+                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "CrystallineLatentHeat1" ;
+                       
+                       rdfs:comment "Latent heat of phase transformation. Only present in crystalline materials." .
 
 
 
@@ -557,7 +603,9 @@
                                
                                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "CrystallineMeltingTemperature1s" ;
                                
-                               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "CrystallineMeltingTemperature1" .
+                               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "CrystallineMeltingTemperature1" ;
+                               
+                               rdfs:comment "Reference temperatures for melting in crystalline materials. They can be assumed at a constant temperature for metals (and Stefan problems), or in a range for alloys." .
 
 
 
@@ -565,7 +613,9 @@
 
 :CrystallineSinteringTemperature rdf:type owl:Class ;
                                  
-                                 rdfs:subClassOf :PhaseTransformationParameter .
+                                 rdfs:subClassOf :PhaseTransformationParameter ;
+                                 
+                                 rdfs:comment "Sintering temperature in the material." .
 
 
 
@@ -581,11 +631,21 @@
 
 
 
+###  http://siam.nist.gov/Model-Ontology#DefinitionOfPhysicalProblem
+
+:DefinitionOfPhysicalProblem rdf:type owl:Class ;
+                             
+                             rdfs:subClassOf :PhysicalAssumption ;
+                             
+                             rdfs:comment "Definition of the different terms in the equation chosen to describe the physical process. Inclusion or neglection of physical phenomena." .
+
+
+
 ###  http://siam.nist.gov/Model-Ontology#DensityVariationEquation
 
 :DensityVariationEquation rdf:type owl:Class ;
                           
-                          rdfs:subClassOf :GoverningEquation ;
+                          rdfs:subClassOf :ProcessEquation ;
                           
                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "DensityVariationEquation" ;
                           
@@ -598,6 +658,8 @@
 :Deterministic rdf:type owl:Class ;
                
                rdfs:subClassOf :StatisticalAssumption ;
+               
+               rdfs:comment "Whether the model is deterministic." ;
                
                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Deterministic" ;
                
@@ -613,7 +675,9 @@
                 
                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ElasticModuluses" ;
                 
-                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ElasticModulus" .
+                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ElasticModulus" ;
+                
+                rdfs:comment "Elastic modulus for solid mechanics equations." .
 
 
 
@@ -622,6 +686,8 @@
 :ElementOfModel rdf:type owl:Class ;
                 
                 rdfs:subClassOf :ModelEntity ;
+                
+                rdfs:comment "An attribute of a model component." ;
                 
                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ElementOfModels" ;
                 
@@ -647,7 +713,9 @@
 
 :EnthalpyDistribution rdf:type owl:Class ;
                       
-                      rdfs:subClassOf :ThermalModelVariable .
+                      rdfs:subClassOf :ThermalModelVariable ;
+                      
+                      rdfs:comment "Distribution of enthalpy in the powder bed." .
 
 
 
@@ -656,6 +724,8 @@
 :EquilibriumPartitionCoefficient rdf:type owl:Class ;
                                  
                                  rdfs:subClassOf :ModelDependentMaterialProperty ;
+                                 
+                                 rdfs:comment "Equilibrium partition coefficient for phase field or cellular automaton model." ;
                                  
                                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "EquilibriumPartitionCoefficient1s" ;
                                  
@@ -687,18 +757,6 @@
 
 
 
-###  http://siam.nist.gov/Model-Ontology#FluidAssumption
-
-:FluidAssumption rdf:type owl:Class ;
-                 
-                 rdfs:subClassOf :PhysicalAssumption ;
-                 
-                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Fluids" ;
-                 
-                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Fluid" .
-
-
-
 ###  http://siam.nist.gov/Model-Ontology#FluidFlowModel
 
 :FluidFlowModel rdf:type owl:Class ;
@@ -706,12 +764,34 @@
                 rdfs:subClassOf :FluidMechanicsModel ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty :hasMathematicalRepresentation ;
-                                  owl:someValuesFrom :NavierStokesEquations
+                                  owl:someValuesFrom :NavierStokesEquation
                                 ] ;
+                
+                rdfs:comment "Transport equation for momentum in a viscous flow. The solution is given by the distribution of velocity in the liquid region." ;
                 
                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "FluidFlowModel" ;
                 
                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "FluidFlowModels" .
+
+
+
+###  http://siam.nist.gov/Model-Ontology#FluidMechanicsBoundaryCondition
+
+:FluidMechanicsBoundaryCondition rdf:type owl:Class ;
+                                 
+                                 rdfs:subClassOf :BoundaryCondition ;
+                                 
+                                 rdfs:comment "Boundary conditions for fluid mechanics model, often given by the velocity or its gradient on a given surface." .
+
+
+
+###  http://siam.nist.gov/Model-Ontology#FluidMechanicsInitialCondition
+
+:FluidMechanicsInitialCondition rdf:type owl:Class ;
+                                
+                                rdfs:subClassOf :InitialCondition ;
+                                
+                                rdfs:comment "Initial condition for fluid mechanics model, given by the initial distribution of velocity in powder bed." .
 
 
 
@@ -720,6 +800,8 @@
 :FluidMechanicsModel rdf:type owl:Class ;
                      
                      rdfs:subClassOf :PhysicsBasedModel ;
+                     
+                     rdfs:comment "A set of differential equations used to simulate fluid mechanics. They include conservation equations for momentum and mass. Equations for conservation of momenutm are given by parabolic PDE for transient simulations and an elliptic one for steady-state simulations." ;
                      
                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "FluidMechanicsModel" ;
                      
@@ -733,6 +815,8 @@
                              
                              rdfs:subClassOf :ModelVariable ;
                              
+                             rdfs:comment "Internal variables used by fluid mechanics models." ;
+                             
                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "FluidMechanicsModelVariables" ;
                              
                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "FluidMechanicsModelVariable" .
@@ -743,7 +827,9 @@
 
 :FullySinteredMaterialThermalConductivity rdf:type owl:Class ;
                                           
-                                          rdfs:subClassOf :ModelDependentMaterialProperty .
+                                          rdfs:subClassOf :ModelDependentMaterialProperty ;
+                                          
+                                          rdfs:comment "Thermal conductivity of fully sintered material, if assumed not equal to bulk material. This is reserved for cases in which fully sintered material is not fully-dense." .
 
 
 
@@ -758,6 +844,8 @@
                                  ] ;
                  
                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Functions" ;
+                 
+                 rdfs:comment "Intended application of model." ;
                  
                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Function" .
 
@@ -799,6 +887,8 @@
                      
                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "GeometricAssumption" ;
                      
+                     rdfs:comment "Modeling assumptions that describe the geometry of the physical problem to be solved: number of dimensions (1-D, 2-D, 3-D), computational domian, location of the coordinate system, possible axes of symmetry." ;
+                     
                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "GeometricAssumptions" .
 
 
@@ -809,21 +899,11 @@
                  
                  rdfs:subClassOf :GeometricAssumption ;
                  
+                 rdfs:comment "Determination of the computational domain." ;
+                 
                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "GeometryOfShape" ;
                  
                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "GeometryOfShapes" .
-
-
-
-###  http://siam.nist.gov/Model-Ontology#GoverningEquation
-
-:GoverningEquation rdf:type owl:Class ;
-                   
-                   rdfs:subClassOf :ModelComponent ;
-                   
-                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Governing_equation" ;
-                   
-                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Governing_equations" .
 
 
 
@@ -836,14 +916,6 @@
                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "GreensFunctions" ;
                 
                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "GreensFunction" .
-
-
-
-###  http://siam.nist.gov/Model-Ontology#HeatSourceAssumption
-
-:HeatSourceAssumption rdf:type owl:Class ;
-                      
-                      rdfs:subClassOf :PhysicalAssumption .
 
 
 
@@ -862,6 +934,8 @@ IrradiationModel = HeatSourceModel""" ;
                  
                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "IrradiationModel" ;
                  
+                 rdfs:comment "A heat source model describes the distribution of a given heat source on an irradiated surface." ;
+                 
                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "IrradiationModels" .
 
 
@@ -870,14 +944,15 @@ IrradiationModel = HeatSourceModel""" ;
 
 :HeatTransferEquation rdf:type owl:Class ;
                       
-                      rdfs:subClassOf :GoverningEquation ;
+                      rdfs:subClassOf :ProcessEquation ;
                       
                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "RadiationTransferEquation" ;
                       
                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "RadiationTransferEquations" ;
                       
                       rdfs:comment """Heat Transfer Equation is also designated in the literature as Energy Conservation Equation 
-Heat Transfer Equation is a type of Transport Equation""" .
+Heat Transfer Equation is a type of Transport Equation""" ,
+                                   "A heat transfer equation describes the flow of thermal energy (heat) due to gradients in temperature, external sources, and generation and dissipation of heat. Mathematically, it is expressed with a partial differential equation for temperature or enthalpy." .
 
 
 
@@ -893,19 +968,19 @@ Heat Transfer Equation is a type of Transport Equation""" .
                    
                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "HeatTransferModels" ;
                    
-                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "HeatTransferModel" .
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "HeatTransferModel" ;
+                   
+                   rdfs:comment "Equation that describes the transport of energy due to differences in temperature, external sources, and heat generation/dissipation. Equations for conservation of energy (enthalpy) are given by parabolic PDE for transient simulations and an elliptic one for steady-state simulations. The output is given by the distribution of temperature." .
 
 
 
-###  http://siam.nist.gov/Model-Ontology#HookesLaw
+###  http://siam.nist.gov/Model-Ontology#InitialCondition
 
-:HookesLaw rdf:type owl:Class ;
-           
-           rdfs:subClassOf :NonGoverningEquation ;
-           
-           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "HookesLaw" ;
-           
-           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "HookesLaws" .
+:InitialCondition rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :BoundaryOrInitialCondition ;
+                  
+                  rdfs:comment "In the case of transient models, initial conditions are required as starting points for the propagation of the solution of the equation." .
 
 
 
@@ -913,7 +988,9 @@ Heat Transfer Equation is a type of Transport Equation""" .
 
 :InitialPorosity rdf:type owl:Class ;
                  
-                 rdfs:subClassOf :ModelDependentMaterialProperty .
+                 rdfs:subClassOf :ModelDependentMaterialProperty ;
+                 
+                 rdfs:comment "Initial value of porosity in the powder bed. Often close to 50%." .
 
 
 
@@ -927,6 +1004,8 @@ Heat Transfer Equation is a type of Transport Equation""" .
                                               owl:someValuesFrom :RadiationTransferEquation
                                             ] ;
                             
+                            rdfs:comment "A physics-based model to describe how irradiation penetrates and heats up a porous medium. This often involves a study of the radiative and optical properties of randomly-packed particles." ;
+                            
                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "RadiationTransferModels" ;
                             
                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "RadiationTransferModel" .
@@ -937,7 +1016,7 @@ Heat Transfer Equation is a type of Transport Equation""" .
 
 :IrradiationEquation rdf:type owl:Class ;
                      
-                     rdfs:subClassOf :NonGoverningEquation ;
+                     rdfs:subClassOf :ConstitutiveEquation ;
                      
                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "IrradiationEquations" ;
                      
@@ -949,7 +1028,7 @@ Heat Transfer Equation is a type of Transport Equation""" .
 
 :LambertBeerLaw rdf:type owl:Class ;
                 
-                rdfs:subClassOf :NonGoverningEquation ;
+                rdfs:subClassOf :ConstitutiveEquation ;
                 
                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "LambertBeerLaws" ;
                 
@@ -963,6 +1042,8 @@ Heat Transfer Equation is a type of Transport Equation""" .
                     
                     rdfs:subClassOf :CrystallineLatentHeat ;
                     
+                    rdfs:comment "Latent heat of fusion: energy barrier to overcome to transform from solid to liquid phase." ;
+                    
                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "LatentHeatOfFusion1" ;
                     
                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "LatentHeatOfFusion1s" .
@@ -974,6 +1055,8 @@ Heat Transfer Equation is a type of Transport Equation""" .
 :LatentHeatOfVaporisation rdf:type owl:Class ;
                           
                           rdfs:subClassOf :CrystallineLatentHeat ;
+                          
+                          rdfs:comment "Latent heat of vaporization: energy barrier to overcome to transform from liquid to gas phase." ;
                           
                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "LatentHeatOfVaporisation1s" ;
                           
@@ -1001,6 +1084,8 @@ Heat Transfer Equation is a type of Transport Equation""" .
                        
                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "LengthScales" ;
                        
+                       rdfs:comment "Assumed length scale for the physical processes included in the model component: micro-, meso-, or macro-scale." ;
+                       
                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "LengthScale" .
 
 
@@ -1010,6 +1095,8 @@ Heat Transfer Equation is a type of Transport Equation""" .
 :LimitationOfModelComponent rdf:type owl:Class ;
                             
                             rdfs:subClassOf :ModelConstraint ;
+                            
+                            rdfs:comment "The group of the identified limitations for each model component." ;
                             
                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Model_component_limitations" ;
                             
@@ -1025,19 +1112,9 @@ Heat Transfer Equation is a type of Transport Equation""" .
                                 
                                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "LiquidMassDiffusionCoefficient1s" ;
                                 
-                                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "LiquidMassDiffusionCoefficient1" .
-
-
-
-###  http://siam.nist.gov/Model-Ontology#LiquidSolidSurfaceEnergy
-
-:LiquidSolidSurfaceEnergy rdf:type owl:Class ;
-                          
-                          rdfs:subClassOf :SurfaceEnergy ;
-                          
-                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "LiquidSolidSurfaceEnergy1s" ;
-                          
-                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "LiquidSolidSurfaceEnergy1" .
+                                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "LiquidMassDiffusionCoefficient1" ;
+                                
+                                rdfs:comment "Mass diffusion coefficient for liquid phase, for phase field model." .
 
 
 
@@ -1049,19 +1126,9 @@ Heat Transfer Equation is a type of Transport Equation""" .
                                    
                                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "LiquidSurfaceRadiationCoefficient1s" ;
                                    
-                                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "LiquidSurfaceRadiationCoefficient1" .
-
-
-
-###  http://siam.nist.gov/Model-Ontology#LiquidVaporSurfaceEnergy
-
-:LiquidVaporSurfaceEnergy rdf:type owl:Class ;
-                          
-                          rdfs:subClassOf :SurfaceEnergy ;
-                          
-                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "LiquidVaporSurfaceEnergy1" ;
-                          
-                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "LiquidVaporSurfaceEnergy1s" .
+                                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "LiquidSurfaceRadiationCoefficient1" ;
+                                   
+                                   rdfs:comment "Emissivity of liquid on top of powder bed." .
 
 
 
@@ -1073,7 +1140,9 @@ Heat Transfer Equation is a type of Transport Equation""" .
                
                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "LiquidusSlope1s" ;
                
-               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "LiquidusSlope1" .
+               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "LiquidusSlope1" ;
+               
+               rdfs:comment "Slope of the liquidus curve on a Temperature vs. Concentratrion curve." .
 
 
 
@@ -1085,7 +1154,9 @@ Heat Transfer Equation is a type of Transport Equation""" .
                      
                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "LiquidusTemperature1" ;
                      
-                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "LiquidusTemperature1s" .
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "LiquidusTemperature1s" ;
+                     
+                     rdfs:comment "Temperature in which mushy zone and liquid phases coexist." .
 
 
 
@@ -1093,7 +1164,9 @@ Heat Transfer Equation is a type of Transport Equation""" .
 
 :LoosePowderThermalConductivity rdf:type owl:Class ;
                                 
-                                rdfs:subClassOf :ModelDependentMaterialProperty .
+                                rdfs:subClassOf :ModelDependentMaterialProperty ;
+                                
+                                rdfs:comment "Thermal conductivity in loose powder." .
 
 
 
@@ -1101,35 +1174,27 @@ Heat Transfer Equation is a type of Transport Equation""" .
 
 :MassTransferEquation rdf:type owl:Class ;
                       
-                      rdfs:subClassOf :GoverningEquation ;
+                      rdfs:subClassOf :ProcessEquation ;
                       
                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "MassTransferEquation" ;
                       
-                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "MassTransferEquations" .
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "MassTransferEquations" ;
+                      
+                      rdfs:comment "It describes the transport of different species in a mixture, due to differences in chemical potential. Mass transport is controlled by diffusion coefficients." .
 
 
 
-###  http://siam.nist.gov/Model-Ontology#MaterialAssumption
+###  http://siam.nist.gov/Model-Ontology#MaterialPropertyAssumption
 
-:MaterialAssumption rdf:type owl:Class ;
-                    
-                    rdfs:subClassOf :PhysicalAssumption ;
-                    
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Material" ;
-                    
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Materials" .
-
-
-
-###  http://siam.nist.gov/Model-Ontology#MechanicalAnalysis
-
-:MechanicalAnalysis rdf:type owl:Class ;
-                    
-                    rdfs:subClassOf :FiniteElementMethod ;
-                    
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "MechanicalAnalysis" ;
-                    
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "MechanicalAnalyses" .
+:MaterialPropertyAssumption rdf:type owl:Class ;
+                            
+                            rdfs:subClassOf :PhysicalAssumption ;
+                            
+                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Material" ;
+                            
+                            rdfs:comment "Assumptions for material properties: constant, dependent on other variables, etc." ;
+                            
+                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Materials" .
 
 
 
@@ -1137,7 +1202,7 @@ Heat Transfer Equation is a type of Transport Equation""" .
 
 :MechanicalAssumption rdf:type owl:Class ;
                       
-                      rdfs:subClassOf :PhysicalAssumption ;
+                      rdfs:subClassOf :DefinitionOfPhysicalProblem ;
                       
                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Mechanicals" ;
                       
@@ -1151,21 +1216,21 @@ Heat Transfer Equation is a type of Transport Equation""" .
                     
                     rdfs:subClassOf :CrystallineMeltingTemperature ;
                     
+                    rdfs:comment "Temperature in which solid and liquid coexist." ;
+                    
                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "MeltingTemperature1s" ;
                     
                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "MeltingTemperature1" .
 
 
 
-###  http://siam.nist.gov/Model-Ontology#MicrostructuralAssumption
+###  http://siam.nist.gov/Model-Ontology#MicrostructuralInitialCondition
 
-:MicrostructuralAssumption rdf:type owl:Class ;
-                           
-                           rdfs:subClassOf :PhysicalAssumption ;
-                           
-                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Microstructural" ;
-                           
-                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Microstructurals" .
+:MicrostructuralInitialCondition rdf:type owl:Class ;
+                                 
+                                 rdfs:subClassOf :InitialCondition ;
+                                 
+                                 rdfs:comment "Initial condition of microstructural evolution model. Given by initial distribution of phase field (in phase field methods) or the state in each cell (for a cellular automaton)." .
 
 
 
@@ -1176,6 +1241,8 @@ Heat Transfer Equation is a type of Transport Equation""" .
                       rdfs:subClassOf :PhysicsBasedModel ;
                       
                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "MicrostructuralModels" ;
+                      
+                      rdfs:comment "A set of equations that describe thermally-activated phase transformations in a metal or alloy." ;
                       
                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "MicrostructuralModel" .
 
@@ -1188,6 +1255,8 @@ Heat Transfer Equation is a type of Transport Equation""" .
                               rdfs:subClassOf :ModelVariable ;
                               
                               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "MicrostructuralModelVariable" ;
+                              
+                              rdfs:comment "Internal variables used by microstructural models." ;
                               
                               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "MicrostructuralModelVariables" .
 
@@ -1213,15 +1282,16 @@ Heat Transfer Equation is a type of Transport Equation""" .
                          owl:someValuesFrom :FunctionOfModel
                        ] ,
                        [ rdf:type owl:Restriction ;
-                         owl:onProperty :hasAssumption ;
-                         owl:someValuesFrom :ModelAssumption
-                       ] ,
-                       [ rdf:type owl:Restriction ;
                          owl:onProperty :hasComponent ;
                          owl:someValuesFrom :ModelComponent
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasAssumption ;
+                         owl:someValuesFrom :ModelAssumption
                        ] ;
        
-       rdfs:comment "This entity defines different types of models" ;
+       rdfs:comment "A model component represents a certain physical process at given length- and time- scales." ,
+                    "This entity defines different types of models" ;
        
        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Model" ;
        
@@ -1235,6 +1305,8 @@ Heat Transfer Equation is a type of Transport Equation""" .
                  
                  rdfs:subClassOf :ElementOfModel ;
                  
+                 rdfs:comment "Simplifying assumption used to reduce the physical process to a solvable mathematical form." ;
+                 
                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ModelAssumptions" ;
                  
                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ModelAssumption" .
@@ -1246,6 +1318,8 @@ Heat Transfer Equation is a type of Transport Equation""" .
 :ModelComponent rdf:type owl:Class ;
                 
                 rdfs:subClassOf :ElementOfModel ;
+                
+                rdfs:comment "A model component represents a certain physical process at given length- and time- scales." ;
                 
                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Model_components" ;
                 
@@ -1259,6 +1333,8 @@ Heat Transfer Equation is a type of Transport Equation""" .
                               
                               rdfs:subClassOf :ModelInputParameter ;
                               
+                              rdfs:comment "Input parameters as required by each component of the model." ;
+                              
                               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ModelComponentInputParameters" ;
                               
                               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ModelComponentInputParameter" .
@@ -1270,6 +1346,8 @@ Heat Transfer Equation is a type of Transport Equation""" .
 :ModelComponentOutputParameter rdf:type owl:Class ;
                                
                                rdfs:subClassOf :ModelOutputParameter ;
+                               
+                               rdfs:comment "Output parameters as required by each component of the model." ;
                                
                                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ModelComponentOutputParameters" ;
                                
@@ -1285,6 +1363,8 @@ Heat Transfer Equation is a type of Transport Equation""" .
                  
                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ModelConstraints" ;
                  
+                 rdfs:comment "Constraints in the applicability of the model, as identified by the developers and users." ;
+                 
                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ModelConstraint" .
 
 
@@ -1297,7 +1377,9 @@ Heat Transfer Equation is a type of Transport Equation""" .
                                 
                                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ModelDependentMaterialProperty" ;
                                 
-                                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ModelDependentMaterialProperties" .
+                                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ModelDependentMaterialProperties" ;
+                                
+                                rdfs:comment "Physical properties as published in tables." .
 
 
 
@@ -1307,7 +1389,9 @@ Heat Transfer Equation is a type of Transport Equation""" .
              
              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "AM_models" ;
              
-             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "AM_model" .
+             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "AM_model" ;
+             
+             rdfs:comment "A representation of a possibly multi-physics multi-scale process. A model entity can be defined as a composition of several model components." .
 
 
 
@@ -1319,7 +1403,9 @@ Heat Transfer Equation is a type of Transport Equation""" .
                      
                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "InputParameter" ;
                      
-                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "InputParameters" .
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "InputParameters" ;
+                     
+                     rdfs:comment "The set of input parameters required to simulate a physics-based model." .
 
 
 
@@ -1330,6 +1416,8 @@ Heat Transfer Equation is a type of Transport Equation""" .
                       rdfs:subClassOf :ElementOfModel ;
                       
                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "OutputParameter" ;
+                      
+                      rdfs:comment "The set of output parameters required to simulate a physics-based model." ;
                       
                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "OutputParameters" .
 
@@ -1342,6 +1430,8 @@ Heat Transfer Equation is a type of Transport Equation""" .
                rdfs:subClassOf :ElementOfModel ;
                
                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ModelVariable" ;
+               
+               rdfs:comment "Internal variables used in model components." ;
                
                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ModelVariables" .
 
@@ -1359,31 +1449,17 @@ Heat Transfer Equation is a type of Transport Equation""" .
 
 
 
-###  http://siam.nist.gov/Model-Ontology#NavierStokesEquations
+###  http://siam.nist.gov/Model-Ontology#NavierStokesEquation
 
-:NavierStokesEquations rdf:type owl:Class ;
-                       
-                       rdfs:subClassOf :GoverningEquation ,
-                                       [ rdf:type owl:Restriction ;
-                                         owl:onProperty :hasOutputParameter ;
-                                         owl:someValuesFrom :SolutionOfNavierStokesEquations
-                                       ] ;
-                       
-                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "NavierStokesEquations" ;
-                       
-                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "NavierStokesEquation" .
-
-
-
-###  http://siam.nist.gov/Model-Ontology#NonGoverningEquation
-
-:NonGoverningEquation rdf:type owl:Class ;
+:NavierStokesEquation rdf:type owl:Class ;
                       
-                      rdfs:subClassOf :ModelComponent ;
+                      rdfs:subClassOf :ProcessEquation ;
                       
-                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "NonGoverningEquation" ;
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "NavierStokesEquations" ;
                       
-                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "NonGoverningEquations" .
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "NavierStokesEquation" ;
+                      
+                      rdfs:comment "An equation that describes the transport of momentum in a viscous fluid flow. The solution is given by the distribution of velocity in the liquid region." .
 
 
 
@@ -1395,19 +1471,9 @@ Heat Transfer Equation is a type of Transport Equation""" .
                     
                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "NumberOfDimensionses" ;
                     
+                    rdfs:comment "Dimensionality of the physics-based model: one-dimensional, two-dimensional, three-dimensional." ;
+                    
                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "NumberOfDimensions" .
-
-
-
-###  http://siam.nist.gov/Model-Ontology#NumericalSoftware
-
-:NumericalSoftware rdf:type owl:Class ;
-                   
-                   rdfs:subClassOf :Software ;
-                   
-                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "FiniteElementAnalysisSoftwares" ;
-                   
-                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "FiniteElementAnalysisSoftware" .
 
 
 
@@ -1419,7 +1485,9 @@ Heat Transfer Equation is a type of Transport Equation""" .
                    
                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Numericals" ;
                    
-                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Numerical" .
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Numerical" ;
+                   
+                   rdfs:comment "Types of numerical solutions." .
 
 
 
@@ -1427,9 +1495,11 @@ Heat Transfer Equation is a type of Transport Equation""" .
 
 :PhaseFieldEquation rdf:type owl:Class ;
                     
-                    rdfs:subClassOf :GoverningEquation ;
+                    rdfs:subClassOf :ProcessEquation ;
                     
                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PhaseFieldEquations" ;
+                    
+                    rdfs:comment "A phase field model is a mathematical model for solving interfacial problem, e.g. diffusion-co ntrolled solidification dynamics." ;
                     
                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PhaseFieldEquation" .
 
@@ -1440,6 +1510,8 @@ Heat Transfer Equation is a type of Transport Equation""" .
 :PhaseTransformationParameter rdf:type owl:Class ;
                               
                               rdfs:subClassOf :ModelDependentMaterialProperty ;
+                              
+                              rdfs:comment "Group of physical parameters that determine phase transformation, depending on the physical nature of the material: amorphous, semi-crystalline, or crystalline." ;
                               
                               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PhaseTransformationParameter1s" ;
                               
@@ -1455,7 +1527,9 @@ Heat Transfer Equation is a type of Transport Equation""" .
                     
                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PhysicalAssumption" ;
                     
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PhysicalAssumptions" .
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PhysicalAssumptions" ;
+                    
+                    rdfs:comment "Simplifying assumptions of physical processes. They may include neglection of certain physical domains, adoption of physical laws, assumption of steady-state solutions, etc." .
 
 
 
@@ -1466,6 +1540,8 @@ Heat Transfer Equation is a type of Transport Equation""" .
                    rdfs:subClassOf :Model ;
                    
                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Physics_baseds" ;
+                   
+                   rdfs:comment "A set of mathematical expressions that describe a physical process." ;
                    
                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Physics_based" .
 
@@ -1489,6 +1565,8 @@ Heat Transfer Equation is a type of Transport Equation""" .
                
                rdfs:subClassOf :ModelDependentMaterialProperty ;
                
+               rdfs:comment "Coefficient of contraction on transverse directions due to axial strain." ;
+               
                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PoissonsRatio1s" ;
                
                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PoissonsRatio1" .
@@ -1499,7 +1577,9 @@ Heat Transfer Equation is a type of Transport Equation""" .
 
 :PorosityDistribution rdf:type owl:Class ;
                       
-                      rdfs:subClassOf :ConsolidationModelVariable .
+                      rdfs:subClassOf :ConsolidationModelVariable ;
+                      
+                      rdfs:comment "Distribution of porosity in the powder bed." .
 
 
 
@@ -1511,7 +1591,23 @@ Heat Transfer Equation is a type of Transport Equation""" .
                                    
                                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PowderSurfaceRadiationCoefficient1" ;
                                    
-                                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PowderSurfaceRadiationCoefficient1s" .
+                                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PowderSurfaceRadiationCoefficient1s" ;
+                                   
+                                   rdfs:comment "Emissivity of powder on top of powder bed." .
+
+
+
+###  http://siam.nist.gov/Model-Ontology#ProcessEquation
+
+:ProcessEquation rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :ModelComponent ;
+                 
+                 rdfs:comment "Mathematical form of the equation describing a physical phenomenon which evolves in time." ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Governing_equation" ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Governing_equations" .
 
 
 
@@ -1519,7 +1615,9 @@ Heat Transfer Equation is a type of Transport Equation""" .
 
 :RadiationTransferEquation rdf:type owl:Class ;
                            
-                           rdfs:subClassOf :GoverningEquation ;
+                           rdfs:subClassOf :ProcessEquation ;
+                           
+                           rdfs:comment "Equations that describe the physical phenomenon of energy transfer in the form of electromagnetic radiation, which depends on the absorption, emission and scattering processes in the medium." ;
                            
                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "IrradiationAbsorptionEquations" ;
                            
@@ -1531,7 +1629,7 @@ Heat Transfer Equation is a type of Transport Equation""" .
 
 :SideBoundaryCondition rdf:type owl:Class ;
                        
-                       rdfs:subClassOf :BoundaryCondition ;
+                       rdfs:subClassOf :ThermalBoundaryCondition ;
                        
                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SideBoundaryCondition" ;
                        
@@ -1547,6 +1645,8 @@ Heat Transfer Equation is a type of Transport Equation""" .
                            
                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SinteringActivationEnergies" ;
                            
+                           rdfs:comment "Activation energy for an Arrhenius-type sintering equation." ;
+                           
                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SinteringActivationEnergy" .
 
 
@@ -1555,19 +1655,9 @@ Heat Transfer Equation is a type of Transport Equation""" .
 
 :SinteringPotentialDistribution rdf:type owl:Class ;
                                 
-                                rdfs:subClassOf :ConsolidationModelVariable .
-
-
-
-###  http://siam.nist.gov/Model-Ontology#Software
-
-:Software rdf:type owl:Class ;
-          
-          rdfs:subClassOf :ModelEntity ;
-          
-          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Softwares" ;
-          
-          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Software" .
+                                rdfs:subClassOf :ConsolidationModelVariable ;
+                                
+                                rdfs:comment "Distribution of sintering potential in the powder bed." .
 
 
 
@@ -1575,7 +1665,9 @@ Heat Transfer Equation is a type of Transport Equation""" .
 
 :SolidFractionDistribution rdf:type owl:Class ;
                            
-                           rdfs:subClassOf :ThermalModelVariable .
+                           rdfs:subClassOf :ThermalModelVariable ;
+                           
+                           rdfs:comment "Distribution of solid fraction in the powder bed (in the case of melting with a mushy zone)" .
 
 
 
@@ -1587,7 +1679,21 @@ Heat Transfer Equation is a type of Transport Equation""" .
                                
                                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SolidMassDiffusionCoefficient1s" ;
                                
+                               rdfs:comment "Mass diffusion coefficient for solid phase, for phase field model." ;
+                               
                                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SolidMassDiffusionCoefficient1" .
+
+
+
+###  http://siam.nist.gov/Model-Ontology#SolidMechanicsEquation
+
+:SolidMechanicsEquation rdf:type owl:Class ;
+                        
+                        rdfs:subClassOf :ProcessEquation ;
+                        
+                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "HookesLaws" ;
+                        
+                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "HookesLaw" .
 
 
 
@@ -1598,12 +1704,14 @@ Heat Transfer Equation is a type of Transport Equation""" .
                      rdfs:subClassOf :StructuralModel ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty :hasMathematicalRepresentation ;
-                                       owl:someValuesFrom :HookesLaw
+                                       owl:someValuesFrom :SolidMechanicsEquation
                                      ] ;
                      
                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SolidMechanicsModels" ;
                      
-                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SolidMechanicsModel" .
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SolidMechanicsModel" ;
+                     
+                     rdfs:comment "A continuum mechanics model that models the response of a solid material under elastic and plastic loads." .
 
 
 
@@ -1614,6 +1722,8 @@ Heat Transfer Equation is a type of Transport Equation""" .
                                   rdfs:subClassOf :SurfaceRadiationCoefficient ;
                                   
                                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SolidSurfaceRadiationCoefficient1" ;
+                                  
+                                  rdfs:comment "Emissivity of fully-dense solid on top of powder bed." ;
                                   
                                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SolidSurfaceRadiationCoefficient1s" .
 
@@ -1627,7 +1737,9 @@ Heat Transfer Equation is a type of Transport Equation""" .
                      
                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SolidificationModels" ;
                      
-                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SolidificationModel" .
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SolidificationModel" ;
+                     
+                     rdfs:comment "Equations that describe phase transformations for a metal or alloy starting from a liquid phase. The solution depends on the temperature history of the material." .
 
 
 
@@ -1636,6 +1748,8 @@ Heat Transfer Equation is a type of Transport Equation""" .
 :SolidusTemperature rdf:type owl:Class ;
                     
                     rdfs:subClassOf :CrystallineMeltingTemperature ;
+                    
+                    rdfs:comment "Temperature in which mushy zone and solid phases coexist." ;
                     
                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SolidusTemperature1" ;
                     
@@ -1651,6 +1765,8 @@ Heat Transfer Equation is a type of Transport Equation""" .
                    
                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SoluteComposition1" ;
                    
+                   rdfs:comment "Chemical composition of solute in binary alloys." ;
+                   
                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SoluteComposition1s" .
 
 
@@ -1663,31 +1779,9 @@ Heat Transfer Equation is a type of Transport Equation""" .
           
           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Solution" ;
           
-          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Solutions" .
-
-
-
-###  http://siam.nist.gov/Model-Ontology#SolutionOfModelEquation
-
-:SolutionOfModelEquation rdf:type owl:Class ;
-                         
-                         rdfs:subClassOf :ElementOfModel ;
-                         
-                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SolutionOfModelEquations" ;
-                         
-                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SolutionOfModelEquation" .
-
-
-
-###  http://siam.nist.gov/Model-Ontology#SolutionOfNavierStokesEquations
-
-:SolutionOfNavierStokesEquations rdf:type owl:Class ;
-                                 
-                                 rdfs:subClassOf :SolutionOfModelEquation ;
-                                 
-                                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SolutionOfNavierStokesEquations" ;
-                                 
-                                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SolutionOfNavierStokesEquationses" .
+          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Solutions" ;
+          
+          rdfs:comment "Methods used to solve the systems of equations in each model component." .
 
 
 
@@ -1699,7 +1793,9 @@ Heat Transfer Equation is a type of Transport Equation""" .
                     
                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SolventComposition1" ;
                     
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SolventComposition1s" .
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SolventComposition1s" ;
+                    
+                    rdfs:comment "Chemical composition of solvent in binary alloys." .
 
 
 
@@ -1711,7 +1807,9 @@ Heat Transfer Equation is a type of Transport Equation""" .
               
               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SpecificHeat1s" ;
               
-              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SpecificHeat1" .
+              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SpecificHeat1" ;
+              
+              rdfs:comment "Specific heat of the material. It can be assumed as temperature dependent and it can be made discontinuous in the mushy zone to artificially model latent heat of fusion." .
 
 
 
@@ -1723,6 +1821,8 @@ Heat Transfer Equation is a type of Transport Equation""" .
                        
                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "StatisticalAssumption" ;
                        
+                       rdfs:comment "In the case of a stochastic model, assumptions regarding the probability of different events." ;
+                       
                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "StatisticalAssumptions" .
 
 
@@ -1733,9 +1833,31 @@ Heat Transfer Equation is a type of Transport Equation""" .
             
             rdfs:subClassOf :StatisticalAssumption ;
             
+            rdfs:comment "Whether the model is deterministic." ;
+            
             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Stochastics" ;
             
             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Stochastic" .
+
+
+
+###  http://siam.nist.gov/Model-Ontology#StructuralBoundaryCondition
+
+:StructuralBoundaryCondition rdf:type owl:Class ;
+                             
+                             rdfs:subClassOf :BoundaryCondition ;
+                             
+                             rdfs:comment "Boundary condition for solid mechanics model, as defined by mechanical constraints (no displacement, no rotation, etc)." .
+
+
+
+###  http://siam.nist.gov/Model-Ontology#StructuralInitialCondition
+
+:StructuralInitialCondition rdf:type owl:Class ;
+                            
+                            rdfs:subClassOf :InitialCondition ;
+                            
+                            rdfs:comment "Initial condition for a solid mechanics model, defined as the initial distribution of stresses and strains." .
 
 
 
@@ -1744,6 +1866,8 @@ Heat Transfer Equation is a type of Transport Equation""" .
 :StructuralModel rdf:type owl:Class ;
                  
                  rdfs:subClassOf :PhysicsBasedModel ;
+                 
+                 rdfs:comment "A model that describes the behavior of a certain material under the action of forces, temperature changes, phase changes, and other agents." ;
                  
                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "StructuralModels" ;
                  
@@ -1756,6 +1880,8 @@ Heat Transfer Equation is a type of Transport Equation""" .
 :StructuralModelVariable rdf:type owl:Class ;
                          
                          rdfs:subClassOf :ModelVariable ;
+                         
+                         rdfs:comment "Internal variables used by structural models." ;
                          
                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "StructuralModelVariable" ;
                          
@@ -1771,7 +1897,9 @@ Heat Transfer Equation is a type of Transport Equation""" .
                               
                               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SubstrateThermalConductivity1" ;
                               
-                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SubstrateThermalConductivity1s" .
+                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SubstrateThermalConductivity1s" ;
+                              
+                              rdfs:comment "Thermal conductivity of the material used for the substrate." .
 
 
 
@@ -1783,19 +1911,9 @@ Heat Transfer Equation is a type of Transport Equation""" .
                               
                               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SurfaceConvectionCoefficient1" ;
                               
-                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SurfaceConvectionCoefficient1s" .
-
-
-
-###  http://siam.nist.gov/Model-Ontology#SurfaceEnergy
-
-:SurfaceEnergy rdf:type owl:Class ;
-               
-               rdfs:subClassOf :ModelDependentMaterialProperty ;
-               
-               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SurfaceEnergy1" ;
-               
-               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SurfaceEnergy1s" .
+                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SurfaceConvectionCoefficient1s" ;
+                              
+                              rdfs:comment "Convection coefficient on top surface of powder bed." .
 
 
 
@@ -1805,9 +1923,23 @@ Heat Transfer Equation is a type of Transport Equation""" .
                              
                              rdfs:subClassOf :ModelDependentMaterialProperty ;
                              
+                             rdfs:comment "Emissivity for radiation on top of the powder bed. Value depends on whether material is liquid, fully-dense solid, or powder." ;
+                             
                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SurfaceRadiationCoefficient1s" ;
                              
                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SurfaceRadiationCoefficient1" .
+
+
+
+###  http://siam.nist.gov/Model-Ontology#SurfaceTension
+
+:SurfaceTension rdf:type owl:Class ;
+                
+                rdfs:subClassOf :ModelDependentMaterialProperty ;
+                
+                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SurfaceEnergy1s" ;
+                
+                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SurfaceEnergy1" .
 
 
 
@@ -1819,19 +1951,9 @@ Heat Transfer Equation is a type of Transport Equation""" .
                            
                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SurfaceTensionCoefficient1s" ;
                            
-                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SurfaceTensionCoefficient1" .
-
-
-
-###  http://siam.nist.gov/Model-Ontology#SurfaceTensionEquation
-
-:SurfaceTensionEquation rdf:type owl:Class ;
-                        
-                        rdfs:subClassOf :GoverningEquation ;
-                        
-                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SurfaceTensionEquation" ;
-                        
-                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SurfaceTensionEquations" .
+                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SurfaceTensionCoefficient1" ;
+                           
+                           rdfs:comment "Surface tension is the elastic tendency of liquid which makes them acquire the least surface area possible." .
 
 
 
@@ -1841,33 +1963,25 @@ Heat Transfer Equation is a type of Transport Equation""" .
           
           rdfs:subClassOf :GeometricAssumption ;
           
+          rdfs:comment "Possible axes of symmetry, if any." ;
+          
           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Symmetries" ;
           
           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Symmetry" .
 
 
 
-###  http://siam.nist.gov/Model-Ontology#ThermalAnalysis
+###  http://siam.nist.gov/Model-Ontology#ThermalBoundaryCondition
 
-:ThermalAnalysis rdf:type owl:Class ;
-                 
-                 rdfs:subClassOf :FiniteElementMethod ;
-                 
-                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ThermalAnalyses" ;
-                 
-                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ThermalAnalysis" .
-
-
-
-###  http://siam.nist.gov/Model-Ontology#ThermalAssumption
-
-:ThermalAssumption rdf:type owl:Class ;
-                   
-                   rdfs:subClassOf :PhysicalAssumption ;
-                   
-                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Thermal" ;
-                   
-                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Thermals" .
+:ThermalBoundaryCondition rdf:type owl:Class ;
+                          
+                          rdfs:subClassOf :BoundaryCondition ;
+                          
+                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "BoundaryCondition" ;
+                          
+                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "BoundaryConditions" ;
+                          
+                          rdfs:comment "Boundary condition for heat transfer model, as given by a specific temperature or heat flux on a certain surface." .
 
 
 
@@ -1875,7 +1989,7 @@ Heat Transfer Equation is a type of Transport Equation""" .
 
 :ThermalConductivityEquation rdf:type owl:Class ;
                              
-                             rdfs:subClassOf :NonGoverningEquation ;
+                             rdfs:subClassOf :ConstitutiveEquation ;
                              
                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ThermalConductivityEquations" ;
                              
@@ -1891,6 +2005,8 @@ Heat Transfer Equation is a type of Transport Equation""" .
                           
                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ThermalConductivityInGas1s" ;
                           
+                          rdfs:comment "Thermal conductivity of the gas in the pores of the powder bed." ;
+                          
                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ThermalConductivityInGas1" .
 
 
@@ -1903,7 +2019,19 @@ Heat Transfer Equation is a type of Transport Equation""" .
                              
                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ThermalExpansionCoefficient1s" ;
                              
-                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ThermalExpansionCoefficient1" .
+                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ThermalExpansionCoefficient1" ;
+                             
+                             rdfs:comment "Coefficient of thermal expansion caused by a change in temperature." .
+
+
+
+###  http://siam.nist.gov/Model-Ontology#ThermalInitialCondition
+
+:ThermalInitialCondition rdf:type owl:Class ;
+                         
+                         rdfs:subClassOf :InitialCondition ;
+                         
+                         rdfs:comment "Initial condition for thermal model, defined by the initial distribution of temperature or enthalpy in \"\"the powder bed\"\"." .
 
 
 
@@ -1912,6 +2040,8 @@ Heat Transfer Equation is a type of Transport Equation""" .
 :ThermalModel rdf:type owl:Class ;
               
               rdfs:subClassOf :PhysicsBasedModel ;
+              
+              rdfs:comment "A model that describes the flow of thermal energy in a given system." ;
               
               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ThermalModels" ;
               
@@ -1927,7 +2057,9 @@ Heat Transfer Equation is a type of Transport Equation""" .
                       
                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ThermalModelVariable" ;
                       
-                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ThermalModelVariables" .
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ThermalModelVariables" ;
+                      
+                      rdfs:comment "Internal variables used by thermal models." .
 
 
 
@@ -1936,6 +2068,8 @@ Heat Transfer Equation is a type of Transport Equation""" .
 :TimeScaleAssumption rdf:type owl:Class ;
                      
                      rdfs:subClassOf :PhysicalAssumption ;
+                     
+                     rdfs:comment "Time-dependent or steady-state solution, and if time-dependent, time scale for the physical phenomenon." ;
                      
                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "TimeScales" ;
                      
@@ -1947,23 +2081,13 @@ Heat Transfer Equation is a type of Transport Equation""" .
 
 :TopBoundaryCondition rdf:type owl:Class ;
                       
-                      rdfs:subClassOf :BoundaryCondition ;
+                      rdfs:subClassOf :ThermalBoundaryCondition ;
                       
                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "TopBoundaryConditions" ;
                       
-                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "TopBoundaryCondition" .
-
-
-
-###  http://siam.nist.gov/Model-Ontology#VaporSolidSurfaceEnergy
-
-:VaporSolidSurfaceEnergy rdf:type owl:Class ;
-                         
-                         rdfs:subClassOf :SurfaceEnergy ;
-                         
-                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "VaporSolidSurfaceEnergy1s" ;
-                         
-                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "VaporSolidSurfaceEnergy1" .
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "TopBoundaryCondition" ;
+                      
+                      rdfs:comment "Boundary condition for the heat transfer problem atop a surface or a bulk material." .
 
 
 
@@ -1975,19 +2099,9 @@ Heat Transfer Equation is a type of Transport Equation""" .
                            
                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ViscosityActivationEnergy" ;
                            
-                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ViscosityActivationEnergies" .
-
-
-
-###  http://siam.nist.gov/Model-Ontology#YoungsModulus
-
-:YoungsModulus rdf:type owl:Class ;
-               
-               rdfs:subClassOf :ModelDependentMaterialProperty ;
-               
-               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "YoungsModulus1" ;
-               
-               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "YoungsModulus1s" .
+                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ViscosityActivationEnergies" ;
+                           
+                           rdfs:comment "Activation energy in case of an Arrhenius-type model for viscosity as a function of temperature." .
 
 
 
