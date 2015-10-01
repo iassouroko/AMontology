@@ -69,9 +69,7 @@
                                
                                <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "describesModelComponentOutputs" ;
                                
-                               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "describesModelComponentOutput" ;
-                               
-                               rdfs:domain :FunctionalityOfModelComponent .
+                               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "describesModelComponentOutput" .
 
 
 
@@ -85,7 +83,10 @@
                       
                       <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "describesModelOutput" ;
                       
-                      rdfs:domain :FunctionOfModel .
+                      rdfs:domain :FunctionOfModel ;
+                      
+                      rdfs:range :ModelComponentOutputParameter ,
+                                 :ModelOutputParameter .
 
 
 
@@ -99,7 +100,8 @@
                
                <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "has_assumptions" ;
                
-               rdfs:range :AssumptionOfModelComponent ;
+               rdfs:range :AssumptionOfModelComponent ,
+                          :ModelAssumption ;
                
                rdfs:domain [ rdf:type owl:Class ;
                              owl:unionOf ( :Model
@@ -118,6 +120,8 @@
                       <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasBoundaryCondition" ;
                       
                       <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasBoundaryConditioned" ;
+                      
+                      rdfs:range :BoundaryOrInitialCondition ;
                       
                       rdfs:domain [ rdf:type owl:Class ;
                                     owl:unionOf ( :Model
@@ -215,6 +219,8 @@
                    
                    <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasInputParameters" ;
                    
+                   rdfs:range :ModelInputParameter ;
+                   
                    rdfs:subPropertyOf :hasParameter ;
                    
                    rdfs:domain [ rdf:type owl:Class ;
@@ -235,6 +241,9 @@
                                
                                <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasRepresentations" ;
                                
+                               rdfs:range :ConstitutiveEquation ,
+                                          :ProcessEquation ;
+                               
                                rdfs:domain [ rdf:type owl:Class ;
                                              owl:unionOf ( :Model
                                                            :ModelComponent
@@ -252,6 +261,8 @@
                     <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasOutputParameter" ;
                     
                     <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasOutputParameters" ;
+                    
+                    rdfs:range :ModelOutputParameter ;
                     
                     rdfs:subPropertyOf :hasParameter ;
                     
@@ -273,7 +284,14 @@
               
               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "has_parametered" ;
               
-              rdfs:domain :ModelComponent .
+              rdfs:range :ModelInputParameter ,
+                         :ModelOutputParameter ;
+              
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( :Model
+                                          :ModelComponent
+                                        )
+                          ] .
 
 
 
@@ -323,9 +341,7 @@
                  
                  <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "isImplementedBies" ;
                  
-                 <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "isImplementedBied" ;
-                 
-                 rdfs:domain :ModelComponent .
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "isImplementedBied" .
 
 
 
@@ -1278,16 +1294,16 @@ Heat Transfer Equation is a type of Transport Equation""" ,
                                             ]
                        ] ,
                        [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasAssumption ;
+                         owl:someValuesFrom :ModelAssumption
+                       ] ,
+                       [ rdf:type owl:Restriction ;
                          owl:onProperty :hasFunction ;
                          owl:someValuesFrom :FunctionOfModel
                        ] ,
                        [ rdf:type owl:Restriction ;
                          owl:onProperty :hasComponent ;
                          owl:someValuesFrom :ModelComponent
-                       ] ,
-                       [ rdf:type owl:Restriction ;
-                         owl:onProperty :hasAssumption ;
-                         owl:someValuesFrom :ModelAssumption
                        ] ;
        
        rdfs:comment "A model component represents a certain physical process at given length- and time- scales." ,

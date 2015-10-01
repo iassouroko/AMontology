@@ -95,8 +95,6 @@
                 
                 <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "describesed" ;
                 
-                rdfs:domain :PhysicalProcess ;
-                
                 owl:inverseOf :isDescribedBy .
 
 
@@ -137,7 +135,12 @@
                     
                     <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasFusionMechanismed" ;
                     
-                    rdfs:domain :PowderBedFusion .
+                    rdfs:range :FullMelting ,
+                               :LiquidPhaseSintering ;
+                    
+                    rdfs:domain :PowderBedFusion ;
+                    
+                    rdfs:range :SolidStateSintering .
 
 
 
@@ -191,8 +194,6 @@
                        
                        <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasHeatSourceProperty" ;
                        
-                       rdfs:domain :HeatSource ;
-                       
                        rdfs:subPropertyOf :hasProperty .
 
 
@@ -221,6 +222,8 @@
              
              <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasMaterial" ;
              
+             rdfs:domain :AdditiveManufacturing ;
+             
              rdfs:range :AdditiveManufacturingMaterial .
 
 
@@ -234,6 +237,8 @@
                      <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasMaterialPropertied" ;
                      
                      <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasMaterialProperties" ;
+                     
+                     rdfs:domain :AdditiveManufacturingMaterial ;
                      
                      rdfs:range :ProcessDependentMaterialProperty ;
                      
@@ -309,6 +314,8 @@
                      
                      <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "has_parameters" ;
                      
+                     rdfs:domain :AdditiveManufacturing ;
+                     
                      rdfs:range :AdditiveManufacturingParameter .
 
 
@@ -345,9 +352,7 @@
           
           <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "has_shape" ;
           
-          <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "has_shapes" ;
-          
-          rdfs:range :MeltPoolShape .
+          <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "has_shapes" .
 
 
 
@@ -359,9 +364,7 @@
              
              <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasVariable" ;
              
-             <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasVariables" ;
-             
-             rdfs:range :AdditiveManufacturingVariable .
+             <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasVariables" .
 
 
 
@@ -453,9 +456,7 @@
                    
                    <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "usesThermalEnergied" ;
                    
-                   <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "usesThermalEnergies" ;
-                   
-                   rdfs:domain :AdditiveManufacturing .
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "usesThermalEnergies" .
 
 
 
@@ -2645,16 +2646,6 @@
               )
 ] .
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :BinderJetting
-                :DirectedEnergyDeposition
-                :MaterialExtrusion
-                :MaterialJetting
-                :PowderBedFusion
-                :SheetLamination
-                :VatPhotopolymerization
-              )
-] .
-[ rdf:type owl:AllDisjointClasses ;
   owl:members ( :BedRadiation
                 :HeatConduction
                 :SurfaceConvection
@@ -2665,6 +2656,16 @@
                 :HardMetal
                 :MetalAlloy
                 :Polymer
+              )
+] .
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :BinderJetting
+                :DirectedEnergyDeposition
+                :MaterialExtrusion
+                :MaterialJetting
+                :PowderBedFusion
+                :SheetLamination
+                :VatPhotopolymerization
               )
 ] .
 [ rdf:type owl:AllDisjointClasses ;
