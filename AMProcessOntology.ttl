@@ -488,7 +488,9 @@
 
 ###  http://siam.nist.gov/AM-Process-Ontology#AMProcessEntity
 
-:AMProcessEntity rdf:type owl:Class .
+:AMProcessEntity rdf:type owl:Class ;
+                 
+                 rdfs:comment "An AMProcessEntity is an element used in the description of an additive manufacturing process." .
 
 
 
@@ -496,20 +498,10 @@
 
 :AdditiveManufacturing rdf:type owl:Class ;
                        
-                       owl:equivalentClass [ rdf:type owl:Class ;
-                                             owl:unionOf ( :BinderJetting
-                                                           :DirectedEnergyDeposition
-                                                           :LaserSolidForming
-                                                           :MaterialExtrusion
-                                                           :MaterialJetting
-                                                           :PowderBedFusion
-                                                           :SheetLamination
-                                                           :VatPhotopolymerization
-                                                         )
-                                           ] ;
-                       
                        rdfs:subClassOf :AMProcessEntity ,
                                        :AdditiveManufacturing ;
+                       
+                       rdfs:comment "A family of additive manufacturing process." ;
                        
                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "AM_entities" ;
                        
@@ -527,11 +519,11 @@
                                
                                rdfs:subClassOf :ElementOfAdditiveManufacturing ;
                                
+                               rdfs:comment "Material used for AM process. Most AM processes are capable of using several materials." ;
+                               
                                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Material_entities" ;
                                
-                               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Material_entity" ;
-                               
-                               rdfs:comment "Material used for AM process is defined here" .
+                               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Material_entity" .
 
 
 
@@ -540,6 +532,8 @@
 :AdditiveManufacturingParameter rdf:type owl:Class ;
                                 
                                 rdfs:subClassOf :ElementOfAdditiveManufacturing ;
+                                
+                                rdfs:comment "Processing parameter determined for a given Additive Manufacturing process." ;
                                 
                                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Process_parameters" ;
                                 
@@ -554,6 +548,8 @@
                                rdfs:subClassOf :ElementOfAdditiveManufacturing ;
                                
                                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "AdditiveManufacturingProcessVariables" ;
+                               
+                               rdfs:comment "Process variable of interest to determine the quality of a build. Some indicators can be measured (observable variables) while other may be inferred from measurements using models or correlations (derived variables)." ;
                                
                                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "AdditiveManufacturingProcessVariable" .
 
@@ -575,15 +571,17 @@
 
 
 
-###  http://siam.nist.gov/AM-Process-Ontology#AmorphousThermoplastics
+###  http://siam.nist.gov/AM-Process-Ontology#AmorphousThermoplastic
 
-:AmorphousThermoplastics rdf:type owl:Class ;
-                         
-                         rdfs:subClassOf :Polymer ;
-                         
-                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "AmorphousThermoplasticses" ;
-                         
-                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "AmorphousThermoplastics" .
+:AmorphousThermoplastic rdf:type owl:Class ;
+                        
+                        rdfs:subClassOf :Polymer ;
+                        
+                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "AmorphousThermoplastics" ;
+                        
+                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "AmorphousThermoplastic" ;
+                        
+                        rdfs:comment "Amorphous high-temperature polymers have a randomly ordered molecular structure which does not have a sharp melt point; instead amorphous materials soften gradually as the temperature rises." .
 
 
 
@@ -592,6 +590,8 @@
 :BeamRadius rdf:type owl:Class ;
             
             rdfs:subClassOf :PredefinedInputParameter ;
+            
+            rdfs:comment "Size of the laser or electron beam." ;
             
             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "BeamDiameter" ;
             
@@ -607,7 +607,9 @@
                 
                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PowerWavelength" ;
                 
-                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PowerWavelengths" .
+                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PowerWavelengths" ;
+                
+                rdfs:comment "Wavelength of the heat source." .
 
 
 
@@ -660,6 +662,8 @@
                rdfs:subClassOf :AdditiveManufacturing ;
                
                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "BinderJettings" ;
+               
+               rdfs:comment "A rapid prototyping technology where an inkjet print head moves accross a bed of powder, slectively depositing a liquid binding material. The process is also known as \"drop-on-powder\" and \"Inkjet 3D printing\"." ;
                
                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "BinderJetting" .
 
@@ -723,7 +727,9 @@
           
           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Ceramicses" ;
           
-          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Ceramics" .
+          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Ceramics" ;
+          
+          rdfs:comment "An inorganic, nonmetallic solid primarily held in ionic and covalent bonds. The crystallinity of ceramic materials ranges from highly-oriented to semi-crystalline, and often completely amorphous." .
 
 
 
@@ -735,7 +741,19 @@
                     
                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ChamberTemperature" ;
                     
+                    rdfs:comment "Temperature inside the build chamber. Some systems have internal heaters (to prevent residual stresses due to thermal gradients) that allow for a reference chamber temperature to be pre-defined." ;
+                    
                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ChamberTemperatures" .
+
+
+
+###  http://siam.nist.gov/AM-Process-Ontology#CompositeMaterials
+
+:CompositeMaterials rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :Ceramics ;
+                    
+                    rdfs:comment "Materials that are particulate reinforced, fiber reinforces or some other combination of oxides and nonoxides." .
 
 
 
@@ -789,7 +807,9 @@
                             
                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Controllable" ;
                             
-                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Controllables" .
+                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Controllables" ;
+                            
+                            rdfs:comment "Input parameters that can be varied during the process." .
 
 
 
@@ -801,7 +821,9 @@
          
          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Coolings" ;
          
-         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Cooling" .
+         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Cooling" ;
+         
+         rdfs:comment "After solidification, more heat is lost making the temperature decrease." .
 
 
 
@@ -814,6 +836,8 @@
                                owl:onProperty :isDeterminedBy ;
                                owl:someValuesFrom :TemperatureDistribution
                              ] ;
+             
+             rdfs:comment "The rate at which temperature decreases after solidification. It is inferred from the temperature distribution." ;
              
              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "CoolingRate" ;
              
@@ -873,7 +897,9 @@
                                 
                                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "DendriteArmSpacingDistribution" ;
                                 
-                                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "DendriteArmSpacingDistributions" .
+                                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "DendriteArmSpacingDistributions" ;
+                                
+                                rdfs:comment "Primary dendrite arm spacing (PDAS) and secondary dendrite arm spacing (SDAS) can be approximated with correlations based on the thermal history of the part. These parameters are used to quantify the likelihood of macrosegregation defects." .
 
 
 
@@ -882,6 +908,8 @@
 :DendriteOrientationDistribution rdf:type owl:Class ;
                                  
                                  rdfs:subClassOf :SolidificationCharacteristic ;
+                                 
+                                 rdfs:comment "Thermal history can be used to predict the orientation of dendrites, which grow perpendicular to the solidification front." ;
                                  
                                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "DendriteOrientationDistribution" ;
                                  
@@ -896,6 +924,8 @@
                      rdfs:subClassOf :DerivedVariable ;
                      
                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "DensityDistribution" ;
+                     
+                     rdfs:comment "Distribution of density in the powder bed. It depends on time and space. It is not measured during the process but it can be approximated with physics-based models." ;
                      
                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "DensityDistributions" .
 
@@ -923,7 +953,9 @@
                           
                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "DirectedEnergyDepositions" ;
                           
-                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "DirectedEnergyDeposition" .
+                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "DirectedEnergyDeposition" ;
+                          
+                          rdfs:comment "An additive manufacturing technology where a nozzle is mounted on a multi-axis arm, which deposits melted material onto a specified surface, where it solidifies. The process can be used with polymers, ceramics but it is typically used with metals, in the form of either powder or wire." .
 
 
 
@@ -971,6 +1003,8 @@
                      
                      rdfs:subClassOf :PowderBedFusion ;
                      
+                     rdfs:comment "Electron Beam Melting (EBM) is a type of additive manufacturing (AM) for metal components in which an electron beam acts as the heat source to fully-melt metal powder." ;
+                     
                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ElectronBeamMeltings" ;
                      
                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ElectronBeamMelting" .
@@ -984,6 +1018,8 @@
                                 rdfs:subClassOf :AMProcessEntity ;
                                 
                                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ElementOfAdditiveManufacturingProcess" ;
+                                
+                                rdfs:comment "Attributes required to define an Additive Manufacturing process, such as the material, the consolidation mechanism, etc." ;
                                 
                                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ElementOfAdditiveManufacturingProcesses" .
 
@@ -1009,6 +1045,8 @@
                           
                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ElementOfPowderBedFusion" ;
                           
+                          rdfs:comment "List of characteristics defining the physics of the powder bed fusion process." ;
+                          
                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ElementOfPowderBedFusions" .
 
 
@@ -1019,9 +1057,9 @@
                     
                     rdfs:subClassOf :PredefinedInputParameter ;
                     
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "EmpiricalParameter" ;
+                    rdfs:comment "THIS DOES NOT MAKE SENSE. THE ONLY REASON WHY YOU WOULD NEED AN EMPIRICAL PARAMETER IS IF YOU HAD A MODEL." ;
                     
-                    rdfs:comment "Approximated with experiments" ;
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "EmpiricalParameter" ;
                     
                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "EmpiricalParameters" .
 
@@ -1031,11 +1069,7 @@
 
 :FluidFlowInMeltPool rdf:type owl:Class ;
                      
-                     rdfs:subClassOf :FluidMechanics ,
-                                     [ rdf:type owl:Restriction ;
-                                       owl:onProperty :isQuantifiedWith ;
-                                       owl:someValuesFrom :FluidVelocity
-                                     ] ;
+                     rdfs:subClassOf :FluidMechanics ;
                      
                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "FluidFlowInMeltPool" ;
                      
@@ -1063,7 +1097,9 @@
                
                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "FluidVelocities" ;
                
-               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "FluidVelocity" .
+               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "FluidVelocity" ;
+               
+               rdfs:comment "Velocity of in the fluid region of the powder bed. It is not measured but it can be approximated with multi-physics models." .
 
 
 
@@ -1075,6 +1111,8 @@
                      
                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Melt_pool_formation" ;
                      
+                     rdfs:comment "Liquid metal forms a liquid region, known as the melt pool." ;
+                     
                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Melt_pool_formations" .
 
 
@@ -1084,6 +1122,8 @@
 :FullMelting rdf:type owl:Class ;
              
              rdfs:subClassOf :FusionMechanism ;
+             
+             rdfs:comment "Powdered material heated up above its melting temperature to result in fully-dense material." ;
              
              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "FullMeltings" ;
              
@@ -1109,6 +1149,8 @@
                  
                  rdfs:subClassOf :ElementOfPowderBedFusion ;
                  
+                 rdfs:comment "Type of consolidation mechanism." ;
+                 
                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "FusionMechanisms" ;
                  
                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "FusionMechanism" .
@@ -1123,7 +1165,9 @@
                 
                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "GasComposition" ;
                 
-                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "GasCompositions" .
+                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "GasCompositions" ;
+                
+                rdfs:comment "Chemical composition of protective gas in the build chamber. When processing metals, noble gases are used to protect the liquid from oxidation." .
 
 
 
@@ -1134,6 +1178,8 @@
              rdfs:subClassOf :PredefinedInputParameter ;
              
              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "GasPressure" ;
+             
+             rdfs:comment "Pressure of the protective gas in the build chamber." ;
              
              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "GasPressures" .
 
@@ -1157,6 +1203,8 @@
                        
                        rdfs:subClassOf :SolidificationCharacteristic ;
                        
+                       rdfs:comment "Termperature gradients and local solidification time can be used to predict grain size, which will be responsible for mechanical properties, such as yield strength." ;
+                       
                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "DendriticGrainSizeDistribution" ;
                        
                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "DendriticGrainSizeDistributions" .
@@ -1170,6 +1218,8 @@
            rdfs:subClassOf :AdditiveManufacturingMaterial ;
            
            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "HardMetals" ;
+           
+           rdfs:comment "Hard materials used in machining tough materials." ;
            
            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "HardMetal" .
 
@@ -1213,13 +1263,15 @@
 
 :HeatSourcePosition rdf:type owl:Class ;
                     
-                    rdfs:subClassOf :DerivedVariable ,
+                    rdfs:subClassOf :ObservableVariable ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty :isDeterminedBy ;
                                       owl:someValuesFrom :HeatSourceVelocity
                                     ] ;
                     
                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "HeatSourcePositions" ;
+                    
+                    rdfs:comment "The scan speed can be integrated in time to find the position of the heat source. This variable is monitored during the process." ;
                     
                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "HeatSourcePosition" .
 
@@ -1233,7 +1285,9 @@
                  
                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "HeatSourcePower" ;
                  
-                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "HeatSourcePowers" .
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "HeatSourcePowers" ;
+                 
+                 rdfs:comment "Power of the heat source (laser or electron beam)." .
 
 
 
@@ -1243,7 +1297,7 @@
                     
                     rdfs:subClassOf :ControllableInputParameter ;
                     
-                    rdfs:comment "Also designated as \"Scanning Speed\" in the literature." ;
+                    rdfs:comment "Speed of the the heat source on the powder bed. Also designated as \"Scanning Speed\" in the literature." ;
                     
                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "HeatSourceVelocity" ;
                     
@@ -1292,11 +1346,13 @@
 
 :HeatingByHeatSource rdf:type owl:Class ;
                      
-                     rdfs:subClassOf :PowderBedFusionProcesses ;
+                     rdfs:subClassOf :IrradiationAbsorptionByPowderBed ;
                      
                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Scannings" ;
                      
-                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Scanning" .
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Scanning" ;
+                     
+                     rdfs:comment "A beam is directed toward the powder bed." .
 
 
 
@@ -1307,6 +1363,8 @@
                       rdfs:subClassOf :ProcessDependentMaterialProperty ;
                       
                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "InitialPowderDensity" ;
+                      
+                      rdfs:comment "Density of the powder before any sort of consolidation." ;
                       
                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "InitialPowderDensities" .
 
@@ -1320,6 +1378,8 @@
                 
                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Input_parameters" ;
                 
+                rdfs:comment "Input parameters determined by the user." ;
+                
                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Input_parameter" .
 
 
@@ -1332,9 +1392,9 @@
                     
                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "InterfaceCurvatures" ;
                     
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "InterfaceCurvature" ;
+                    rdfs:comment "Usually accounted for when studying balling. Although not measured during the process, it can be estimated with meso-scale models." ;
                     
-                    rdfs:comment "is usually accounted for when studying balling" .
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "InterfaceCurvature" .
 
 
 
@@ -1356,6 +1416,8 @@
                                   
                                   rdfs:subClassOf :PowderBedFusionProcesses ,
                                                   :Thermal ;
+                                  
+                                  rdfs:comment "Part of the irradiation is absorbed by the powder bed, heating it up." ;
                                   
                                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "HeatAbsorptions" ;
                                   
@@ -1379,18 +1441,6 @@
 
 
 
-###  http://siam.nist.gov/AM-Process-Ontology#LaserSolidForming
-
-:LaserSolidForming rdf:type owl:Class ;
-                   
-                   rdfs:subClassOf :AdditiveManufacturing ;
-                   
-                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "LaserSolidForming" ;
-                   
-                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "LaserSolidFormings" .
-
-
-
 ###  http://siam.nist.gov/AM-Process-Ontology#LiquidPhaseSintering
 
 :LiquidPhaseSintering rdf:type owl:Class ;
@@ -1398,6 +1448,8 @@
                       rdfs:subClassOf :FusionMechanism ;
                       
                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "LiquidPhaseSintering" ;
+                      
+                      rdfs:comment "Part of the powder is melted to act as an adhesive that will hold together the rest of the material, still solid. Also known as partial melting." ;
                       
                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "LiquidPhaseSinterings" .
 
@@ -1415,7 +1467,9 @@
                          
                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Cooling_time" ;
                          
-                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Cooling_times" .
+                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Cooling_times" ;
+                         
+                         rdfs:comment "Time between liquidus and solidus transition. This parameter is extracted from the temperature distribution." .
 
 
 
@@ -1439,7 +1493,9 @@
                    
                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "MaterialExtrusion" ;
                    
-                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "MaterialExtrusions" .
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "MaterialExtrusions" ;
+                   
+                   rdfs:comment "In this process, material is drawn through a nozzle, where it is heated and then deposited layer by layer. It is commonly used in several inexpensive, domestive 3D printers." .
 
 
 
@@ -1451,6 +1507,8 @@
                  
                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "MaterialJetting" ;
                  
+                 rdfs:comment "This process creates objects in a similar method to an ink jet printer. The difference is that in this process the nozzle deposits material instead of binder." ;
+                 
                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "MaterialJettings" .
 
 
@@ -1459,7 +1517,9 @@
 
 :MeltPoolArea rdf:type owl:Class ;
               
-              rdfs:subClassOf :MeltPoolSize .
+              rdfs:subClassOf :MeltPoolSize ;
+              
+              rdfs:comment "Cross-sectional area of melt pool, usually measured on the plane where the cross-sectional area reaches its maximum." .
 
 
 
@@ -1469,6 +1529,8 @@
                
                rdfs:subClassOf :MeltPoolShape ,
                                :MeltPoolSize ;
+               
+               rdfs:comment "Maximum depth of the melt pool, as measured from the top of the powder bed. It can be measured only after the process has been completed." ;
                
                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Melt_pool_depth" ;
                
@@ -1480,7 +1542,9 @@
 
 :MeltPoolLength rdf:type owl:Class ;
                 
-                rdfs:subClassOf :MeltPoolSize .
+                rdfs:subClassOf :MeltPoolSize ;
+                
+                rdfs:comment "Length of melt pool, as measured on the top surface of the powder bed." .
 
 
 
@@ -1492,7 +1556,9 @@
                
                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Melt_pool_shapes" ;
                
-               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Melt_pool_shape" .
+               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Melt_pool_shape" ;
+               
+               rdfs:comment "Geometry of melt pool as measured either during the process or after." .
 
 
 
@@ -1504,7 +1570,9 @@
               
               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Melt_pool_sizes" ;
               
-              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Melt_pool_size" .
+              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Melt_pool_size" ;
+              
+              rdfs:comment "Geometry of the melt pool in the powder bed." .
 
 
 
@@ -1515,6 +1583,8 @@
                      rdfs:subClassOf :ObservableVariable ;
                      
                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Melt_pool_temperature" ;
+                     
+                     rdfs:comment "In some applications, thermography is used to measure temperature in the melt pool." ;
                      
                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Melt_pool_temperatures" .
 
@@ -1529,7 +1599,9 @@
                
                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "MeltPoolWidths" ;
                
-               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "MeltPoolWidth" .
+               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "MeltPoolWidth" ;
+               
+               rdfs:comment "Melt pool width as measured on top surface of powder bed. It can be measured during the process with non-invasive methods, such as thermography." .
 
 
 
@@ -1541,6 +1613,8 @@
                           
                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Melting" ;
                           
+                          rdfs:comment "Absorbed heat increases the powder bed temperature above melting temperature." ;
+                          
                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Meltings" .
 
 
@@ -1550,6 +1624,8 @@
 :Metal rdf:type owl:Class ;
        
        rdfs:subClassOf :AdditiveManufacturingMaterial ;
+       
+       rdfs:comment "A material that is typically hard, opaque, shiny, and has good electrical and thermal conductivity." ;
        
        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Metal" ;
        
@@ -1575,6 +1651,8 @@
                             
                             rdfs:subClassOf :SolidificationCharacteristic ;
                             
+                            rdfs:comment "Thermal history can be fed to microstructural models that predict the distribution of different phases in the solidified part." ;
+                            
                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "MicrostructureDistributions" ;
                             
                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "MicrostructureDistribution" .
@@ -1593,6 +1671,20 @@
 
 
 
+###  http://siam.nist.gov/AM-Process-Ontology#NickelAlloy
+
+:NickelAlloy rdf:type owl:Class ;
+             
+             rdfs:subClassOf :Metal ;
+             
+             rdfs:comment "Superalloys with nickel as principal element. Some examples are alloys 625 and 718." ;
+             
+             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "NickelAlloy" ;
+             
+             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "NickelAlloys" .
+
+
+
 ###  http://siam.nist.gov/AM-Process-Ontology#NonOxideCeramic
 
 :NonOxideCeramic rdf:type owl:Class ;
@@ -1600,6 +1692,8 @@
                  rdfs:subClassOf :Ceramics ;
                  
                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "NonOxideCeramic" ;
+                 
+                 rdfs:comment "Nonoxide ceramics, such as carbides, borides, nitrides, and silicides." ;
                  
                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "NonOxideCeramics" .
 
@@ -1613,7 +1707,9 @@
                     
                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Observable" ;
                     
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Observables" .
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Observables" ;
+                    
+                    rdfs:comment "Set of process variables that can be observed experimentally." .
 
 
 
@@ -1635,6 +1731,8 @@
               
               rdfs:subClassOf :Ceramics ;
               
+              rdfs:comment "Oxides are chemical compounds that contains at least one oxygen atom and one other element in its chemical formula." ;
+              
               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "OxideCeramic" ;
               
               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "OxideCeramics" .
@@ -1647,6 +1745,8 @@
                 
                 rdfs:subClassOf :ProcessDependentMaterialProperty ;
                 
+                rdfs:comment "Packing density of powder." ;
+                
                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PackingDensities" ;
                 
                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PackingDensity" .
@@ -1658,6 +1758,8 @@
 :ParticleSize rdf:type owl:Class ;
               
               rdfs:subClassOf :ProcessDependentMaterialProperty ;
+              
+              rdfs:comment "Average size of powdered particles used in the AM process." ;
               
               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ParticleSizes" ;
               
@@ -1717,9 +1819,11 @@
 
 :PolyMethylmetacrylate rdf:type owl:Class ;
                        
-                       rdfs:subClassOf :AmorphousThermoplastics ;
+                       rdfs:subClassOf :AmorphousThermoplastic ;
                        
                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PolyMethylmetacrylates" ;
+                       
+                       rdfs:comment "PMMA is a transparent thermoplastic often used in sheet form as a lightweight or shatter-resistant alternative to glass." ;
                        
                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PolyMethylmetacrylate" .
 
@@ -1731,6 +1835,8 @@
            
            rdfs:subClassOf :SemiChrystallineThermoplastics ;
            
+           rdfs:comment "A macromolecule with repeating units linked by amide bonds." ;
+           
            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Polyamides" ;
            
            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Polyamide" .
@@ -1741,11 +1847,13 @@
 
 :Polycarbonate rdf:type owl:Class ;
                
-               rdfs:subClassOf :AmorphousThermoplastics ;
+               rdfs:subClassOf :AmorphousThermoplastic ;
                
                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Polycarbonate" ;
                
-               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Polycarbonates" .
+               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Polycarbonates" ;
+               
+               rdfs:comment "A group of thermoplastic polymers containing carbonate groups in their chemical structures. Polycarbonates used in engineering are strong, tough materials, and some grades are optically transparent. They are easily worked, molded, and thermoformed." .
 
 
 
@@ -1754,6 +1862,8 @@
 :Polyethylene rdf:type owl:Class ;
               
               rdfs:subClassOf :SemiChrystallineThermoplastics ;
+              
+              rdfs:comment "PE is the most common plastic. Many kinds of polyethylene are known, with most having the chemical formula (C2H4)n. Thus PE is usually a mixture of similar organic compounds that differ in terms of the value of n." ;
               
               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Polyethylene" ;
               
@@ -1769,6 +1879,8 @@
          
          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Polymer" ;
          
+         rdfs:comment "A large molecule, or macromolecule, composed of many repeated subunits. Only amorphous and semi-crystalline polymers are used in AM processes." ;
+         
          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Polymers" .
 
 
@@ -1781,6 +1893,8 @@
                
                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Polypropylene" ;
                
+               rdfs:comment "PP is a thermoplastic polymer used in a wide variety of applications including packaging and labeling, textiles (e.g., ropes, thermal underwear and carpets), stationery, plastic parts and reusable containers of various types, laboratory equipment, loudspeakers, automotive components, and polymer banknotes. An addition polymer made from the monomer propylene, it is rugged and unusually resistant to many chemical solvents, bases and acids." ;
+               
                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Polypropylenes" .
 
 
@@ -1789,7 +1903,9 @@
 
 :Polystyrene rdf:type owl:Class ;
              
-             rdfs:subClassOf :AmorphousThermoplastics ;
+             rdfs:subClassOf :AmorphousThermoplastic ;
+             
+             rdfs:comment "A synthetic aromatic polymer made from the monomer styrene. Polystyrene can be solid or foamed. General purpose polystyrene is clear, hard, and rather brittle." ;
              
              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Polystyrene" ;
              
@@ -1840,6 +1956,8 @@
                  
                  rdfs:subClassOf :AdditiveManufacturing ;
                  
+                 rdfs:comment "Powder bed fusion (PBF) describes a family of additive manufacturing processes in which either a laser or an electrob beam melts heats up layers of powder to produce thermally-activated consolidation, either by sintering or melting. Some of the techniques that can be considered PBF are: Direct metal laser sintering (DMLS), Electron beam melting (EBM), Selective heat sintering (SHS) and selective laser sintering (SLS)." ;
+                 
                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PowderBedFusion" ;
                  
                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PowderBedFusions" .
@@ -1853,6 +1971,8 @@
                           rdfs:subClassOf :ElementOfPowderBedFusion ;
                           
                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PowderBedFusionPhase" ;
+                          
+                          rdfs:comment "Individual stages of the multi-physics multi-scale process that characterizes PBF processes. THIS IS INCOMPLETE AS IT ONLY ACCOUNTS FOR METALS, WHAT ABOUT OTHER MATERIALS? SINTERING?" ;
                           
                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PowderBedFusionPhases" .
 
@@ -1902,7 +2022,9 @@
                           
                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PowderInitialTemperature" ;
                           
-                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PowderInitialTemperatures" .
+                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PowderInitialTemperatures" ;
+                          
+                          rdfs:comment "Temperature at which the powder is spread on the powder bed. It may be pre-heated to prevent residual stresses." .
 
 
 
@@ -1925,6 +2047,8 @@
                       rdfs:subClassOf :PredefinedInputParameter ;
                       
                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PowderLayerThickness" ;
+                      
+                      rdfs:comment "Thickness of the powder layer spread on top of the powder bed." ;
                       
                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PowderLayerThicknesses" .
 
@@ -1950,7 +2074,9 @@
                             
                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PowderParticlesCompositions" ;
                             
-                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PowderParticlesComposition" .
+                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PowderParticlesComposition" ;
+                            
+                            rdfs:comment "Chemical composition of the powdered particles. All of them could have the same composition, or a combination of different compositions could be used." .
 
 
 
@@ -1962,6 +2088,8 @@
                         
                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PowderSizeDistribution" ;
                         
+                        rdfs:comment "YOU ALREADY HAVE PARTICLE SIZE. THIS DOES NOT MAKE SENSE AS YOU ARE REPEATING INFORMATION. THEY'RE THE SAME." ;
+                        
                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PowderSizeDistributions" .
 
 
@@ -1971,6 +2099,8 @@
 :PredefinedInputParameter rdf:type owl:Class ;
                           
                           rdfs:subClassOf :InputParameter ;
+                          
+                          rdfs:comment "Input parameters that are determined before the build." ;
                           
                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Predefined" ;
                           
@@ -1986,7 +2116,9 @@
                                   
                                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Material_properties" ;
                                   
-                                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Material_propertieses" .
+                                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Material_propertieses" ;
+                                  
+                                  rdfs:comment "Properties of the material used in the AM process." .
 
 
 
@@ -1997,6 +2129,8 @@
                rdfs:subClassOf :PredefinedInputParameter ;
                
                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PulseDuration" ;
+               
+               rdfs:comment "In the case of pulsed lasers, the pulse duration needs to be pre-defined." ;
                
                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PulseDurations" .
 
@@ -2038,7 +2172,9 @@
                             
                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Stress_distribution" ;
                             
-                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Stress_distributions" .
+                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Stress_distributions" ;
+                            
+                            rdfs:comment "Distribution of residual stresses which arise due to thermal gradients during solidification." .
 
 
 
@@ -2050,6 +2186,8 @@
                             
                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Resolidification_of_melt_pools" ;
                             
+                            rdfs:comment "After the heat source is removed, heat is removed from the melt pool making it solidify." ;
+                            
                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Resolidification_of_melt_pool" .
 
 
@@ -2059,6 +2197,8 @@
 :ScaningTrackPattern rdf:type owl:Class ;
                      
                      rdfs:subClassOf :PredefinedInputParameter ;
+                     
+                     rdfs:comment "The trajectory to be followed by the heat source to scan the surface of a given layer." ;
                      
                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Scan_tracks" ;
                      
@@ -2089,6 +2229,8 @@
                        
                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SelectiveLaserMeltings" ;
                        
+                       rdfs:comment "This process uses a high-power laser, usually an ytterbium fiber laser with hundreds of Watts, to fully melt selected regions of a metal powder bed." ;
+                       
                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SelectiveLaserMelting" .
 
 
@@ -2117,7 +2259,9 @@
                          
                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SelectiveLaserSintering" ;
                          
-                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SelectiveLaserSinterings" .
+                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SelectiveLaserSinterings" ;
+                         
+                         rdfs:comment "Selective laser sintering (SLS) uses a laser as the power source to sinter powdered material, binding the material together to create a solid structure." .
 
 
 
@@ -2128,6 +2272,8 @@
                                 rdfs:subClassOf :Polymer ;
                                 
                                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SemiChrystallineThermoplastics" ;
+                                
+                                rdfs:comment "Semi-crystalline materials have a highly ordered molecular structure with sharp melt points. They do not gradually soften with a temperature increase, instead, semi-crystalline materials remain solid until a given quantity of heat is absorbed and then rapidly change into a low viscosity liquid." ;
                                 
                                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SemiChrystallineThermoplasticses" .
 
@@ -2141,6 +2287,8 @@
                  
                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SheetLaminations" ;
                  
+                 rdfs:comment "Sheet lamination describes a family of additive manufacturing process in which  layers are shaped separately (by laser or knife), and then bound together using ultrasonic welding or an adhesive." ;
+                 
                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SheetLamination" .
 
 
@@ -2149,11 +2297,13 @@
 
 :SilicateCeramic rdf:type owl:Class ;
                  
-                 rdfs:subClassOf :Ceramics ;
+                 rdfs:subClassOf :OxideCeramic ;
                  
                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SilicateCeramic" ;
                  
-                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SilicateCeramics" .
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SilicateCeramics" ;
+                 
+                 rdfs:comment "Silicate ceramics are manufactured from natural raw materials. They include porcelains, steatites, cordierites, and mullites." .
 
 
 
@@ -2164,6 +2314,8 @@
                rdfs:subClassOf :DerivedVariable ;
                
                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SinteringRates" ;
+               
+               rdfs:comment "Rate at which particles are sintered together when temperature is increased." ;
                
                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SinteringRate" .
 
@@ -2177,6 +2329,8 @@
                      
                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SolidStateSinterings" ;
                      
+                     rdfs:comment "Viscous sintering, which occurs when powder is heated up below melting temperature." ;
+                     
                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SolidStateSintering" .
 
 
@@ -2186,6 +2340,8 @@
 :SolidificationCharacteristic rdf:type owl:Class ;
                               
                               rdfs:subClassOf :DerivedVariable ;
+                              
+                              rdfs:comment "Indicators of the microstructural properties in the part. They are computed only for metallic parts." ;
                               
                               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SolidificationCharacteristics" ;
                               
@@ -2199,6 +2355,8 @@
                     
                     rdfs:subClassOf :SolidificationCharacteristic ;
                     
+                    rdfs:comment "THIS IS WRONG. LAST WEEK I TOLD YOU THAT SOLIDIFICATION RATE AND LOCAL SOLIDIFICATION TIME ARE THE SAME THING." ;
+                    
                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SolidificationRate" ;
                     
                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SolidificationRates" .
@@ -2211,9 +2369,11 @@
                 
                 rdfs:subClassOf :Metal ;
                 
-                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Metal_based_powder" ;
+                rdfs:comment "Steel alloy with a minimum of 10.5% of chromium content by mass, to protect it from corrosion." ;
                 
-                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Metal_based_powders" .
+                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Stainless_steel" ;
+                
+                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Stainless_steels" .
 
 
 
@@ -2221,7 +2381,9 @@
 
 :StrainDistribution rdf:type owl:Class ;
                     
-                    rdfs:subClassOf :DerivedVariable .
+                    rdfs:subClassOf :DerivedVariable ;
+                    
+                    rdfs:comment "Distribution of strain (deformation) in the solidified part." .
 
 
 
@@ -2230,6 +2392,8 @@
 :StressDistribution rdf:type owl:Class ;
                     
                     rdfs:subClassOf :DerivedVariable ;
+                    
+                    rdfs:comment "Distribution of stresses in the part. In the case of AM. When no external load is applied, only residual stresses remain." ;
                     
                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "StressDistributions" ;
                     
@@ -2257,19 +2421,9 @@
                       
                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SubstrateTemperature" ;
                       
+                      rdfs:comment "Temperature of the substrate. Often assumed constant, it will receive heat from the source and its temperature may increase, especially when building the first layers." ;
+                      
                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SubstrateTemperatures" .
-
-
-
-###  http://siam.nist.gov/AM-Process-Ontology#SuperAlloy
-
-:SuperAlloy rdf:type owl:Class ;
-            
-            rdfs:subClassOf :Metal ;
-            
-            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SuperAlloys" ;
-            
-            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SuperAlloy" .
 
 
 
@@ -2281,7 +2435,9 @@
                     
                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SurfaceBallingSize" ;
                     
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SurfaceBallingSizes" .
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SurfaceBallingSizes" ;
+                    
+                    rdfs:comment "When balling occurs, the size of the defects can be measured after the process is completed." .
 
 
 
@@ -2343,6 +2499,8 @@
                          
                          rdfs:subClassOf :DerivedVariable ;
                          
+                         rdfs:comment "Temperature distribution on the powder bed. It is not possible to measure the entire distribution of temperature and one must resort to computational models to predict it." ;
+                         
                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Temperature_distribution" ;
                          
                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Temperature_distributions" .
@@ -2381,6 +2539,8 @@
                                                               )
                                          ] ;
                      
+                     rdfs:comment "Thermal conductivity in the powder bed is a function of both temperature and density, and as such needs to be approximated with a model because it cannot be measured during the process." ;
+                     
                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ThermalConductivities" ;
                      
                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ThermalConductivity" .
@@ -2399,7 +2559,9 @@
                              
                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Thermal_gradients" ;
                              
-                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Thermal_gradient" .
+                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Thermal_gradient" ;
+                             
+                             rdfs:comment "Temperature distribution can be used to return approximations of the temperature gradient, which are used to make microstructural predictions." .
 
 
 
@@ -2435,7 +2597,9 @@
                
                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "TitaniumAlloy" ;
                
-               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "TitaniumAlloys" .
+               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "TitaniumAlloys" ;
+               
+               rdfs:comment "Alloys with Titanium as the primary element. The most typical example is Ti-6Al-4V." .
 
 
 
@@ -2459,7 +2623,9 @@
                         
                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "VatPhotopolymerization" ;
                         
-                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "VatPhotopolymerizations" .
+                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "VatPhotopolymerizations" ;
+                        
+                        rdfs:comment "This process uses a vat of liquid photopolymer resin, out of which the model is constructed later by layer. An ultraviolet (UV) light is used to cure or harden the resin where required." .
 
 
 
@@ -2471,7 +2637,9 @@
            
            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Viscosity" ;
            
-           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Viscosities" .
+           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Viscosities" ;
+           
+           rdfs:comment "Material viscosity plays an important role not only for prediction of the melt pool dynamics (when melting) but also for viscous sintering (when sintering). Its value cannot be measured and needs to be approximated with material models." .
 
 
 
@@ -2506,6 +2674,8 @@
                       rdfs:subClassOf :HardMetal ;
                       
                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "WC-COCementedCarbide" ;
+                      
+                      rdfs:comment "Cemented carbides are composed of a metal matrix composite where carbide particles act as the aggregate and a metallic binder serves as the matrix." ;
                       
                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "WC-COCementedCarbides" .
 
@@ -2546,14 +2716,9 @@
 
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :BinderJetting
-                :DirectedEnergyDeposition
-                :LaserSolidForming
-                :MaterialExtrusion
-                :MaterialJetting
-                :PowderBedFusion
-                :SheetLamination
-                :VatPhotopolymerization
+  owl:members ( :BedRadiation
+                :HeatConduction
+                :SurfaceConvection
               )
 ] .
 [ rdf:type owl:AllDisjointClasses ;
@@ -2562,12 +2727,6 @@
                 :Microstructural
                 :Structural
                 :Thermal
-              )
-] .
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :BedRadiation
-                :HeatConduction
-                :SurfaceConvection
               )
 ] .
 
