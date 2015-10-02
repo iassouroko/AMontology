@@ -905,6 +905,26 @@ model-ontology:isImplementedBy rdfs:subPropertyOf owl:topObjectProperty .
                               rdfs:subClassOf :PowderBedFusionPredictiveModel ,
                                               [ rdf:type owl:Restriction ;
                                                 owl:onProperty model-ontology:hasInputParameter ;
+                                                owl:someValuesFrom amProcess-ontology:ChamberTemperature
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :hasTopBoundaryCondition ;
+                                                owl:someValuesFrom :PowderBedTopBoundaryCondition
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty model-ontology:hasInputParameter ;
+                                                owl:someValuesFrom amProcess-ontology:TemperatureDistribution
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty model-ontology:hasInputParameter ;
+                                                owl:someValuesFrom model-ontology:SpecificHeat
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty model-ontology:hasInputParameter ;
+                                                owl:someValuesFrom amProcess-ontology:HeatSourceVelocity
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :Predicts ;
                                                 owl:someValuesFrom amProcess-ontology:TemperatureDistribution
                                               ] ,
                                               [ rdf:type owl:Restriction ;
@@ -913,11 +933,19 @@ model-ontology:isImplementedBy rdfs:subPropertyOf owl:topObjectProperty .
                                               ] ,
                                               [ rdf:type owl:Restriction ;
                                                 owl:onProperty model-ontology:hasInputParameter ;
-                                                owl:someValuesFrom amProcess-ontology:HeatSourceVelocity
+                                                owl:someValuesFrom model-ontology:AbsorbedHeatPerUnitVolume
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :isRepresentationOf ;
+                                                owl:someValuesFrom amProcess-ontology:HeatTransferInPowderBed
                                               ] ,
                                               [ rdf:type owl:Restriction ;
                                                 owl:onProperty model-ontology:hasInputParameter ;
-                                                owl:someValuesFrom amProcess-ontology:ChamberTemperature
+                                                owl:someValuesFrom amProcess-ontology:SubstrateTemperature
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty model-ontology:hasInputParameter ;
+                                                owl:someValuesFrom amProcess-ontology:DensityDistribution
                                               ] ,
                                               [ rdf:type owl:Restriction ;
                                                 owl:onProperty model-ontology:hasInputParameter ;
@@ -925,7 +953,15 @@ model-ontology:isImplementedBy rdfs:subPropertyOf owl:topObjectProperty .
                                               ] ,
                                               [ rdf:type owl:Restriction ;
                                                 owl:onProperty model-ontology:hasInputParameter ;
+                                                owl:someValuesFrom amProcess-ontology:PowderInitialTemperature
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty model-ontology:hasInputParameter ;
                                                 owl:someValuesFrom amProcess-ontology:FluidVelocity
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty model-ontology:hasInputParameter ;
+                                                owl:someValuesFrom amProcess-ontology:ThermalConductivity
                                               ] ,
                                               [ rdf:type owl:Class ;
                                                 owl:unionOf ( [ rdf:type owl:Class ;
@@ -947,43 +983,7 @@ model-ontology:isImplementedBy rdfs:subPropertyOf owl:topObjectProperty .
                                               ] ,
                                               [ rdf:type owl:Restriction ;
                                                 owl:onProperty model-ontology:hasInputParameter ;
-                                                owl:someValuesFrom model-ontology:AbsorbedHeatPerUnitVolume
-                                              ] ,
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty :hasTopBoundaryCondition ;
-                                                owl:someValuesFrom :PowderBedTopBoundaryCondition
-                                              ] ,
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty :Predicts ;
-                                                owl:someValuesFrom amProcess-ontology:TemperatureDistribution
-                                              ] ,
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty model-ontology:hasInputParameter ;
-                                                owl:someValuesFrom amProcess-ontology:DensityDistribution
-                                              ] ,
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty model-ontology:hasInputParameter ;
                                                 owl:someValuesFrom model-ontology:SurfaceConvectionCoefficient
-                                              ] ,
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty :isRepresentationOf ;
-                                                owl:someValuesFrom amProcess-ontology:HeatTransferInPowderBed
-                                              ] ,
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty model-ontology:hasInputParameter ;
-                                                owl:someValuesFrom model-ontology:SpecificHeat
-                                              ] ,
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty model-ontology:hasInputParameter ;
-                                                owl:someValuesFrom amProcess-ontology:SubstrateTemperature
-                                              ] ,
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty model-ontology:hasInputParameter ;
-                                                owl:someValuesFrom amProcess-ontology:ThermalConductivity
-                                              ] ,
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty model-ontology:hasInputParameter ;
-                                                owl:someValuesFrom amProcess-ontology:PowderInitialTemperature
                                               ] .
 
 
@@ -993,6 +993,25 @@ model-ontology:isImplementedBy rdfs:subPropertyOf owl:topObjectProperty .
 :IrradiationAbsorptionByPowderBedModel rdf:type owl:Class ;
                                        
                                        rdfs:subClassOf :PowderBedFusionPredictiveModel ,
+                                                       [ rdf:type owl:Class ;
+                                                         owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty model-ontology:hasInputParameter ;
+                                                                                owl:someValuesFrom amProcess-ontology:ParticleSize
+                                                                              ]
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty model-ontology:hasInputParameter ;
+                                                                                owl:someValuesFrom amProcess-ontology:PowderSizeDistribution
+                                                                              ]
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty model-ontology:hasInputParameter ;
+                                                                                owl:someValuesFrom amProcess-ontology:SurfaceIrradiation
+                                                                              ]
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty model-ontology:hasInputParameter ;
+                                                                                owl:someValuesFrom model-ontology:BulkMaterialRadiativeProperty
+                                                                              ]
+                                                                            )
+                                                       ] ,
                                                        [ rdf:type owl:Class ;
                                                          owl:unionOf ( [ rdf:type owl:Class ;
                                                                          owl:intersectionOf ( [ rdf:type owl:Restriction ;
@@ -1019,25 +1038,6 @@ model-ontology:isImplementedBy rdfs:subPropertyOf owl:topObjectProperty .
                                                                               [ rdf:type owl:Restriction ;
                                                                                 owl:onProperty :Predicts ;
                                                                                 owl:someValuesFrom amProcess-ontology:ExtinctionCoefficient
-                                                                              ]
-                                                                            )
-                                                       ] ,
-                                                       [ rdf:type owl:Class ;
-                                                         owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                                owl:onProperty model-ontology:hasInputParameter ;
-                                                                                owl:someValuesFrom amProcess-ontology:ParticleSize
-                                                                              ]
-                                                                              [ rdf:type owl:Restriction ;
-                                                                                owl:onProperty model-ontology:hasInputParameter ;
-                                                                                owl:someValuesFrom amProcess-ontology:PowderSizeDistribution
-                                                                              ]
-                                                                              [ rdf:type owl:Restriction ;
-                                                                                owl:onProperty model-ontology:hasInputParameter ;
-                                                                                owl:someValuesFrom amProcess-ontology:SurfaceIrradiation
-                                                                              ]
-                                                                              [ rdf:type owl:Restriction ;
-                                                                                owl:onProperty model-ontology:hasInputParameter ;
-                                                                                owl:someValuesFrom model-ontology:BulkMaterialRadiativeProperty
                                                                               ]
                                                                             )
                                                        ] ,
@@ -1537,10 +1537,6 @@ amProcess-ontology:ElasticDeformation owl:equivalentClass [ rdf:type owl:Class ;
 amProcess-ontology:ExtinctionCoefficient rdf:type owl:Class ;
                                          
                                          rdfs:subClassOf model-ontology:ThermalModelVariable ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty :isDependentOn ;
-                                                           owl:allValuesFrom model-ontology:LambertBeerLaw
-                                                         ] ,
                                                          [ rdf:type owl:Class ;
                                                            owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                   owl:onProperty model-ontology:isFunctionOf ;
@@ -1563,6 +1559,10 @@ amProcess-ontology:ExtinctionCoefficient rdf:type owl:Class ;
                                                                                   owl:someValuesFrom model-ontology:BulkMaterialRadiativeProperty
                                                                                 ]
                                                                               )
+                                                         ] ,
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :isDependentOn ;
+                                                           owl:allValuesFrom model-ontology:LambertBeerLaw
                                                          ] ;
                                          
                                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ExtinctionCoefficient" ;
@@ -2272,7 +2272,11 @@ model-ontology:ModelComponent <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Mo
 
 ###  http://siam.nist.gov/Model-Ontology#NavierStokesEquation
 
-model-ontology:NavierStokesEquation rdfs:subClassOf [ rdf:type owl:Class ;
+model-ontology:NavierStokesEquation rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                      owl:onProperty model-ontology:hasOutputParameter ;
+                                                      owl:someValuesFrom amProcess-ontology:FluidVelocity
+                                                    ] ,
+                                                    [ rdf:type owl:Class ;
                                                       owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                              owl:onProperty model-ontology:isDeterminedBy ;
                                                                              owl:someValuesFrom amProcess-ontology:DensityDistribution
@@ -2294,10 +2298,6 @@ model-ontology:NavierStokesEquation rdfs:subClassOf [ rdf:type owl:Class ;
                                                                              owl:someValuesFrom model-ontology:SurfaceTension
                                                                            ]
                                                                          )
-                                                    ] ,
-                                                    [ rdf:type owl:Restriction ;
-                                                      owl:onProperty model-ontology:hasOutputParameter ;
-                                                      owl:someValuesFrom amProcess-ontology:FluidVelocity
                                                     ] .
 
 
@@ -2397,11 +2397,7 @@ model-ontology:SolidMechanicsModel rdfs:subClassOf [ rdf:type owl:Class ;
 
 ###  http://siam.nist.gov/Model-Ontology#SolidificationModel
 
-model-ontology:SolidificationModel rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                     owl:onProperty :isDependentOn ;
-                                                     owl:allValuesFrom amProcess-ontology:ConsolidationByMelting
-                                                   ] ,
-                                                   [ rdf:type owl:Class ;
+model-ontology:SolidificationModel rdfs:subClassOf [ rdf:type owl:Class ;
                                                      owl:unionOf ( [ rdf:type owl:Restriction ;
                                                                      owl:onProperty model-ontology:hasMathematicalRepresentation ;
                                                                      owl:someValuesFrom model-ontology:CellularAutomataEquation
@@ -2411,6 +2407,10 @@ model-ontology:SolidificationModel rdfs:subClassOf [ rdf:type owl:Restriction ;
                                                                      owl:someValuesFrom model-ontology:PhaseFieldEquation
                                                                    ]
                                                                  )
+                                                   ] ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :isDependentOn ;
+                                                     owl:allValuesFrom amProcess-ontology:ConsolidationByMelting
                                                    ] ;
                                    
                                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SolidificationModels" ;
@@ -2834,12 +2834,12 @@ model-ontology:ViscosityActivationEnergy rdfs:subClassOf [ rdf:type owl:Restrict
                                 
                                 model-ontology:hasInputParameter :DensityOfBulkMaterial ,
                                                                  :HeatTransferCoefficient ,
-                                                                 :Jiang-CoefficientOfThermalExpansion ;
+                                                                 :Jiang-CoefficientOfThermalExpansion ,
+                                                                 :Jiang-ThermalConductivityOfSolidMaterial ;
                                 
                                 model-ontology:hasOutputParameter :Jiang-TransientTemperatureDistribution ;
                                 
-                                model-ontology:hasInputParameter :Kolossov-ThermalConductivityOfTheBulkMaterial ,
-                                                                 :LaserHeatFlux ,
+                                model-ontology:hasInputParameter :LaserHeatFlux ,
                                                                  :LaserSpeed ,
                                                                  :LaserSpotRadius ,
                                                                  :LatentHeatOfFusion ,
