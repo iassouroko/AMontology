@@ -440,51 +440,6 @@
 
 
 
-###  http://siam.nist.gov/Model-Ontology#BulkMaterialDensity
-
-:BulkMaterialDensity rdf:type owl:Class ;
-                     
-                     rdfs:subClassOf :ModelDependentMaterialProperty ;
-                     
-                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "BulkMaterialDensity" ;
-                     
-                     rdfs:comment "Density of fully-dense material. It is usually assumed as a function of temperature." ;
-                     
-                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "BulkMaterialDensities" .
-
-
-
-###  http://siam.nist.gov/Model-Ontology#BulkMaterialRadiativeProperty
-
-:BulkMaterialRadiativeProperty rdf:type owl:Class ;
-                               
-                               rdfs:subClassOf :ModelDependentMaterialProperty ;
-                               
-                               rdfs:comment "Radiative properties of a material: absorptivity, emissivity, and transmissivity. They depend on temperature and wavelength." ;
-                               
-                               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "BulkMaterialRadiativeProperty" ;
-                               
-                               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "BulkMaterialRadiativeProperties" .
-
-
-
-###  http://siam.nist.gov/Model-Ontology#BulkMaterialThermalConductivity
-
-:BulkMaterialThermalConductivity rdf:type owl:Class ;
-                                 
-                                 rdfs:subClassOf :ModelDependentMaterialProperty ;
-                                 
-                                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "BulkMaterialThermalConductivity1" ;
-                                 
-                                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "BulkMaterialThermalConductivity1s" ,
-                                                                                "ThermalConductivityInSolid1s" ;
-                                 
-                                 rdfs:comment "Thermal conductivity of bulk material. It is often modeled as a function of temperature." ;
-                                 
-                                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ThermalConductivityInSolid1" .
-
-
-
 ###  http://siam.nist.gov/Model-Ontology#CellularAutomataEquation
 
 :CellularAutomataEquation rdf:type owl:Class ;
@@ -654,6 +609,20 @@
                              rdfs:subClassOf :PhysicalAssumption ;
                              
                              rdfs:comment "Definition of the different terms in the equation chosen to describe the physical process. Inclusion or neglection of physical phenomena." .
+
+
+
+###  http://siam.nist.gov/Model-Ontology#DensityOfBulkMaterial
+
+:DensityOfBulkMaterial rdf:type owl:Class ;
+                       
+                       rdfs:subClassOf :ModelDependentMaterialProperty ;
+                       
+                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "BulkMaterialDensity" ;
+                       
+                       rdfs:comment "Density of fully-dense material. It is usually assumed as a function of temperature." ;
+                       
+                       <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "BulkMaterialDensities" .
 
 
 
@@ -836,16 +805,6 @@
                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "FluidMechanicsModelVariables" ;
                              
                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "FluidMechanicsModelVariable" .
-
-
-
-###  http://siam.nist.gov/Model-Ontology#FullySinteredMaterialThermalConductivity
-
-:FullySinteredMaterialThermalConductivity rdf:type owl:Class ;
-                                          
-                                          rdfs:subClassOf :ModelDependentMaterialProperty ;
-                                          
-                                          rdfs:comment "Thermal conductivity of fully sintered material, if assumed not equal to bulk material. This is reserved for cases in which fully sintered material is not fully-dense." .
 
 
 
@@ -1176,16 +1135,6 @@ Heat Transfer Equation is a type of Transport Equation""" ,
 
 
 
-###  http://siam.nist.gov/Model-Ontology#LoosePowderThermalConductivity
-
-:LoosePowderThermalConductivity rdf:type owl:Class ;
-                                
-                                rdfs:subClassOf :ModelDependentMaterialProperty ;
-                                
-                                rdfs:comment "Thermal conductivity in loose powder." .
-
-
-
 ###  http://siam.nist.gov/Model-Ontology#MassTransferEquation
 
 :MassTransferEquation rdf:type owl:Class ;
@@ -1286,24 +1235,24 @@ Heat Transfer Equation is a type of Transport Equation""" ,
        
        rdfs:subClassOf :ModelEntity ,
                        [ rdf:type owl:Restriction ;
-                         owl:onProperty :hasParameter ;
-                         owl:someValuesFrom [ rdf:type owl:Class ;
-                                              owl:intersectionOf ( :ModelInputParameter
-                                                                   :ModelOutputParameter
-                                                                 )
-                                            ]
+                         owl:onProperty :hasFunction ;
+                         owl:someValuesFrom :FunctionOfModel
                        ] ,
                        [ rdf:type owl:Restriction ;
                          owl:onProperty :hasAssumption ;
                          owl:someValuesFrom :ModelAssumption
                        ] ,
                        [ rdf:type owl:Restriction ;
-                         owl:onProperty :hasFunction ;
-                         owl:someValuesFrom :FunctionOfModel
-                       ] ,
-                       [ rdf:type owl:Restriction ;
                          owl:onProperty :hasComponent ;
                          owl:someValuesFrom :ModelComponent
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasParameter ;
+                         owl:someValuesFrom [ rdf:type owl:Class ;
+                                              owl:intersectionOf ( :ModelInputParameter
+                                                                   :ModelOutputParameter
+                                                                 )
+                                            ]
                        ] ;
        
        rdfs:comment "A model component represents a certain physical process at given length- and time- scales." ,
@@ -1641,6 +1590,20 @@ Heat Transfer Equation is a type of Transport Equation""" ,
 
 
 
+###  http://siam.nist.gov/Model-Ontology#RadiativePropertyOfBulkMaterial
+
+:RadiativePropertyOfBulkMaterial rdf:type owl:Class ;
+                                 
+                                 rdfs:subClassOf :ModelDependentMaterialProperty ;
+                                 
+                                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "BulkMaterialRadiativeProperties" ;
+                                 
+                                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "BulkMaterialRadiativeProperty" ;
+                                 
+                                 rdfs:comment "Radiative properties of a material: absorptivity, emissivity, and transmissivity. They depend on temperature and wavelength." .
+
+
+
 ###  http://siam.nist.gov/Model-Ontology#SideBoundaryCondition
 
 :SideBoundaryCondition rdf:type owl:Class ;
@@ -1905,20 +1868,6 @@ Heat Transfer Equation is a type of Transport Equation""" ,
 
 
 
-###  http://siam.nist.gov/Model-Ontology#SubstrateThermalConductivity
-
-:SubstrateThermalConductivity rdf:type owl:Class ;
-                              
-                              rdfs:subClassOf :ModelDependentMaterialProperty ;
-                              
-                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SubstrateThermalConductivity1" ;
-                              
-                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SubstrateThermalConductivity1s" ;
-                              
-                              rdfs:comment "Thermal conductivity of the material used for the substrate." .
-
-
-
 ###  http://siam.nist.gov/Model-Ontology#SurfaceConvectionCoefficient
 
 :SurfaceConvectionCoefficient rdf:type owl:Class ;
@@ -2024,6 +1973,56 @@ Heat Transfer Equation is a type of Transport Equation""" ,
                           rdfs:comment "Thermal conductivity of the gas in the pores of the powder bed." ;
                           
                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ThermalConductivityInGas1" .
+
+
+
+###  http://siam.nist.gov/Model-Ontology#ThermalConductivityOfBulkMaterial
+
+:ThermalConductivityOfBulkMaterial rdf:type owl:Class ;
+                                   
+                                   rdfs:subClassOf :ModelDependentMaterialProperty ;
+                                   
+                                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ThermalConductivityInSolid1" ,
+                                                                                  "BulkMaterialThermalConductivity1" ;
+                                   
+                                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "BulkMaterialThermalConductivity1s" ,
+                                                                                  "ThermalConductivityInSolid1s" ;
+                                   
+                                   rdfs:comment "Thermal conductivity of bulk material. It is often modeled as a function of temperature." .
+
+
+
+###  http://siam.nist.gov/Model-Ontology#ThermalConductivityOfFullySinteredMaterial
+
+:ThermalConductivityOfFullySinteredMaterial rdf:type owl:Class ;
+                                            
+                                            rdfs:subClassOf :ModelDependentMaterialProperty ;
+                                            
+                                            rdfs:comment "Thermal conductivity of fully sintered material, if assumed not equal to bulk material. This is reserved for cases in which fully sintered material is not fully-dense." .
+
+
+
+###  http://siam.nist.gov/Model-Ontology#ThermalConductivityOfLoosePowder
+
+:ThermalConductivityOfLoosePowder rdf:type owl:Class ;
+                                  
+                                  rdfs:subClassOf :ModelDependentMaterialProperty ;
+                                  
+                                  rdfs:comment "Thermal conductivity in loose powder." .
+
+
+
+###  http://siam.nist.gov/Model-Ontology#ThermalConductivityOfSubstrate
+
+:ThermalConductivityOfSubstrate rdf:type owl:Class ;
+                                
+                                rdfs:subClassOf :ModelDependentMaterialProperty ;
+                                
+                                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SubstrateThermalConductivity1s" ;
+                                
+                                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SubstrateThermalConductivity1" ;
+                                
+                                rdfs:comment "Thermal conductivity of the material used for the substrate." .
 
 
 
