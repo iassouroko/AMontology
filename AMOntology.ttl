@@ -611,6 +611,56 @@ model-ontology:isImplementedBy rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
+###  http://siam.nist.gov/AM-Ontology#Li-Ma_AbsorptionCoefficient
+
+:Li-Ma_AbsorptionCoefficient rdf:type owl:DatatypeProperty .
+
+
+
+###  http://siam.nist.gov/AM-Ontology#Li-Ma_AmbientTemperature
+
+:Li-Ma_AmbientTemperature rdf:type owl:DatatypeProperty ;
+                          
+                          rdfs:subPropertyOf owl:topDataProperty .
+
+
+
+###  http://siam.nist.gov/AM-Ontology#Li-Ma_LaserBeamRadius
+
+:Li-Ma_LaserBeamRadius rdf:type owl:DatatypeProperty .
+
+
+
+###  http://siam.nist.gov/AM-Ontology#Li-Ma_LaserPower
+
+:Li-Ma_LaserPower rdf:type owl:DatatypeProperty .
+
+
+
+###  http://siam.nist.gov/AM-Ontology#Li-Ma_LaserWavelength
+
+:Li-Ma_LaserWavelength rdf:type owl:DatatypeProperty .
+
+
+
+###  http://siam.nist.gov/AM-Ontology#Li-Ma_PowderLayerThickness
+
+:Li-Ma_PowderLayerThickness rdf:type owl:DatatypeProperty .
+
+
+
+###  http://siam.nist.gov/AM-Ontology#Li-Ma_PowderPreheatTemperature
+
+:Li-Ma_PowderPreheatTemperature rdf:type owl:DatatypeProperty .
+
+
+
+###  http://siam.nist.gov/AM-Ontology#Li-Ma_ScanningSpeed
+
+:Li-Ma_ScanningSpeed rdf:type owl:DatatypeProperty .
+
+
+
 ###  http://siam.nist.gov/AM-Ontology#Roberts-LayerThickness
 
 :Roberts-LayerThickness rdf:type owl:DatatypeProperty .
@@ -635,15 +685,21 @@ model-ontology:isImplementedBy rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
+###  http://siam.nist.gov/AM-Ontology#hasAbsorptionCoefficient
+
+:hasAbsorptionCoefficient rdf:type owl:DatatypeProperty .
+
+
+
 ###  http://siam.nist.gov/AM-Ontology#hasBeamDiameter
 
 :hasBeamDiameter rdf:type owl:DatatypeProperty .
 
 
 
-###  http://siam.nist.gov/AM-Ontology#hasBulkThermalConductivity
+###  http://siam.nist.gov/AM-Ontology#hasBulkMaterialThermalConductivity
 
-:hasBulkThermalConductivity rdf:type owl:DatatypeProperty .
+:hasBulkMaterialThermalConductivity rdf:type owl:DatatypeProperty .
 
 
 
@@ -653,9 +709,27 @@ model-ontology:isImplementedBy rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
+###  http://siam.nist.gov/AM-Ontology#hasConvectionHeatTransferCoefficient
+
+:hasConvectionHeatTransferCoefficient rdf:type owl:DatatypeProperty .
+
+
+
 ###  http://siam.nist.gov/AM-Ontology#hasElasticModulus
 
 :hasElasticModulus rdf:type owl:DatatypeProperty .
+
+
+
+###  http://siam.nist.gov/AM-Ontology#hasInitialPowderDensity
+
+:hasInitialPowderDensity rdf:type owl:DatatypeProperty .
+
+
+
+###  http://siam.nist.gov/AM-Ontology#hasInternalHeat
+
+:hasInternalHeat rdf:type owl:DatatypeProperty .
 
 
 
@@ -719,15 +793,15 @@ model-ontology:isImplementedBy rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
-###  http://siam.nist.gov/AM-Ontology#hasSpecificHeat
+###  http://siam.nist.gov/AM-Ontology#hasSpecificHeatCapacity
 
-:hasSpecificHeat rdf:type owl:DatatypeProperty ;
-                 
-                 <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "TitaniumAverageSpecificHeat" ;
-                 
-                 <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "TitaniumAverageSpecificHeated" ;
-                 
-                 <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "TitaniumAverageSpecificHeats" .
+:hasSpecificHeatCapacity rdf:type owl:DatatypeProperty ;
+                         
+                         <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "TitaniumAverageSpecificHeats" ;
+                         
+                         <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "TitaniumAverageSpecificHeat" ;
+                         
+                         <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "TitaniumAverageSpecificHeated" .
 
 
 
@@ -764,6 +838,12 @@ model-ontology:isImplementedBy rdfs:subPropertyOf owl:topObjectProperty .
 ###  http://siam.nist.gov/AM-Ontology#hasThermalConductivity
 
 :hasThermalConductivity rdf:type owl:DatatypeProperty .
+
+
+
+###  http://siam.nist.gov/AM-Ontology#hasThermalRadiationCoefficient
+
+:hasThermalRadiationCoefficient rdf:type owl:DatatypeProperty .
 
 
 
@@ -905,51 +985,11 @@ model-ontology:isImplementedBy rdfs:subPropertyOf owl:topObjectProperty .
                               rdfs:subClassOf :PowderBedFusionPredictiveModel ,
                                               [ rdf:type owl:Restriction ;
                                                 owl:onProperty model-ontology:hasInputParameter ;
-                                                owl:someValuesFrom amProcess-ontology:ChamberTemperature
-                                              ] ,
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty :hasTopBoundaryCondition ;
-                                                owl:someValuesFrom :PowderBedTopBoundaryCondition
-                                              ] ,
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty model-ontology:hasInputParameter ;
-                                                owl:someValuesFrom amProcess-ontology:TemperatureDistribution
-                                              ] ,
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty model-ontology:hasInputParameter ;
-                                                owl:someValuesFrom model-ontology:SpecificHeat
-                                              ] ,
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty model-ontology:hasInputParameter ;
                                                 owl:someValuesFrom amProcess-ontology:HeatSourceVelocity
                                               ] ,
                                               [ rdf:type owl:Restriction ;
-                                                owl:onProperty :Predicts ;
-                                                owl:someValuesFrom amProcess-ontology:TemperatureDistribution
-                                              ] ,
-                                              [ rdf:type owl:Restriction ;
                                                 owl:onProperty model-ontology:hasInputParameter ;
-                                                owl:someValuesFrom amProcess-ontology:BedEmissivity
-                                              ] ,
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty model-ontology:hasInputParameter ;
-                                                owl:someValuesFrom model-ontology:AbsorbedHeatPerUnitVolume
-                                              ] ,
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty :isRepresentationOf ;
-                                                owl:someValuesFrom amProcess-ontology:HeatTransferInPowderBed
-                                              ] ,
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty model-ontology:hasInputParameter ;
-                                                owl:someValuesFrom amProcess-ontology:SubstrateTemperature
-                                              ] ,
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty model-ontology:hasInputParameter ;
-                                                owl:someValuesFrom amProcess-ontology:DensityDistribution
-                                              ] ,
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty model-ontology:hasInputParameter ;
-                                                owl:someValuesFrom model-ontology:ThermalConductivityOfSubstrate
+                                                owl:someValuesFrom amProcess-ontology:ThermalConductivity
                                               ] ,
                                               [ rdf:type owl:Restriction ;
                                                 owl:onProperty model-ontology:hasInputParameter ;
@@ -957,11 +997,15 @@ model-ontology:isImplementedBy rdfs:subPropertyOf owl:topObjectProperty .
                                               ] ,
                                               [ rdf:type owl:Restriction ;
                                                 owl:onProperty model-ontology:hasInputParameter ;
-                                                owl:someValuesFrom amProcess-ontology:FluidVelocity
+                                                owl:someValuesFrom amProcess-ontology:ChamberTemperature
                                               ] ,
                                               [ rdf:type owl:Restriction ;
                                                 owl:onProperty model-ontology:hasInputParameter ;
-                                                owl:someValuesFrom amProcess-ontology:ThermalConductivity
+                                                owl:someValuesFrom model-ontology:SurfaceConvectionCoefficient
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :hasTopBoundaryCondition ;
+                                                owl:someValuesFrom :PowderBedTopBoundaryCondition
                                               ] ,
                                               [ rdf:type owl:Class ;
                                                 owl:unionOf ( [ rdf:type owl:Class ;
@@ -983,7 +1027,43 @@ model-ontology:isImplementedBy rdfs:subPropertyOf owl:topObjectProperty .
                                               ] ,
                                               [ rdf:type owl:Restriction ;
                                                 owl:onProperty model-ontology:hasInputParameter ;
-                                                owl:someValuesFrom model-ontology:SurfaceConvectionCoefficient
+                                                owl:someValuesFrom amProcess-ontology:SubstrateTemperature
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty model-ontology:hasInputParameter ;
+                                                owl:someValuesFrom amProcess-ontology:FluidVelocity
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty model-ontology:hasInputParameter ;
+                                                owl:someValuesFrom model-ontology:ThermalConductivityOfSubstrate
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :Predicts ;
+                                                owl:someValuesFrom amProcess-ontology:TemperatureDistribution
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty model-ontology:hasInputParameter ;
+                                                owl:someValuesFrom amProcess-ontology:TemperatureDistribution
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty model-ontology:hasInputParameter ;
+                                                owl:someValuesFrom model-ontology:AbsorbedHeatPerUnitVolume
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty model-ontology:hasInputParameter ;
+                                                owl:someValuesFrom amProcess-ontology:DensityDistribution
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty model-ontology:hasInputParameter ;
+                                                owl:someValuesFrom amProcess-ontology:BedEmissivity
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty model-ontology:hasInputParameter ;
+                                                owl:someValuesFrom model-ontology:SpecificHeat
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :isRepresentationOf ;
+                                                owl:someValuesFrom amProcess-ontology:HeatTransferInPowderBed
                                               ] .
 
 
@@ -993,24 +1073,6 @@ model-ontology:isImplementedBy rdfs:subPropertyOf owl:topObjectProperty .
 :IrradiationAbsorptionByPowderBedModel rdf:type owl:Class ;
                                        
                                        rdfs:subClassOf :PowderBedFusionPredictiveModel ,
-                                                       [ rdf:type owl:Class ;
-                                                         owl:unionOf ( [ rdf:type owl:Class ;
-                                                                         owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                                                owl:onProperty model-ontology:hasOutputParameter ;
-                                                                                                owl:someValuesFrom amProcess-ontology:AbsorptionCoefficient
-                                                                                              ]
-                                                                                              [ rdf:type owl:Restriction ;
-                                                                                                owl:onProperty model-ontology:hasOutputParameter ;
-                                                                                                owl:someValuesFrom amProcess-ontology:ExtinctionCoefficient
-                                                                                              ]
-                                                                                            )
-                                                                       ]
-                                                                       [ rdf:type owl:Restriction ;
-                                                                         owl:onProperty model-ontology:hasOutputParameter ;
-                                                                         owl:someValuesFrom model-ontology:AbsorbedHeatPerUnitVolume
-                                                                       ]
-                                                                     )
-                                                       ] ,
                                                        [ rdf:type owl:Class ;
                                                          owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                 owl:onProperty model-ontology:hasInputParameter ;
@@ -1040,6 +1102,24 @@ model-ontology:isImplementedBy rdfs:subPropertyOf owl:topObjectProperty .
                                                                                 owl:someValuesFrom amProcess-ontology:ExtinctionCoefficient
                                                                               ]
                                                                             )
+                                                       ] ,
+                                                       [ rdf:type owl:Class ;
+                                                         owl:unionOf ( [ rdf:type owl:Class ;
+                                                                         owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty model-ontology:hasOutputParameter ;
+                                                                                                owl:someValuesFrom amProcess-ontology:AbsorptionCoefficient
+                                                                                              ]
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty model-ontology:hasOutputParameter ;
+                                                                                                owl:someValuesFrom amProcess-ontology:ExtinctionCoefficient
+                                                                                              ]
+                                                                                            )
+                                                                       ]
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty model-ontology:hasOutputParameter ;
+                                                                         owl:someValuesFrom model-ontology:AbsorbedHeatPerUnitVolume
+                                                                       ]
+                                                                     )
                                                        ] ,
                                                        [ rdf:type owl:Restriction ;
                                                          owl:onProperty :isRepresentationOf ;
@@ -1080,6 +1160,10 @@ model-ontology:isImplementedBy rdfs:subPropertyOf owl:topObjectProperty .
 :ModelOfDensityVariationInPowderMaterial rdf:type owl:Class ;
                                          
                                          rdfs:subClassOf :PowderBedFusionPredictiveModel ,
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :Predicts ;
+                                                           owl:someValuesFrom amProcess-ontology:DensityDistribution
+                                                         ] ,
                                                          [ rdf:type owl:Class ;
                                                            owl:unionOf ( [ rdf:type owl:Restriction ;
                                                                            owl:onProperty :isRepresentationOf ;
@@ -1090,10 +1174,6 @@ model-ontology:isImplementedBy rdfs:subPropertyOf owl:topObjectProperty .
                                                                            owl:someValuesFrom amProcess-ontology:ConsolidationBySintering
                                                                          ]
                                                                        )
-                                                         ] ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty :Predicts ;
-                                                           owl:someValuesFrom amProcess-ontology:DensityDistribution
                                                          ] ;
                                          
                                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ModelOfDensityVariationInPowderMaterials" ;
@@ -1537,6 +1617,10 @@ amProcess-ontology:ElasticDeformation owl:equivalentClass [ rdf:type owl:Class ;
 amProcess-ontology:ExtinctionCoefficient rdf:type owl:Class ;
                                          
                                          rdfs:subClassOf model-ontology:ThermalModelVariable ,
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :isDependentOn ;
+                                                           owl:allValuesFrom model-ontology:LambertBeerLaw
+                                                         ] ,
                                                          [ rdf:type owl:Class ;
                                                            owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                   owl:onProperty amProcess-ontology:isFunctionOf ;
@@ -1559,10 +1643,6 @@ amProcess-ontology:ExtinctionCoefficient rdf:type owl:Class ;
                                                                                   owl:someValuesFrom model-ontology:RadiativePropertyOfBulkMaterial
                                                                                 ]
                                                                               )
-                                                         ] ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty :isDependentOn ;
-                                                           owl:allValuesFrom model-ontology:LambertBeerLaw
                                                          ] ;
                                          
                                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ExtinctionCoefficient" ;
@@ -1747,6 +1827,14 @@ amProcess-ontology:PowderBed rdfs:subClassOf [ rdf:type owl:Class ;
                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PowderBeds" ;
                              
                              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PowderBed" .
+
+
+
+###  http://siam.nist.gov/AM-Process-Ontology#PowderBedFusion
+
+amProcess-ontology:PowderBedFusion <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PowderBedFusion" ;
+                                   
+                                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PowderBedFusions" .
 
 
 
@@ -1968,6 +2056,10 @@ amProcess-ontology:VolumetricHeatGeneration rdfs:subClassOf [ rdf:type owl:Restr
 model-ontology:AbsorbedHeatPerUnitVolume rdf:type owl:Class ;
                                          
                                          rdfs:subClassOf model-ontology:ThermalModelVariable ,
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :isRepresentationOf ;
+                                                           owl:someValuesFrom amProcess-ontology:VolumetricHeatGeneration
+                                                         ] ,
                                                          [ rdf:type owl:Class ;
                                                            owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                   owl:onProperty model-ontology:isDeterminedBy ;
@@ -1990,10 +2082,6 @@ model-ontology:AbsorbedHeatPerUnitVolume rdf:type owl:Class ;
                                                                                   owl:someValuesFrom amProcess-ontology:SurfaceIrradiation
                                                                                 ]
                                                                               )
-                                                         ] ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty :isRepresentationOf ;
-                                                           owl:someValuesFrom amProcess-ontology:VolumetricHeatGeneration
                                                          ] ;
                                          
                                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "AbsorbedHeatPerUnitVolume" ;
@@ -2243,11 +2331,7 @@ model-ontology:ModelComponent <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Mo
 
 ###  http://siam.nist.gov/Model-Ontology#NavierStokesEquation
 
-model-ontology:NavierStokesEquation rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                      owl:onProperty model-ontology:hasOutputParameter ;
-                                                      owl:someValuesFrom amProcess-ontology:FluidVelocity
-                                                    ] ,
-                                                    [ rdf:type owl:Class ;
+model-ontology:NavierStokesEquation rdfs:subClassOf [ rdf:type owl:Class ;
                                                       owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                              owl:onProperty model-ontology:isDeterminedBy ;
                                                                              owl:someValuesFrom amProcess-ontology:DensityDistribution
@@ -2269,6 +2353,10 @@ model-ontology:NavierStokesEquation rdfs:subClassOf [ rdf:type owl:Restriction ;
                                                                              owl:someValuesFrom model-ontology:SurfaceTension
                                                                            ]
                                                                          )
+                                                    ] ,
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty model-ontology:hasOutputParameter ;
+                                                      owl:someValuesFrom amProcess-ontology:FluidVelocity
                                                     ] .
 
 
@@ -2573,6 +2661,26 @@ model-ontology:ViscosityActivationEnergy rdfs:subClassOf [ rdf:type owl:Restrict
 #################################################################
 
 
+###  http://siam.nist.gov/AM-Ontology#AbsorptionCoefficent
+
+:AbsorptionCoefficent rdf:type amProcess-ontology:AbsorptionCoefficient ,
+                               owl:NamedIndividual ;
+                      
+                      :Li-Ma_AbsorptionCoefficient "0.12"^^xsd:double .
+
+
+
+###  http://siam.nist.gov/AM-Ontology#AmbientTemperature
+
+:AmbientTemperature rdf:type amProcess-ontology:ChamberTemperature ,
+                             owl:NamedIndividual ;
+                    
+                    :Li-Ma_AmbientTemperature ""^^xsd:double ;
+                    
+                    :Jiang-AmbientTemperature ""^^xsd:double .
+
+
+
 ###  http://siam.nist.gov/AM-Ontology#DensityOfBulkMaterial
 
 :DensityOfBulkMaterial rdf:type model-ontology:DensityOfBulkMaterial ,
@@ -2638,6 +2746,13 @@ model-ontology:ViscosityActivationEnergy rdfs:subClassOf [ rdf:type owl:Restrict
 
 
 
+###  http://siam.nist.gov/AM-Ontology#InitialPowderDensity
+
+:InitialPowderDensity rdf:type amProcess-ontology:InitialPowderDensity ,
+                               owl:NamedIndividual .
+
+
+
 ###  http://siam.nist.gov/AM-Ontology#InteractionBetweenPartBedAndPowderIsModeledWithoutCoefficientOfFriction
 
 :InteractionBetweenPartBedAndPowderIsModeledWithoutCoefficientOfFriction rdf:type model-ontology:MechanicalAssumption ,
@@ -2647,19 +2762,16 @@ model-ontology:ViscosityActivationEnergy rdfs:subClassOf [ rdf:type owl:Restrict
 
 
 
+###  http://siam.nist.gov/AM-Ontology#InternalHeat
+
+:InternalHeat rdf:type owl:NamedIndividual .
+
+
+
 ###  http://siam.nist.gov/AM-Ontology#IrradiationAbsorptionByPowderBedModel
 
 :IrradiationAbsorptionByPowderBedModel rdf:type model-ontology:IrradiationAbsorptionModel ,
                                                 owl:NamedIndividual .
-
-
-
-###  http://siam.nist.gov/AM-Ontology#Jiang-AmbientTemperature
-
-:Jiang-AmbientTemperature rdf:type amProcess-ontology:ChamberTemperature ,
-                                   owl:NamedIndividual ;
-                          
-                          :Jiang-AmbientTemperature "" .
 
 
 
@@ -2724,6 +2836,15 @@ model-ontology:ViscosityActivationEnergy rdfs:subClassOf [ rdf:type owl:Restrict
                           owl:NamedIndividual ;
                  
                  :isRepresentedBy :GaussianDistribution .
+
+
+
+###  http://siam.nist.gov/AM-Ontology#Jiang-LaserHeatFlux
+
+:Jiang-LaserHeatFlux rdf:type amProcess-ontology:HeatSourcePower ,
+                              owl:NamedIndividual ;
+                     
+                     <http://attempto.ifi.uzh.ch/ace_lexicon#PN_sg> "LaserHeatFlux" .
 
 
 
@@ -2807,26 +2928,26 @@ model-ontology:ViscosityActivationEnergy rdfs:subClassOf [ rdf:type owl:Restrict
                                 
                                 <http://attempto.ifi.uzh.ch/ace_lexicon#PN_sg> "ThermalModelComponent" ;
                                 
-                                model-ontology:hasInputParameter :DensityOfBulkMaterial ,
+                                model-ontology:hasInputParameter :AmbientTemperature ,
+                                                                 :DensityOfBulkMaterial ,
                                                                  :HeatTransferCoefficient ,
-                                                                 :Jiang-AmbientTemperature ,
                                                                  :Jiang-CoefficientOfThermalExpansion ;
                                 
                                 amProcess-ontology:hasVariable :Jiang-DensityDistribution ;
                                 
-                                model-ontology:hasInputParameter :Jiang-ThermalConductivityOfSolidMaterial ;
+                                model-ontology:hasInputParameter :Jiang-LaserHeatFlux ,
+                                                                 :Jiang-ThermalConductivityOfSolidMaterial ;
                                 
                                 model-ontology:hasOutputParameter :Jiang-TransientTemperatureDistribution ;
                                 
-                                model-ontology:hasInputParameter :LaserHeatFlux ,
-                                                                 :LaserSpeed ,
+                                model-ontology:hasInputParameter :LaserSpeed ,
                                                                  :LaserSpotRadius ,
                                                                  :LatentHeatOfFusion ,
                                                                  :LiquidusTemperature ,
                                                                  :PowderBedTemperature ,
                                                                  :PowderLayerThickness ,
                                                                  :SolidusTemperature ,
-                                                                 :SpecificHeat ;
+                                                                 :SpecificHeatCapacity ;
                                 
                                 amProcess-ontology:hasVariable :ThermalConductivity .
 
@@ -2971,7 +3092,7 @@ model-ontology:ViscosityActivationEnergy rdfs:subClassOf [ rdf:type owl:Restrict
                                   <http://attempto.ifi.uzh.ch/ace_lexicon#PN_sg> "Kolossov-TemperatureDistribution" ;
                                   
                                   :isDependentOn :Kolossov-VolumeEnthalpy ,
-                                                 :SpecificHeat .
+                                                 :SpecificHeatCapacity .
 
 
 
@@ -3002,7 +3123,8 @@ SinteringPotential (or DensityDistribution) : SinteringPotential (is hihgly corr
                                    
                                    :hasInputParameter "ExternalTemperature ; HeatSourceProperties ; MaterialProperties ; LayerThickness ; ThermalExchangeCoefficient ;" ;
                                    
-                                   model-ontology:hasInputParameter :Kolossov-ExternalTemperature ,
+                                   model-ontology:hasInputParameter :DensityOfBulkMaterial ,
+                                                                    :Kolossov-ExternalTemperature ,
                                                                     :Kolossov-NonLinearThermalConductivityParameter_a ,
                                                                     :Kolossov-NonLinearThermalConductivityParameter_b ;
                                    
@@ -3019,7 +3141,7 @@ SinteringPotential (or DensityDistribution) : SinteringPotential (is hihgly corr
                                                                     :LaserSpotRadius ,
                                                                     :PowderBedTemperature ,
                                                                     :PowderLayerThickness ,
-                                                                    :SpecificHeat .
+                                                                    :SpecificHeatCapacity .
 
 
 
@@ -3045,7 +3167,8 @@ SinteringPotential (or DensityDistribution) : SinteringPotential (is hihgly corr
 
 ###  http://siam.nist.gov/AM-Ontology#Kolossov-ThermalConductivityOfPowder
 
-:Kolossov-ThermalConductivityOfPowder rdf:type owl:NamedIndividual ;
+:Kolossov-ThermalConductivityOfPowder rdf:type model-ontology:ThermalConductivityOfLoosePowder ,
+                                               owl:NamedIndividual ;
                                       
                                       :Kolossov-ThermalConductivityOfPowder "0.2 W/m K"^^xsd:double .
 
@@ -3078,13 +3201,13 @@ SinteringPotential (or DensityDistribution) : SinteringPotential (is hihgly corr
                   
                   :hasPowderThermalConductivity "0.2 W/m K"^^xsd:double ;
                   
-                  :hasSpecificHeat "1.9 x 10(e-3) J/mm3 K"^^xsd:double ;
+                  :hasSpecificHeatCapacity "1.9 x 10(e-3) J/mm3 K"^^xsd:double ;
                   
                   :hasThermalConductivity "11 W/m K"^^xsd:double ;
                   
                   :hasPowderDensity "2.9 x 10(e-3) kg/m3"^^xsd:double ;
                   
-                  :hasBulkThermalConductivity "22 W/m K"^^xsd:double ;
+                  :hasBulkMaterialThermalConductivity "22 W/m K"^^xsd:double ;
                   
                   :haSolidDensity "5.8 x 10(e-3) kg/m3"^^xsd:double .
 
@@ -3092,7 +3215,8 @@ SinteringPotential (or DensityDistribution) : SinteringPotential (is hihgly corr
 
 ###  http://siam.nist.gov/AM-Ontology#Kolossov-VolumeEnthalpy
 
-:Kolossov-VolumeEnthalpy rdf:type owl:NamedIndividual ;
+:Kolossov-VolumeEnthalpy rdf:type model-ontology:EnthalpyDistribution ,
+                                  owl:NamedIndividual ;
                          
                          <http://attempto.ifi.uzh.ch/ace_lexicon#PN_sg> "Kolossov-VolumeEnthalpy" .
 
@@ -3117,19 +3241,12 @@ SinteringPotential (or DensityDistribution) : SinteringPotential (is hihgly corr
 
 
 
-###  http://siam.nist.gov/AM-Ontology#LaserHeatFlux
-
-:LaserHeatFlux rdf:type amProcess-ontology:HeatSourcePower ,
-                        owl:NamedIndividual ;
-               
-               <http://attempto.ifi.uzh.ch/ace_lexicon#PN_sg> "LaserHeatFlux" .
-
-
-
 ###  http://siam.nist.gov/AM-Ontology#LaserPower
 
 :LaserPower rdf:type amProcess-ontology:HeatSourcePower ,
                      owl:NamedIndividual ;
+            
+            :Li-Ma_LaserPower "195 W"^^xsd:double ;
             
             :Kolossov-AverageLaserPower "2.0 W"^^xsd:double .
 
@@ -3142,6 +3259,8 @@ SinteringPotential (or DensityDistribution) : SinteringPotential (is hihgly corr
             
             :Kolossov-LaserSpotSpeed "1.0 x 10(e-3) m/s"^^xsd:double ;
             
+            :Li-Ma_ScanningSpeed "800 mm/s"^^xsd:double ;
+            
             :Jiang-LaserBladeScanSpeed "" .
 
 
@@ -3153,6 +3272,8 @@ SinteringPotential (or DensityDistribution) : SinteringPotential (is hihgly corr
                  
                  :Kolossov-SpotRadius "2.5 x 10(e-5) m"^^xsd:double ;
                  
+                 :Li-Ma_LaserBeamRadius "50 µm"^^xsd:double ;
+                 
                  :Jiang-SpotRadius "9.15 x 10(e-3) mm"^^xsd:double .
 
 
@@ -3161,6 +3282,8 @@ SinteringPotential (or DensityDistribution) : SinteringPotential (is hihgly corr
 
 :LaserWavelength rdf:type amProcess-ontology:BeamWavelength ,
                           owl:NamedIndividual ;
+                 
+                 :Li-Ma_LaserWavelength "1.064 µm"^^xsd:double ;
                  
                  :Kolossov-LaserWavelength "1.064 µm" .
 
@@ -3175,20 +3298,207 @@ SinteringPotential (or DensityDistribution) : SinteringPotential (is hihgly corr
 
 
 
+###  http://siam.nist.gov/AM-Ontology#Li-MA_ThermalModel
+
+:Li-MA_ThermalModel rdf:type :HeatTransferInPowderBedModel ,
+                             owl:NamedIndividual ;
+                    
+                    model-ontology:hasComponent :Li-Ma_ConsolidationModelComponent ;
+                    
+                    :Predicts :Li-Ma_TemperatureDistribution ;
+                    
+                    :isRepresentationOf :Li-Ma_TemperatureDistribution_InSingleLayerSingleTrackPowderBedFusionProcess ;
+                    
+                    model-ontology:hasComponent :Li-Ma_ThermalAnalysisComponent ;
+                    
+                    model-ontology:hasFunction :Li-Ma_ThreeDimensional_SingleLayerSingleTrack_FEA_OfTemperatureDistributionInPPBF .
+
+
+
+###  http://siam.nist.gov/AM-Ontology#Li-Ma_ConsolidationModelComponent
+
+:Li-Ma_ConsolidationModelComponent rdf:type :ModelOfMeltingInPowder ,
+                                            owl:NamedIndividual ;
+                                   
+                                   model-ontology:hasInputParameter :DensityOfBulkMaterial ;
+                                   
+                                   model-ontology:hasOutputParameter :Li-Ma_DensityDistribution ;
+                                   
+                                   model-ontology:hasInputParameter :Li-Ma_InitialPackingRatio ;
+                                   
+                                   amProcess-ontology:hasVariable :Li-Ma_PackingRatioDistribution ;
+                                   
+                                   model-ontology:hasInputParameter :Li-Ma_TemperatureDistribution .
+
+
+
+###  http://siam.nist.gov/AM-Ontology#Li-Ma_ContinuousYtterbiumFiberDiodeLaser
+
+:Li-Ma_ContinuousYtterbiumFiberDiodeLaser rdf:type amProcess-ontology:LaserBeam ,
+                                                   owl:NamedIndividual ;
+                                          
+                                          :hasWavelength "1.064 µm"^^xsd:double ;
+                                          
+                                          :hasLaserPower "200 W"^^xsd:double ;
+                                          
+                                          :hasSpotRadius "50 µm"^^xsd:double ;
+                                          
+                                          :hasSpotSpeed "800 m/s"^^xsd:double .
+
+
+
+###  http://siam.nist.gov/AM-Ontology#Li-Ma_ConvectionHeatTransferCoefficient
+
+:Li-Ma_ConvectionHeatTransferCoefficient rdf:type model-ontology:SurfaceConvectionCoefficient ,
+                                                  owl:NamedIndividual .
+
+
+
+###  http://siam.nist.gov/AM-Ontology#Li-Ma_DensityDistribution
+
+:Li-Ma_DensityDistribution rdf:type amProcess-ontology:DensityDistribution ,
+                                    owl:NamedIndividual .
+
+
+
+###  http://siam.nist.gov/AM-Ontology#Li-Ma_Inconel625
+
+:Li-Ma_Inconel625 rdf:type amProcess-ontology:MetalAlloy ,
+                           owl:NamedIndividual ;
+                  
+                  :hasConvectionHeatTransferCoefficient ""^^xsd:double ;
+                  
+                  :hasThermalRadiationCoefficient ""^^xsd:double ;
+                  
+                  :hasInitialPowderDensity ""^^xsd:double ;
+                  
+                  :hasSolidusTemperature ""^^xsd:double ;
+                  
+                  :hasLiquidusTemperature ""^^xsd:double ;
+                  
+                  :haSolidDensity ""^^xsd:double ;
+                  
+                  :hasAbsorptionCoefficient "0.12"^^xsd:double ;
+                  
+                  :hasInternalHeat "" ;
+                  
+                  :hasBulkMaterialThermalConductivity "" ;
+                  
+                  :hasInitialPowderDensity "" ;
+                  
+                  :hasSpecificHeatCapacity "" .
+
+
+
+###  http://siam.nist.gov/AM-Ontology#Li-Ma_InitialPackingRatio
+
+:Li-Ma_InitialPackingRatio rdf:type owl:NamedIndividual .
+
+
+
+###  http://siam.nist.gov/AM-Ontology#Li-Ma_MeltStateVariable
+
+:Li-Ma_MeltStateVariable rdf:type owl:NamedIndividual .
+
+
+
+###  http://siam.nist.gov/AM-Ontology#Li-Ma_PackingRatioDistribution
+
+:Li-Ma_PackingRatioDistribution rdf:type model-ontology:PorosityDistribution ,
+                                         owl:NamedIndividual ;
+                                
+                                amProcess-ontology:isFunctionOf :DensityOfBulkMaterial ,
+                                                                :Li-Ma_DensityDistribution .
+
+
+
+###  http://siam.nist.gov/AM-Ontology#Li-Ma_TemperatureDistribution
+
+:Li-Ma_TemperatureDistribution rdf:type amProcess-ontology:TemperatureDistribution ,
+                                        owl:NamedIndividual .
+
+
+
+###  http://siam.nist.gov/AM-Ontology#Li-Ma_TemperatureDistribution_InSingleLayerSingleTrackPowderBedFusionProcess
+
+:Li-Ma_TemperatureDistribution_InSingleLayerSingleTrackPowderBedFusionProcess rdf:type amProcess-ontology:PowderBedFusion ,
+                                                                                       owl:NamedIndividual ;
+                                                                              
+                                                                              amProcess-ontology:hasHeatSource :Li-Ma_ContinuousYtterbiumFiberDiodeLaser ;
+                                                                              
+                                                                              amProcess-ontology:hasMaterial :Li-Ma_Inconel625 ;
+                                                                              
+                                                                              amProcess-ontology:hasPowderLayerProperty :PowderLayerThickness .
+
+
+
+###  http://siam.nist.gov/AM-Ontology#Li-Ma_ThermalAnalysisComponent
+
+:Li-Ma_ThermalAnalysisComponent rdf:type :HeatTransferInPowderBedModel ,
+                                         model-ontology:ModelComponent ,
+                                         owl:NamedIndividual ;
+                                
+                                model-ontology:hasInputParameter :AbsorptionCoefficent ,
+                                                                 :AmbientTemperature ,
+                                                                 :DensityOfBulkMaterial ,
+                                                                 :InitialPowderDensity ,
+                                                                 :InternalHeat ,
+                                                                 :LaserPower ,
+                                                                 :LaserSpeed ,
+                                                                 :LaserSpotRadius ,
+                                                                 :LaserWavelength ,
+                                                                 :Li-Ma_ConvectionHeatTransferCoefficient ;
+                                
+                                amProcess-ontology:hasVariable :Li-Ma_DensityDistribution ,
+                                                               :Li-Ma_MeltStateVariable ;
+                                
+                                model-ontology:hasOutputParameter :Li-Ma_TemperatureDistribution ;
+                                
+                                amProcess-ontology:hasVariable :Li-Ma_ThermalConductivityOfPowder ;
+                                
+                                model-ontology:hasInputParameter :Li-Ma_ThermalConductivityOfTheBulkMaterial ,
+                                                                 :Li-Ma_ThermalRadiationCoefficient ,
+                                                                 :LiquidusTemperature ,
+                                                                 :PowderBedTemperature ,
+                                                                 :PowderLayerThickness ,
+                                                                 :SolidusTemperature ,
+                                                                 :SpecificHeatCapacity .
+
+
+
+###  http://siam.nist.gov/AM-Ontology#Li-Ma_ThermalConductivityOfPowder
+
+:Li-Ma_ThermalConductivityOfPowder rdf:type owl:NamedIndividual .
+
+
+
+###  http://siam.nist.gov/AM-Ontology#Li-Ma_ThermalConductivityOfTheBulkMaterial
+
+:Li-Ma_ThermalConductivityOfTheBulkMaterial rdf:type model-ontology:ThermalConductivityOfBulkMaterial ,
+                                                     owl:NamedIndividual .
+
+
+
+###  http://siam.nist.gov/AM-Ontology#Li-Ma_ThermalRadiationCoefficient
+
+:Li-Ma_ThermalRadiationCoefficient rdf:type model-ontology:SurfaceRadiationCoefficient ,
+                                            owl:NamedIndividual .
+
+
+
+###  http://siam.nist.gov/AM-Ontology#Li-Ma_ThreeDimensional_SingleLayerSingleTrack_FEA_OfTemperatureDistributionInPPBF
+
+:Li-Ma_ThreeDimensional_SingleLayerSingleTrack_FEA_OfTemperatureDistributionInPPBF rdf:type model-ontology:FunctionOfModel ,
+                                                                                            owl:NamedIndividual .
+
+
+
 ###  http://siam.nist.gov/AM-Ontology#LiquidusTemperature
 
 :LiquidusTemperature rdf:type model-ontology:LiquidusTemperature ,
                               owl:NamedIndividual ;
                      
                      :Jiang-316StainlessSteelLiquidusTemperature "1380 °C"^^xsd:double .
-
-
-
-###  http://siam.nist.gov/AM-Ontology#MeltingAndResolidifcationMechanismsWithinASelectiveLaserSintering
-
-:MeltingAndResolidifcationMechanismsWithinASelectiveLaserSintering rdf:type owl:NamedIndividual ;
-                                                                   
-                                                                   <http://attempto.ifi.uzh.ch/ace_lexicon#PN_sg> "MeltingAndResolidifcationMechanismsWithinASelectiveLaserSintering" .
 
 
 
@@ -3256,20 +3566,15 @@ SinteringPotential (or DensityDistribution) : SinteringPotential (is hihgly corr
 
 
 
-###  http://siam.nist.gov/AM-Ontology#PowderBedPreheatingTemperature
-
-:PowderBedPreheatingTemperature rdf:type owl:NamedIndividual ;
-                                
-                                <http://attempto.ifi.uzh.ch/ace_lexicon#PN_sg> "PowderBedPreheatingTemperature" .
-
-
-
 ###  http://siam.nist.gov/AM-Ontology#PowderBedTemperature
 
 :PowderBedTemperature rdf:type amProcess-ontology:PowderBedProperty ,
+                               amProcess-ontology:PowderInitialTemperature ,
                                owl:NamedIndividual ;
                       
-                      :Jiang-PowderBedTemperature "20°C"^^xsd:double .
+                      :Jiang-PowderBedTemperature "20°C"^^xsd:double ;
+                      
+                      :Li-Ma_PowderPreheatTemperature "80 oC"^^xsd:double .
 
 
 
@@ -3282,7 +3587,9 @@ SinteringPotential (or DensityDistribution) : SinteringPotential (is hihgly corr
                       
                       :Kolossov-LayerThickness "2 mm"^^xsd:double ;
                       
-                      :Roberts-LayerThickness "30 µm"^^xsd:double .
+                      :Roberts-LayerThickness "30 µm"^^xsd:double ;
+                      
+                      :Li-Ma_PowderLayerThickness "37 µm"^^xsd:double .
 
 
 
@@ -3372,7 +3679,8 @@ SinteringPotential (or DensityDistribution) : SinteringPotential (is hihgly corr
 
 ###  http://siam.nist.gov/AM-Ontology#SolidFraction
 
-:SolidFraction rdf:type owl:NamedIndividual ;
+:SolidFraction rdf:type model-ontology:SolidFractionDistribution ,
+                        owl:NamedIndividual ;
                
                model-ontology:isFunctionOf :Jiang-TemperatureDistribution ,
                                            :LiquidusTemperature ,
@@ -3391,16 +3699,16 @@ SinteringPotential (or DensityDistribution) : SinteringPotential (is hihgly corr
 
 
 
-###  http://siam.nist.gov/AM-Ontology#SpecificHeat
+###  http://siam.nist.gov/AM-Ontology#SpecificHeatCapacity
 
-:SpecificHeat rdf:type model-ontology:SpecificHeat ,
-                       owl:NamedIndividual ;
-              
-              :Kolossov-AverageSpecificHeat "1.9 x 10(e-3) J/mm3 K"^^xsd:double ;
-              
-              :Jiang-SpecificHeatofTheMaterial "10(e+2) J/Kg K"^^xsd:double ;
-              
-              <http://attempto.ifi.uzh.ch/ace_lexicon#PN_sg> "SpecificHeat" .
+:SpecificHeatCapacity rdf:type model-ontology:SpecificHeat ,
+                               owl:NamedIndividual ;
+                      
+                      :Kolossov-AverageSpecificHeat "1.9 x 10(e-3) J/mm3 K"^^xsd:double ;
+                      
+                      :Jiang-SpecificHeatofTheMaterial "10(e+2) J/Kg K"^^xsd:double ;
+                      
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#PN_sg> "SpecificHeat" .
 
 
 
@@ -3458,7 +3766,7 @@ amProcess-ontology:Jiang-ResidualStressesAndDefromationDistributionInDMLS rdf:ty
                                                                          
                                                                          :hasPoissonsRatio 0.3 ;
                                                                          
-                                                                         :hasSpecificHeat "10(e+2) J/Kg K"^^xsd:double ;
+                                                                         :hasSpecificHeatCapacity "10(e+2) J/Kg K"^^xsd:double ;
                                                                          
                                                                          :hasElasticModulus "10(e+4) MPa"^^xsd:double ;
                                                                          
@@ -3474,7 +3782,7 @@ amProcess-ontology:Jiang-ResidualStressesAndDefromationDistributionInDMLS rdf:ty
                                                                          
                                                                          <http://attempto.ifi.uzh.ch/ace_lexicon#PN_sg> "StainlessSteel" ;
                                                                          
-                                                                         :hasBulkThermalConductivity "" ;
+                                                                         :hasBulkMaterialThermalConductivity "" ;
                                                                          
                                                                          :hasThermalConductivity "" .
 
@@ -3506,12 +3814,6 @@ model-ontology:NavierStokesEquations <http://attempto.ifi.uzh.ch/ace_lexicon#CN_
                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "FluidFlowInMeltPoolModels" ;
                           
                           <http://attempto.ifi.uzh.ch/ace_lexicon#PN_sg> "FluidFlowInMeltPoolModel" .
-
-
-
-amProcess-ontology:PowderBedFusion <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PowderBedFusion" ;
-                                   
-                                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PowderBedFusions" .
 
 
 
