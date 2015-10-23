@@ -1235,16 +1235,8 @@ Heat Transfer Equation is a type of Transport Equation""" ,
        
        rdfs:subClassOf :ModelEntity ,
                        [ rdf:type owl:Restriction ;
-                         owl:onProperty :hasFunction ;
-                         owl:someValuesFrom :FunctionOfModel
-                       ] ,
-                       [ rdf:type owl:Restriction ;
                          owl:onProperty :hasAssumption ;
                          owl:someValuesFrom :ModelAssumption
-                       ] ,
-                       [ rdf:type owl:Restriction ;
-                         owl:onProperty :hasComponent ;
-                         owl:someValuesFrom :ModelComponent
                        ] ,
                        [ rdf:type owl:Restriction ;
                          owl:onProperty :hasParameter ;
@@ -1253,6 +1245,14 @@ Heat Transfer Equation is a type of Transport Equation""" ,
                                                                    :ModelOutputParameter
                                                                  )
                                             ]
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasFunction ;
+                         owl:someValuesFrom :FunctionOfModel
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasComponent ;
+                         owl:someValuesFrom :ModelComponent
                        ] ;
        
        rdfs:comment "A model component represents a certain physical process at given length- and time- scales." ,

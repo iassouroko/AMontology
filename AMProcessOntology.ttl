@@ -69,7 +69,13 @@
 
 ###  http://siam.nist.gov/AM-Process-Ontology#appliedTo
 
-:appliedTo rdf:type owl:ObjectProperty .
+:appliedTo rdf:type owl:ObjectProperty ;
+           
+           <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "appliedToed" ;
+           
+           <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "appliedTo" ;
+           
+           <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "appliedToes" .
 
 
 
@@ -82,6 +88,18 @@
            <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "dependsOned" ;
            
            <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "dependsOns" .
+
+
+
+###  http://siam.nist.gov/AM-Process-Ontology#hasCharacteristic
+
+:hasCharacteristic rdf:type owl:ObjectProperty ;
+                   
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasCharacteristic" ;
+                   
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasCharacteristics" ;
+                   
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasCharacteristiced" .
 
 
 
@@ -122,6 +140,18 @@
                          <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasEnvironmentParameters" ;
                          
                          rdfs:subPropertyOf :hasProcessParameter .
+
+
+
+###  http://siam.nist.gov/AM-Process-Ontology#hasExistenceIn
+
+:hasExistenceIn rdf:type owl:ObjectProperty ;
+                
+                <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasExistenceIned" ;
+                
+                <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasExistenceIn" ;
+                
+                <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasExistenceIns" .
 
 
 
@@ -304,6 +334,18 @@
 
 
 
+###  http://siam.nist.gov/AM-Process-Ontology#hasPriorProcess
+
+:hasPriorProcess rdf:type owl:ObjectProperty ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasPriorProcess" ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasPriorProcessed" ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasPriorProcesses" .
+
+
+
 ###  http://siam.nist.gov/AM-Process-Ontology#hasProcessParameter
 
 :hasProcessParameter rdf:type owl:ObjectProperty ;
@@ -329,6 +371,18 @@
                     <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasResources" ;
                     
                     <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasResourced" .
+
+
+
+###  http://siam.nist.gov/AM-Process-Ontology#hasProcessSequence
+
+:hasProcessSequence rdf:type owl:ObjectProperty ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasProcessSequenced" ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasProcessSequence" ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasProcessSequences" .
 
 
 
@@ -444,7 +498,13 @@
 
 ###  http://siam.nist.gov/AM-Process-Ontology#uses
 
-:uses rdf:type owl:ObjectProperty .
+:uses rdf:type owl:ObjectProperty ;
+      
+      <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "useses" ;
+      
+      <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "uses" ;
+      
+      <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "usesed" .
 
 
 
@@ -483,7 +543,11 @@
 
 :AMProcessEntity rdf:type owl:Class ;
                  
-                 rdfs:comment "An AMProcessEntity is an element used in the description of an additive manufacturing process." .
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "AMProcessEntity" ;
+                 
+                 rdfs:comment "An AMProcessEntity is an element used in the description of an additive manufacturing process." ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "AMProcessEntities" .
 
 
 
@@ -746,6 +810,10 @@
                     
                     rdfs:subClassOf :Ceramics ;
                     
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "CompositeMaterialses" ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "CompositeMaterials" ;
+                    
                     rdfs:comment "Materials that are particulate reinforced, fiber reinforces or some other combination of oxides and nonoxides." .
 
 
@@ -754,7 +822,11 @@
 
 :Consolidation rdf:type owl:Class ;
                
-               rdfs:subClassOf :PhysicalProcess ;
+               rdfs:subClassOf :PhysicalProcess ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasPriorProcess ;
+                                 owl:someValuesFrom :HeatTransferInPowderBed
+                               ] ;
                
                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Consolidations" ;
                
@@ -1048,7 +1120,26 @@
 
 :FluidFlowInMeltPool rdf:type owl:Class ;
                      
-                     rdfs:subClassOf :FluidMechanics ;
+                     rdfs:subClassOf :FluidMechanics ,
+                                     [ rdf:type owl:Class ;
+                                       owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :isDeterminedBy ;
+                                                              owl:someValuesFrom :BuoyancyEffects
+                                                            ]
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :isDeterminedBy ;
+                                                              owl:someValuesFrom :SurfaceTensionEffects
+                                                            ]
+                                                          )
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasExistenceIn ;
+                                       owl:allValuesFrom :ConsolidationByMelting
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasPriorProcess ;
+                                       owl:someValuesFrom :HeatTransferInPowderBed
+                                     ] ;
                      
                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "FluidFlowInMeltPool" ;
                      
@@ -1274,50 +1365,37 @@
 
 :HeatTransferInPowderBed rdf:type owl:Class ;
                          
-                         owl:equivalentClass [ rdf:type owl:Class ;
-                                               owl:intersectionOf ( :Thermal
-                                                                    [ rdf:type owl:Class ;
-                                                                      owl:unionOf ( [ rdf:type owl:Class ;
-                                                                                      owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                                                             owl:onProperty :isFunctionOf ;
-                                                                                                             owl:someValuesFrom :BedRadiation
-                                                                                                           ]
-                                                                                                           [ rdf:type owl:Restriction ;
-                                                                                                             owl:onProperty :isFunctionOf ;
-                                                                                                             owl:someValuesFrom :HeatConduction
-                                                                                                           ]
-                                                                                                           [ rdf:type owl:Restriction ;
-                                                                                                             owl:onProperty :isFunctionOf ;
-                                                                                                             owl:someValuesFrom :SurfaceConvection
-                                                                                                           ]
-                                                                                                         )
-                                                                                    ]
-                                                                                    [ rdf:type owl:Restriction ;
-                                                                                      owl:onProperty :isFunctionOf ;
-                                                                                      owl:allValuesFrom :HeatConduction
-                                                                                    ]
-                                                                                  )
-                                                                    ]
-                                                                  )
-                                             ] ;
+                         rdfs:subClassOf :Thermal ,
+                                         [ rdf:type owl:Class ;
+                                           owl:unionOf ( [ rdf:type owl:Class ;
+                                                           owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty :isFunctionOf ;
+                                                                                  owl:someValuesFrom :BedRadiation
+                                                                                ]
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty :isFunctionOf ;
+                                                                                  owl:someValuesFrom :HeatConduction
+                                                                                ]
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty :isFunctionOf ;
+                                                                                  owl:someValuesFrom :SurfaceConvection
+                                                                                ]
+                                                                              )
+                                                         ]
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :isFunctionOf ;
+                                                           owl:allValuesFrom :HeatConduction
+                                                         ]
+                                                       )
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasPriorProcess ;
+                                           owl:someValuesFrom :IrradiationAbsorptionByPowderBed
+                                         ] ;
                          
                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "HeatTransfers" ;
                          
                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "HeatTransfer" .
-
-
-
-###  http://siam.nist.gov/AM-Process-Ontology#HeatingByHeatSource
-
-:HeatingByHeatSource rdf:type owl:Class ;
-                     
-                     rdfs:subClassOf :IrradiationAbsorptionByPowderBed ;
-                     
-                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "Scannings" ;
-                     
-                     <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Scanning" ;
-                     
-                     rdfs:comment "A beam is directed toward the powder bed." .
 
 
 
@@ -1379,7 +1457,11 @@
 
 :IrradiationAbsorptionByPowderBed rdf:type owl:Class ;
                                   
-                                  rdfs:subClassOf :Thermal ;
+                                  rdfs:subClassOf :Thermal ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :hasPriorProcess ;
+                                                    owl:someValuesFrom :Irradiation
+                                                  ] ;
                                   
                                   rdfs:comment "Part of the irradiation is absorbed by the powder bed, heating it up." ;
                                   
@@ -1483,7 +1565,11 @@
               
               rdfs:subClassOf :MeltPoolSize ;
               
-              rdfs:comment "Cross-sectional area of melt pool, usually measured on the plane where the cross-sectional area reaches its maximum." .
+              rdfs:comment "Cross-sectional area of melt pool, usually measured on the plane where the cross-sectional area reaches its maximum." ;
+              
+              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "MeltPoolArea" ;
+              
+              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "MeltPoolAreas" .
 
 
 
@@ -1508,7 +1594,11 @@
                 
                 rdfs:subClassOf :MeltPoolSize ;
                 
-                rdfs:comment "Length of melt pool, as measured on the top surface of the powder bed." .
+                rdfs:comment "Length of melt pool, as measured on the top surface of the powder bed." ;
+                
+                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "MeltPoolLengths" ;
+                
+                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "MeltPoolLength" .
 
 
 
@@ -1613,7 +1703,26 @@
 
 :MicrostructureEvolution rdf:type owl:Class ;
                          
-                         rdfs:subClassOf :Microstructural ;
+                         rdfs:subClassOf :Microstructural ,
+                                         [ rdf:type owl:Class ;
+                                           owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty :hasPriorProcess ;
+                                                                  owl:someValuesFrom :ConsolidationByMelting
+                                                                ]
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty :hasPriorProcess ;
+                                                                  owl:someValuesFrom :FluidFlowInMeltPool
+                                                                ]
+                                                              )
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :dependsOn ;
+                                           owl:someValuesFrom :FluidFlowInMeltPool
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasCharacteristic ;
+                                           owl:someValuesFrom :SolidificationCharacteristic
+                                         ] ;
                          
                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "MicrostructureEvolution" ;
                          
@@ -2137,6 +2246,37 @@
                        rdfs:subClassOf :PowderBedFusion ,
                                        [ rdf:type owl:Class ;
                                          owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :hasProcessSequence ;
+                                                                owl:someValuesFrom :ConsolidationByMelting
+                                                              ]
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :hasProcessSequence ;
+                                                                owl:someValuesFrom :FluidMechanics
+                                                              ]
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :hasProcessSequence ;
+                                                                owl:someValuesFrom :HeatTransferInPowderBed
+                                                              ]
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :hasProcessSequence ;
+                                                                owl:someValuesFrom :Irradiation
+                                                              ]
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :hasProcessSequence ;
+                                                                owl:someValuesFrom :IrradiationAbsorptionByPowderBed
+                                                              ]
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :hasProcessSequence ;
+                                                                owl:someValuesFrom :Microstructural
+                                                              ]
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :hasProcessSequence ;
+                                                                owl:someValuesFrom :Structural
+                                                              ]
+                                                            )
+                                       ] ,
+                                       [ rdf:type owl:Class ;
+                                         owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                 owl:onProperty :appliedTo ;
                                                                 owl:someValuesFrom [ rdf:type owl:Class ;
                                                                                      owl:intersectionOf ( :HardMetal
@@ -2307,7 +2447,11 @@
                     
                     rdfs:subClassOf :DerivedVariable ;
                     
-                    rdfs:comment "Distribution of strain (deformation) in the solidified part." .
+                    rdfs:comment "Distribution of strain (deformation) in the solidified part." ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "StrainDistributions" ;
+                    
+                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "StrainDistribution" .
 
 
 
@@ -2329,7 +2473,18 @@
 
 :Structural rdf:type owl:Class ;
             
-            rdfs:subClassOf :PhysicalProcess ;
+            rdfs:subClassOf :PhysicalProcess ,
+                            [ rdf:type owl:Class ;
+                              owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :hasPriorProcess ;
+                                                     owl:someValuesFrom :Consolidation
+                                                   ]
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :hasPriorProcess ;
+                                                     owl:someValuesFrom :FluidMechanics
+                                                   ]
+                                                 )
+                            ] ;
             
             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "Structural" ;
             
@@ -2640,15 +2795,17 @@
 
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :FullMelting
-                :LiquidPhaseSintering
-                :SolidStateSintering
+  owl:members ( :Consolidation
+                :FluidMechanics
+                :Microstructural
+                :Structural
+                :Thermal
               )
 ] .
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :BedRadiation
-                :HeatConduction
-                :SurfaceConvection
+  owl:members ( :FullMelting
+                :LiquidPhaseSintering
+                :SolidStateSintering
               )
 ] .
 [ rdf:type owl:AllDisjointClasses ;
@@ -2659,6 +2816,12 @@
               )
 ] .
 [ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :BedRadiation
+                :HeatConduction
+                :SurfaceConvection
+              )
+] .
+[ rdf:type owl:AllDisjointClasses ;
   owl:members ( :BinderJetting
                 :DirectedEnergyDeposition
                 :MaterialExtrusion
@@ -2666,14 +2829,6 @@
                 :PowderBedFusion
                 :SheetLamination
                 :VatPhotopolymerization
-              )
-] .
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Consolidation
-                :FluidMechanics
-                :Microstructural
-                :Structural
-                :Thermal
               )
 ] .
 
