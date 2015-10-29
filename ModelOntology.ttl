@@ -61,35 +61,6 @@
 #################################################################
 
 
-###  http://siam.nist.gov/Model-Ontology#describesModelComponentOutput
-
-:describesModelComponentOutput rdf:type owl:ObjectProperty ;
-                               
-                               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "describesModelComponentOutputed" ;
-                               
-                               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "describesModelComponentOutputs" ;
-                               
-                               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "describesModelComponentOutput" .
-
-
-
-###  http://siam.nist.gov/Model-Ontology#describesModelOutput
-
-:describesModelOutput rdf:type owl:ObjectProperty ;
-                      
-                      <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "describesModelOutputed" ;
-                      
-                      <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "describesModelOutputs" ;
-                      
-                      <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "describesModelOutput" ;
-                      
-                      rdfs:domain :FunctionOfModel ;
-                      
-                      rdfs:range :ModelComponentOutputParameter ,
-                                 :ModelOutputParameter .
-
-
-
 ###  http://siam.nist.gov/Model-Ontology#hasAssumption
 
 :hasAssumption rdf:type owl:ObjectProperty ;
@@ -426,7 +397,11 @@
                    
                    rdfs:subClassOf :BoundaryOrInitialCondition ;
                    
-                   rdfs:comment "Boundary conditions are required for the solution of partial differential equations. There is one boundary condition required per degree of the equation for each dimension." .
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "BoundaryConditions" ;
+                   
+                   rdfs:comment "Boundary conditions are required for the solution of partial differential equations. There is one boundary condition required per degree of the equation for each dimension." ;
+                   
+                   <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "BoundaryCondition" .
 
 
 
@@ -436,7 +411,11 @@
                             
                             rdfs:subClassOf :ElementOfModel ;
                             
-                            rdfs:comment "Is a model element that gives information about the variable of interest on certain regions of the design space. A model requires one boundary condition per degree of the partial derivative on each dimension. Boundary conditions are required for the solution of partial differential equations." .
+                            rdfs:comment "Is a model element that gives information about the variable of interest on certain regions of the design space. A model requires one boundary condition per degree of the partial derivative on each dimension. Boundary conditions are required for the solution of partial differential equations." ;
+                            
+                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "BoundaryOrInitialConditions" ;
+                            
+                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "BoundaryOrInitialCondition" .
 
 
 
@@ -488,7 +467,11 @@
                                
                                rdfs:subClassOf :InitialCondition ;
                                
-                               rdfs:comment "Initial condition for consolidation model. It may be described as the initial distribution of porosity (or density) in the powder bed before the process." .
+                               rdfs:comment "Initial condition for consolidation model. It may be described as the initial distribution of porosity (or density) in the powder bed before the process." ;
+                               
+                               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ConsolidationInitialCondition" ;
+                               
+                               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ConsolidationInitialConditions" .
 
 
 
@@ -586,6 +569,10 @@
                                  
                                  rdfs:subClassOf :PhaseTransformationParameter ;
                                  
+                                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "CrystallineSinteringTemperatures" ;
+                                 
+                                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "CrystallineSinteringTemperature" ;
+                                 
                                  rdfs:comment "Sintering temperature in the material." .
 
 
@@ -607,6 +594,10 @@
 :DefinitionOfPhysicalProblem rdf:type owl:Class ;
                              
                              rdfs:subClassOf :PhysicalAssumption ;
+                             
+                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "DefinitionOfPhysicalProblem" ;
+                             
+                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "DefinitionOfPhysicalProblems" ;
                              
                              rdfs:comment "Definition of the different terms in the equation chosen to describe the physical process. Inclusion or neglection of physical phenomena." .
 
@@ -700,6 +691,10 @@
                       
                       rdfs:subClassOf :ThermalModelVariable ;
                       
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "EnthalpyDistributions" ;
+                      
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "EnthalpyDistribution" ;
+                      
                       rdfs:comment "Distribution of enthalpy in the powder bed." .
 
 
@@ -766,7 +761,11 @@
                                  
                                  rdfs:subClassOf :BoundaryCondition ;
                                  
-                                 rdfs:comment "Boundary conditions for fluid mechanics model, often given by the velocity or its gradient on a given surface." .
+                                 rdfs:comment "Boundary conditions for fluid mechanics model, often given by the velocity or its gradient on a given surface." ;
+                                 
+                                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "FluidMechanicsBoundaryCondition" ;
+                                 
+                                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "FluidMechanicsBoundaryConditions" .
 
 
 
@@ -776,7 +775,11 @@
                                 
                                 rdfs:subClassOf :InitialCondition ;
                                 
-                                rdfs:comment "Initial condition for fluid mechanics model, given by the initial distribution of velocity in powder bed." .
+                                rdfs:comment "Initial condition for fluid mechanics model, given by the initial distribution of velocity in powder bed." ;
+                                
+                                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "FluidMechanicsInitialCondition" ;
+                                
+                                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "FluidMechanicsInitialConditions" .
 
 
 
@@ -955,6 +958,10 @@ Heat Transfer Equation is a type of Transport Equation""" ,
                   
                   rdfs:subClassOf :BoundaryOrInitialCondition ;
                   
+                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "InitialConditions" ;
+                  
+                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "InitialCondition" ;
+                  
                   rdfs:comment "In the case of transient models, initial conditions are required as starting points for the propagation of the solution of the equation." .
 
 
@@ -965,7 +972,11 @@ Heat Transfer Equation is a type of Transport Equation""" ,
                  
                  rdfs:subClassOf :ModelDependentMaterialProperty ;
                  
-                 rdfs:comment "Initial value of porosity in the powder bed. Often close to 50%." .
+                 rdfs:comment "Initial value of porosity in the powder bed. Often close to 50%." ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "InitialPorosities" ;
+                 
+                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "InitialPorosity" .
 
 
 
@@ -1195,7 +1206,11 @@ Heat Transfer Equation is a type of Transport Equation""" ,
                                  
                                  rdfs:subClassOf :InitialCondition ;
                                  
-                                 rdfs:comment "Initial condition of microstructural evolution model. Given by initial distribution of phase field (in phase field methods) or the state in each cell (for a cellular automaton)." .
+                                 rdfs:comment "Initial condition of microstructural evolution model. Given by initial distribution of phase field (in phase field methods) or the state in each cell (for a cellular automaton)." ;
+                                 
+                                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "MicrostructuralInitialConditions" ;
+                                 
+                                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "MicrostructuralInitialCondition" .
 
 
 
@@ -1235,10 +1250,6 @@ Heat Transfer Equation is a type of Transport Equation""" ,
        
        rdfs:subClassOf :ModelEntity ,
                        [ rdf:type owl:Restriction ;
-                         owl:onProperty :hasAssumption ;
-                         owl:someValuesFrom :ModelAssumption
-                       ] ,
-                       [ rdf:type owl:Restriction ;
                          owl:onProperty :hasParameter ;
                          owl:someValuesFrom [ rdf:type owl:Class ;
                                               owl:intersectionOf ( :ModelInputParameter
@@ -1249,6 +1260,10 @@ Heat Transfer Equation is a type of Transport Equation""" ,
                        [ rdf:type owl:Restriction ;
                          owl:onProperty :hasFunction ;
                          owl:someValuesFrom :FunctionOfModel
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasAssumption ;
+                         owl:someValuesFrom :ModelAssumption
                        ] ,
                        [ rdf:type owl:Restriction ;
                          owl:onProperty :hasComponent ;
@@ -1544,7 +1559,11 @@ Heat Transfer Equation is a type of Transport Equation""" ,
                       
                       rdfs:subClassOf :ConsolidationModelVariable ;
                       
-                      rdfs:comment "Distribution of porosity in the powder bed." .
+                      rdfs:comment "Distribution of porosity in the powder bed." ;
+                      
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PorosityDistribution" ;
+                      
+                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PorosityDistributions" .
 
 
 
@@ -1636,6 +1655,10 @@ Heat Transfer Equation is a type of Transport Equation""" ,
                                 
                                 rdfs:subClassOf :ConsolidationModelVariable ;
                                 
+                                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SinteringPotentialDistribution" ;
+                                
+                                <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SinteringPotentialDistributions" ;
+                                
                                 rdfs:comment "Distribution of sintering potential in the powder bed." .
 
 
@@ -1646,7 +1669,11 @@ Heat Transfer Equation is a type of Transport Equation""" ,
                            
                            rdfs:subClassOf :ThermalModelVariable ;
                            
-                           rdfs:comment "Distribution of solid fraction in the powder bed (in the case of melting with a mushy zone)" .
+                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SolidFractionDistributions" ;
+                           
+                           rdfs:comment "Distribution of solid fraction in the powder bed (in the case of melting with a mushy zone)" ;
+                           
+                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SolidFractionDistribution" .
 
 
 
@@ -1826,7 +1853,11 @@ Heat Transfer Equation is a type of Transport Equation""" ,
                              
                              rdfs:subClassOf :BoundaryCondition ;
                              
-                             rdfs:comment "Boundary condition for solid mechanics model, as defined by mechanical constraints (no displacement, no rotation, etc)." .
+                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "StructuralBoundaryConditions" ;
+                             
+                             rdfs:comment "Boundary condition for solid mechanics model, as defined by mechanical constraints (no displacement, no rotation, etc)." ;
+                             
+                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "StructuralBoundaryCondition" .
 
 
 
@@ -1835,6 +1866,10 @@ Heat Transfer Equation is a type of Transport Equation""" ,
 :StructuralInitialCondition rdf:type owl:Class ;
                             
                             rdfs:subClassOf :InitialCondition ;
+                            
+                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "StructuralInitialCondition" ;
+                            
+                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "StructuralInitialConditions" ;
                             
                             rdfs:comment "Initial condition for a solid mechanics model, defined as the initial distribution of stresses and strains." .
 
@@ -1998,7 +2033,11 @@ Heat Transfer Equation is a type of Transport Equation""" ,
                                             
                                             rdfs:subClassOf :ModelDependentMaterialProperty ;
                                             
-                                            rdfs:comment "Thermal conductivity of fully sintered material, if assumed not equal to bulk material. This is reserved for cases in which fully sintered material is not fully-dense." .
+                                            rdfs:comment "Thermal conductivity of fully sintered material, if assumed not equal to bulk material. This is reserved for cases in which fully sintered material is not fully-dense." ;
+                                            
+                                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ThermalConductivityOfFullySinteredMaterials" ;
+                                            
+                                            <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ThermalConductivityOfFullySinteredMaterial" .
 
 
 
@@ -2007,6 +2046,10 @@ Heat Transfer Equation is a type of Transport Equation""" ,
 :ThermalConductivityOfLoosePowder rdf:type owl:Class ;
                                   
                                   rdfs:subClassOf :ModelDependentMaterialProperty ;
+                                  
+                                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ThermalConductivityOfLoosePowders" ;
+                                  
+                                  <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ThermalConductivityOfLoosePowder" ;
                                   
                                   rdfs:comment "Thermal conductivity in loose powder." .
 
@@ -2045,6 +2088,10 @@ Heat Transfer Equation is a type of Transport Equation""" ,
 :ThermalInitialCondition rdf:type owl:Class ;
                          
                          rdfs:subClassOf :InitialCondition ;
+                         
+                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ThermalInitialConditions" ;
+                         
+                         <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ThermalInitialCondition" ;
                          
                          rdfs:comment "Initial condition for thermal model, defined by the initial distribution of temperature or enthalpy in \"\"the powder bed\"\"." .
 

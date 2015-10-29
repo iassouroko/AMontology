@@ -67,9 +67,9 @@
 #################################################################
 
 
-###  http://siam.nist.gov/AM-Process-Ontology#appliedTo
+###  http://siam.nist.gov/AM-Process-Ontology#appliesTo
 
-:appliedTo rdf:type owl:ObjectProperty ;
+:appliesTo rdf:type owl:ObjectProperty ;
            
            <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "appliedToed" ;
            
@@ -88,58 +88,6 @@
            <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "dependsOned" ;
            
            <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "dependsOns" .
-
-
-
-###  http://siam.nist.gov/AM-Process-Ontology#hasCharacteristic
-
-:hasCharacteristic rdf:type owl:ObjectProperty ;
-                   
-                   <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasCharacteristic" ;
-                   
-                   <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasCharacteristics" ;
-                   
-                   <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasCharacteristiced" .
-
-
-
-###  http://siam.nist.gov/AM-Process-Ontology#hasDescription
-
-:hasDescription rdf:type owl:ObjectProperty ;
-                
-                <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "describes" ;
-                
-                <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "describeses" ;
-                
-                <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "describesed" ;
-                
-                owl:inverseOf :isDescribedBy .
-
-
-
-###  http://siam.nist.gov/AM-Process-Ontology#hasDeterminingFactor
-
-:hasDeterminingFactor rdf:type owl:ObjectProperty ;
-                      
-                      <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasDeterminingFactors" ;
-                      
-                      <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasDeterminingFactored" ;
-                      
-                      <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasDeterminingFactor" .
-
-
-
-###  http://siam.nist.gov/AM-Process-Ontology#hasEnvironmentParameter
-
-:hasEnvironmentParameter rdf:type owl:ObjectProperty ;
-                         
-                         <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasEnvironmentParametered" ;
-                         
-                         <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasEnvironmentParameter" ;
-                         
-                         <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasEnvironmentParameters" ;
-                         
-                         rdfs:subPropertyOf :hasProcessParameter .
 
 
 
@@ -174,24 +122,6 @@
 
 
 
-###  http://siam.nist.gov/AM-Process-Ontology#hasHeatAbsorptionDeterminingFactor
-
-:hasHeatAbsorptionDeterminingFactor rdf:type owl:ObjectProperty ;
-                                    
-                                    rdfs:comment """Heat_absorption determinig factors can be defined within the following range
-   Energy_density, Power_wavelength, Pulse_duration, Scanning_speed, Absorption_factor,      
-   Heat_conduction, Powder_oxidation_rate""" ;
-                                    
-                                    <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "has_HA_DeterminingFactors" ;
-                                    
-                                    <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "has_HA_DeterminingFactor" ;
-                                    
-                                    <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "has_HA_DeterminingFactored" ;
-                                    
-                                    rdfs:subPropertyOf :hasDeterminingFactor .
-
-
-
 ###  http://siam.nist.gov/AM-Process-Ontology#hasHeatSource
 
 :hasHeatSource rdf:type owl:ObjectProperty ;
@@ -204,7 +134,7 @@
                
                rdfs:domain :AdditiveManufacturing ;
                
-               rdfs:subPropertyOf :usesThermalEnergy ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
                
                rdfs:range [ rdf:type owl:Class ;
                             owl:unionOf ( :ElectronBeam
@@ -225,20 +155,6 @@
                        <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasHeatSourceProperty" ;
                        
                        rdfs:subPropertyOf :hasProperty .
-
-
-
-###  http://siam.nist.gov/AM-Process-Ontology#hasInputParameter
-
-:hasInputParameter rdf:type owl:ObjectProperty ;
-                   
-                   <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasInputParameters" ;
-                   
-                   <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasInputParameter" ;
-                   
-                   <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasInputParametered" ;
-                   
-                   rdfs:subPropertyOf :hasProcessParameter .
 
 
 
@@ -273,20 +189,6 @@
                      rdfs:range :ProcessDependentMaterialProperty ;
                      
                      rdfs:subPropertyOf :hasProperty .
-
-
-
-###  http://siam.nist.gov/AM-Process-Ontology#hasMeltPoolDeterminingFactor
-
-:hasMeltPoolDeterminingFactor rdf:type owl:ObjectProperty ;
-                              
-                              <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "has_determining_factored" ;
-                              
-                              <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "has_determining_factors" ;
-                              
-                              <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "has_determining_factor" ;
-                              
-                              rdfs:subPropertyOf :hasDeterminingFactor .
 
 
 
@@ -346,22 +248,6 @@
 
 
 
-###  http://siam.nist.gov/AM-Process-Ontology#hasProcessParameter
-
-:hasProcessParameter rdf:type owl:ObjectProperty ;
-                     
-                     <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "has_parametered" ;
-                     
-                     <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "has_parameter" ;
-                     
-                     <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "has_parameters" ;
-                     
-                     rdfs:domain :AdditiveManufacturing ;
-                     
-                     rdfs:range :AdditiveManufacturingParameter .
-
-
-
 ###  http://siam.nist.gov/AM-Process-Ontology#hasProcessResource
 
 :hasProcessResource rdf:type owl:ObjectProperty ;
@@ -395,18 +281,6 @@
              <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasProperties" ;
              
              <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasProperty" .
-
-
-
-###  http://siam.nist.gov/AM-Process-Ontology#hasShape
-
-:hasShape rdf:type owl:ObjectProperty ;
-          
-          <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "has_shaped" ;
-          
-          <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "has_shape" ;
-          
-          <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "has_shapes" .
 
 
 
@@ -446,18 +320,6 @@
 
 
 
-###  http://siam.nist.gov/AM-Process-Ontology#isDescribedBy
-
-:isDescribedBy rdf:type owl:ObjectProperty ;
-               
-               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "isDescribedBies" ;
-               
-               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "isDescribedBied" ;
-               
-               <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "isDescribedBy" .
-
-
-
 ###  http://siam.nist.gov/AM-Process-Ontology#isDeterminedBy
 
 :isDeterminedBy rdf:type owl:ObjectProperty ;
@@ -466,9 +328,7 @@
                 
                 <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "isDeterminedBy" ;
                 
-                <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "isDeterminedBies" ;
-                
-                owl:inverseOf :hasDeterminingFactor .
+                <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "isDeterminedBies" .
 
 
 
@@ -484,18 +344,6 @@
 
 
 
-###  http://siam.nist.gov/AM-Process-Ontology#isQuantifiedWith
-
-:isQuantifiedWith rdf:type owl:ObjectProperty ;
-                  
-                  <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "isQuantifiedWith" ;
-                  
-                  <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "isQuantifiedWithed" ;
-                  
-                  <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "isQuantifiedWiths" .
-
-
-
 ###  http://siam.nist.gov/AM-Process-Ontology#uses
 
 :uses rdf:type owl:ObjectProperty ;
@@ -505,18 +353,6 @@
       <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "uses" ;
       
       <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "usesed" .
-
-
-
-###  http://siam.nist.gov/AM-Process-Ontology#usesThermalEnergy
-
-:usesThermalEnergy rdf:type owl:ObjectProperty ;
-                   
-                   <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "usesThermalEnergy" ;
-                   
-                   <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "usesThermalEnergied" ;
-                   
-                   <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "usesThermalEnergies" .
 
 
 
@@ -1366,6 +1202,10 @@
 :HeatTransferInPowderBed rdf:type owl:Class ;
                          
                          rdfs:subClassOf :Thermal ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasPriorProcess ;
+                                           owl:someValuesFrom :IrradiationAbsorptionByPowderBed
+                                         ] ,
                                          [ rdf:type owl:Class ;
                                            owl:unionOf ( [ rdf:type owl:Class ;
                                                            owl:intersectionOf ( [ rdf:type owl:Restriction ;
@@ -1387,10 +1227,6 @@
                                                            owl:allValuesFrom :HeatConduction
                                                          ]
                                                        )
-                                         ] ,
-                                         [ rdf:type owl:Restriction ;
-                                           owl:onProperty :hasPriorProcess ;
-                                           owl:someValuesFrom :IrradiationAbsorptionByPowderBed
                                          ] ;
                          
                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "HeatTransfers" ;
@@ -1704,6 +1540,10 @@
 :MicrostructureEvolution rdf:type owl:Class ;
                          
                          rdfs:subClassOf :Microstructural ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :dependsOn ;
+                                           owl:someValuesFrom :FluidFlowInMeltPool
+                                         ] ,
                                          [ rdf:type owl:Class ;
                                            owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                   owl:onProperty :hasPriorProcess ;
@@ -1714,14 +1554,6 @@
                                                                   owl:someValuesFrom :FluidFlowInMeltPool
                                                                 ]
                                                               )
-                                         ] ,
-                                         [ rdf:type owl:Restriction ;
-                                           owl:onProperty :dependsOn ;
-                                           owl:someValuesFrom :FluidFlowInMeltPool
-                                         ] ,
-                                         [ rdf:type owl:Restriction ;
-                                           owl:onProperty :hasCharacteristic ;
-                                           owl:someValuesFrom :SolidificationCharacteristic
                                          ] ;
                          
                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "MicrostructureEvolution" ;
@@ -2246,6 +2078,21 @@
                        rdfs:subClassOf :PowderBedFusion ,
                                        [ rdf:type owl:Class ;
                                          owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :appliesTo ;
+                                                                owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                     owl:intersectionOf ( :HardMetal
+                                                                                                          :MetalAlloy
+                                                                                                        )
+                                                                                   ]
+                                                              ]
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :hasFusionMechanism ;
+                                                                owl:someValuesFrom :FullMelting
+                                                              ]
+                                                            )
+                                       ] ,
+                                       [ rdf:type owl:Class ;
+                                         owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                 owl:onProperty :hasProcessSequence ;
                                                                 owl:someValuesFrom :ConsolidationByMelting
                                                               ]
@@ -2274,21 +2121,6 @@
                                                                 owl:someValuesFrom :Structural
                                                               ]
                                                             )
-                                       ] ,
-                                       [ rdf:type owl:Class ;
-                                         owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                owl:onProperty :appliedTo ;
-                                                                owl:someValuesFrom [ rdf:type owl:Class ;
-                                                                                     owl:intersectionOf ( :HardMetal
-                                                                                                          :MetalAlloy
-                                                                                                        )
-                                                                                   ]
-                                                              ]
-                                                              [ rdf:type owl:Restriction ;
-                                                                owl:onProperty :hasFusionMechanism ;
-                                                                owl:someValuesFrom :FullMelting
-                                                              ]
-                                                            )
                                        ] ;
                        
                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SelectiveLaserMeltings" ;
@@ -2306,7 +2138,7 @@
                          rdfs:subClassOf :PowderBedFusion ,
                                          [ rdf:type owl:Class ;
                                            owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                  owl:onProperty :appliedTo ;
+                                                                  owl:onProperty :appliesTo ;
                                                                   owl:someValuesFrom :AdditiveManufacturingMaterial
                                                                 ]
                                                                 [ rdf:type owl:Restriction ;
@@ -2795,17 +2627,17 @@
 
 
 [ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :FullMelting
+                :LiquidPhaseSintering
+                :SolidStateSintering
+              )
+] .
+[ rdf:type owl:AllDisjointClasses ;
   owl:members ( :Consolidation
                 :FluidMechanics
                 :Microstructural
                 :Structural
                 :Thermal
-              )
-] .
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :FullMelting
-                :LiquidPhaseSintering
-                :SolidStateSintering
               )
 ] .
 [ rdf:type owl:AllDisjointClasses ;
@@ -2816,12 +2648,6 @@
               )
 ] .
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :BedRadiation
-                :HeatConduction
-                :SurfaceConvection
-              )
-] .
-[ rdf:type owl:AllDisjointClasses ;
   owl:members ( :BinderJetting
                 :DirectedEnergyDeposition
                 :MaterialExtrusion
@@ -2829,6 +2655,12 @@
                 :PowderBedFusion
                 :SheetLamination
                 :VatPhotopolymerization
+              )
+] .
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :BedRadiation
+                :HeatConduction
+                :SurfaceConvection
               )
 ] .
 
