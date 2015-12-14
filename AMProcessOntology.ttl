@@ -1232,6 +1232,10 @@
 :HeatTransferInPowderBed rdf:type owl:Class ;
                          
                          rdfs:subClassOf :Thermal ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasPriorProcess ;
+                                           owl:someValuesFrom :IrradiationAbsorptionByPowderBed
+                                         ] ,
                                          [ rdf:type owl:Class ;
                                            owl:unionOf ( [ rdf:type owl:Class ;
                                                            owl:intersectionOf ( [ rdf:type owl:Restriction ;
@@ -1253,10 +1257,6 @@
                                                            owl:allValuesFrom :HeatConduction
                                                          ]
                                                        )
-                                         ] ,
-                                         [ rdf:type owl:Restriction ;
-                                           owl:onProperty :hasPriorProcess ;
-                                           owl:someValuesFrom :IrradiationAbsorptionByPowderBed
                                          ] ;
                          
                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "HeatTransfers" ;
@@ -1680,11 +1680,11 @@
               
               rdfs:subClassOf :ProcessDependentMaterialProperty ;
               
-              rdfs:comment "Average size of powdered particles used in the AM process." ;
-              
               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ParticleSizes" ;
               
-              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ParticleSize" .
+              <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ParticleSize" ;
+              
+              rdfs:comment "Average size of powder particles used in an AM process." .
 
 
 
@@ -1989,20 +1989,6 @@
 
 
 
-###  http://siam.nist.gov/AM-Process-Ontology#PowderSizeDistribution
-
-:PowderSizeDistribution rdf:type owl:Class ;
-                        
-                        rdfs:subClassOf :ProcessDependentMaterialProperty ;
-                        
-                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "PowderSizeDistribution" ;
-                        
-                        rdfs:comment "YOU ALREADY HAVE PARTICLE SIZE. THIS DOES NOT MAKE SENSE AS YOU ARE REPEATING INFORMATION. THEY'RE THE SAME." ;
-                        
-                        <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "PowderSizeDistributions" .
-
-
-
 ###  http://siam.nist.gov/AM-Process-Ontology#PredefinedInputParameter
 
 :PredefinedInputParameter rdf:type owl:Class ;
@@ -2272,20 +2258,6 @@
                               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SolidificationCharacteristics" ;
                               
                               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SolidificationCharacteristic" .
-
-
-
-###  http://siam.nist.gov/AM-Process-Ontology#SolidificationRate
-
-:SolidificationRate rdf:type owl:Class ;
-                    
-                    rdfs:subClassOf :SolidificationCharacteristic ;
-                    
-                    rdfs:comment "THIS IS WRONG. LAST WEEK I TOLD YOU THAT SOLIDIFICATION RATE AND LOCAL SOLIDIFICATION TIME ARE THE SAME THING." ;
-                    
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SolidificationRate" ;
-                    
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SolidificationRates" .
 
 
 
@@ -2674,19 +2646,10 @@
 
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :FullMelting
-                :LiquidPhaseSintering
-                :SolidStateSintering
-              )
-] .
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :BinderJetting
-                :DirectedEnergyDeposition
-                :MaterialExtrusion
-                :MaterialJetting
-                :PowderBedFusion
-                :SheetLamination
-                :VatPhotoPolymerization
+  owl:members ( :Ceramics
+                :HardMetal
+                :MetalAlloy
+                :Polymer
               )
 ] .
 [ rdf:type owl:AllDisjointClasses ;
@@ -2704,10 +2667,19 @@
               )
 ] .
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Ceramics
-                :HardMetal
-                :MetalAlloy
-                :Polymer
+  owl:members ( :FullMelting
+                :LiquidPhaseSintering
+                :SolidStateSintering
+              )
+] .
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :BinderJetting
+                :DirectedEnergyDeposition
+                :MaterialExtrusion
+                :MaterialJetting
+                :PowderBedFusion
+                :SheetLamination
+                :VatPhotoPolymerization
               )
 ] .
 

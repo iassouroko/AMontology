@@ -152,22 +152,6 @@
 
 
 
-###  http://siam.nist.gov/Model-Ontology#hasFunctionality
-
-:hasFunctionality rdf:type owl:ObjectProperty ;
-                  
-                  <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "hasFunctionality" ;
-                  
-                  <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasFunctionalities" ;
-                  
-                  <http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg> "hasFunctionalitied" ;
-                  
-                  rdfs:range :FunctionalityOfModelComponent ;
-                  
-                  rdfs:domain :ModelComponent .
-
-
-
 ###  http://siam.nist.gov/Model-Ontology#hasInputParameter
 
 :hasInputParameter rdf:type owl:ObjectProperty ;
@@ -178,8 +162,7 @@
                    
                    <http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg> "hasInputParameters" ;
                    
-                   rdfs:domain :Model ,
-                               :ModelComponent ;
+                   rdfs:domain :Model ;
                    
                    rdfs:range :ModelInputParameter ;
                    
@@ -1241,16 +1224,16 @@ Heat Transfer Equation is a type of Transport Equation""" ,
                                             ]
                        ] ,
                        [ rdf:type owl:Restriction ;
-                         owl:onProperty :hasAssumption ;
-                         owl:someValuesFrom :ModelAssumption
-                       ] ,
-                       [ rdf:type owl:Restriction ;
                          owl:onProperty :hasComponent ;
                          owl:someValuesFrom :ModelComponent
                        ] ,
                        [ rdf:type owl:Restriction ;
                          owl:onProperty :hasFunction ;
                          owl:someValuesFrom :FunctionOfModel
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasAssumption ;
+                         owl:someValuesFrom :ModelAssumption
                        ] ;
        
        rdfs:comment "A model component represents a certain physical process at given length- and time- scales." ,
