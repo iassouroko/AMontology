@@ -968,20 +968,6 @@
 
 
 
-###  http://siam.nist.gov/AM-Process-Ontology#EmpiricalParameter
-
-:EmpiricalParameter rdf:type owl:Class ;
-                    
-                    rdfs:subClassOf :PredefinedInputParameter ;
-                    
-                    rdfs:comment "THIS DOES NOT MAKE SENSE. THE ONLY REASON WHY YOU WOULD NEED AN EMPIRICAL PARAMETER IS IF YOU HAD A MODEL." ;
-                    
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "EmpiricalParameter" ;
-                    
-                    <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "EmpiricalParameters" .
-
-
-
 ###  http://siam.nist.gov/AM-Process-Ontology#FluidFlowInMeltPool
 
 :FluidFlowInMeltPool rdf:type owl:Class ;
@@ -990,6 +976,10 @@
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty :hasPriorProcess ;
                                        owl:someValuesFrom :HeatTransferInPowderBed
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasExistenceIn ;
+                                       owl:allValuesFrom :ConsolidationByMelting
                                      ] ,
                                      [ rdf:type owl:Class ;
                                        owl:intersectionOf ( [ rdf:type owl:Restriction ;
@@ -1001,10 +991,6 @@
                                                               owl:someValuesFrom :SurfaceTensionEffects
                                                             ]
                                                           )
-                                     ] ,
-                                     [ rdf:type owl:Restriction ;
-                                       owl:onProperty :hasExistenceIn ;
-                                       owl:allValuesFrom :ConsolidationByMelting
                                      ] ;
                      
                      <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "FluidFlowInMeltPool" ;
@@ -2094,6 +2080,21 @@
                        rdfs:subClassOf :PowderBedFusion ,
                                        [ rdf:type owl:Class ;
                                          owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :appliesTo ;
+                                                                owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                     owl:intersectionOf ( :HardMetal
+                                                                                                          :MetalAlloy
+                                                                                                        )
+                                                                                   ]
+                                                              ]
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :hasFusionMechanism ;
+                                                                owl:someValuesFrom :FullMelting
+                                                              ]
+                                                            )
+                                       ] ,
+                                       [ rdf:type owl:Class ;
+                                         owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                 owl:onProperty :hasProcessSequence ;
                                                                 owl:someValuesFrom :ConsolidationByMelting
                                                               ]
@@ -2120,21 +2121,6 @@
                                                               [ rdf:type owl:Restriction ;
                                                                 owl:onProperty :hasProcessSequence ;
                                                                 owl:someValuesFrom :Structural
-                                                              ]
-                                                            )
-                                       ] ,
-                                       [ rdf:type owl:Class ;
-                                         owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                owl:onProperty :appliesTo ;
-                                                                owl:someValuesFrom [ rdf:type owl:Class ;
-                                                                                     owl:intersectionOf ( :HardMetal
-                                                                                                          :MetalAlloy
-                                                                                                        )
-                                                                                   ]
-                                                              ]
-                                                              [ rdf:type owl:Restriction ;
-                                                                owl:onProperty :hasFusionMechanism ;
-                                                                owl:someValuesFrom :FullMelting
                                                               ]
                                                             )
                                        ] ;
@@ -2646,27 +2632,6 @@
 
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Ceramics
-                :HardMetal
-                :MetalAlloy
-                :Polymer
-              )
-] .
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Consolidation
-                :FluidMechanics
-                :Microstructural
-                :Structural
-                :Thermal
-              )
-] .
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :BedRadiation
-                :HeatConduction
-                :SurfaceConvection
-              )
-] .
-[ rdf:type owl:AllDisjointClasses ;
   owl:members ( :FullMelting
                 :LiquidPhaseSintering
                 :SolidStateSintering
@@ -2680,6 +2645,27 @@
                 :PowderBedFusion
                 :SheetLamination
                 :VatPhotoPolymerization
+              )
+] .
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :BedRadiation
+                :HeatConduction
+                :SurfaceConvection
+              )
+] .
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Consolidation
+                :FluidMechanics
+                :Microstructural
+                :Structural
+                :Thermal
+              )
+] .
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Ceramics
+                :HardMetal
+                :MetalAlloy
+                :Polymer
               )
 ] .
 
