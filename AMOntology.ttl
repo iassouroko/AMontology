@@ -1235,18 +1235,6 @@ model-ontology:isImplementedBy <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "i
 
 
 
-###  http://siam.nist.gov/AM-Ontology#ContactGeometry
-
-:ContactGeometry rdf:type owl:Class ;
-                 
-                 rdfs:subClassOf model-ontology:FluidMechanicsModelVariable ;
-                 
-                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ContactGeometry" ;
-                 
-                 <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "ContactGeometries" .
-
-
-
 ###  http://siam.nist.gov/AM-Ontology#CrystallineMaterialSinteringModel
 
 :CrystallineMaterialSinteringModel rdf:type owl:Class ;
@@ -1295,10 +1283,6 @@ model-ontology:isImplementedBy <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "i
                                                                      [ rdf:type owl:Class ;
                                                                        owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                               owl:onProperty :Predicts ;
-                                                                                              owl:someValuesFrom :ContactGeometry
-                                                                                            ]
-                                                                                            [ rdf:type owl:Restriction ;
-                                                                                              owl:onProperty :Predicts ;
                                                                                               owl:someValuesFrom amProcess-ontology:FluidVelocity
                                                                                             ]
                                                                                             [ rdf:type owl:Restriction ;
@@ -1342,27 +1326,15 @@ model-ontology:isImplementedBy <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "i
                               rdfs:subClassOf :PowderBedFusionPredictiveModel ,
                                               [ rdf:type owl:Restriction ;
                                                 owl:onProperty model-ontology:hasInputParameter ;
-                                                owl:someValuesFrom amProcess-ontology:SubstrateTemperature
-                                              ] ,
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty :Predicts ;
-                                                owl:someValuesFrom amProcess-ontology:TemperatureDistribution
+                                                owl:someValuesFrom model-ontology:SpecificHeat
                                               ] ,
                                               [ rdf:type owl:Restriction ;
                                                 owl:onProperty model-ontology:hasInputParameter ;
-                                                owl:someValuesFrom amProcess-ontology:HeatSourceVelocity
+                                                owl:someValuesFrom amProcess-ontology:PowderInitialTemperature
                                               ] ,
                                               [ rdf:type owl:Restriction ;
                                                 owl:onProperty model-ontology:hasInputParameter ;
-                                                owl:someValuesFrom model-ontology:AbsorbedHeatPerUnitVolume
-                                              ] ,
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty model-ontology:hasInputParameter ;
-                                                owl:someValuesFrom model-ontology:ThermalConductivityOfSubstrate
-                                              ] ,
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty model-ontology:hasInputParameter ;
-                                                owl:someValuesFrom amProcess-ontology:ThermalConductivity
+                                                owl:someValuesFrom amProcess-ontology:BedEmissivity
                                               ] ,
                                               [ rdf:type owl:Class ;
                                                 owl:unionOf ( [ rdf:type owl:Class ;
@@ -1383,18 +1355,6 @@ model-ontology:isImplementedBy <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "i
                                                             )
                                               ] ,
                                               [ rdf:type owl:Restriction ;
-                                                owl:onProperty :hasTopBoundaryCondition ;
-                                                owl:someValuesFrom :PowderBedTopBoundaryCondition
-                                              ] ,
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty model-ontology:hasInputParameter ;
-                                                owl:someValuesFrom amProcess-ontology:FluidVelocity
-                                              ] ,
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty model-ontology:hasInputParameter ;
-                                                owl:someValuesFrom amProcess-ontology:BedEmissivity
-                                              ] ,
-                                              [ rdf:type owl:Restriction ;
                                                 owl:onProperty model-ontology:hasInputParameter ;
                                                 owl:someValuesFrom amProcess-ontology:DensityDistribution
                                               ] ,
@@ -1403,12 +1363,24 @@ model-ontology:isImplementedBy <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "i
                                                 owl:someValuesFrom amProcess-ontology:ChamberTemperature
                                               ] ,
                                               [ rdf:type owl:Restriction ;
-                                                owl:onProperty model-ontology:hasInputParameter ;
+                                                owl:onProperty :Predicts ;
                                                 owl:someValuesFrom amProcess-ontology:TemperatureDistribution
                                               ] ,
                                               [ rdf:type owl:Restriction ;
+                                                owl:onProperty :hasTopBoundaryCondition ;
+                                                owl:someValuesFrom :PowderBedTopBoundaryCondition
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
                                                 owl:onProperty model-ontology:hasInputParameter ;
-                                                owl:someValuesFrom model-ontology:SpecificHeat
+                                                owl:someValuesFrom model-ontology:ThermalConductivityOfSubstrate
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty model-ontology:hasInputParameter ;
+                                                owl:someValuesFrom model-ontology:SurfaceConvectionCoefficient
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty model-ontology:hasInputParameter ;
+                                                owl:someValuesFrom amProcess-ontology:TemperatureDistribution
                                               ] ,
                                               [ rdf:type owl:Restriction ;
                                                 owl:onProperty :isRepresentationOf ;
@@ -1416,11 +1388,23 @@ model-ontology:isImplementedBy <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "i
                                               ] ,
                                               [ rdf:type owl:Restriction ;
                                                 owl:onProperty model-ontology:hasInputParameter ;
-                                                owl:someValuesFrom amProcess-ontology:PowderInitialTemperature
+                                                owl:someValuesFrom amProcess-ontology:ThermalConductivity
                                               ] ,
                                               [ rdf:type owl:Restriction ;
                                                 owl:onProperty model-ontology:hasInputParameter ;
-                                                owl:someValuesFrom model-ontology:SurfaceConvectionCoefficient
+                                                owl:someValuesFrom model-ontology:AbsorbedHeatPerUnitVolume
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty model-ontology:hasInputParameter ;
+                                                owl:someValuesFrom amProcess-ontology:HeatSourceVelocity
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty model-ontology:hasInputParameter ;
+                                                owl:someValuesFrom amProcess-ontology:FluidVelocity
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty model-ontology:hasInputParameter ;
+                                                owl:someValuesFrom amProcess-ontology:SubstrateTemperature
                                               ] .
 
 
@@ -1463,6 +1447,10 @@ model-ontology:isImplementedBy <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "i
                                                                        ]
                                                                      )
                                                        ] ,
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :isRepresentationOf ;
+                                                         owl:someValuesFrom amProcess-ontology:IrradiationAbsorptionByPowderBed
+                                                       ] ,
                                                        [ rdf:type owl:Class ;
                                                          owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                 owl:onProperty :Predicts ;
@@ -1473,10 +1461,6 @@ model-ontology:isImplementedBy <http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl> "i
                                                                                 owl:someValuesFrom amProcess-ontology:ExtinctionCoefficient
                                                                               ]
                                                                             )
-                                                       ] ,
-                                                       [ rdf:type owl:Restriction ;
-                                                         owl:onProperty :isRepresentationOf ;
-                                                         owl:someValuesFrom amProcess-ontology:IrradiationAbsorptionByPowderBed
                                                        ] .
 
 
@@ -1970,10 +1954,6 @@ amProcess-ontology:ElasticDeformation owl:equivalentClass [ rdf:type owl:Class ;
 amProcess-ontology:ExtinctionCoefficient rdf:type owl:Class ;
                                          
                                          rdfs:subClassOf model-ontology:ThermalModelVariable ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty :isDependentOn ;
-                                                           owl:allValuesFrom model-ontology:LambertBeerLaw
-                                                         ] ,
                                                          [ rdf:type owl:Class ;
                                                            owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                   owl:onProperty model-ontology:isFunctionOf ;
@@ -1996,6 +1976,10 @@ amProcess-ontology:ExtinctionCoefficient rdf:type owl:Class ;
                                                                                   owl:someValuesFrom model-ontology:RadiativePropertyOfBulkMaterial
                                                                                 ]
                                                                               )
+                                                         ] ,
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :isDependentOn ;
+                                                           owl:allValuesFrom model-ontology:LambertBeerLaw
                                                          ] ;
                                          
                                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "ExtinctionCoefficient" ;
@@ -2457,10 +2441,6 @@ amProcess-ontology:VolumetricHeatGeneration rdfs:subClassOf [ rdf:type owl:Restr
 model-ontology:AbsorbedHeatPerUnitVolume rdf:type owl:Class ;
                                          
                                          rdfs:subClassOf model-ontology:ThermalModelVariable ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty :isRepresentationOf ;
-                                                           owl:someValuesFrom amProcess-ontology:VolumetricHeatGeneration
-                                                         ] ,
                                                          [ rdf:type owl:Class ;
                                                            owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                   owl:onProperty model-ontology:isDeterminedBy ;
@@ -2483,6 +2463,10 @@ model-ontology:AbsorbedHeatPerUnitVolume rdf:type owl:Class ;
                                                                                   owl:someValuesFrom amProcess-ontology:SurfaceIrradiation
                                                                                 ]
                                                                               )
+                                                         ] ,
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :isRepresentationOf ;
+                                                           owl:someValuesFrom amProcess-ontology:VolumetricHeatGeneration
                                                          ] ;
                                          
                                          <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "AbsorbedHeatPerUnitVolume" ;
@@ -2619,14 +2603,6 @@ model-ontology:EquilibriumPartitionCoefficient <http://attempto.ifi.uzh.ch/ace_l
 model-ontology:FluidFlowModel <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "FluidFlowModel" ;
                               
                               <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "FluidFlowModels" .
-
-
-
-###  http://siam.nist.gov/Model-Ontology#FluidMechanicsModelVariable
-
-model-ontology:FluidMechanicsModelVariable <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "FluidMechanicsModelVariables" ;
-                                           
-                                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "FluidMechanicsModelVariable" .
 
 
 
@@ -4539,6 +4515,12 @@ model-ontology:SolutionOfNavierStokesEquations <http://attempto.ifi.uzh.ch/ace_l
 model-ontology:SubstrateThermalConductivity <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "SubstrateThermalConductivity" ;
                                             
                                             <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "SubstrateThermalConductivities" .
+
+
+
+model-ontology:FluidMechanicsModelVariable <http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl> "FluidMechanicsModelVariables" ;
+                                           
+                                           <http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg> "FluidMechanicsModelVariable" .
 
 
 
