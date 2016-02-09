@@ -1,0 +1,2199 @@
+@prefix : <http://www.w3.org/2002/07/owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336> .
+
+<http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336> rdf:type :Ontology .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#hasCharacteristic
+
+:hasCharacteristic rdf:type :ObjectProperty ;
+                   
+                   rdfs:domain :PowderBedFusionProcess ;
+                   
+                   rdfs:range :PowderBedFusionProcessParameter .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#influences
+
+:influences rdf:type :ObjectProperty ;
+            
+            rdfs:range :Characteristic ;
+            
+            rdfs:domain :Characteristic ;
+            
+            :inverseOf :isInfluencedBy .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#isFunctionOf
+
+:isFunctionOf rdf:type :ObjectProperty ;
+              
+              rdfs:range :Characteristic ;
+              
+              rdfs:domain :Characteristic .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#isInfluencedBy
+
+:isInfluencedBy rdf:type :ObjectProperty .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#isProvidedBy
+
+:isProvidedBy rdf:type :ObjectProperty ;
+              
+              rdfs:subPropertyOf :topObjectProperty .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#partOf
+
+:partOf rdf:type :ObjectProperty .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#provides
+
+:provides rdf:type :ObjectProperty ;
+          
+          rdfs:range :Characteristic ;
+          
+          rdfs:domain :Model ;
+          
+          :inverseOf :isProvidedBy .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#relates
+
+:relates rdf:type :ObjectProperty ;
+         
+         rdfs:range :Characteristic ;
+         
+         rdfs:domain :Model ;
+         
+         rdfs:range :Phenomenon .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#represents
+
+:represents rdf:type :ObjectProperty ;
+            
+            rdfs:domain :Model ;
+            
+            rdfs:range :Phenomenon .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#requires
+
+:requires rdf:type :ObjectProperty ;
+          
+          rdfs:range :Characteristic ;
+          
+          rdfs:domain :Model .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#requiresApproximation
+
+:requiresApproximation rdf:type :ObjectProperty ;
+                       
+                       rdfs:subPropertyOf :requires .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#requiresAssumption
+
+:requiresAssumption rdf:type :ObjectProperty ;
+                    
+                    rdfs:subPropertyOf :requires .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#requiresCharacteristic
+
+:requiresCharacteristic rdf:type :ObjectProperty ;
+                        
+                        rdfs:subPropertyOf :requires .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#AbsorptionCoefficient
+
+:AbsorptionCoefficient rdf:type :Class ;
+                       
+                       rdfs:subClassOf :IrradiationAbsorptionCharacteristic ,
+                                       :IrradiationAbsorptionSignature ,
+                                       [ rdf:type :Restriction ;
+                                         :onProperty :isFunctionOf ;
+                                         :someValuesFrom :BeamSize
+                                       ] ,
+                                       [ rdf:type :Restriction ;
+                                         :onProperty :isFunctionOf ;
+                                         :someValuesFrom :ParticleSize
+                                       ] ,
+                                       [ rdf:type :Restriction ;
+                                         :onProperty :isFunctionOf ;
+                                         :someValuesFrom :RadiativePropertyOfBulkMaterial
+                                       ] ,
+                                       [ rdf:type :Restriction ;
+                                         :onProperty :isFunctionOf ;
+                                         :someValuesFrom :HeatSourcePower
+                                       ] ,
+                                       [ rdf:type :Restriction ;
+                                         :onProperty :isFunctionOf ;
+                                         :someValuesFrom :BeamWavelength
+                                       ] ;
+                       
+                       rdfs:comment "The absorption coefficient quantifies the amount of irradiation that is absorbed by the powder bed. Its value can be determined experimentally or through computational simulation." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#Absorptivity
+
+:Absorptivity rdf:type :Class ;
+              
+              rdfs:subClassOf :PowderCharacteristic ,
+                              [ rdf:type :Restriction ;
+                                :onProperty :influences ;
+                                :someValuesFrom :SurfaceDistributionOfAbsorbedHeat
+                              ] ,
+                              [ rdf:type :Class ;
+                                :intersectionOf ( [ rdf:type :Restriction ;
+                                                    :onProperty :requiresAssumption ;
+                                                    :someValuesFrom :Continum
+                                                  ]
+                                                  [ rdf:type :Restriction ;
+                                                    :onProperty :requiresAssumption ;
+                                                    :someValuesFrom :DeterministicIrradiation
+                                                  ]
+                                                  [ rdf:type :Restriction ;
+                                                    :onProperty :requiresAssumption ;
+                                                    :someValuesFrom :SurfaceDistributionOfAbsorbedHeat
+                                                  ]
+                                                )
+                              ] ;
+              
+              rdfs:comment """Absorptivity and absorptance are terms (without any units) used interchangeably to define the amount or fraction of radiation energy captured by an irradiated body. 
+
+Those terms differ from \"absorption coefficient\" that has units of per unit length and describes the decay of the laser intensity with depth of penetration.""" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#Abstract
+
+:Abstract rdf:type :Class ;
+          
+          rdfs:comment "Abstract concepts include everything that does not exist in the physical universe (space/time)." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#AdditiveManufacturingProcess
+
+:AdditiveManufacturingProcess rdf:type :Class ;
+                              
+                              rdfs:subClassOf :Physical ;
+                              
+                              rdfs:comment "An additive manufacturing process is a process of joining layering material to make objects from 3D model data, using a machine equipment (energy source, build platform, etc.) controlled by a computer [ASTM F2792-12a]" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#BeamSize
+
+:BeamSize rdf:type :Class ;
+          
+          rdfs:subClassOf :HeatSourceParameter ;
+          
+          rdfs:comment "Size of the beam." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#BeamType
+
+:BeamType rdf:type :Class ;
+          
+          rdfs:subClassOf :HeatSourceParameter ;
+          
+          rdfs:comment "Whether the beam originates from a laser or an electron beam, and whether the beam is continuous or pulsed." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#BeamWavelength
+
+:BeamWavelength rdf:type :Class ;
+                
+                rdfs:subClassOf :HeatSourceParameter .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#BedEmissivity
+
+:BedEmissivity rdf:type :Class ;
+               
+               rdfs:subClassOf :PowderCharacteristic .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#BeerLambertEquation
+
+:BeerLambertEquation rdf:type :Class ;
+                     
+                     rdfs:subClassOf :Equation ,
+                                     [ rdf:type :Restriction ;
+                                       :onProperty :provides ;
+                                       :someValuesFrom :VolumetricDistributionOfAbsorbedHeat
+                                     ] ,
+                                     [ rdf:type :Class ;
+                                       :intersectionOf ( [ rdf:type :Restriction ;
+                                                           :onProperty :requiresAssumption ;
+                                                           :someValuesFrom :Continum
+                                                         ]
+                                                         [ rdf:type :Restriction ;
+                                                           :onProperty :requiresAssumption ;
+                                                           :someValuesFrom :DeterministicIrradiation
+                                                         ]
+                                                         [ rdf:type :Restriction ;
+                                                           :onProperty :requiresAssumption ;
+                                                           :someValuesFrom :VolumetricDistributionOfAbsorbedHeat
+                                                         ]
+                                                       )
+                                     ] ,
+                                     [ rdf:type :Class ;
+                                       :intersectionOf ( [ rdf:type :Restriction ;
+                                                           :onProperty :isFunctionOf ;
+                                                           :someValuesFrom :AbsorptionCoefficient
+                                                         ]
+                                                         [ rdf:type :Restriction ;
+                                                           :onProperty :isFunctionOf ;
+                                                           :someValuesFrom :ExtinctionCoefficient
+                                                         ]
+                                                       )
+                                     ] .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#BuildChamberParameter
+
+:BuildChamberParameter rdf:type :Class ;
+                       
+                       rdfs:subClassOf :MachineEquipmentParameter ;
+                       
+                       rdfs:comment "Characteristics of the build chamber: composition, temperature, pressure." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#BuoyancyEffectsCharacteristic
+
+:BuoyancyEffectsCharacteristic rdf:type :Class ;
+                               
+                               rdfs:subClassOf :FluidMechanicsCharacteristic ;
+                               
+                               rdfs:comment "Not significant in additive manufacturing, differences in density create volumetric pressure gradients that drive liquid flows." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#CellularAutomataEquation
+
+:CellularAutomataEquation rdf:type :Class ;
+                          
+                          rdfs:subClassOf :Equation .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ChamberTemperature
+
+:ChamberTemperature rdf:type :Class ;
+                    
+                    rdfs:subClassOf :BuildChamberParameter .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#Characteristic
+
+:Characteristic rdf:type :Class ;
+                
+                rdfs:subClassOf :Abstract ;
+                
+                rdfs:comment "A property of a thing or an individual." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ChemicalComposition
+
+:ChemicalComposition rdf:type :Class ;
+                     
+                     rdfs:subClassOf :PowderCharacteristic ;
+                     
+                     rdfs:comment "Chemical composition of powder, as purchased." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#Consolidation
+
+:Consolidation rdf:type :Class ;
+               
+               rdfs:subClassOf :Phenomenon ;
+               
+               rdfs:comment "An increment in the density of a material due to thermal processes or the addition of a binder." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ConsolidationByMelting
+
+:ConsolidationByMelting rdf:type :Class ;
+                        
+                        rdfs:subClassOf :Consolidation ;
+                        
+                        rdfs:comment "Thermally-activated consolidation that occurs above the melting point of a material." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ConsolidationByMeltingCharacteristic
+
+:ConsolidationByMeltingCharacteristic rdf:type :Class ;
+                                      
+                                      rdfs:subClassOf :ConsolidationCharacteristic ,
+                                                      [ rdf:type :Restriction ;
+                                                        :onProperty :influences ;
+                                                        :someValuesFrom :FluidMechanics
+                                                      ] ,
+                                                      [ rdf:type :Restriction ;
+                                                        :onProperty :influences ;
+                                                        :someValuesFrom :SolidMechanics
+                                                      ] ,
+                                                      [ rdf:type :Restriction ;
+                                                        :onProperty :influences ;
+                                                        :someValuesFrom :MicrostructureEvolution
+                                                      ] ;
+                                      
+                                      rdfs:comment "A set of characteristics that define a melting process. Most melting models are simple, as they assume that melting occurs instantaneously. The only characteristic necessary in such scenarios is a function describing how density is expected to change as a function of temperature." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ConsolidationBySintering
+
+:ConsolidationBySintering rdf:type :Class ;
+                          
+                          rdfs:subClassOf :Consolidation ;
+                          
+                          rdfs:comment "Thermally-activated consolidation that occurs below the melting point of a material." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ConsolidationBySinteringCharacteristic
+
+:ConsolidationBySinteringCharacteristic rdf:type :Class ;
+                                        
+                                        rdfs:subClassOf :ConsolidationCharacteristic ,
+                                                        [ rdf:type :Restriction ;
+                                                          :onProperty :influences ;
+                                                          :someValuesFrom :SolidMechanics
+                                                        ] ;
+                                        
+                                        rdfs:comment "Sintering, as a consolidation mechanism, is much slower than melting. It is commonly accepted that the mechanism controlling sintering is viscous sintering, driven by an effort to reduce surface energy at high temperatures. The characteristics required to describe these sintering processes depend on the model that is chosen, but they need to include either visosity or sintering activation energy, loose powder density, and fully-sintered density." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ConsolidationCharacteristic
+
+:ConsolidationCharacteristic rdf:type :Class ;
+                             
+                             rdfs:subClassOf :PhenomenonCharacteristic ;
+                             
+                             rdfs:comment """mainly concerns characteristics that determine the density variation process within melting or sintering
+
+Include characteristics that determine the consolidation mechanism that best describes the process.
+
+Consolidation characteristics also include the type of consolidation mechanism used in the powder bed fusion process. This will determine the range of temperatures in which the machine will operate and the desnity that can be expected from produced components.""" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ConsolidationMathematicalModel
+
+:ConsolidationMathematicalModel rdf:type :Class ;
+                                
+                                rdfs:subClassOf :MathematicalModel ;
+                                
+                                rdfs:comment "A physics-based model of a consolidation phenomenon." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ConsolidationModelPrediction
+
+:ConsolidationModelPrediction rdf:type :Class ;
+                              
+                              :equivalentClass [ rdf:type :Class ;
+                                                 :unionOf ( :DensityDistribution
+                                                            :PorosityDistribution
+                                                          )
+                                               ] ;
+                              
+                              rdfs:subClassOf :Prediction .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ConstantMeltingTemperature
+
+:ConstantMeltingTemperature rdf:type :Class ;
+                            
+                            rdfs:subClassOf :MeltingModelingAssumption .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#Continum
+
+:Continum rdf:type :Class ;
+          
+          rdfs:subClassOf :MaterialDistributionModelingAssumption ;
+          
+          :disjointWith :Particle .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ConvectionCharacteristic
+
+:ConvectionCharacteristic rdf:type :Class ;
+                          
+                          rdfs:subClassOf :HeatDissipationCharacteristic ,
+                                          [ rdf:type :Restriction ;
+                                            :onProperty :isFunctionOf ;
+                                            :someValuesFrom :ChamberTemperature
+                                          ] ,
+                                          [ rdf:type :Restriction ;
+                                            :onProperty :isFunctionOf ;
+                                            :someValuesFrom :TemperatureFieldDistribution
+                                          ] ,
+                                          [ rdf:type :Restriction ;
+                                            :onProperty :isFunctionOf ;
+                                            :someValuesFrom :SurfaceConvectionCoefficient
+                                          ] .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#CylindricalDistribution
+
+:CylindricalDistribution rdf:type :Class ;
+                         
+                         rdfs:subClassOf :SurfaceDistributionOfHeatSource .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#DeformationCharacteristic
+
+:DeformationCharacteristic rdf:type :Class ;
+                           
+                           rdfs:subClassOf :SolidMechanicsCharacteristic .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#DendriteGrainOrientation
+
+:DendriteGrainOrientation rdf:type :Class ;
+                          
+                          rdfs:subClassOf :Microsturcture .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#DendriteOrientation
+
+:DendriteOrientation rdf:type :Class ;
+                     
+                     rdfs:subClassOf :MicrostructuralModelPrediction ,
+                                     :MicrostructureEvolutionCharacteristic ;
+                     
+                     rdfs:comment "Dendritic growth is dependent on the thermal gradients observed in the process." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#DendriticGrainSize
+
+:DendriticGrainSize rdf:type :Class ;
+                    
+                    rdfs:subClassOf :MicrostructureEvolutionCharacteristic ;
+                    
+                    rdfs:comment "Mechanical properties depend on grain size, which in turn depends on the thermal history of the part." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#DendriticGrainSizeDistribution
+
+:DendriticGrainSizeDistribution rdf:type :Class ;
+                                
+                                rdfs:subClassOf :MicrostructuralModelPrediction .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#DensityDistribution
+
+:DensityDistribution rdf:type :Class ;
+                     
+                     rdfs:subClassOf :ConsolidationModelPrediction ;
+                     
+                     rdfs:comment "Distribution of density in the powder bed. It depends on time and space. It is not measured during the process but it can be approximated with physics-based models." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#DensityOfBulkMaterial
+
+:DensityOfBulkMaterial rdf:type :Class ;
+                       
+                       rdfs:subClassOf :MaterialProperty .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#DensityVariationEquation
+
+:DensityVariationEquation rdf:type :Class ;
+                          
+                          rdfs:subClassOf :Equation .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#DentriticGrainSize
+
+:DentriticGrainSize rdf:type :Class ;
+                    
+                    rdfs:subClassOf :Microsturcture .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#DeterministicIrradiation
+
+:DeterministicIrradiation rdf:type :Class ;
+                          
+                          rdfs:subClassOf :StatisticalAssumptionOfIrradiationDistribution ;
+                          
+                          :disjointWith :StochasticIrradiation .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#DimensionalityOfAbsorbedHeat
+
+:DimensionalityOfAbsorbedHeat rdf:type :Class ;
+                              
+                              rdfs:subClassOf :HeatTransferModelingAssumption ,
+                                              :IrradiationAbsorptionModelingAssumption .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#DimensionalityOfPhysicalSystem
+
+:DimensionalityOfPhysicalSystem rdf:type :Class ;
+                                
+                                rdfs:subClassOf :HeatTransferModelingAssumption ,
+                                                :IrradiationAbsorptionModelingAssumption .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#DirectMetalLaserMelting
+
+:DirectMetalLaserMelting rdf:type :Class ;
+                         
+                         rdfs:subClassOf :PowderBedFusionProcess .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#DirectMetalLaserSintering
+
+:DirectMetalLaserSintering rdf:type :Class ;
+                           
+                           rdfs:subClassOf :PowderBedFusionProcess .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ElasticDeformationCharacteristic
+
+:ElasticDeformationCharacteristic rdf:type :Class ;
+                                  
+                                  rdfs:subClassOf :DeformationCharacteristic .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ElasticModulus
+
+:ElasticModulus rdf:type :Class ;
+                
+                rdfs:subClassOf :MaterialProperty .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ElectronBeamMelting
+
+:ElectronBeamMelting rdf:type :Class ;
+                     
+                     rdfs:subClassOf :PowderBedFusionProcess .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#EmpiricalModel
+
+:EmpiricalModel rdf:type :Class ;
+                
+                rdfs:subClassOf :Model ;
+                
+                rdfs:comment "A data-driven computational model." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#EnthalpyDistribution
+
+:EnthalpyDistribution rdf:type :Class ;
+                      
+                      rdfs:subClassOf :HeatTransferModelPrediction .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#Equation
+
+:Equation rdf:type :Class ;
+          
+          rdfs:subClassOf :ModelElement ;
+          
+          :disjointWith :ModelingAssumption ;
+          
+          rdfs:comment "A mathematical expression is an equation that represent the physical phenomenon of interest or part of it." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#EvaporationModelingAssumption
+
+:EvaporationModelingAssumption rdf:type :Class ;
+                               
+                               rdfs:subClassOf :HeatTransferModelingAssumption .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ExtinctionCoefficient
+
+:ExtinctionCoefficient rdf:type :Class ;
+                       
+                       rdfs:subClassOf :IrradiationAbsorptionCharacteristic ,
+                                       [ rdf:type :Restriction ;
+                                         :onProperty :isFunctionOf ;
+                                         :someValuesFrom :RadiativePropertyOfBulkMaterial
+                                       ] ,
+                                       [ rdf:type :Restriction ;
+                                         :onProperty :isFunctionOf ;
+                                         :someValuesFrom :BeamSize
+                                       ] ,
+                                       [ rdf:type :Restriction ;
+                                         :onProperty :isFunctionOf ;
+                                         :someValuesFrom :HeatSourcePower
+                                       ] ,
+                                       [ rdf:type :Restriction ;
+                                         :onProperty :isFunctionOf ;
+                                         :someValuesFrom :ParticleSize
+                                       ] ,
+                                       [ rdf:type :Restriction ;
+                                         :onProperty :isProvidedBy ;
+                                         :someValuesFrom :BeerLambertEquation
+                                       ] ,
+                                       [ rdf:type :Restriction ;
+                                         :onProperty :isFunctionOf ;
+                                         :someValuesFrom :BeamWavelength
+                                       ] ;
+                       
+                       rdfs:comment "The extinction coefficient is a measure of how deep irradiation penetrates in the powder bed, as described by a Beer-Lambert model." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#FluidMechanics
+
+:FluidMechanics rdf:type :Class ;
+                
+                rdfs:subClassOf :Phenomenon ;
+                
+                rdfs:comment "The motion of fluids (liquids, gases, and plasmas) and the forces that act upon them." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#FluidMechanicsCharacteristic
+
+:FluidMechanicsCharacteristic rdf:type :Class ;
+                              
+                              rdfs:subClassOf :PhenomenonCharacteristic ,
+                                              [ rdf:type :Restriction ;
+                                                :onProperty :influences ;
+                                                :someValuesFrom :SolidMechanics
+                                              ] ,
+                                              [ rdf:type :Restriction ;
+                                                :onProperty :influences ;
+                                                :someValuesFrom :MicrostructureEvolution
+                                              ] ;
+                              
+                              rdfs:comment "Characteristics that determine the free-surface dynamics in powder bed fusion processes. They only appear when melting (going above the liquidus temperature) as there is no liquid otherwise. Flows are dominated by recoil pressure, surface tensions and buoyancy effects." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#FluidMechanicsMathematicalModel
+
+:FluidMechanicsMathematicalModel rdf:type :Class ;
+                                 
+                                 rdfs:subClassOf :MathematicalModel ;
+                                 
+                                 rdfs:comment "A physics-based model of a fluid mechanics phenomenon." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#FluidMechanicsModelPrediction
+
+:FluidMechanicsModelPrediction rdf:type :Class ;
+                               
+                               rdfs:subClassOf :Prediction .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#FluidVelocity
+
+:FluidVelocity rdf:type :Class ;
+               
+               rdfs:subClassOf :FluidMechanicsModelPrediction ;
+               
+               rdfs:comment "Velocity in the fluid region of the powder bed. It is not measured but it can be approximated with multi-physics models." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#FouriersEquation
+
+:FouriersEquation rdf:type :Class ;
+                  
+                  rdfs:subClassOf :Equation .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#FullMelting
+
+:FullMelting rdf:type :Class ;
+             
+             rdfs:subClassOf :ConsolidationByMeltingCharacteristic ;
+             
+             rdfs:comment "Characteristics describing a process where temperature in the powder bed is raised above the liquidus temperature." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#Fusion
+
+:Fusion rdf:type :Class ;
+        
+        rdfs:subClassOf :PhaseTransformation ;
+        
+        rdfs:comment "Melting. Phase change from solid to liquid." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#FusionCharacteristic
+
+:FusionCharacteristic rdf:type :Class ;
+                      
+                      rdfs:subClassOf :PhaseTransformationCharacteristic .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#GasComposition
+
+:GasComposition rdf:type :Class ;
+                
+                rdfs:subClassOf :BuildChamberParameter .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#GasPressure
+
+:GasPressure rdf:type :Class ;
+             
+             rdfs:subClassOf :BuildChamberParameter .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#GaussianDistribution
+
+:GaussianDistribution rdf:type :Class ;
+                      
+                      rdfs:subClassOf :SurfaceDistributionOfHeatSource .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#HeatDissipation
+
+:HeatDissipation rdf:type :Class ;
+                 
+                 rdfs:subClassOf :HeatTransfer ;
+                 
+                 rdfs:comment "The flow of thermal energy in a physical system as dictated only by diffusion." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#HeatDissipationCharacteristic
+
+:HeatDissipationCharacteristic rdf:type :Class ;
+                               
+                               rdfs:subClassOf :HeatTransferCharacteristic ,
+                                               [ rdf:type :Restriction ;
+                                                 :onProperty :influences ;
+                                                 :someValuesFrom :Consolidation
+                                               ] ,
+                                               [ rdf:type :Restriction ;
+                                                 :onProperty :isFunctionOf ;
+                                                 :someValuesFrom :ConvectionCharacteristic
+                                               ] ,
+                                               [ rdf:type :Restriction ;
+                                                 :onProperty :influences ;
+                                                 :someValuesFrom :FluidMechanics
+                                               ] ,
+                                               [ rdf:type :Restriction ;
+                                                 :onProperty :isFunctionOf ;
+                                                 :someValuesFrom :ThermalDiffusivityCharacteristic
+                                               ] ,
+                                               [ rdf:type :Restriction ;
+                                                 :onProperty :isFunctionOf ;
+                                                 :someValuesFrom :RadiationCharacteristic
+                                               ] ,
+                                               [ rdf:type :Restriction ;
+                                                 :onProperty :isFunctionOf ;
+                                                 :someValuesFrom :ThermalConductivityOfTheSubstrate
+                                               ] ;
+                               
+                               rdfs:comment "Characteristics that determine how easily heat is transmitted in a medium. They include thermal conductivity, density, heat capacity (all of which can be summarized in the form of thermal diffusivity); convection and radiation coefficients for the surface of the powder bed, and conductivity of the substrate." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#HeatSourceParameter
+
+:HeatSourceParameter rdf:type :Class ;
+                     
+                     rdfs:subClassOf :MachineEquipmentParameter ;
+                     
+                     rdfs:comment "Characteristics of the heat source used for thermally-activated consolidation: Its type (laser or electron beam), power, scanning speed, size." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#HeatSourcePower
+
+:HeatSourcePower rdf:type :Class ;
+                 
+                 rdfs:subClassOf :HeatSourceParameter ,
+                                 :LaserIrradiationModelingAssumption ;
+                 
+                 rdfs:comment "Power used to heat powder when beam is on." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#HeatTransfer
+
+:HeatTransfer rdf:type :Class ;
+              
+              rdfs:subClassOf :Phenomenon ;
+              
+              rdfs:comment "The exchange of thermal energy between physical systems due to conduction, convection and radiation." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#HeatTransferCharacteristic
+
+:HeatTransferCharacteristic rdf:type :Class ;
+                            
+                            rdfs:subClassOf :PhenomenonCharacteristic ;
+                            
+                            rdfs:comment "Characteristics that define heat transfer processes." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#HeatTransferMathematicalModel
+
+:HeatTransferMathematicalModel rdf:type :Class ;
+                               
+                               rdfs:subClassOf :MathematicalModel ,
+                                               [ rdf:type :Restriction ;
+                                                 :onProperty :provides ;
+                                                 :someValuesFrom :TemperatureFieldDistribution
+                                               ] ,
+                                               [ rdf:type :Restriction ;
+                                                 :onProperty :represents ;
+                                                 :someValuesFrom :HeatTransfer
+                                               ] ;
+                               
+                               rdfs:comment "A physics-based model of a heat transfer phenomenon." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#HeatTransferModelPrediction
+
+:HeatTransferModelPrediction rdf:type :Class ;
+                             
+                             :equivalentClass [ rdf:type :Class ;
+                                                :unionOf ( :EnthalpyDistribution
+                                                           :TemperatureFieldDistribution
+                                                         )
+                                              ] ;
+                             
+                             rdfs:subClassOf :HeatTransferModelingAssumption ,
+                                             :Prediction .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#HeatTransferModelingAssumption
+
+:HeatTransferModelingAssumption rdf:type :Class ;
+                                
+                                rdfs:subClassOf :ModelingAssumption .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#InitialPorosity
+
+:InitialPorosity rdf:type :Class ;
+                 
+                 rdfs:subClassOf :PowderCharacteristic .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#InitialPowderDensity
+
+:InitialPowderDensity rdf:type :Class ;
+                      
+                      rdfs:subClassOf :PowderCharacteristic ;
+                      
+                      rdfs:comment "Relative density (or porosity) of powder." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#IrradiationAbsorption
+
+:IrradiationAbsorption rdf:type :Class ;
+                       
+                       rdfs:subClassOf :Phenomenon ;
+                       
+                       rdfs:comment "The partial absorption of thermal energy in a body that is subject to irradiation." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#IrradiationAbsorptionCharacteristic
+
+:IrradiationAbsorptionCharacteristic rdf:type :Class ;
+                                     
+                                     rdfs:subClassOf :PhenomenonCharacteristic ,
+                                                     [ rdf:type :Restriction ;
+                                                       :onProperty :isFunctionOf ;
+                                                       :someValuesFrom :IrradiationCharacteristic
+                                                     ] ,
+                                                     [ rdf:type :Restriction ;
+                                                       :onProperty :isFunctionOf ;
+                                                       :someValuesFrom :ExtinctionCoefficient
+                                                     ] ,
+                                                     [ rdf:type :Restriction ;
+                                                       :onProperty :influences ;
+                                                       :someValuesFrom :HeatDissipation
+                                                     ] ,
+                                                     [ rdf:type :Restriction ;
+                                                       :onProperty :isFunctionOf ;
+                                                       :someValuesFrom :AbsorptionCoefficient
+                                                     ] ;
+                                     
+                                     rdfs:comment "Distinguishing features or properties of how irradiation is absorbed by the powder bed." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#IrradiationAbsorptionMathematicalModel
+
+:IrradiationAbsorptionMathematicalModel rdf:type :Class ;
+                                        
+                                        :equivalentClass [ rdf:type :Class ;
+                                                           :unionOf ( :BeerLambertEquation
+                                                                      :RadiationTransferEquation
+                                                                      :RayTracingEquation
+                                                                    )
+                                                         ] ;
+                                        
+                                        rdfs:subClassOf :MathematicalModel ,
+                                                        [ rdf:type :Class ;
+                                                          :intersectionOf ( [ rdf:type :Restriction ;
+                                                                              :onProperty :hasCharacteristic ;
+                                                                              :someValuesFrom :AbsorptionCoefficient
+                                                                            ]
+                                                                            [ rdf:type :Restriction ;
+                                                                              :onProperty :hasCharacteristic ;
+                                                                              :someValuesFrom :Absorptivity
+                                                                            ]
+                                                                            [ rdf:type :Restriction ;
+                                                                              :onProperty :hasCharacteristic ;
+                                                                              :someValuesFrom :ExtinctionCoefficient
+                                                                            ]
+                                                                          )
+                                                        ] .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#IrradiationAbsorptionModelPrediction
+
+:IrradiationAbsorptionModelPrediction rdf:type :Class ;
+                                      
+                                      rdfs:subClassOf :Prediction .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#IrradiationAbsorptionModelingAssumption
+
+:IrradiationAbsorptionModelingAssumption rdf:type :Class ;
+                                         
+                                         rdfs:subClassOf :ModelingAssumption .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#IrradiationAbsorptionSignature
+
+:IrradiationAbsorptionSignature rdf:type :Class ;
+                                
+                                rdfs:subClassOf :ProcessSignature .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#IrradiationCharacteristic
+
+:IrradiationCharacteristic rdf:type :Class ;
+                           
+                           rdfs:subClassOf :PhenomenonCharacteristic ,
+                                           [ rdf:type :Restriction ;
+                                             :onProperty :influences ;
+                                             :someValuesFrom :IrradiationAbsorption
+                                           ] ;
+                           
+                           rdfs:comment "Characteristics that determine the irradiation of the powder bed." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#LaserIrradiation
+
+:LaserIrradiation rdf:type :Class ;
+                  
+                  rdfs:subClassOf :Phenomenon ;
+                  
+                  rdfs:comment "The process by which an object is exposed to radiation, which in turn is defined as the transmission of energy in the form of waves or particles through space or a medium." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#LaserIrradiationModelingAssumption
+
+:LaserIrradiationModelingAssumption rdf:type :Class ;
+                                    
+                                    rdfs:subClassOf :IrradiationAbsorptionModelingAssumption .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#LatentHeatOfFusionModelingAssumption
+
+:LatentHeatOfFusionModelingAssumption rdf:type :Class ;
+                                      
+                                      rdfs:subClassOf :HeatTransferModelingAssumption .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#LayerThickness
+
+:LayerThickness rdf:type :Class ;
+                
+                rdfs:subClassOf :PowderCharacteristic ;
+                
+                rdfs:comment "Thickness of layers of powder being spread." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#LiquidStateSintering
+
+:LiquidStateSintering rdf:type :Class ;
+                      
+                      rdfs:subClassOf :ConsolidationBySinteringCharacteristic ;
+                      
+                      rdfs:comment "Characteristics describing a process where the maximum temperature in the powder bed is between the liquidus and solidus temperatures. This produces partial melting, also known as liquid state sintering." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MachineEquipmentParameter
+
+:MachineEquipmentParameter rdf:type :Class ;
+                           
+                           rdfs:subClassOf :PowderBedFusionProcessParameter ;
+                           
+                           rdfs:comment "Characteristics of the machine used in the process." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MarangoniEffectCharacteristic
+
+:MarangoniEffectCharacteristic rdf:type :Class ;
+                               
+                               rdfs:subClassOf :SurfaceTensionEffectCharacteristic ;
+                               
+                               rdfs:comment "Marangoni effects (thermo-capillary convection) are the result of temperature gradients. Surface tension is stronger at lower temperatures, creating surface tension gradients where temperature gradients exist." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MassTransferEquation
+
+:MassTransferEquation rdf:type :Class ;
+                      
+                      rdfs:subClassOf :Equation .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#Material
+
+:Material rdf:type :Class ;
+          
+          rdfs:subClassOf :Physical .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MaterialDistributionModelingAssumption
+
+:MaterialDistributionModelingAssumption rdf:type :Class ;
+                                        
+                                        rdfs:subClassOf :HeatTransferModelingAssumption ,
+                                                        :IrradiationAbsorptionModelingAssumption .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MaterialProperty
+
+:MaterialProperty rdf:type :Class ;
+                  
+                  rdfs:subClassOf :PowderBedFusionProcessParameter ;
+                  
+                  rdfs:comment "All the material properties including the ones as provided by material vendor, as well as the ones not initially provided and that can only be evaluated by the mean of a model." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MathematicalModel
+
+:MathematicalModel rdf:type :Class ;
+                   
+                   rdfs:subClassOf :PhysicsBasedModel ;
+                   
+                   rdfs:comment "The mathematical model that is chosen to represent the physical phenomenon. The mathematical model is an abstraction in the form of an analytical equation before a discretization is applied for its solution." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MaximumResidualStress
+
+:MaximumResidualStress rdf:type :Class ;
+                       
+                       rdfs:subClassOf :ProcessSignature ,
+                                       [ rdf:type :Restriction ;
+                                         :onProperty :isInfluencedBy ;
+                                         :someValuesFrom :ScanningSpeed
+                                       ] ,
+                                       [ rdf:type :Restriction ;
+                                         :onProperty :isInfluencedBy ;
+                                         :someValuesFrom :ScanningTrackPattern
+                                       ] ,
+                                       [ rdf:type :Restriction ;
+                                         :onProperty :isInfluencedBy ;
+                                         :someValuesFrom :MeltPoolTemperatureGradient
+                                       ] ,
+                                       [ rdf:type :Restriction ;
+                                         :onProperty :isInfluencedBy ;
+                                         :someValuesFrom :Shrinkage
+                                       ] .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MeltPoolDepth
+
+:MeltPoolDepth rdf:type :Class ;
+               
+               rdfs:subClassOf :MeltPoolShape .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MeltPoolLength
+
+:MeltPoolLength rdf:type :Class ;
+                
+                rdfs:subClassOf :MeltPoolShape .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MeltPoolMaximumTemperature
+
+:MeltPoolMaximumTemperature rdf:type :Class ;
+                            
+                            rdfs:subClassOf :MeltPoolTemperature .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MeltPoolShape
+
+:MeltPoolShape rdf:type :Class ;
+               
+               rdfs:subClassOf :FluidMechanicsModelPrediction ,
+                               :MeltPoolSignature .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MeltPoolSignature
+
+:MeltPoolSignature rdf:type :Class ;
+                   
+                   rdfs:subClassOf :ProcessSignature ,
+                                   [ rdf:type :Restriction ;
+                                     :onProperty :isInfluencedBy ;
+                                     :someValuesFrom :HeatSourcePower
+                                   ] ,
+                                   [ rdf:type :Restriction ;
+                                     :onProperty :isInfluencedBy ;
+                                     :someValuesFrom :PowderSizeDistribution
+                                   ] ,
+                                   [ rdf:type :Restriction ;
+                                     :onProperty :isInfluencedBy ;
+                                     :someValuesFrom :ThermalConductivityOfTheSubstrate
+                                   ] ,
+                                   [ rdf:type :Restriction ;
+                                     :onProperty :isInfluencedBy ;
+                                     :someValuesFrom :ScanningSpeed
+                                   ] ,
+                                   [ rdf:type :Restriction ;
+                                     :onProperty :isInfluencedBy ;
+                                     :someValuesFrom :Absorptivity
+                                   ] ,
+                                   [ rdf:type :Restriction ;
+                                     :onProperty :isInfluencedBy ;
+                                     :someValuesFrom :BeamSize
+                                   ] ,
+                                   [ rdf:type :Restriction ;
+                                     :onProperty :isInfluencedBy ;
+                                     :someValuesFrom :PackingDensity
+                                   ] ,
+                                   [ rdf:type :Restriction ;
+                                     :onProperty :isInfluencedBy ;
+                                     :someValuesFrom :LayerThickness
+                                   ] .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MeltPoolTemperature
+
+:MeltPoolTemperature rdf:type :Class ;
+                     
+                     rdfs:subClassOf :MeltPoolSignature .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MeltPoolTemperatureGradient
+
+:MeltPoolTemperatureGradient rdf:type :Class ;
+                             
+                             rdfs:subClassOf :MeltPoolTemperature .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MeltPoolWidth
+
+:MeltPoolWidth rdf:type :Class ;
+               
+               rdfs:subClassOf :MeltPoolShape .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MeltingModelingAssumption
+
+:MeltingModelingAssumption rdf:type :Class ;
+                           
+                           rdfs:subClassOf :HeatTransferModelingAssumption .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MicrostructuralMathematicalModel
+
+:MicrostructuralMathematicalModel rdf:type :Class ;
+                                  
+                                  rdfs:subClassOf :MathematicalModel ;
+                                  
+                                  rdfs:comment "A physics-based model of microstructural evolution." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MicrostructuralModelPrediction
+
+:MicrostructuralModelPrediction rdf:type :Class ;
+                                
+                                rdfs:subClassOf :Prediction .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MicrostructureDistribution
+
+:MicrostructureDistribution rdf:type :Class ;
+                            
+                            rdfs:subClassOf :MicrostructuralModelPrediction ,
+                                            :MicrostructureEvolutionCharacteristic .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MicrostructureEvolution
+
+:MicrostructureEvolution rdf:type :Class ;
+                         
+                         rdfs:subClassOf :Phenomenon ;
+                         
+                         rdfs:comment "The time history of microstructural phases in a material, as dictated by their composition and the temperature history." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MicrostructureEvolutionCharacteristic
+
+:MicrostructureEvolutionCharacteristic rdf:type :Class ;
+                                       
+                                       rdfs:subClassOf :PhenomenonCharacteristic ;
+                                       
+                                       rdfs:comment "In the case of consolidation by melting, as the material solidies it goes through numerous microstructural changes that define its microstructure, and as a results, its mechanical properties." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#Microsturcture
+
+:Microsturcture rdf:type :Class ;
+                
+                rdfs:subClassOf :ProcessSignature ,
+                                [ rdf:type :Restriction ;
+                                  :onProperty :isInfluencedBy ;
+                                  :someValuesFrom :MeltPoolTemperatureGradient
+                                ] ,
+                                [ rdf:type :Restriction ;
+                                  :onProperty :isInfluencedBy ;
+                                  :someValuesFrom :MeltPoolMaximumTemperature
+                                ] ,
+                                [ rdf:type :Restriction ;
+                                  :onProperty :isInfluencedBy ;
+                                  :someValuesFrom :ScanningSpeed
+                                ] .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#Model
+
+:Model rdf:type :Class ;
+       
+       rdfs:subClassOf :Abstract ;
+       
+       rdfs:comment "Computational model  --> A mathematical model used to simulate the behavior of a system by computer simulation." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ModelElement
+
+:ModelElement rdf:type :Class ;
+              
+              rdfs:subClassOf :Characteristic ;
+              
+              rdfs:comment "A characteristic regarding a physics-based model." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ModelingAssumption
+
+:ModelingAssumption rdf:type :Class ;
+                    
+                    rdfs:subClassOf :ModelElement ;
+                    
+                    rdfs:comment """Set of modeling assumptions used to determine the choice of model and boundary conditions to be applied.
+
+Modeling assumptions can be geometric, physical, or statistical. Geometric assumptions involve the delimitation of the domain, number of dimensions, axes of symmetry, etc. Physical assumptions cover the definition of the physical phenomena involved, constitutive laws, time- and length scales, physical properties, and an appropriate choise of initial and boundary conditions. Statistical assumption provide information about random processes in stochastic models.""" .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MonteCarloMethod
+
+:MonteCarloMethod rdf:type :Class ;
+                  
+                  rdfs:subClassOf :NumericalApproximation .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#NavierStokesEquation
+
+:NavierStokesEquation rdf:type :Class ;
+                      
+                      rdfs:subClassOf :Equation .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#NumericalApproximation
+
+:NumericalApproximation rdf:type :Class ;
+                        
+                        rdfs:subClassOf :ModelElement ;
+                        
+                        rdfs:comment "Important characteristics of numerical models are the numerical methods used in the discretization, granularity of the grid, the use of preconditioning algoritms, whether the system has been parallelized, if the system has been optimized and what optimization methods was used, generators of pseudo-random numbers used, grid refinement algorithms, and linear algebra packages used in the solution." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#NumericalModel
+
+:NumericalModel rdf:type :Class ;
+                
+                rdfs:subClassOf :PhysicsBasedModel ;
+                
+                rdfs:comment "A numerical model is a numerical approximation of the mathematical model that can be solved (simulated) with a computer." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#OpticalProperty
+
+:OpticalProperty rdf:type :Class ;
+                 
+                 rdfs:subClassOf :PowderCharacteristic .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#PackingDensity
+
+:PackingDensity rdf:type :Class ;
+                
+                rdfs:subClassOf :PowderCharacteristic .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#Particle
+
+:Particle rdf:type :Class ;
+          
+          rdfs:subClassOf :MaterialDistributionModelingAssumption .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ParticleSize
+
+:ParticleSize rdf:type :Class ;
+              
+              rdfs:subClassOf :PowderCharacteristic ;
+              
+              rdfs:comment "Size of powder particles used in the process." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#PhaseFieldEquation
+
+:PhaseFieldEquation rdf:type :Class ;
+                    
+                    rdfs:subClassOf :Equation .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#PhaseTransformation
+
+:PhaseTransformation rdf:type :Class ;
+                     
+                     rdfs:subClassOf :HeatTransfer ;
+                     
+                     rdfs:comment "A thermally-activated change in the phase of a material." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#PhaseTransformationCharacteristic
+
+:PhaseTransformationCharacteristic rdf:type :Class ;
+                                   
+                                   rdfs:subClassOf :HeatTransferCharacteristic ;
+                                   
+                                   rdfs:comment "Phase transformation effects need to be taken into account when describing heat transfer as phase transformations take heat contributions (latent heat) that affect the thermal system." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#Phenomenon
+
+:Phenomenon rdf:type :Class ;
+            
+            rdfs:subClassOf :Physical ,
+                            [ rdf:type :Restriction ;
+                              :onProperty :hasCharacteristic ;
+                              :someValuesFrom :PhenomenonCharacteristic
+                            ] ;
+            
+            rdfs:comment "A sub-set of observable events described by flows of matter and/or energy within a given physical domain." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#PhenomenonCharacteristic
+
+:PhenomenonCharacteristic rdf:type :Class ;
+                          
+                          rdfs:subClassOf :Characteristic ;
+                          
+                          rdfs:comment "A characteristic regarding a physical phenomenon." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#Physical
+
+:Physical rdf:type :Class ;
+          
+          rdfs:comment "Physical concepts include everything that exists in the physical universe (space/time)." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#PhysicsBasedModel
+
+:PhysicsBasedModel rdf:type :Class ;
+                   
+                   rdfs:subClassOf :Model ,
+                                   [ rdf:type :Restriction ;
+                                     :onProperty :represents ;
+                                     :someValuesFrom :Phenomenon
+                                   ] ,
+                                   [ rdf:type :Restriction ;
+                                     :onProperty :provides ;
+                                     :someValuesFrom :Characteristic
+                                   ] ;
+                   
+                   rdfs:comment "A computational model obtained from first-principles (laws of physics)." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#PlasticDeformationCharacteristic
+
+:PlasticDeformationCharacteristic rdf:type :Class ;
+                                  
+                                  rdfs:subClassOf :DeformationCharacteristic .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#PointSourceDistribution
+
+:PointSourceDistribution rdf:type :Class ;
+                         
+                         rdfs:subClassOf :SurfaceDistributionOfHeatSource .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#PoissonsRatio
+
+:PoissonsRatio rdf:type :Class ;
+               
+               rdfs:subClassOf :MaterialProperty .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#PorosityDistribution
+
+:PorosityDistribution rdf:type :Class ;
+                      
+                      rdfs:subClassOf :ConsolidationModelPrediction .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#PowderBedFusionProcess
+
+:PowderBedFusionProcess rdf:type :Class ;
+                        
+                        rdfs:subClassOf :AdditiveManufacturingProcess ,
+                                        [ rdf:type :Restriction ;
+                                          :onProperty :hasCharacteristic ;
+                                          :someValuesFrom :PowderBedFusionProcessParameter
+                                        ] ;
+                        
+                        rdfs:comment "An additive manufacturing process in which thermal energy selectively fuses regions of a powder bed." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#PowderBedFusionProcessParameter
+
+:PowderBedFusionProcessParameter rdf:type :Class ;
+                                 
+                                 rdfs:subClassOf :ProcessParameter ;
+                                 
+                                 rdfs:comment "Distinguishing features required to define a powder bed fusion process." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#PowderCharacteristic
+
+:PowderCharacteristic rdf:type :Class ;
+                      
+                      rdfs:subClassOf :PowderBedFusionProcessParameter ;
+                      
+                      rdfs:comment "Characteristics that describe the powder and the way it is spread on the powder bed." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#PowderSizeDistribution
+
+:PowderSizeDistribution rdf:type :Class ;
+                        
+                        rdfs:subClassOf :PowderCharacteristic .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#Prediction
+
+:Prediction rdf:type :Class ;
+            
+            rdfs:subClassOf :ModelElement .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ProcessParameter
+
+:ProcessParameter rdf:type :Class ;
+                  
+                  rdfs:subClassOf :Characteristic ;
+                  
+                  rdfs:comment "Distinguishing features required to define a process." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ProcessSignature
+
+:ProcessSignature rdf:type :Class ;
+                  
+                  rdfs:subClassOf :Characteristic .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#RadiationCharacteristic
+
+:RadiationCharacteristic rdf:type :Class ;
+                         
+                         rdfs:subClassOf :HeatDissipationCharacteristic ,
+                                         [ rdf:type :Restriction ;
+                                           :onProperty :isFunctionOf ;
+                                           :someValuesFrom :ChamberTemperature
+                                         ] ,
+                                         [ rdf:type :Restriction ;
+                                           :onProperty :isFunctionOf ;
+                                           :someValuesFrom :RadiationCoefficient
+                                         ] ,
+                                         [ rdf:type :Restriction ;
+                                           :onProperty :isFunctionOf ;
+                                           :someValuesFrom :TemperatureFieldDistribution
+                                         ] .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#RadiationCoefficient
+
+:RadiationCoefficient rdf:type :Class ;
+                      
+                      rdfs:subClassOf :RadiationCharacteristic .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#RadiationTransferEquation
+
+:RadiationTransferEquation rdf:type :Class ;
+                           
+                           rdfs:subClassOf :Equation ,
+                                           [ rdf:type :Restriction ;
+                                             :onProperty :requiresApproximation ;
+                                             :someValuesFrom :TwoFluxMethod
+                                           ] ,
+                                           [ rdf:type :Class ;
+                                             :intersectionOf ( [ rdf:type :Restriction ;
+                                                                 :onProperty :requiresAssumption ;
+                                                                 :someValuesFrom :DeterministicIrradiation
+                                                               ]
+                                                               [ rdf:type :Restriction ;
+                                                                 :onProperty :requiresAssumption ;
+                                                                 :someValuesFrom :Particle
+                                                               ]
+                                                               [ rdf:type :Restriction ;
+                                                                 :onProperty :requiresAssumption ;
+                                                                 :someValuesFrom :VolumetricDistributionOfAbsorbedHeat
+                                                               ]
+                                                             )
+                                           ] ,
+                                           [ rdf:type :Restriction ;
+                                             :onProperty :provides ;
+                                             :someValuesFrom :VolumetricDistributionOfAbsorbedHeat
+                                           ] .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#RadiativeProperty
+
+:RadiativeProperty rdf:type :Class ;
+                   
+                   rdfs:subClassOf :PowderCharacteristic .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#RadiativePropertyOfBulkMaterial
+
+:RadiativePropertyOfBulkMaterial rdf:type :Class ;
+                                 
+                                 rdfs:subClassOf :MaterialProperty .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#RayTracingEquation
+
+:RayTracingEquation rdf:type :Class ;
+                    
+                    rdfs:subClassOf :Equation ,
+                                    [ rdf:type :Class ;
+                                      :intersectionOf ( [ rdf:type :Restriction ;
+                                                          :onProperty :requiresAssumption ;
+                                                          :someValuesFrom :Particle
+                                                        ]
+                                                        [ rdf:type :Restriction ;
+                                                          :onProperty :requiresAssumption ;
+                                                          :someValuesFrom :VolumetricDistributionOfAbsorbedHeat
+                                                        ]
+                                                        [ rdf:type :Restriction ;
+                                                          :onProperty :requiresAssumption ;
+                                                          :someValuesFrom [ rdf:type :Class ;
+                                                                            :unionOf ( :DeterministicIrradiation
+                                                                                       :StochasticIrradiation
+                                                                                     )
+                                                                          ]
+                                                        ]
+                                                      )
+                                    ] ,
+                                    [ rdf:type :Restriction ;
+                                      :onProperty :provides ;
+                                      :someValuesFrom :VolumetricDistributionOfAbsorbedHeat
+                                    ] ,
+                                    [ rdf:type :Restriction ;
+                                      :onProperty :requiresApproximation ;
+                                      :someValuesFrom :MonteCarloMethod
+                                    ] .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#RecoilPressureCharacteristic
+
+:RecoilPressureCharacteristic rdf:type :Class ;
+                              
+                              rdfs:subClassOf :FluidMechanicsCharacteristic ;
+                              
+                              rdfs:comment "Surface temperatures below the laser spot can easily reach boiling point, which adds extra forces due to vapor recoil pressure and may affect the surface topology." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ResidualStressCharacteristic
+
+:ResidualStressCharacteristic rdf:type :Class ;
+                              
+                              rdfs:subClassOf :SolidMechanicsCharacteristic .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ResidualStressDistribution
+
+:ResidualStressDistribution rdf:type :Class ;
+                            
+                            rdfs:subClassOf :SolidMechanicsModelPrediction .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ScanningSpeed
+
+:ScanningSpeed rdf:type :Class ;
+               
+               rdfs:subClassOf :HeatSourceParameter ;
+               
+               rdfs:comment "Scanning speed when the beam is on." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ScanningTrackPattern
+
+:ScanningTrackPattern rdf:type :Class ;
+                      
+                      rdfs:subClassOf :HeatSourceParameter .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#SelectiveLaserMelting
+
+:SelectiveLaserMelting rdf:type :Class ;
+                       
+                       rdfs:subClassOf :PowderBedFusionProcess .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#SelectiveLaserSintering
+
+:SelectiveLaserSintering rdf:type :Class ;
+                         
+                         rdfs:subClassOf :PowderBedFusionProcess .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#Shrinkage
+
+:Shrinkage rdf:type :Class ;
+           
+           rdfs:subClassOf :ProcessSignature ,
+                           [ rdf:type :Restriction ;
+                             :onProperty :isInfluencedBy ;
+                             :someValuesFrom :PackingDensity
+                           ] ,
+                           [ rdf:type :Restriction ;
+                             :onProperty :isInfluencedBy ;
+                             :someValuesFrom :LayerThickness
+                           ] .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#SolidMechanics
+
+:SolidMechanics rdf:type :Class ;
+                
+                rdfs:subClassOf :Phenomenon ;
+                
+                rdfs:comment "The motion and deformation of solid materials under the action of loads, e.g. forces, temperature changes, etc." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#SolidMechanicsCharacteristic
+
+:SolidMechanicsCharacteristic rdf:type :Class ;
+                              
+                              rdfs:subClassOf :PhenomenonCharacteristic ;
+                              
+                              rdfs:comment "Elastic and plastic models are used to determine the effect of thermal load on the solidifying part, and the resulting residual stresses." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#SolidMechanicsEquation
+
+:SolidMechanicsEquation rdf:type :Class ;
+                        
+                        rdfs:subClassOf :Equation .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#SolidMechanicsMathematicalModel
+
+:SolidMechanicsMathematicalModel rdf:type :Class ;
+                                 
+                                 rdfs:subClassOf :MathematicalModel ;
+                                 
+                                 rdfs:comment "A physics-based model of a structural phenomenon." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#SolidMechanicsModelPrediction
+
+:SolidMechanicsModelPrediction rdf:type :Class ;
+                               
+                               rdfs:subClassOf :Prediction .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#SolidStateSintering
+
+:SolidStateSintering rdf:type :Class ;
+                     
+                     rdfs:subClassOf :ConsolidationBySinteringCharacteristic ;
+                     
+                     rdfs:comment "Characteristics describing a process where the maximum temperature in the powder bed is below the solidus temperatures. Consolidation is produced by solid-phase sintering." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#StatisticalAssumptionOfIrradiationDistribution
+
+:StatisticalAssumptionOfIrradiationDistribution rdf:type :Class ;
+                                                
+                                                rdfs:subClassOf :LaserIrradiationModelingAssumption .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#StochasticIrradiation
+
+:StochasticIrradiation rdf:type :Class ;
+                       
+                       rdfs:subClassOf :StatisticalAssumptionOfIrradiationDistribution .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#StrainDistribution
+
+:StrainDistribution rdf:type :Class ;
+                    
+                    rdfs:subClassOf :SolidMechanicsModelPrediction .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#Surface
+
+:Surface rdf:type :Class ;
+         
+         rdfs:subClassOf :DimensionalityOfAbsorbedHeat ;
+         
+         :disjointWith :Volumetric .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#SurfaceConvectionCoefficient
+
+:SurfaceConvectionCoefficient rdf:type :Class ;
+                              
+                              rdfs:subClassOf :ConvectionCharacteristic .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#SurfaceDistributionOfAbsorbedHeat
+
+:SurfaceDistributionOfAbsorbedHeat rdf:type :Class ;
+                                   
+                                   rdfs:subClassOf :IrradiationAbsorptionModelPrediction ,
+                                                   [ rdf:type :Restriction ;
+                                                     :onProperty :isFunctionOf ;
+                                                     :someValuesFrom :Absorptivity
+                                                   ] ,
+                                                   [ rdf:type :Restriction ;
+                                                     :onProperty :isFunctionOf ;
+                                                     :someValuesFrom :SurfaceDistributionOfHeatSource
+                                                   ] ;
+                                   
+                                   :disjointWith :VolumetricDistributionOfAbsorbedHeat .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#SurfaceDistributionOfHeatSource
+
+:SurfaceDistributionOfHeatSource rdf:type :Class ;
+                                 
+                                 rdfs:subClassOf :LaserIrradiationModelingAssumption .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#SurfaceEnergyCharacteristic
+
+:SurfaceEnergyCharacteristic rdf:type :Class ;
+                             
+                             rdfs:subClassOf :SurfaceTensionEffectCharacteristic ;
+                             
+                             rdfs:comment "Surface tension gradients are created due to differences in surface energy in different phases: liquid, solid, gas." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#SurfaceTensionEffectCharacteristic
+
+:SurfaceTensionEffectCharacteristic rdf:type :Class ;
+                                    
+                                    rdfs:subClassOf :FluidMechanicsCharacteristic ;
+                                    
+                                    rdfs:comment "Characteristics that define the different sources of surface tensions that drive flows." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#TemperatureFieldDistribution
+
+:TemperatureFieldDistribution rdf:type :Class ;
+                              
+                              rdfs:subClassOf :HeatTransferModelPrediction .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#TemperatureRange
+
+:TemperatureRange rdf:type :Class ;
+                  
+                  rdfs:subClassOf :MeltingModelingAssumption .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ThermalConductivityEquation
+
+:ThermalConductivityEquation rdf:type :Class ;
+                             
+                             rdfs:subClassOf :Equation .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ThermalConductivityOfTheSubstrate
+
+:ThermalConductivityOfTheSubstrate rdf:type :Class ;
+                                   
+                                   rdfs:subClassOf :MaterialProperty .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ThermalDiffusivityCharacteristic
+
+:ThermalDiffusivityCharacteristic rdf:type :Class ;
+                                  
+                                  rdfs:subClassOf :HeatDissipationCharacteristic ,
+                                                  [ rdf:type :Restriction ;
+                                                    :onProperty :isFunctionOf ;
+                                                    :someValuesFrom :DensityDistribution
+                                                  ] .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ThreeDimensional
+
+:ThreeDimensional rdf:type :Class ;
+                  
+                  rdfs:subClassOf :DimensionalityOfPhysicalSystem ;
+                  
+                  :disjointWith :TwoDimensional .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#TwoDimensional
+
+:TwoDimensional rdf:type :Class ;
+                
+                rdfs:subClassOf :DimensionalityOfPhysicalSystem .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#TwoFluxMethod
+
+:TwoFluxMethod rdf:type :Class ;
+               
+               rdfs:subClassOf :NumericalApproximation .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#Vaporization
+
+:Vaporization rdf:type :Class ;
+              
+              rdfs:subClassOf :PhaseTransformation ;
+              
+              rdfs:comment "Phase change from liquid to vapor." .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#VaporizationCharacteristic
+
+:VaporizationCharacteristic rdf:type :Class ;
+                            
+                            rdfs:subClassOf :PhaseTransformationCharacteristic .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#Void
+
+:Void rdf:type :Class ;
+      
+      rdfs:subClassOf :ProcessSignature ,
+                      [ rdf:type :Restriction ;
+                        :onProperty :isInfluencedBy ;
+                        :someValuesFrom :MeltPoolShape
+                      ] ,
+                      [ rdf:type :Restriction ;
+                        :onProperty :isInfluencedBy ;
+                        :someValuesFrom :MeltPoolTemperature
+                      ] .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#Volumetric
+
+:Volumetric rdf:type :Class ;
+            
+            rdfs:subClassOf :DimensionalityOfAbsorbedHeat .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#VolumetricDistributionOfAbsorbedHeat
+
+:VolumetricDistributionOfAbsorbedHeat rdf:type :Class ;
+                                      
+                                      rdfs:subClassOf :IrradiationAbsorptionModelPrediction ,
+                                                      [ rdf:type :Restriction ;
+                                                        :onProperty :isFunctionOf ;
+                                                        :someValuesFrom :AbsorptionCoefficient
+                                                      ] ,
+                                                      [ rdf:type :Restriction ;
+                                                        :onProperty :isFunctionOf ;
+                                                        :someValuesFrom :ExtinctionCoefficient
+                                                      ] ,
+                                                      [ rdf:type :Restriction ;
+                                                        :onProperty :isFunctionOf ;
+                                                        :someValuesFrom :BeamSize
+                                                      ] ,
+                                                      [ rdf:type :Restriction ;
+                                                        :onProperty :isFunctionOf ;
+                                                        :someValuesFrom :ScanningSpeed
+                                                      ] ,
+                                                      [ rdf:type :Restriction ;
+                                                        :onProperty :isFunctionOf ;
+                                                        :someValuesFrom :SurfaceDistributionOfAbsorbedHeat
+                                                      ] .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ThreeDimensional
+
+:ThreeDimensional rdf:type :NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#TwoDimensional
+
+:TwoDimensional rdf:type :NamedIndividual .
+
+
+
+
+
+#################################################################
+#
+#    General axioms
+#
+#################################################################
+
+
+[ rdf:type :AllDisjointClasses ;
+  :members ( :CylindricalDistribution
+             :GaussianDistribution
+             :PointSourceDistribution
+           )
+] .
+[ rdf:type :AllDisjointClasses ;
+  :members ( :ConsolidationCharacteristic
+             :FluidMechanicsCharacteristic
+             :HeatTransferCharacteristic
+             :IrradiationAbsorptionCharacteristic
+             :IrradiationCharacteristic
+             :MicrostructureEvolutionCharacteristic
+             :SolidMechanicsCharacteristic
+           )
+] .
+
+
+
+
+###  Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net
+
