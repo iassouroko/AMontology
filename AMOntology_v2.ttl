@@ -1,12 +1,18 @@
-@prefix : <http://www.w3.org/2002/07/owl#> .
+@prefix : <http://siam.nist.gov/AM-Ontology_v2#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix qudt: <http://qudt.org/1.1/schema/qudt#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336> .
+@prefix vaem: <http://www.linkedmodel.org/1.2/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/1.0/schema/voag#> .
+@prefix dtype: <http://www.linkedmodel.org/1.0/schema/dtype#> .
+@prefix quantity: <http://qudt.org/1.1/schema/quantity#> .
+@prefix dimension: <http://qudt.org/1.1/schema/dimension#> .
+@base <http://siam.nist.gov/AM-Ontology-v2#> .
 
-<http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336> rdf:type :Ontology .
+<http://siam.nist.gov/AM-Ontology-v2#> rdf:type owl:Ontology .
 
 
 #################################################################
@@ -16,9 +22,9 @@
 #################################################################
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#hasCharacteristic
+###  http://siam.nist.gov/AM-Ontology-v2##hasCharacteristic
 
-:hasCharacteristic rdf:type :ObjectProperty ;
+:hasCharacteristic rdf:type owl:ObjectProperty ;
                    
                    rdfs:domain :PowderBedFusionProcess ;
                    
@@ -26,63 +32,63 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#influences
+###  http://siam.nist.gov/AM-Ontology-v2##influences
 
-:influences rdf:type :ObjectProperty ;
-            
-            rdfs:range :Characteristic ;
+:influences rdf:type owl:ObjectProperty ;
             
             rdfs:domain :Characteristic ;
             
-            :inverseOf :isInfluencedBy .
+            rdfs:range :Characteristic ;
+            
+            owl:inverseOf :isInfluencedBy .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#isFunctionOf
+###  http://siam.nist.gov/AM-Ontology-v2##isFunctionOf
 
-:isFunctionOf rdf:type :ObjectProperty ;
+:isFunctionOf rdf:type owl:ObjectProperty ;
               
-              rdfs:range :Characteristic ;
+              rdfs:domain :Characteristic ;
               
-              rdfs:domain :Characteristic .
+              rdfs:range :Characteristic .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#isInfluencedBy
+###  http://siam.nist.gov/AM-Ontology-v2##isInfluencedBy
 
-:isInfluencedBy rdf:type :ObjectProperty .
+:isInfluencedBy rdf:type owl:ObjectProperty .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#isProvidedBy
+###  http://siam.nist.gov/AM-Ontology-v2##isProvidedBy
 
-:isProvidedBy rdf:type :ObjectProperty ;
+:isProvidedBy rdf:type owl:ObjectProperty ;
               
-              rdfs:subPropertyOf :topObjectProperty .
+              rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#partOf
+###  http://siam.nist.gov/AM-Ontology-v2##partOf
 
-:partOf rdf:type :ObjectProperty .
+:partOf rdf:type owl:ObjectProperty .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#provides
+###  http://siam.nist.gov/AM-Ontology-v2##provides
 
-:provides rdf:type :ObjectProperty ;
+:provides rdf:type owl:ObjectProperty ;
           
           rdfs:range :Characteristic ;
           
           rdfs:domain :Model ;
           
-          :inverseOf :isProvidedBy .
+          owl:inverseOf :isProvidedBy .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#relates
+###  http://siam.nist.gov/AM-Ontology-v2##relates
 
-:relates rdf:type :ObjectProperty ;
+:relates rdf:type owl:ObjectProperty ;
          
          rdfs:range :Characteristic ;
          
@@ -92,9 +98,9 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#represents
+###  http://siam.nist.gov/AM-Ontology-v2##represents
 
-:represents rdf:type :ObjectProperty ;
+:represents rdf:type owl:ObjectProperty ;
             
             rdfs:domain :Model ;
             
@@ -102,9 +108,9 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#requires
+###  http://siam.nist.gov/AM-Ontology-v2##requires
 
-:requires rdf:type :ObjectProperty ;
+:requires rdf:type owl:ObjectProperty ;
           
           rdfs:range :Characteristic ;
           
@@ -112,25 +118,25 @@
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#requiresApproximation
+###  http://siam.nist.gov/AM-Ontology-v2##requiresApproximation
 
-:requiresApproximation rdf:type :ObjectProperty ;
+:requiresApproximation rdf:type owl:ObjectProperty ;
                        
                        rdfs:subPropertyOf :requires .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#requiresAssumption
+###  http://siam.nist.gov/AM-Ontology-v2##requiresAssumption
 
-:requiresAssumption rdf:type :ObjectProperty ;
+:requiresAssumption rdf:type owl:ObjectProperty ;
                     
                     rdfs:subPropertyOf :requires .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#requiresCharacteristic
+###  http://siam.nist.gov/AM-Ontology-v2##requiresCharacteristic
 
-:requiresCharacteristic rdf:type :ObjectProperty ;
+:requiresCharacteristic rdf:type owl:ObjectProperty ;
                         
                         rdfs:subPropertyOf :requires .
 
@@ -145,60 +151,60 @@
 #################################################################
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#AbsorptionCoefficient
+###  http://siam.nist.gov/AM-Ontology-v2##AbsorptionCoefficient
 
-:AbsorptionCoefficient rdf:type :Class ;
+:AbsorptionCoefficient rdf:type owl:Class ;
                        
                        rdfs:subClassOf :IrradiationAbsorptionCharacteristic ,
                                        :IrradiationAbsorptionSignature ,
-                                       [ rdf:type :Restriction ;
-                                         :onProperty :isFunctionOf ;
-                                         :someValuesFrom :BeamSize
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :isFunctionOf ;
+                                         owl:someValuesFrom :BeamWavelength
                                        ] ,
-                                       [ rdf:type :Restriction ;
-                                         :onProperty :isFunctionOf ;
-                                         :someValuesFrom :ParticleSize
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :isFunctionOf ;
+                                         owl:someValuesFrom :BeamSize
                                        ] ,
-                                       [ rdf:type :Restriction ;
-                                         :onProperty :isFunctionOf ;
-                                         :someValuesFrom :RadiativePropertyOfBulkMaterial
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :isFunctionOf ;
+                                         owl:someValuesFrom :RadiativePropertyOfBulkMaterial
                                        ] ,
-                                       [ rdf:type :Restriction ;
-                                         :onProperty :isFunctionOf ;
-                                         :someValuesFrom :HeatSourcePower
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :isFunctionOf ;
+                                         owl:someValuesFrom :ParticleSize
                                        ] ,
-                                       [ rdf:type :Restriction ;
-                                         :onProperty :isFunctionOf ;
-                                         :someValuesFrom :BeamWavelength
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :isFunctionOf ;
+                                         owl:someValuesFrom :HeatSourcePower
                                        ] ;
                        
                        rdfs:comment "The absorption coefficient quantifies the amount of irradiation that is absorbed by the powder bed. Its value can be determined experimentally or through computational simulation." .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#Absorptivity
+###  http://siam.nist.gov/AM-Ontology-v2##Absorptivity
 
-:Absorptivity rdf:type :Class ;
+:Absorptivity rdf:type owl:Class ;
               
               rdfs:subClassOf :PowderCharacteristic ,
-                              [ rdf:type :Restriction ;
-                                :onProperty :influences ;
-                                :someValuesFrom :SurfaceDistributionOfAbsorbedHeat
+                              [ rdf:type owl:Class ;
+                                owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :requiresAssumption ;
+                                                       owl:someValuesFrom :Continum
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :requiresAssumption ;
+                                                       owl:someValuesFrom :DeterministicIrradiation
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :requiresAssumption ;
+                                                       owl:someValuesFrom :SurfaceDistributionOfAbsorbedHeat
+                                                     ]
+                                                   )
                               ] ,
-                              [ rdf:type :Class ;
-                                :intersectionOf ( [ rdf:type :Restriction ;
-                                                    :onProperty :requiresAssumption ;
-                                                    :someValuesFrom :Continum
-                                                  ]
-                                                  [ rdf:type :Restriction ;
-                                                    :onProperty :requiresAssumption ;
-                                                    :someValuesFrom :DeterministicIrradiation
-                                                  ]
-                                                  [ rdf:type :Restriction ;
-                                                    :onProperty :requiresAssumption ;
-                                                    :someValuesFrom :SurfaceDistributionOfAbsorbedHeat
-                                                  ]
-                                                )
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :influences ;
+                                owl:someValuesFrom :SurfaceDistributionOfAbsorbedHeat
                               ] ;
               
               rdfs:comment """Absorptivity and absorptance are terms (without any units) used interchangeably to define the amount or fraction of radiation energy captured by an irradiated body. 
@@ -207,17 +213,17 @@ Those terms differ from \"absorption coefficient\" that has units of per unit le
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#Abstract
+###  http://siam.nist.gov/AM-Ontology-v2##Abstract
 
-:Abstract rdf:type :Class ;
+:Abstract rdf:type owl:Class ;
           
           rdfs:comment "Abstract concepts include everything that does not exist in the physical universe (space/time)." .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#AdditiveManufacturingProcess
+###  http://siam.nist.gov/AM-Ontology-v2##AdditiveManufacturingProcess
 
-:AdditiveManufacturingProcess rdf:type :Class ;
+:AdditiveManufacturingProcess rdf:type owl:Class ;
                               
                               rdfs:subClassOf :Physical ;
                               
@@ -225,9 +231,9 @@ Those terms differ from \"absorption coefficient\" that has units of per unit le
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#BeamSize
+###  http://siam.nist.gov/AM-Ontology-v2##BeamSize
 
-:BeamSize rdf:type :Class ;
+:BeamSize rdf:type owl:Class ;
           
           rdfs:subClassOf :HeatSourceParameter ;
           
@@ -235,9 +241,9 @@ Those terms differ from \"absorption coefficient\" that has units of per unit le
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#BeamType
+###  http://siam.nist.gov/AM-Ontology-v2##BeamType
 
-:BeamType rdf:type :Class ;
+:BeamType rdf:type owl:Class ;
           
           rdfs:subClassOf :HeatSourceParameter ;
           
@@ -245,63 +251,63 @@ Those terms differ from \"absorption coefficient\" that has units of per unit le
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#BeamWavelength
+###  http://siam.nist.gov/AM-Ontology-v2##BeamWavelength
 
-:BeamWavelength rdf:type :Class ;
+:BeamWavelength rdf:type owl:Class ;
                 
                 rdfs:subClassOf :HeatSourceParameter .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#BedEmissivity
+###  http://siam.nist.gov/AM-Ontology-v2##BedEmissivity
 
-:BedEmissivity rdf:type :Class ;
+:BedEmissivity rdf:type owl:Class ;
                
                rdfs:subClassOf :PowderCharacteristic .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#BeerLambertEquation
+###  http://siam.nist.gov/AM-Ontology-v2##BeerLambertEquation
 
-:BeerLambertEquation rdf:type :Class ;
+:BeerLambertEquation rdf:type owl:Class ;
                      
                      rdfs:subClassOf :Equation ,
-                                     [ rdf:type :Restriction ;
-                                       :onProperty :provides ;
-                                       :someValuesFrom :VolumetricDistributionOfAbsorbedHeat
+                                     [ rdf:type owl:Class ;
+                                       owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :requiresAssumption ;
+                                                              owl:someValuesFrom :Continum
+                                                            ]
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :requiresAssumption ;
+                                                              owl:someValuesFrom :DeterministicIrradiation
+                                                            ]
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :requiresAssumption ;
+                                                              owl:someValuesFrom :VolumetricDistributionOfAbsorbedHeat
+                                                            ]
+                                                          )
                                      ] ,
-                                     [ rdf:type :Class ;
-                                       :intersectionOf ( [ rdf:type :Restriction ;
-                                                           :onProperty :requiresAssumption ;
-                                                           :someValuesFrom :Continum
-                                                         ]
-                                                         [ rdf:type :Restriction ;
-                                                           :onProperty :requiresAssumption ;
-                                                           :someValuesFrom :DeterministicIrradiation
-                                                         ]
-                                                         [ rdf:type :Restriction ;
-                                                           :onProperty :requiresAssumption ;
-                                                           :someValuesFrom :VolumetricDistributionOfAbsorbedHeat
-                                                         ]
-                                                       )
+                                     [ rdf:type owl:Class ;
+                                       owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :isFunctionOf ;
+                                                              owl:someValuesFrom :AbsorptionCoefficient
+                                                            ]
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :isFunctionOf ;
+                                                              owl:someValuesFrom :ExtinctionCoefficient
+                                                            ]
+                                                          )
                                      ] ,
-                                     [ rdf:type :Class ;
-                                       :intersectionOf ( [ rdf:type :Restriction ;
-                                                           :onProperty :isFunctionOf ;
-                                                           :someValuesFrom :AbsorptionCoefficient
-                                                         ]
-                                                         [ rdf:type :Restriction ;
-                                                           :onProperty :isFunctionOf ;
-                                                           :someValuesFrom :ExtinctionCoefficient
-                                                         ]
-                                                       )
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :provides ;
+                                       owl:someValuesFrom :VolumetricDistributionOfAbsorbedHeat
                                      ] .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#BuildChamberParameter
+###  http://siam.nist.gov/AM-Ontology-v2##BuildChamberParameter
 
-:BuildChamberParameter rdf:type :Class ;
+:BuildChamberParameter rdf:type owl:Class ;
                        
                        rdfs:subClassOf :MachineEquipmentParameter ;
                        
@@ -309,9 +315,9 @@ Those terms differ from \"absorption coefficient\" that has units of per unit le
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#BuoyancyEffectsCharacteristic
+###  http://siam.nist.gov/AM-Ontology-v2##BuoyancyEffectsCharacteristic
 
-:BuoyancyEffectsCharacteristic rdf:type :Class ;
+:BuoyancyEffectsCharacteristic rdf:type owl:Class ;
                                
                                rdfs:subClassOf :FluidMechanicsCharacteristic ;
                                
@@ -319,25 +325,25 @@ Those terms differ from \"absorption coefficient\" that has units of per unit le
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#CellularAutomataEquation
+###  http://siam.nist.gov/AM-Ontology-v2##CellularAutomataEquation
 
-:CellularAutomataEquation rdf:type :Class ;
+:CellularAutomataEquation rdf:type owl:Class ;
                           
                           rdfs:subClassOf :Equation .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ChamberTemperature
+###  http://siam.nist.gov/AM-Ontology-v2##ChamberTemperature
 
-:ChamberTemperature rdf:type :Class ;
+:ChamberTemperature rdf:type owl:Class ;
                     
                     rdfs:subClassOf :BuildChamberParameter .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#Characteristic
+###  http://siam.nist.gov/AM-Ontology-v2##Characteristic
 
-:Characteristic rdf:type :Class ;
+:Characteristic rdf:type owl:Class ;
                 
                 rdfs:subClassOf :Abstract ;
                 
@@ -345,9 +351,9 @@ Those terms differ from \"absorption coefficient\" that has units of per unit le
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ChemicalComposition
+###  http://siam.nist.gov/AM-Ontology-v2##ChemicalComposition
 
-:ChemicalComposition rdf:type :Class ;
+:ChemicalComposition rdf:type owl:Class ;
                      
                      rdfs:subClassOf :PowderCharacteristic ;
                      
@@ -355,9 +361,9 @@ Those terms differ from \"absorption coefficient\" that has units of per unit le
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#Consolidation
+###  http://siam.nist.gov/AM-Ontology-v2##Consolidation
 
-:Consolidation rdf:type :Class ;
+:Consolidation rdf:type owl:Class ;
                
                rdfs:subClassOf :Phenomenon ;
                
@@ -365,9 +371,9 @@ Those terms differ from \"absorption coefficient\" that has units of per unit le
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ConsolidationByMelting
+###  http://siam.nist.gov/AM-Ontology-v2##ConsolidationByMelting
 
-:ConsolidationByMelting rdf:type :Class ;
+:ConsolidationByMelting rdf:type owl:Class ;
                         
                         rdfs:subClassOf :Consolidation ;
                         
@@ -375,31 +381,31 @@ Those terms differ from \"absorption coefficient\" that has units of per unit le
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ConsolidationByMeltingCharacteristic
+###  http://siam.nist.gov/AM-Ontology-v2##ConsolidationByMeltingCharacteristic
 
-:ConsolidationByMeltingCharacteristic rdf:type :Class ;
+:ConsolidationByMeltingCharacteristic rdf:type owl:Class ;
                                       
                                       rdfs:subClassOf :ConsolidationCharacteristic ,
-                                                      [ rdf:type :Restriction ;
-                                                        :onProperty :influences ;
-                                                        :someValuesFrom :FluidMechanics
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :influences ;
+                                                        owl:someValuesFrom :MicrostructureEvolution
                                                       ] ,
-                                                      [ rdf:type :Restriction ;
-                                                        :onProperty :influences ;
-                                                        :someValuesFrom :SolidMechanics
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :influences ;
+                                                        owl:someValuesFrom :SolidMechanics
                                                       ] ,
-                                                      [ rdf:type :Restriction ;
-                                                        :onProperty :influences ;
-                                                        :someValuesFrom :MicrostructureEvolution
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :influences ;
+                                                        owl:someValuesFrom :FluidMechanics
                                                       ] ;
                                       
                                       rdfs:comment "A set of characteristics that define a melting process. Most melting models are simple, as they assume that melting occurs instantaneously. The only characteristic necessary in such scenarios is a function describing how density is expected to change as a function of temperature." .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ConsolidationBySintering
+###  http://siam.nist.gov/AM-Ontology-v2##ConsolidationBySintering
 
-:ConsolidationBySintering rdf:type :Class ;
+:ConsolidationBySintering rdf:type owl:Class ;
                           
                           rdfs:subClassOf :Consolidation ;
                           
@@ -407,23 +413,23 @@ Those terms differ from \"absorption coefficient\" that has units of per unit le
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ConsolidationBySinteringCharacteristic
+###  http://siam.nist.gov/AM-Ontology-v2##ConsolidationBySinteringCharacteristic
 
-:ConsolidationBySinteringCharacteristic rdf:type :Class ;
+:ConsolidationBySinteringCharacteristic rdf:type owl:Class ;
                                         
                                         rdfs:subClassOf :ConsolidationCharacteristic ,
-                                                        [ rdf:type :Restriction ;
-                                                          :onProperty :influences ;
-                                                          :someValuesFrom :SolidMechanics
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :influences ;
+                                                          owl:someValuesFrom :SolidMechanics
                                                         ] ;
                                         
                                         rdfs:comment "Sintering, as a consolidation mechanism, is much slower than melting. It is commonly accepted that the mechanism controlling sintering is viscous sintering, driven by an effort to reduce surface energy at high temperatures. The characteristics required to describe these sintering processes depend on the model that is chosen, but they need to include either visosity or sintering activation energy, loose powder density, and fully-sintered density." .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ConsolidationCharacteristic
+###  http://siam.nist.gov/AM-Ontology-v2##ConsolidationCharacteristic
 
-:ConsolidationCharacteristic rdf:type :Class ;
+:ConsolidationCharacteristic rdf:type owl:Class ;
                              
                              rdfs:subClassOf :PhenomenonCharacteristic ;
                              
@@ -435,9 +441,9 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ConsolidationMathematicalModel
+###  http://siam.nist.gov/AM-Ontology-v2##ConsolidationMathematicalModel
 
-:ConsolidationMathematicalModel rdf:type :Class ;
+:ConsolidationMathematicalModel rdf:type owl:Class ;
                                 
                                 rdfs:subClassOf :MathematicalModel ;
                                 
@@ -445,85 +451,85 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ConsolidationModelPrediction
+###  http://siam.nist.gov/AM-Ontology-v2##ConsolidationModelPrediction
 
-:ConsolidationModelPrediction rdf:type :Class ;
+:ConsolidationModelPrediction rdf:type owl:Class ;
                               
-                              :equivalentClass [ rdf:type :Class ;
-                                                 :unionOf ( :DensityDistribution
-                                                            :PorosityDistribution
-                                                          )
-                                               ] ;
+                              owl:equivalentClass [ rdf:type owl:Class ;
+                                                    owl:unionOf ( :DensityDistribution
+                                                                  :PorosityDistribution
+                                                                )
+                                                  ] ;
                               
                               rdfs:subClassOf :Prediction .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ConstantMeltingTemperature
+###  http://siam.nist.gov/AM-Ontology-v2##ConstantMeltingTemperature
 
-:ConstantMeltingTemperature rdf:type :Class ;
+:ConstantMeltingTemperature rdf:type owl:Class ;
                             
                             rdfs:subClassOf :MeltingModelingAssumption .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#Continum
+###  http://siam.nist.gov/AM-Ontology-v2##Continum
 
-:Continum rdf:type :Class ;
+:Continum rdf:type owl:Class ;
           
           rdfs:subClassOf :MaterialDistributionModelingAssumption ;
           
-          :disjointWith :Particle .
+          owl:disjointWith :Particle .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ConvectionCharacteristic
+###  http://siam.nist.gov/AM-Ontology-v2##ConvectionCharacteristic
 
-:ConvectionCharacteristic rdf:type :Class ;
+:ConvectionCharacteristic rdf:type owl:Class ;
                           
                           rdfs:subClassOf :HeatDissipationCharacteristic ,
-                                          [ rdf:type :Restriction ;
-                                            :onProperty :isFunctionOf ;
-                                            :someValuesFrom :ChamberTemperature
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :isFunctionOf ;
+                                            owl:someValuesFrom :SurfaceConvectionCoefficient
                                           ] ,
-                                          [ rdf:type :Restriction ;
-                                            :onProperty :isFunctionOf ;
-                                            :someValuesFrom :TemperatureFieldDistribution
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :isFunctionOf ;
+                                            owl:someValuesFrom :ChamberTemperature
                                           ] ,
-                                          [ rdf:type :Restriction ;
-                                            :onProperty :isFunctionOf ;
-                                            :someValuesFrom :SurfaceConvectionCoefficient
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :isFunctionOf ;
+                                            owl:someValuesFrom :TemperatureFieldDistribution
                                           ] .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#CylindricalDistribution
+###  http://siam.nist.gov/AM-Ontology-v2##CylindricalDistribution
 
-:CylindricalDistribution rdf:type :Class ;
+:CylindricalDistribution rdf:type owl:Class ;
                          
                          rdfs:subClassOf :SurfaceDistributionOfHeatSource .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#DeformationCharacteristic
+###  http://siam.nist.gov/AM-Ontology-v2##DeformationCharacteristic
 
-:DeformationCharacteristic rdf:type :Class ;
+:DeformationCharacteristic rdf:type owl:Class ;
                            
                            rdfs:subClassOf :SolidMechanicsCharacteristic .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#DendriteGrainOrientation
+###  http://siam.nist.gov/AM-Ontology-v2##DendriteGrainOrientation
 
-:DendriteGrainOrientation rdf:type :Class ;
+:DendriteGrainOrientation rdf:type owl:Class ;
                           
                           rdfs:subClassOf :Microsturcture .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#DendriteOrientation
+###  http://siam.nist.gov/AM-Ontology-v2##DendriteOrientation
 
-:DendriteOrientation rdf:type :Class ;
+:DendriteOrientation rdf:type owl:Class ;
                      
                      rdfs:subClassOf :MicrostructuralModelPrediction ,
                                      :MicrostructureEvolutionCharacteristic ;
@@ -532,9 +538,9 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#DendriticGrainSize
+###  http://siam.nist.gov/AM-Ontology-v2##DendriticGrainSize
 
-:DendriticGrainSize rdf:type :Class ;
+:DendriticGrainSize rdf:type owl:Class ;
                     
                     rdfs:subClassOf :MicrostructureEvolutionCharacteristic ;
                     
@@ -542,17 +548,17 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#DendriticGrainSizeDistribution
+###  http://siam.nist.gov/AM-Ontology-v2##DendriticGrainSizeDistribution
 
-:DendriticGrainSizeDistribution rdf:type :Class ;
+:DendriticGrainSizeDistribution rdf:type owl:Class ;
                                 
                                 rdfs:subClassOf :MicrostructuralModelPrediction .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#DensityDistribution
+###  http://siam.nist.gov/AM-Ontology-v2##DensityDistribution
 
-:DensityDistribution rdf:type :Class ;
+:DensityDistribution rdf:type owl:Class ;
                      
                      rdfs:subClassOf :ConsolidationModelPrediction ;
                      
@@ -560,101 +566,101 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#DensityOfBulkMaterial
+###  http://siam.nist.gov/AM-Ontology-v2##DensityOfBulkMaterial
 
-:DensityOfBulkMaterial rdf:type :Class ;
+:DensityOfBulkMaterial rdf:type owl:Class ;
                        
                        rdfs:subClassOf :MaterialProperty .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#DensityVariationEquation
+###  http://siam.nist.gov/AM-Ontology-v2##DensityVariationEquation
 
-:DensityVariationEquation rdf:type :Class ;
+:DensityVariationEquation rdf:type owl:Class ;
                           
                           rdfs:subClassOf :Equation .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#DentriticGrainSize
+###  http://siam.nist.gov/AM-Ontology-v2##DentriticGrainSize
 
-:DentriticGrainSize rdf:type :Class ;
+:DentriticGrainSize rdf:type owl:Class ;
                     
                     rdfs:subClassOf :Microsturcture .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#DeterministicIrradiation
+###  http://siam.nist.gov/AM-Ontology-v2##DeterministicIrradiation
 
-:DeterministicIrradiation rdf:type :Class ;
+:DeterministicIrradiation rdf:type owl:Class ;
                           
                           rdfs:subClassOf :StatisticalAssumptionOfIrradiationDistribution ;
                           
-                          :disjointWith :StochasticIrradiation .
+                          owl:disjointWith :StochasticIrradiation .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#DimensionalityOfAbsorbedHeat
+###  http://siam.nist.gov/AM-Ontology-v2##DimensionalityOfAbsorbedHeat
 
-:DimensionalityOfAbsorbedHeat rdf:type :Class ;
+:DimensionalityOfAbsorbedHeat rdf:type owl:Class ;
                               
                               rdfs:subClassOf :HeatTransferModelingAssumption ,
                                               :IrradiationAbsorptionModelingAssumption .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#DimensionalityOfPhysicalSystem
+###  http://siam.nist.gov/AM-Ontology-v2##DimensionalityOfPhysicalSystem
 
-:DimensionalityOfPhysicalSystem rdf:type :Class ;
+:DimensionalityOfPhysicalSystem rdf:type owl:Class ;
                                 
                                 rdfs:subClassOf :HeatTransferModelingAssumption ,
                                                 :IrradiationAbsorptionModelingAssumption .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#DirectMetalLaserMelting
+###  http://siam.nist.gov/AM-Ontology-v2##DirectMetalLaserMelting
 
-:DirectMetalLaserMelting rdf:type :Class ;
+:DirectMetalLaserMelting rdf:type owl:Class ;
                          
                          rdfs:subClassOf :PowderBedFusionProcess .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#DirectMetalLaserSintering
+###  http://siam.nist.gov/AM-Ontology-v2##DirectMetalLaserSintering
 
-:DirectMetalLaserSintering rdf:type :Class ;
+:DirectMetalLaserSintering rdf:type owl:Class ;
                            
                            rdfs:subClassOf :PowderBedFusionProcess .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ElasticDeformationCharacteristic
+###  http://siam.nist.gov/AM-Ontology-v2##ElasticDeformationCharacteristic
 
-:ElasticDeformationCharacteristic rdf:type :Class ;
+:ElasticDeformationCharacteristic rdf:type owl:Class ;
                                   
                                   rdfs:subClassOf :DeformationCharacteristic .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ElasticModulus
+###  http://siam.nist.gov/AM-Ontology-v2##ElasticModulus
 
-:ElasticModulus rdf:type :Class ;
+:ElasticModulus rdf:type owl:Class ;
                 
                 rdfs:subClassOf :MaterialProperty .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ElectronBeamMelting
+###  http://siam.nist.gov/AM-Ontology-v2##ElectronBeamMelting
 
-:ElectronBeamMelting rdf:type :Class ;
+:ElectronBeamMelting rdf:type owl:Class ;
                      
                      rdfs:subClassOf :PowderBedFusionProcess .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#EmpiricalModel
+###  http://siam.nist.gov/AM-Ontology-v2##EmpiricalModel
 
-:EmpiricalModel rdf:type :Class ;
+:EmpiricalModel rdf:type owl:Class ;
                 
                 rdfs:subClassOf :Model ;
                 
@@ -662,71 +668,71 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#EnthalpyDistribution
+###  http://siam.nist.gov/AM-Ontology-v2##EnthalpyDistribution
 
-:EnthalpyDistribution rdf:type :Class ;
+:EnthalpyDistribution rdf:type owl:Class ;
                       
                       rdfs:subClassOf :HeatTransferModelPrediction .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#Equation
+###  http://siam.nist.gov/AM-Ontology-v2##Equation
 
-:Equation rdf:type :Class ;
+:Equation rdf:type owl:Class ;
           
           rdfs:subClassOf :ModelElement ;
           
-          :disjointWith :ModelingAssumption ;
+          owl:disjointWith :ModelingAssumption ;
           
           rdfs:comment "A mathematical expression is an equation that represent the physical phenomenon of interest or part of it." .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#EvaporationModelingAssumption
+###  http://siam.nist.gov/AM-Ontology-v2##EvaporationModelingAssumption
 
-:EvaporationModelingAssumption rdf:type :Class ;
+:EvaporationModelingAssumption rdf:type owl:Class ;
                                
                                rdfs:subClassOf :HeatTransferModelingAssumption .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ExtinctionCoefficient
+###  http://siam.nist.gov/AM-Ontology-v2##ExtinctionCoefficient
 
-:ExtinctionCoefficient rdf:type :Class ;
+:ExtinctionCoefficient rdf:type owl:Class ;
                        
                        rdfs:subClassOf :IrradiationAbsorptionCharacteristic ,
-                                       [ rdf:type :Restriction ;
-                                         :onProperty :isFunctionOf ;
-                                         :someValuesFrom :RadiativePropertyOfBulkMaterial
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :isFunctionOf ;
+                                         owl:someValuesFrom :BeamSize
                                        ] ,
-                                       [ rdf:type :Restriction ;
-                                         :onProperty :isFunctionOf ;
-                                         :someValuesFrom :BeamSize
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :isFunctionOf ;
+                                         owl:someValuesFrom :HeatSourcePower
                                        ] ,
-                                       [ rdf:type :Restriction ;
-                                         :onProperty :isFunctionOf ;
-                                         :someValuesFrom :HeatSourcePower
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :isProvidedBy ;
+                                         owl:someValuesFrom :BeerLambertEquation
                                        ] ,
-                                       [ rdf:type :Restriction ;
-                                         :onProperty :isFunctionOf ;
-                                         :someValuesFrom :ParticleSize
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :isFunctionOf ;
+                                         owl:someValuesFrom :RadiativePropertyOfBulkMaterial
                                        ] ,
-                                       [ rdf:type :Restriction ;
-                                         :onProperty :isProvidedBy ;
-                                         :someValuesFrom :BeerLambertEquation
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :isFunctionOf ;
+                                         owl:someValuesFrom :BeamWavelength
                                        ] ,
-                                       [ rdf:type :Restriction ;
-                                         :onProperty :isFunctionOf ;
-                                         :someValuesFrom :BeamWavelength
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :isFunctionOf ;
+                                         owl:someValuesFrom :ParticleSize
                                        ] ;
                        
                        rdfs:comment "The extinction coefficient is a measure of how deep irradiation penetrates in the powder bed, as described by a Beer-Lambert model." .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#FluidMechanics
+###  http://siam.nist.gov/AM-Ontology-v2##FluidMechanics
 
-:FluidMechanics rdf:type :Class ;
+:FluidMechanics rdf:type owl:Class ;
                 
                 rdfs:subClassOf :Phenomenon ;
                 
@@ -734,27 +740,27 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#FluidMechanicsCharacteristic
+###  http://siam.nist.gov/AM-Ontology-v2##FluidMechanicsCharacteristic
 
-:FluidMechanicsCharacteristic rdf:type :Class ;
+:FluidMechanicsCharacteristic rdf:type owl:Class ;
                               
                               rdfs:subClassOf :PhenomenonCharacteristic ,
-                                              [ rdf:type :Restriction ;
-                                                :onProperty :influences ;
-                                                :someValuesFrom :SolidMechanics
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :influences ;
+                                                owl:someValuesFrom :MicrostructureEvolution
                                               ] ,
-                                              [ rdf:type :Restriction ;
-                                                :onProperty :influences ;
-                                                :someValuesFrom :MicrostructureEvolution
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :influences ;
+                                                owl:someValuesFrom :SolidMechanics
                                               ] ;
                               
                               rdfs:comment "Characteristics that determine the free-surface dynamics in powder bed fusion processes. They only appear when melting (going above the liquidus temperature) as there is no liquid otherwise. Flows are dominated by recoil pressure, surface tensions and buoyancy effects." .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#FluidMechanicsMathematicalModel
+###  http://siam.nist.gov/AM-Ontology-v2##FluidMechanicsMathematicalModel
 
-:FluidMechanicsMathematicalModel rdf:type :Class ;
+:FluidMechanicsMathematicalModel rdf:type owl:Class ;
                                  
                                  rdfs:subClassOf :MathematicalModel ;
                                  
@@ -762,17 +768,17 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#FluidMechanicsModelPrediction
+###  http://siam.nist.gov/AM-Ontology-v2##FluidMechanicsModelPrediction
 
-:FluidMechanicsModelPrediction rdf:type :Class ;
+:FluidMechanicsModelPrediction rdf:type owl:Class ;
                                
                                rdfs:subClassOf :Prediction .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#FluidVelocity
+###  http://siam.nist.gov/AM-Ontology-v2##FluidVelocity
 
-:FluidVelocity rdf:type :Class ;
+:FluidVelocity rdf:type owl:Class ;
                
                rdfs:subClassOf :FluidMechanicsModelPrediction ;
                
@@ -780,17 +786,17 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#FouriersEquation
+###  http://siam.nist.gov/AM-Ontology-v2##FouriersEquation
 
-:FouriersEquation rdf:type :Class ;
+:FouriersEquation rdf:type owl:Class ;
                   
                   rdfs:subClassOf :Equation .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#FullMelting
+###  http://siam.nist.gov/AM-Ontology-v2##FullMelting
 
-:FullMelting rdf:type :Class ;
+:FullMelting rdf:type owl:Class ;
              
              rdfs:subClassOf :ConsolidationByMeltingCharacteristic ;
              
@@ -798,9 +804,9 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#Fusion
+###  http://siam.nist.gov/AM-Ontology-v2##Fusion
 
-:Fusion rdf:type :Class ;
+:Fusion rdf:type owl:Class ;
         
         rdfs:subClassOf :PhaseTransformation ;
         
@@ -808,41 +814,41 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#FusionCharacteristic
+###  http://siam.nist.gov/AM-Ontology-v2##FusionCharacteristic
 
-:FusionCharacteristic rdf:type :Class ;
+:FusionCharacteristic rdf:type owl:Class ;
                       
                       rdfs:subClassOf :PhaseTransformationCharacteristic .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#GasComposition
+###  http://siam.nist.gov/AM-Ontology-v2##GasComposition
 
-:GasComposition rdf:type :Class ;
+:GasComposition rdf:type owl:Class ;
                 
                 rdfs:subClassOf :BuildChamberParameter .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#GasPressure
+###  http://siam.nist.gov/AM-Ontology-v2##GasPressure
 
-:GasPressure rdf:type :Class ;
+:GasPressure rdf:type owl:Class ;
              
              rdfs:subClassOf :BuildChamberParameter .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#GaussianDistribution
+###  http://siam.nist.gov/AM-Ontology-v2##GaussianDistribution
 
-:GaussianDistribution rdf:type :Class ;
+:GaussianDistribution rdf:type owl:Class ;
                       
                       rdfs:subClassOf :SurfaceDistributionOfHeatSource .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#HeatDissipation
+###  http://siam.nist.gov/AM-Ontology-v2##HeatDissipation
 
-:HeatDissipation rdf:type :Class ;
+:HeatDissipation rdf:type owl:Class ;
                  
                  rdfs:subClassOf :HeatTransfer ;
                  
@@ -850,43 +856,43 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#HeatDissipationCharacteristic
+###  http://siam.nist.gov/AM-Ontology-v2##HeatDissipationCharacteristic
 
-:HeatDissipationCharacteristic rdf:type :Class ;
+:HeatDissipationCharacteristic rdf:type owl:Class ;
                                
                                rdfs:subClassOf :HeatTransferCharacteristic ,
-                                               [ rdf:type :Restriction ;
-                                                 :onProperty :influences ;
-                                                 :someValuesFrom :Consolidation
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :isFunctionOf ;
+                                                 owl:someValuesFrom :RadiationCharacteristic
                                                ] ,
-                                               [ rdf:type :Restriction ;
-                                                 :onProperty :isFunctionOf ;
-                                                 :someValuesFrom :ConvectionCharacteristic
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :isFunctionOf ;
+                                                 owl:someValuesFrom :ThermalDiffusivityCharacteristic
                                                ] ,
-                                               [ rdf:type :Restriction ;
-                                                 :onProperty :influences ;
-                                                 :someValuesFrom :FluidMechanics
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :influences ;
+                                                 owl:someValuesFrom :FluidMechanics
                                                ] ,
-                                               [ rdf:type :Restriction ;
-                                                 :onProperty :isFunctionOf ;
-                                                 :someValuesFrom :ThermalDiffusivityCharacteristic
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :influences ;
+                                                 owl:someValuesFrom :Consolidation
                                                ] ,
-                                               [ rdf:type :Restriction ;
-                                                 :onProperty :isFunctionOf ;
-                                                 :someValuesFrom :RadiationCharacteristic
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :isFunctionOf ;
+                                                 owl:someValuesFrom :ConvectionCharacteristic
                                                ] ,
-                                               [ rdf:type :Restriction ;
-                                                 :onProperty :isFunctionOf ;
-                                                 :someValuesFrom :ThermalConductivityOfTheSubstrate
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :isFunctionOf ;
+                                                 owl:someValuesFrom :ThermalConductivityOfTheSubstrate
                                                ] ;
                                
                                rdfs:comment "Characteristics that determine how easily heat is transmitted in a medium. They include thermal conductivity, density, heat capacity (all of which can be summarized in the form of thermal diffusivity); convection and radiation coefficients for the surface of the powder bed, and conductivity of the substrate." .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#HeatSourceParameter
+###  http://siam.nist.gov/AM-Ontology-v2##HeatSourceParameter
 
-:HeatSourceParameter rdf:type :Class ;
+:HeatSourceParameter rdf:type owl:Class ;
                      
                      rdfs:subClassOf :MachineEquipmentParameter ;
                      
@@ -894,9 +900,9 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#HeatSourcePower
+###  http://siam.nist.gov/AM-Ontology-v2##HeatSourcePower
 
-:HeatSourcePower rdf:type :Class ;
+:HeatSourcePower rdf:type owl:Class ;
                  
                  rdfs:subClassOf :HeatSourceParameter ,
                                  :LaserIrradiationModelingAssumption ;
@@ -905,9 +911,9 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#HeatTransfer
+###  http://siam.nist.gov/AM-Ontology-v2##HeatTransfer
 
-:HeatTransfer rdf:type :Class ;
+:HeatTransfer rdf:type owl:Class ;
               
               rdfs:subClassOf :Phenomenon ;
               
@@ -915,9 +921,9 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#HeatTransferCharacteristic
+###  http://siam.nist.gov/AM-Ontology-v2##HeatTransferCharacteristic
 
-:HeatTransferCharacteristic rdf:type :Class ;
+:HeatTransferCharacteristic rdf:type owl:Class ;
                             
                             rdfs:subClassOf :PhenomenonCharacteristic ;
                             
@@ -925,58 +931,58 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#HeatTransferMathematicalModel
+###  http://siam.nist.gov/AM-Ontology-v2##HeatTransferMathematicalModel
 
-:HeatTransferMathematicalModel rdf:type :Class ;
+:HeatTransferMathematicalModel rdf:type owl:Class ;
                                
                                rdfs:subClassOf :MathematicalModel ,
-                                               [ rdf:type :Restriction ;
-                                                 :onProperty :provides ;
-                                                 :someValuesFrom :TemperatureFieldDistribution
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :provides ;
+                                                 owl:someValuesFrom :TemperatureFieldDistribution
                                                ] ,
-                                               [ rdf:type :Restriction ;
-                                                 :onProperty :represents ;
-                                                 :someValuesFrom :HeatTransfer
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :represents ;
+                                                 owl:someValuesFrom :HeatTransfer
                                                ] ;
                                
                                rdfs:comment "A physics-based model of a heat transfer phenomenon." .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#HeatTransferModelPrediction
+###  http://siam.nist.gov/AM-Ontology-v2##HeatTransferModelPrediction
 
-:HeatTransferModelPrediction rdf:type :Class ;
+:HeatTransferModelPrediction rdf:type owl:Class ;
                              
-                             :equivalentClass [ rdf:type :Class ;
-                                                :unionOf ( :EnthalpyDistribution
-                                                           :TemperatureFieldDistribution
-                                                         )
-                                              ] ;
+                             owl:equivalentClass [ rdf:type owl:Class ;
+                                                   owl:unionOf ( :EnthalpyDistribution
+                                                                 :TemperatureFieldDistribution
+                                                               )
+                                                 ] ;
                              
                              rdfs:subClassOf :HeatTransferModelingAssumption ,
                                              :Prediction .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#HeatTransferModelingAssumption
+###  http://siam.nist.gov/AM-Ontology-v2##HeatTransferModelingAssumption
 
-:HeatTransferModelingAssumption rdf:type :Class ;
+:HeatTransferModelingAssumption rdf:type owl:Class ;
                                 
                                 rdfs:subClassOf :ModelingAssumption .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#InitialPorosity
+###  http://siam.nist.gov/AM-Ontology-v2##InitialPorosity
 
-:InitialPorosity rdf:type :Class ;
+:InitialPorosity rdf:type owl:Class ;
                  
                  rdfs:subClassOf :PowderCharacteristic .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#InitialPowderDensity
+###  http://siam.nist.gov/AM-Ontology-v2##InitialPowderDensity
 
-:InitialPowderDensity rdf:type :Class ;
+:InitialPowderDensity rdf:type owl:Class ;
                       
                       rdfs:subClassOf :PowderCharacteristic ;
                       
@@ -984,9 +990,9 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#IrradiationAbsorption
+###  http://siam.nist.gov/AM-Ontology-v2##IrradiationAbsorption
 
-:IrradiationAbsorption rdf:type :Class ;
+:IrradiationAbsorption rdf:type owl:Class ;
                        
                        rdfs:subClassOf :Phenomenon ;
                        
@@ -994,103 +1000,103 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#IrradiationAbsorptionCharacteristic
+###  http://siam.nist.gov/AM-Ontology-v2##IrradiationAbsorptionCharacteristic
 
-:IrradiationAbsorptionCharacteristic rdf:type :Class ;
+:IrradiationAbsorptionCharacteristic rdf:type owl:Class ;
                                      
                                      rdfs:subClassOf :PhenomenonCharacteristic ,
-                                                     [ rdf:type :Restriction ;
-                                                       :onProperty :isFunctionOf ;
-                                                       :someValuesFrom :IrradiationCharacteristic
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :isFunctionOf ;
+                                                       owl:someValuesFrom :AbsorptionCoefficient
                                                      ] ,
-                                                     [ rdf:type :Restriction ;
-                                                       :onProperty :isFunctionOf ;
-                                                       :someValuesFrom :ExtinctionCoefficient
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :influences ;
+                                                       owl:someValuesFrom :HeatDissipation
                                                      ] ,
-                                                     [ rdf:type :Restriction ;
-                                                       :onProperty :influences ;
-                                                       :someValuesFrom :HeatDissipation
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :isFunctionOf ;
+                                                       owl:someValuesFrom :ExtinctionCoefficient
                                                      ] ,
-                                                     [ rdf:type :Restriction ;
-                                                       :onProperty :isFunctionOf ;
-                                                       :someValuesFrom :AbsorptionCoefficient
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :isFunctionOf ;
+                                                       owl:someValuesFrom :IrradiationCharacteristic
                                                      ] ;
                                      
                                      rdfs:comment "Distinguishing features or properties of how irradiation is absorbed by the powder bed." .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#IrradiationAbsorptionMathematicalModel
+###  http://siam.nist.gov/AM-Ontology-v2##IrradiationAbsorptionMathematicalModel
 
-:IrradiationAbsorptionMathematicalModel rdf:type :Class ;
+:IrradiationAbsorptionMathematicalModel rdf:type owl:Class ;
                                         
-                                        :equivalentClass [ rdf:type :Class ;
-                                                           :unionOf ( :BeerLambertEquation
-                                                                      :RadiationTransferEquation
-                                                                      :RayTracingEquation
-                                                                    )
-                                                         ] ;
+                                        owl:equivalentClass [ rdf:type owl:Class ;
+                                                              owl:unionOf ( :BeerLambertEquation
+                                                                            :RadiationTransferEquation
+                                                                            :RayTracingEquation
+                                                                          )
+                                                            ] ;
                                         
                                         rdfs:subClassOf :MathematicalModel ,
-                                                        [ rdf:type :Class ;
-                                                          :intersectionOf ( [ rdf:type :Restriction ;
-                                                                              :onProperty :hasCharacteristic ;
-                                                                              :someValuesFrom :AbsorptionCoefficient
-                                                                            ]
-                                                                            [ rdf:type :Restriction ;
-                                                                              :onProperty :hasCharacteristic ;
-                                                                              :someValuesFrom :Absorptivity
-                                                                            ]
-                                                                            [ rdf:type :Restriction ;
-                                                                              :onProperty :hasCharacteristic ;
-                                                                              :someValuesFrom :ExtinctionCoefficient
-                                                                            ]
-                                                                          )
+                                                        [ rdf:type owl:Class ;
+                                                          owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                 owl:onProperty :hasCharacteristic ;
+                                                                                 owl:someValuesFrom :AbsorptionCoefficient
+                                                                               ]
+                                                                               [ rdf:type owl:Restriction ;
+                                                                                 owl:onProperty :hasCharacteristic ;
+                                                                                 owl:someValuesFrom :Absorptivity
+                                                                               ]
+                                                                               [ rdf:type owl:Restriction ;
+                                                                                 owl:onProperty :hasCharacteristic ;
+                                                                                 owl:someValuesFrom :ExtinctionCoefficient
+                                                                               ]
+                                                                             )
                                                         ] .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#IrradiationAbsorptionModelPrediction
+###  http://siam.nist.gov/AM-Ontology-v2##IrradiationAbsorptionModelPrediction
 
-:IrradiationAbsorptionModelPrediction rdf:type :Class ;
+:IrradiationAbsorptionModelPrediction rdf:type owl:Class ;
                                       
                                       rdfs:subClassOf :Prediction .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#IrradiationAbsorptionModelingAssumption
+###  http://siam.nist.gov/AM-Ontology-v2##IrradiationAbsorptionModelingAssumption
 
-:IrradiationAbsorptionModelingAssumption rdf:type :Class ;
+:IrradiationAbsorptionModelingAssumption rdf:type owl:Class ;
                                          
                                          rdfs:subClassOf :ModelingAssumption .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#IrradiationAbsorptionSignature
+###  http://siam.nist.gov/AM-Ontology-v2##IrradiationAbsorptionSignature
 
-:IrradiationAbsorptionSignature rdf:type :Class ;
+:IrradiationAbsorptionSignature rdf:type owl:Class ;
                                 
                                 rdfs:subClassOf :ProcessSignature .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#IrradiationCharacteristic
+###  http://siam.nist.gov/AM-Ontology-v2##IrradiationCharacteristic
 
-:IrradiationCharacteristic rdf:type :Class ;
+:IrradiationCharacteristic rdf:type owl:Class ;
                            
                            rdfs:subClassOf :PhenomenonCharacteristic ,
-                                           [ rdf:type :Restriction ;
-                                             :onProperty :influences ;
-                                             :someValuesFrom :IrradiationAbsorption
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :influences ;
+                                             owl:someValuesFrom :IrradiationAbsorption
                                            ] ;
                            
                            rdfs:comment "Characteristics that determine the irradiation of the powder bed." .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#LaserIrradiation
+###  http://siam.nist.gov/AM-Ontology-v2##LaserIrradiation
 
-:LaserIrradiation rdf:type :Class ;
+:LaserIrradiation rdf:type owl:Class ;
                   
                   rdfs:subClassOf :Phenomenon ;
                   
@@ -1098,25 +1104,25 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#LaserIrradiationModelingAssumption
+###  http://siam.nist.gov/AM-Ontology-v2##LaserIrradiationModelingAssumption
 
-:LaserIrradiationModelingAssumption rdf:type :Class ;
+:LaserIrradiationModelingAssumption rdf:type owl:Class ;
                                     
                                     rdfs:subClassOf :IrradiationAbsorptionModelingAssumption .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#LatentHeatOfFusionModelingAssumption
+###  http://siam.nist.gov/AM-Ontology-v2##LatentHeatOfFusionModelingAssumption
 
-:LatentHeatOfFusionModelingAssumption rdf:type :Class ;
+:LatentHeatOfFusionModelingAssumption rdf:type owl:Class ;
                                       
                                       rdfs:subClassOf :HeatTransferModelingAssumption .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#LayerThickness
+###  http://siam.nist.gov/AM-Ontology-v2##LayerThickness
 
-:LayerThickness rdf:type :Class ;
+:LayerThickness rdf:type owl:Class ;
                 
                 rdfs:subClassOf :PowderCharacteristic ;
                 
@@ -1124,9 +1130,9 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#LiquidStateSintering
+###  http://siam.nist.gov/AM-Ontology-v2##LiquidStateSintering
 
-:LiquidStateSintering rdf:type :Class ;
+:LiquidStateSintering rdf:type owl:Class ;
                       
                       rdfs:subClassOf :ConsolidationBySinteringCharacteristic ;
                       
@@ -1134,9 +1140,9 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MachineEquipmentParameter
+###  http://siam.nist.gov/AM-Ontology-v2##MachineEquipmentParameter
 
-:MachineEquipmentParameter rdf:type :Class ;
+:MachineEquipmentParameter rdf:type owl:Class ;
                            
                            rdfs:subClassOf :PowderBedFusionProcessParameter ;
                            
@@ -1144,9 +1150,9 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MarangoniEffectCharacteristic
+###  http://siam.nist.gov/AM-Ontology-v2##MarangoniEffectCharacteristic
 
-:MarangoniEffectCharacteristic rdf:type :Class ;
+:MarangoniEffectCharacteristic rdf:type owl:Class ;
                                
                                rdfs:subClassOf :SurfaceTensionEffectCharacteristic ;
                                
@@ -1154,34 +1160,34 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MassTransferEquation
+###  http://siam.nist.gov/AM-Ontology-v2##MassTransferEquation
 
-:MassTransferEquation rdf:type :Class ;
+:MassTransferEquation rdf:type owl:Class ;
                       
                       rdfs:subClassOf :Equation .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#Material
+###  http://siam.nist.gov/AM-Ontology-v2##Material
 
-:Material rdf:type :Class ;
+:Material rdf:type owl:Class ;
           
           rdfs:subClassOf :Physical .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MaterialDistributionModelingAssumption
+###  http://siam.nist.gov/AM-Ontology-v2##MaterialDistributionModelingAssumption
 
-:MaterialDistributionModelingAssumption rdf:type :Class ;
+:MaterialDistributionModelingAssumption rdf:type owl:Class ;
                                         
                                         rdfs:subClassOf :HeatTransferModelingAssumption ,
                                                         :IrradiationAbsorptionModelingAssumption .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MaterialProperty
+###  http://siam.nist.gov/AM-Ontology-v2##MaterialProperty
 
-:MaterialProperty rdf:type :Class ;
+:MaterialProperty rdf:type owl:Class ;
                   
                   rdfs:subClassOf :PowderBedFusionProcessParameter ;
                   
@@ -1189,9 +1195,9 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MathematicalModel
+###  http://siam.nist.gov/AM-Ontology-v2##MathematicalModel
 
-:MathematicalModel rdf:type :Class ;
+:MathematicalModel rdf:type owl:Class ;
                    
                    rdfs:subClassOf :PhysicsBasedModel ;
                    
@@ -1199,138 +1205,138 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MaximumResidualStress
+###  http://siam.nist.gov/AM-Ontology-v2##MaximumResidualStress
 
-:MaximumResidualStress rdf:type :Class ;
+:MaximumResidualStress rdf:type owl:Class ;
                        
                        rdfs:subClassOf :ProcessSignature ,
-                                       [ rdf:type :Restriction ;
-                                         :onProperty :isInfluencedBy ;
-                                         :someValuesFrom :ScanningSpeed
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :isInfluencedBy ;
+                                         owl:someValuesFrom :Shrinkage
                                        ] ,
-                                       [ rdf:type :Restriction ;
-                                         :onProperty :isInfluencedBy ;
-                                         :someValuesFrom :ScanningTrackPattern
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :isInfluencedBy ;
+                                         owl:someValuesFrom :ScanningTrackPattern
                                        ] ,
-                                       [ rdf:type :Restriction ;
-                                         :onProperty :isInfluencedBy ;
-                                         :someValuesFrom :MeltPoolTemperatureGradient
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :isInfluencedBy ;
+                                         owl:someValuesFrom :MeltPoolTemperatureGradient
                                        ] ,
-                                       [ rdf:type :Restriction ;
-                                         :onProperty :isInfluencedBy ;
-                                         :someValuesFrom :Shrinkage
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :isInfluencedBy ;
+                                         owl:someValuesFrom :ScanningSpeed
                                        ] .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MeltPoolDepth
+###  http://siam.nist.gov/AM-Ontology-v2##MeltPoolDepth
 
-:MeltPoolDepth rdf:type :Class ;
+:MeltPoolDepth rdf:type owl:Class ;
                
                rdfs:subClassOf :MeltPoolShape .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MeltPoolLength
+###  http://siam.nist.gov/AM-Ontology-v2##MeltPoolLength
 
-:MeltPoolLength rdf:type :Class ;
+:MeltPoolLength rdf:type owl:Class ;
                 
                 rdfs:subClassOf :MeltPoolShape .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MeltPoolMaximumTemperature
+###  http://siam.nist.gov/AM-Ontology-v2##MeltPoolMaximumTemperature
 
-:MeltPoolMaximumTemperature rdf:type :Class ;
+:MeltPoolMaximumTemperature rdf:type owl:Class ;
                             
                             rdfs:subClassOf :MeltPoolTemperature .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MeltPoolShape
+###  http://siam.nist.gov/AM-Ontology-v2##MeltPoolShape
 
-:MeltPoolShape rdf:type :Class ;
+:MeltPoolShape rdf:type owl:Class ;
                
                rdfs:subClassOf :FluidMechanicsModelPrediction ,
                                :MeltPoolSignature .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MeltPoolSignature
+###  http://siam.nist.gov/AM-Ontology-v2##MeltPoolSignature
 
-:MeltPoolSignature rdf:type :Class ;
+:MeltPoolSignature rdf:type owl:Class ;
                    
                    rdfs:subClassOf :ProcessSignature ,
-                                   [ rdf:type :Restriction ;
-                                     :onProperty :isInfluencedBy ;
-                                     :someValuesFrom :HeatSourcePower
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :isInfluencedBy ;
+                                     owl:someValuesFrom :BeamSize
                                    ] ,
-                                   [ rdf:type :Restriction ;
-                                     :onProperty :isInfluencedBy ;
-                                     :someValuesFrom :PowderSizeDistribution
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :isInfluencedBy ;
+                                     owl:someValuesFrom :PackingDensity
                                    ] ,
-                                   [ rdf:type :Restriction ;
-                                     :onProperty :isInfluencedBy ;
-                                     :someValuesFrom :ThermalConductivityOfTheSubstrate
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :isInfluencedBy ;
+                                     owl:someValuesFrom :HeatSourcePower
                                    ] ,
-                                   [ rdf:type :Restriction ;
-                                     :onProperty :isInfluencedBy ;
-                                     :someValuesFrom :ScanningSpeed
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :isInfluencedBy ;
+                                     owl:someValuesFrom :LayerThickness
                                    ] ,
-                                   [ rdf:type :Restriction ;
-                                     :onProperty :isInfluencedBy ;
-                                     :someValuesFrom :Absorptivity
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :isInfluencedBy ;
+                                     owl:someValuesFrom :ThermalConductivityOfTheSubstrate
                                    ] ,
-                                   [ rdf:type :Restriction ;
-                                     :onProperty :isInfluencedBy ;
-                                     :someValuesFrom :BeamSize
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :isInfluencedBy ;
+                                     owl:someValuesFrom :Absorptivity
                                    ] ,
-                                   [ rdf:type :Restriction ;
-                                     :onProperty :isInfluencedBy ;
-                                     :someValuesFrom :PackingDensity
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :isInfluencedBy ;
+                                     owl:someValuesFrom :ScanningSpeed
                                    ] ,
-                                   [ rdf:type :Restriction ;
-                                     :onProperty :isInfluencedBy ;
-                                     :someValuesFrom :LayerThickness
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :isInfluencedBy ;
+                                     owl:someValuesFrom :PowderSizeDistribution
                                    ] .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MeltPoolTemperature
+###  http://siam.nist.gov/AM-Ontology-v2##MeltPoolTemperature
 
-:MeltPoolTemperature rdf:type :Class ;
+:MeltPoolTemperature rdf:type owl:Class ;
                      
                      rdfs:subClassOf :MeltPoolSignature .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MeltPoolTemperatureGradient
+###  http://siam.nist.gov/AM-Ontology-v2##MeltPoolTemperatureGradient
 
-:MeltPoolTemperatureGradient rdf:type :Class ;
+:MeltPoolTemperatureGradient rdf:type owl:Class ;
                              
                              rdfs:subClassOf :MeltPoolTemperature .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MeltPoolWidth
+###  http://siam.nist.gov/AM-Ontology-v2##MeltPoolWidth
 
-:MeltPoolWidth rdf:type :Class ;
+:MeltPoolWidth rdf:type owl:Class ;
                
                rdfs:subClassOf :MeltPoolShape .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MeltingModelingAssumption
+###  http://siam.nist.gov/AM-Ontology-v2##MeltingModelingAssumption
 
-:MeltingModelingAssumption rdf:type :Class ;
+:MeltingModelingAssumption rdf:type owl:Class ;
                            
                            rdfs:subClassOf :HeatTransferModelingAssumption .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MicrostructuralMathematicalModel
+###  http://siam.nist.gov/AM-Ontology-v2##MicrostructuralMathematicalModel
 
-:MicrostructuralMathematicalModel rdf:type :Class ;
+:MicrostructuralMathematicalModel rdf:type owl:Class ;
                                   
                                   rdfs:subClassOf :MathematicalModel ;
                                   
@@ -1338,26 +1344,26 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MicrostructuralModelPrediction
+###  http://siam.nist.gov/AM-Ontology-v2##MicrostructuralModelPrediction
 
-:MicrostructuralModelPrediction rdf:type :Class ;
+:MicrostructuralModelPrediction rdf:type owl:Class ;
                                 
                                 rdfs:subClassOf :Prediction .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MicrostructureDistribution
+###  http://siam.nist.gov/AM-Ontology-v2##MicrostructureDistribution
 
-:MicrostructureDistribution rdf:type :Class ;
+:MicrostructureDistribution rdf:type owl:Class ;
                             
                             rdfs:subClassOf :MicrostructuralModelPrediction ,
                                             :MicrostructureEvolutionCharacteristic .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MicrostructureEvolution
+###  http://siam.nist.gov/AM-Ontology-v2##MicrostructureEvolution
 
-:MicrostructureEvolution rdf:type :Class ;
+:MicrostructureEvolution rdf:type owl:Class ;
                          
                          rdfs:subClassOf :Phenomenon ;
                          
@@ -1365,9 +1371,9 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MicrostructureEvolutionCharacteristic
+###  http://siam.nist.gov/AM-Ontology-v2##MicrostructureEvolutionCharacteristic
 
-:MicrostructureEvolutionCharacteristic rdf:type :Class ;
+:MicrostructureEvolutionCharacteristic rdf:type owl:Class ;
                                        
                                        rdfs:subClassOf :PhenomenonCharacteristic ;
                                        
@@ -1375,29 +1381,29 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#Microsturcture
+###  http://siam.nist.gov/AM-Ontology-v2##Microsturcture
 
-:Microsturcture rdf:type :Class ;
+:Microsturcture rdf:type owl:Class ;
                 
                 rdfs:subClassOf :ProcessSignature ,
-                                [ rdf:type :Restriction ;
-                                  :onProperty :isInfluencedBy ;
-                                  :someValuesFrom :MeltPoolTemperatureGradient
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :isInfluencedBy ;
+                                  owl:someValuesFrom :ScanningSpeed
                                 ] ,
-                                [ rdf:type :Restriction ;
-                                  :onProperty :isInfluencedBy ;
-                                  :someValuesFrom :MeltPoolMaximumTemperature
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :isInfluencedBy ;
+                                  owl:someValuesFrom :MeltPoolTemperatureGradient
                                 ] ,
-                                [ rdf:type :Restriction ;
-                                  :onProperty :isInfluencedBy ;
-                                  :someValuesFrom :ScanningSpeed
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :isInfluencedBy ;
+                                  owl:someValuesFrom :MeltPoolMaximumTemperature
                                 ] .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#Model
+###  http://siam.nist.gov/AM-Ontology-v2##Model
 
-:Model rdf:type :Class ;
+:Model rdf:type owl:Class ;
        
        rdfs:subClassOf :Abstract ;
        
@@ -1405,9 +1411,9 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ModelElement
+###  http://siam.nist.gov/AM-Ontology-v2##ModelElement
 
-:ModelElement rdf:type :Class ;
+:ModelElement rdf:type owl:Class ;
               
               rdfs:subClassOf :Characteristic ;
               
@@ -1415,9 +1421,9 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ModelingAssumption
+###  http://siam.nist.gov/AM-Ontology-v2##ModelingAssumption
 
-:ModelingAssumption rdf:type :Class ;
+:ModelingAssumption rdf:type owl:Class ;
                     
                     rdfs:subClassOf :ModelElement ;
                     
@@ -1427,25 +1433,25 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#MonteCarloMethod
+###  http://siam.nist.gov/AM-Ontology-v2##MonteCarloMethod
 
-:MonteCarloMethod rdf:type :Class ;
+:MonteCarloMethod rdf:type owl:Class ;
                   
                   rdfs:subClassOf :NumericalApproximation .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#NavierStokesEquation
+###  http://siam.nist.gov/AM-Ontology-v2##NavierStokesEquation
 
-:NavierStokesEquation rdf:type :Class ;
+:NavierStokesEquation rdf:type owl:Class ;
                       
                       rdfs:subClassOf :Equation .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#NumericalApproximation
+###  http://siam.nist.gov/AM-Ontology-v2##NumericalApproximation
 
-:NumericalApproximation rdf:type :Class ;
+:NumericalApproximation rdf:type owl:Class ;
                         
                         rdfs:subClassOf :ModelElement ;
                         
@@ -1453,9 +1459,9 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#NumericalModel
+###  http://siam.nist.gov/AM-Ontology-v2##NumericalModel
 
-:NumericalModel rdf:type :Class ;
+:NumericalModel rdf:type owl:Class ;
                 
                 rdfs:subClassOf :PhysicsBasedModel ;
                 
@@ -1463,33 +1469,33 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#OpticalProperty
+###  http://siam.nist.gov/AM-Ontology-v2##OpticalProperty
 
-:OpticalProperty rdf:type :Class ;
+:OpticalProperty rdf:type owl:Class ;
                  
                  rdfs:subClassOf :PowderCharacteristic .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#PackingDensity
+###  http://siam.nist.gov/AM-Ontology-v2##PackingDensity
 
-:PackingDensity rdf:type :Class ;
+:PackingDensity rdf:type owl:Class ;
                 
                 rdfs:subClassOf :PowderCharacteristic .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#Particle
+###  http://siam.nist.gov/AM-Ontology-v2##Particle
 
-:Particle rdf:type :Class ;
+:Particle rdf:type owl:Class ;
           
           rdfs:subClassOf :MaterialDistributionModelingAssumption .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ParticleSize
+###  http://siam.nist.gov/AM-Ontology-v2##ParticleSize
 
-:ParticleSize rdf:type :Class ;
+:ParticleSize rdf:type owl:Class ;
               
               rdfs:subClassOf :PowderCharacteristic ;
               
@@ -1497,17 +1503,17 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#PhaseFieldEquation
+###  http://siam.nist.gov/AM-Ontology-v2##PhaseFieldEquation
 
-:PhaseFieldEquation rdf:type :Class ;
+:PhaseFieldEquation rdf:type owl:Class ;
                     
                     rdfs:subClassOf :Equation .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#PhaseTransformation
+###  http://siam.nist.gov/AM-Ontology-v2##PhaseTransformation
 
-:PhaseTransformation rdf:type :Class ;
+:PhaseTransformation rdf:type owl:Class ;
                      
                      rdfs:subClassOf :HeatTransfer ;
                      
@@ -1515,9 +1521,9 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#PhaseTransformationCharacteristic
+###  http://siam.nist.gov/AM-Ontology-v2##PhaseTransformationCharacteristic
 
-:PhaseTransformationCharacteristic rdf:type :Class ;
+:PhaseTransformationCharacteristic rdf:type owl:Class ;
                                    
                                    rdfs:subClassOf :HeatTransferCharacteristic ;
                                    
@@ -1525,23 +1531,23 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#Phenomenon
+###  http://siam.nist.gov/AM-Ontology-v2##Phenomenon
 
-:Phenomenon rdf:type :Class ;
+:Phenomenon rdf:type owl:Class ;
             
             rdfs:subClassOf :Physical ,
-                            [ rdf:type :Restriction ;
-                              :onProperty :hasCharacteristic ;
-                              :someValuesFrom :PhenomenonCharacteristic
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasCharacteristic ;
+                              owl:someValuesFrom :PhenomenonCharacteristic
                             ] ;
             
             rdfs:comment "A sub-set of observable events described by flows of matter and/or energy within a given physical domain." .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#PhenomenonCharacteristic
+###  http://siam.nist.gov/AM-Ontology-v2##PhenomenonCharacteristic
 
-:PhenomenonCharacteristic rdf:type :Class ;
+:PhenomenonCharacteristic rdf:type owl:Class ;
                           
                           rdfs:subClassOf :Characteristic ;
                           
@@ -1549,81 +1555,81 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#Physical
+###  http://siam.nist.gov/AM-Ontology-v2##Physical
 
-:Physical rdf:type :Class ;
+:Physical rdf:type owl:Class ;
           
           rdfs:comment "Physical concepts include everything that exists in the physical universe (space/time)." .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#PhysicsBasedModel
+###  http://siam.nist.gov/AM-Ontology-v2##PhysicsBasedModel
 
-:PhysicsBasedModel rdf:type :Class ;
+:PhysicsBasedModel rdf:type owl:Class ;
                    
                    rdfs:subClassOf :Model ,
-                                   [ rdf:type :Restriction ;
-                                     :onProperty :represents ;
-                                     :someValuesFrom :Phenomenon
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :provides ;
+                                     owl:someValuesFrom :Characteristic
                                    ] ,
-                                   [ rdf:type :Restriction ;
-                                     :onProperty :provides ;
-                                     :someValuesFrom :Characteristic
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :represents ;
+                                     owl:someValuesFrom :Phenomenon
                                    ] ;
                    
                    rdfs:comment "A computational model obtained from first-principles (laws of physics)." .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#PlasticDeformationCharacteristic
+###  http://siam.nist.gov/AM-Ontology-v2##PlasticDeformationCharacteristic
 
-:PlasticDeformationCharacteristic rdf:type :Class ;
+:PlasticDeformationCharacteristic rdf:type owl:Class ;
                                   
                                   rdfs:subClassOf :DeformationCharacteristic .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#PointSourceDistribution
+###  http://siam.nist.gov/AM-Ontology-v2##PointSourceDistribution
 
-:PointSourceDistribution rdf:type :Class ;
+:PointSourceDistribution rdf:type owl:Class ;
                          
                          rdfs:subClassOf :SurfaceDistributionOfHeatSource .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#PoissonsRatio
+###  http://siam.nist.gov/AM-Ontology-v2##PoissonsRatio
 
-:PoissonsRatio rdf:type :Class ;
+:PoissonsRatio rdf:type owl:Class ;
                
                rdfs:subClassOf :MaterialProperty .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#PorosityDistribution
+###  http://siam.nist.gov/AM-Ontology-v2##PorosityDistribution
 
-:PorosityDistribution rdf:type :Class ;
+:PorosityDistribution rdf:type owl:Class ;
                       
                       rdfs:subClassOf :ConsolidationModelPrediction .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#PowderBedFusionProcess
+###  http://siam.nist.gov/AM-Ontology-v2##PowderBedFusionProcess
 
-:PowderBedFusionProcess rdf:type :Class ;
+:PowderBedFusionProcess rdf:type owl:Class ;
                         
                         rdfs:subClassOf :AdditiveManufacturingProcess ,
-                                        [ rdf:type :Restriction ;
-                                          :onProperty :hasCharacteristic ;
-                                          :someValuesFrom :PowderBedFusionProcessParameter
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasCharacteristic ;
+                                          owl:someValuesFrom :PowderBedFusionProcessParameter
                                         ] ;
                         
                         rdfs:comment "An additive manufacturing process in which thermal energy selectively fuses regions of a powder bed." .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#PowderBedFusionProcessParameter
+###  http://siam.nist.gov/AM-Ontology-v2##PowderBedFusionProcessParameter
 
-:PowderBedFusionProcessParameter rdf:type :Class ;
+:PowderBedFusionProcessParameter rdf:type owl:Class ;
                                  
                                  rdfs:subClassOf :ProcessParameter ;
                                  
@@ -1631,9 +1637,9 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#PowderCharacteristic
+###  http://siam.nist.gov/AM-Ontology-v2##PowderCharacteristic
 
-:PowderCharacteristic rdf:type :Class ;
+:PowderCharacteristic rdf:type owl:Class ;
                       
                       rdfs:subClassOf :PowderBedFusionProcessParameter ;
                       
@@ -1641,25 +1647,25 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#PowderSizeDistribution
+###  http://siam.nist.gov/AM-Ontology-v2##PowderSizeDistribution
 
-:PowderSizeDistribution rdf:type :Class ;
+:PowderSizeDistribution rdf:type owl:Class ;
                         
                         rdfs:subClassOf :PowderCharacteristic .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#Prediction
+###  http://siam.nist.gov/AM-Ontology-v2##Prediction
 
-:Prediction rdf:type :Class ;
+:Prediction rdf:type owl:Class ;
             
             rdfs:subClassOf :ModelElement .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ProcessParameter
+###  http://siam.nist.gov/AM-Ontology-v2##ProcessParameter
 
-:ProcessParameter rdf:type :Class ;
+:ProcessParameter rdf:type owl:Class ;
                   
                   rdfs:subClassOf :Characteristic ;
                   
@@ -1667,127 +1673,127 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ProcessSignature
+###  http://siam.nist.gov/AM-Ontology-v2##ProcessSignature
 
-:ProcessSignature rdf:type :Class ;
+:ProcessSignature rdf:type owl:Class ;
                   
                   rdfs:subClassOf :Characteristic .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#RadiationCharacteristic
+###  http://siam.nist.gov/AM-Ontology-v2##RadiationCharacteristic
 
-:RadiationCharacteristic rdf:type :Class ;
+:RadiationCharacteristic rdf:type owl:Class ;
                          
                          rdfs:subClassOf :HeatDissipationCharacteristic ,
-                                         [ rdf:type :Restriction ;
-                                           :onProperty :isFunctionOf ;
-                                           :someValuesFrom :ChamberTemperature
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :isFunctionOf ;
+                                           owl:someValuesFrom :ChamberTemperature
                                          ] ,
-                                         [ rdf:type :Restriction ;
-                                           :onProperty :isFunctionOf ;
-                                           :someValuesFrom :RadiationCoefficient
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :isFunctionOf ;
+                                           owl:someValuesFrom :TemperatureFieldDistribution
                                          ] ,
-                                         [ rdf:type :Restriction ;
-                                           :onProperty :isFunctionOf ;
-                                           :someValuesFrom :TemperatureFieldDistribution
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :isFunctionOf ;
+                                           owl:someValuesFrom :RadiationCoefficient
                                          ] .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#RadiationCoefficient
+###  http://siam.nist.gov/AM-Ontology-v2##RadiationCoefficient
 
-:RadiationCoefficient rdf:type :Class ;
+:RadiationCoefficient rdf:type owl:Class ;
                       
                       rdfs:subClassOf :RadiationCharacteristic .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#RadiationTransferEquation
+###  http://siam.nist.gov/AM-Ontology-v2##RadiationTransferEquation
 
-:RadiationTransferEquation rdf:type :Class ;
+:RadiationTransferEquation rdf:type owl:Class ;
                            
                            rdfs:subClassOf :Equation ,
-                                           [ rdf:type :Restriction ;
-                                             :onProperty :requiresApproximation ;
-                                             :someValuesFrom :TwoFluxMethod
+                                           [ rdf:type owl:Class ;
+                                             owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :requiresAssumption ;
+                                                                    owl:someValuesFrom :DeterministicIrradiation
+                                                                  ]
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :requiresAssumption ;
+                                                                    owl:someValuesFrom :Particle
+                                                                  ]
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :requiresAssumption ;
+                                                                    owl:someValuesFrom :VolumetricDistributionOfAbsorbedHeat
+                                                                  ]
+                                                                )
                                            ] ,
-                                           [ rdf:type :Class ;
-                                             :intersectionOf ( [ rdf:type :Restriction ;
-                                                                 :onProperty :requiresAssumption ;
-                                                                 :someValuesFrom :DeterministicIrradiation
-                                                               ]
-                                                               [ rdf:type :Restriction ;
-                                                                 :onProperty :requiresAssumption ;
-                                                                 :someValuesFrom :Particle
-                                                               ]
-                                                               [ rdf:type :Restriction ;
-                                                                 :onProperty :requiresAssumption ;
-                                                                 :someValuesFrom :VolumetricDistributionOfAbsorbedHeat
-                                                               ]
-                                                             )
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :provides ;
+                                             owl:someValuesFrom :VolumetricDistributionOfAbsorbedHeat
                                            ] ,
-                                           [ rdf:type :Restriction ;
-                                             :onProperty :provides ;
-                                             :someValuesFrom :VolumetricDistributionOfAbsorbedHeat
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :requiresApproximation ;
+                                             owl:someValuesFrom :TwoFluxMethod
                                            ] .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#RadiativeProperty
+###  http://siam.nist.gov/AM-Ontology-v2##RadiativeProperty
 
-:RadiativeProperty rdf:type :Class ;
+:RadiativeProperty rdf:type owl:Class ;
                    
                    rdfs:subClassOf :PowderCharacteristic .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#RadiativePropertyOfBulkMaterial
+###  http://siam.nist.gov/AM-Ontology-v2##RadiativePropertyOfBulkMaterial
 
-:RadiativePropertyOfBulkMaterial rdf:type :Class ;
+:RadiativePropertyOfBulkMaterial rdf:type owl:Class ;
                                  
                                  rdfs:subClassOf :MaterialProperty .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#RayTracingEquation
+###  http://siam.nist.gov/AM-Ontology-v2##RayTracingEquation
 
-:RayTracingEquation rdf:type :Class ;
+:RayTracingEquation rdf:type owl:Class ;
                     
                     rdfs:subClassOf :Equation ,
-                                    [ rdf:type :Class ;
-                                      :intersectionOf ( [ rdf:type :Restriction ;
-                                                          :onProperty :requiresAssumption ;
-                                                          :someValuesFrom :Particle
-                                                        ]
-                                                        [ rdf:type :Restriction ;
-                                                          :onProperty :requiresAssumption ;
-                                                          :someValuesFrom :VolumetricDistributionOfAbsorbedHeat
-                                                        ]
-                                                        [ rdf:type :Restriction ;
-                                                          :onProperty :requiresAssumption ;
-                                                          :someValuesFrom [ rdf:type :Class ;
-                                                                            :unionOf ( :DeterministicIrradiation
-                                                                                       :StochasticIrradiation
-                                                                                     )
-                                                                          ]
-                                                        ]
-                                                      )
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :provides ;
+                                      owl:someValuesFrom :VolumetricDistributionOfAbsorbedHeat
                                     ] ,
-                                    [ rdf:type :Restriction ;
-                                      :onProperty :provides ;
-                                      :someValuesFrom :VolumetricDistributionOfAbsorbedHeat
+                                    [ rdf:type owl:Class ;
+                                      owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :requiresAssumption ;
+                                                             owl:someValuesFrom :Particle
+                                                           ]
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :requiresAssumption ;
+                                                             owl:someValuesFrom :VolumetricDistributionOfAbsorbedHeat
+                                                           ]
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :requiresAssumption ;
+                                                             owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                  owl:unionOf ( :DeterministicIrradiation
+                                                                                                :StochasticIrradiation
+                                                                                              )
+                                                                                ]
+                                                           ]
+                                                         )
                                     ] ,
-                                    [ rdf:type :Restriction ;
-                                      :onProperty :requiresApproximation ;
-                                      :someValuesFrom :MonteCarloMethod
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :requiresApproximation ;
+                                      owl:someValuesFrom :MonteCarloMethod
                                     ] .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#RecoilPressureCharacteristic
+###  http://siam.nist.gov/AM-Ontology-v2##RecoilPressureCharacteristic
 
-:RecoilPressureCharacteristic rdf:type :Class ;
+:RecoilPressureCharacteristic rdf:type owl:Class ;
                               
                               rdfs:subClassOf :FluidMechanicsCharacteristic ;
                               
@@ -1795,25 +1801,25 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ResidualStressCharacteristic
+###  http://siam.nist.gov/AM-Ontology-v2##ResidualStressCharacteristic
 
-:ResidualStressCharacteristic rdf:type :Class ;
+:ResidualStressCharacteristic rdf:type owl:Class ;
                               
                               rdfs:subClassOf :SolidMechanicsCharacteristic .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ResidualStressDistribution
+###  http://siam.nist.gov/AM-Ontology-v2##ResidualStressDistribution
 
-:ResidualStressDistribution rdf:type :Class ;
+:ResidualStressDistribution rdf:type owl:Class ;
                             
                             rdfs:subClassOf :SolidMechanicsModelPrediction .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ScanningSpeed
+###  http://siam.nist.gov/AM-Ontology-v2##ScanningSpeed
 
-:ScanningSpeed rdf:type :Class ;
+:ScanningSpeed rdf:type owl:Class ;
                
                rdfs:subClassOf :HeatSourceParameter ;
                
@@ -1821,49 +1827,49 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ScanningTrackPattern
+###  http://siam.nist.gov/AM-Ontology-v2##ScanningTrackPattern
 
-:ScanningTrackPattern rdf:type :Class ;
+:ScanningTrackPattern rdf:type owl:Class ;
                       
                       rdfs:subClassOf :HeatSourceParameter .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#SelectiveLaserMelting
+###  http://siam.nist.gov/AM-Ontology-v2##SelectiveLaserMelting
 
-:SelectiveLaserMelting rdf:type :Class ;
+:SelectiveLaserMelting rdf:type owl:Class ;
                        
                        rdfs:subClassOf :PowderBedFusionProcess .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#SelectiveLaserSintering
+###  http://siam.nist.gov/AM-Ontology-v2##SelectiveLaserSintering
 
-:SelectiveLaserSintering rdf:type :Class ;
+:SelectiveLaserSintering rdf:type owl:Class ;
                          
                          rdfs:subClassOf :PowderBedFusionProcess .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#Shrinkage
+###  http://siam.nist.gov/AM-Ontology-v2##Shrinkage
 
-:Shrinkage rdf:type :Class ;
+:Shrinkage rdf:type owl:Class ;
            
            rdfs:subClassOf :ProcessSignature ,
-                           [ rdf:type :Restriction ;
-                             :onProperty :isInfluencedBy ;
-                             :someValuesFrom :PackingDensity
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :isInfluencedBy ;
+                             owl:someValuesFrom :PackingDensity
                            ] ,
-                           [ rdf:type :Restriction ;
-                             :onProperty :isInfluencedBy ;
-                             :someValuesFrom :LayerThickness
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :isInfluencedBy ;
+                             owl:someValuesFrom :LayerThickness
                            ] .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#SolidMechanics
+###  http://siam.nist.gov/AM-Ontology-v2##SolidMechanics
 
-:SolidMechanics rdf:type :Class ;
+:SolidMechanics rdf:type owl:Class ;
                 
                 rdfs:subClassOf :Phenomenon ;
                 
@@ -1871,9 +1877,9 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#SolidMechanicsCharacteristic
+###  http://siam.nist.gov/AM-Ontology-v2##SolidMechanicsCharacteristic
 
-:SolidMechanicsCharacteristic rdf:type :Class ;
+:SolidMechanicsCharacteristic rdf:type owl:Class ;
                               
                               rdfs:subClassOf :PhenomenonCharacteristic ;
                               
@@ -1881,17 +1887,17 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#SolidMechanicsEquation
+###  http://siam.nist.gov/AM-Ontology-v2##SolidMechanicsEquation
 
-:SolidMechanicsEquation rdf:type :Class ;
+:SolidMechanicsEquation rdf:type owl:Class ;
                         
                         rdfs:subClassOf :Equation .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#SolidMechanicsMathematicalModel
+###  http://siam.nist.gov/AM-Ontology-v2##SolidMechanicsMathematicalModel
 
-:SolidMechanicsMathematicalModel rdf:type :Class ;
+:SolidMechanicsMathematicalModel rdf:type owl:Class ;
                                  
                                  rdfs:subClassOf :MathematicalModel ;
                                  
@@ -1899,17 +1905,17 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#SolidMechanicsModelPrediction
+###  http://siam.nist.gov/AM-Ontology-v2##SolidMechanicsModelPrediction
 
-:SolidMechanicsModelPrediction rdf:type :Class ;
+:SolidMechanicsModelPrediction rdf:type owl:Class ;
                                
                                rdfs:subClassOf :Prediction .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#SolidStateSintering
+###  http://siam.nist.gov/AM-Ontology-v2##SolidStateSintering
 
-:SolidStateSintering rdf:type :Class ;
+:SolidStateSintering rdf:type owl:Class ;
                      
                      rdfs:subClassOf :ConsolidationBySinteringCharacteristic ;
                      
@@ -1917,77 +1923,77 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#StatisticalAssumptionOfIrradiationDistribution
+###  http://siam.nist.gov/AM-Ontology-v2##StatisticalAssumptionOfIrradiationDistribution
 
-:StatisticalAssumptionOfIrradiationDistribution rdf:type :Class ;
+:StatisticalAssumptionOfIrradiationDistribution rdf:type owl:Class ;
                                                 
                                                 rdfs:subClassOf :LaserIrradiationModelingAssumption .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#StochasticIrradiation
+###  http://siam.nist.gov/AM-Ontology-v2##StochasticIrradiation
 
-:StochasticIrradiation rdf:type :Class ;
+:StochasticIrradiation rdf:type owl:Class ;
                        
                        rdfs:subClassOf :StatisticalAssumptionOfIrradiationDistribution .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#StrainDistribution
+###  http://siam.nist.gov/AM-Ontology-v2##StrainDistribution
 
-:StrainDistribution rdf:type :Class ;
+:StrainDistribution rdf:type owl:Class ;
                     
                     rdfs:subClassOf :SolidMechanicsModelPrediction .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#Surface
+###  http://siam.nist.gov/AM-Ontology-v2##Surface
 
-:Surface rdf:type :Class ;
+:Surface rdf:type owl:Class ;
          
          rdfs:subClassOf :DimensionalityOfAbsorbedHeat ;
          
-         :disjointWith :Volumetric .
+         owl:disjointWith :Volumetric .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#SurfaceConvectionCoefficient
+###  http://siam.nist.gov/AM-Ontology-v2##SurfaceConvectionCoefficient
 
-:SurfaceConvectionCoefficient rdf:type :Class ;
+:SurfaceConvectionCoefficient rdf:type owl:Class ;
                               
                               rdfs:subClassOf :ConvectionCharacteristic .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#SurfaceDistributionOfAbsorbedHeat
+###  http://siam.nist.gov/AM-Ontology-v2##SurfaceDistributionOfAbsorbedHeat
 
-:SurfaceDistributionOfAbsorbedHeat rdf:type :Class ;
+:SurfaceDistributionOfAbsorbedHeat rdf:type owl:Class ;
                                    
                                    rdfs:subClassOf :IrradiationAbsorptionModelPrediction ,
-                                                   [ rdf:type :Restriction ;
-                                                     :onProperty :isFunctionOf ;
-                                                     :someValuesFrom :Absorptivity
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :isFunctionOf ;
+                                                     owl:someValuesFrom :Absorptivity
                                                    ] ,
-                                                   [ rdf:type :Restriction ;
-                                                     :onProperty :isFunctionOf ;
-                                                     :someValuesFrom :SurfaceDistributionOfHeatSource
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :isFunctionOf ;
+                                                     owl:someValuesFrom :SurfaceDistributionOfHeatSource
                                                    ] ;
                                    
-                                   :disjointWith :VolumetricDistributionOfAbsorbedHeat .
+                                   owl:disjointWith :VolumetricDistributionOfAbsorbedHeat .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#SurfaceDistributionOfHeatSource
+###  http://siam.nist.gov/AM-Ontology-v2##SurfaceDistributionOfHeatSource
 
-:SurfaceDistributionOfHeatSource rdf:type :Class ;
+:SurfaceDistributionOfHeatSource rdf:type owl:Class ;
                                  
                                  rdfs:subClassOf :LaserIrradiationModelingAssumption .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#SurfaceEnergyCharacteristic
+###  http://siam.nist.gov/AM-Ontology-v2##SurfaceEnergyCharacteristic
 
-:SurfaceEnergyCharacteristic rdf:type :Class ;
+:SurfaceEnergyCharacteristic rdf:type owl:Class ;
                              
                              rdfs:subClassOf :SurfaceTensionEffectCharacteristic ;
                              
@@ -1995,9 +2001,9 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#SurfaceTensionEffectCharacteristic
+###  http://siam.nist.gov/AM-Ontology-v2##SurfaceTensionEffectCharacteristic
 
-:SurfaceTensionEffectCharacteristic rdf:type :Class ;
+:SurfaceTensionEffectCharacteristic rdf:type owl:Class ;
                                     
                                     rdfs:subClassOf :FluidMechanicsCharacteristic ;
                                     
@@ -2005,79 +2011,79 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#TemperatureFieldDistribution
+###  http://siam.nist.gov/AM-Ontology-v2##TemperatureFieldDistribution
 
-:TemperatureFieldDistribution rdf:type :Class ;
+:TemperatureFieldDistribution rdf:type owl:Class ;
                               
                               rdfs:subClassOf :HeatTransferModelPrediction .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#TemperatureRange
+###  http://siam.nist.gov/AM-Ontology-v2##TemperatureRange
 
-:TemperatureRange rdf:type :Class ;
+:TemperatureRange rdf:type owl:Class ;
                   
                   rdfs:subClassOf :MeltingModelingAssumption .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ThermalConductivityEquation
+###  http://siam.nist.gov/AM-Ontology-v2##ThermalConductivityEquation
 
-:ThermalConductivityEquation rdf:type :Class ;
+:ThermalConductivityEquation rdf:type owl:Class ;
                              
                              rdfs:subClassOf :Equation .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ThermalConductivityOfTheSubstrate
+###  http://siam.nist.gov/AM-Ontology-v2##ThermalConductivityOfTheSubstrate
 
-:ThermalConductivityOfTheSubstrate rdf:type :Class ;
+:ThermalConductivityOfTheSubstrate rdf:type owl:Class ;
                                    
                                    rdfs:subClassOf :MaterialProperty .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ThermalDiffusivityCharacteristic
+###  http://siam.nist.gov/AM-Ontology-v2##ThermalDiffusivityCharacteristic
 
-:ThermalDiffusivityCharacteristic rdf:type :Class ;
+:ThermalDiffusivityCharacteristic rdf:type owl:Class ;
                                   
                                   rdfs:subClassOf :HeatDissipationCharacteristic ,
-                                                  [ rdf:type :Restriction ;
-                                                    :onProperty :isFunctionOf ;
-                                                    :someValuesFrom :DensityDistribution
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :isFunctionOf ;
+                                                    owl:someValuesFrom :DensityDistribution
                                                   ] .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ThreeDimensional
+###  http://siam.nist.gov/AM-Ontology-v2##ThreeDimensional
 
-:ThreeDimensional rdf:type :Class ;
+:ThreeDimensional rdf:type owl:Class ;
                   
                   rdfs:subClassOf :DimensionalityOfPhysicalSystem ;
                   
-                  :disjointWith :TwoDimensional .
+                  owl:disjointWith :TwoDimensional .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#TwoDimensional
+###  http://siam.nist.gov/AM-Ontology-v2##TwoDimensional
 
-:TwoDimensional rdf:type :Class ;
+:TwoDimensional rdf:type owl:Class ;
                 
                 rdfs:subClassOf :DimensionalityOfPhysicalSystem .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#TwoFluxMethod
+###  http://siam.nist.gov/AM-Ontology-v2##TwoFluxMethod
 
-:TwoFluxMethod rdf:type :Class ;
+:TwoFluxMethod rdf:type owl:Class ;
                
                rdfs:subClassOf :NumericalApproximation .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#Vaporization
+###  http://siam.nist.gov/AM-Ontology-v2##Vaporization
 
-:Vaporization rdf:type :Class ;
+:Vaporization rdf:type owl:Class ;
               
               rdfs:subClassOf :PhaseTransformation ;
               
@@ -2085,62 +2091,62 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#VaporizationCharacteristic
+###  http://siam.nist.gov/AM-Ontology-v2##VaporizationCharacteristic
 
-:VaporizationCharacteristic rdf:type :Class ;
+:VaporizationCharacteristic rdf:type owl:Class ;
                             
                             rdfs:subClassOf :PhaseTransformationCharacteristic .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#Void
+###  http://siam.nist.gov/AM-Ontology-v2##Void
 
-:Void rdf:type :Class ;
+:Void rdf:type owl:Class ;
       
       rdfs:subClassOf :ProcessSignature ,
-                      [ rdf:type :Restriction ;
-                        :onProperty :isInfluencedBy ;
-                        :someValuesFrom :MeltPoolShape
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :isInfluencedBy ;
+                        owl:someValuesFrom :MeltPoolShape
                       ] ,
-                      [ rdf:type :Restriction ;
-                        :onProperty :isInfluencedBy ;
-                        :someValuesFrom :MeltPoolTemperature
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :isInfluencedBy ;
+                        owl:someValuesFrom :MeltPoolTemperature
                       ] .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#Volumetric
+###  http://siam.nist.gov/AM-Ontology-v2##Volumetric
 
-:Volumetric rdf:type :Class ;
+:Volumetric rdf:type owl:Class ;
             
             rdfs:subClassOf :DimensionalityOfAbsorbedHeat .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#VolumetricDistributionOfAbsorbedHeat
+###  http://siam.nist.gov/AM-Ontology-v2##VolumetricDistributionOfAbsorbedHeat
 
-:VolumetricDistributionOfAbsorbedHeat rdf:type :Class ;
+:VolumetricDistributionOfAbsorbedHeat rdf:type owl:Class ;
                                       
                                       rdfs:subClassOf :IrradiationAbsorptionModelPrediction ,
-                                                      [ rdf:type :Restriction ;
-                                                        :onProperty :isFunctionOf ;
-                                                        :someValuesFrom :AbsorptionCoefficient
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :isFunctionOf ;
+                                                        owl:someValuesFrom :ExtinctionCoefficient
                                                       ] ,
-                                                      [ rdf:type :Restriction ;
-                                                        :onProperty :isFunctionOf ;
-                                                        :someValuesFrom :ExtinctionCoefficient
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :isFunctionOf ;
+                                                        owl:someValuesFrom :AbsorptionCoefficient
                                                       ] ,
-                                                      [ rdf:type :Restriction ;
-                                                        :onProperty :isFunctionOf ;
-                                                        :someValuesFrom :BeamSize
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :isFunctionOf ;
+                                                        owl:someValuesFrom :BeamSize
                                                       ] ,
-                                                      [ rdf:type :Restriction ;
-                                                        :onProperty :isFunctionOf ;
-                                                        :someValuesFrom :ScanningSpeed
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :isFunctionOf ;
+                                                        owl:someValuesFrom :SurfaceDistributionOfAbsorbedHeat
                                                       ] ,
-                                                      [ rdf:type :Restriction ;
-                                                        :onProperty :isFunctionOf ;
-                                                        :someValuesFrom :SurfaceDistributionOfAbsorbedHeat
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :isFunctionOf ;
+                                                        owl:someValuesFrom :ScanningSpeed
                                                       ] .
 
 
@@ -2154,15 +2160,15 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 #################################################################
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#ThreeDimensional
+###  http://siam.nist.gov/AM-Ontology-v2##ThreeDimensional
 
-:ThreeDimensional rdf:type :NamedIndividual .
+:ThreeDimensional rdf:type owl:NamedIndividual .
 
 
 
-###  http://www.semanticweb.org/ina3/ontologies/2015/10/untitled-ontology-336#TwoDimensional
+###  http://siam.nist.gov/AM-Ontology-v2##TwoDimensional
 
-:TwoDimensional rdf:type :NamedIndividual .
+:TwoDimensional rdf:type owl:NamedIndividual .
 
 
 
@@ -2175,21 +2181,21 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 #################################################################
 
 
-[ rdf:type :AllDisjointClasses ;
-  :members ( :CylindricalDistribution
-             :GaussianDistribution
-             :PointSourceDistribution
-           )
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :ConsolidationCharacteristic
+                :FluidMechanicsCharacteristic
+                :HeatTransferCharacteristic
+                :IrradiationAbsorptionCharacteristic
+                :IrradiationCharacteristic
+                :MicrostructureEvolutionCharacteristic
+                :SolidMechanicsCharacteristic
+              )
 ] .
-[ rdf:type :AllDisjointClasses ;
-  :members ( :ConsolidationCharacteristic
-             :FluidMechanicsCharacteristic
-             :HeatTransferCharacteristic
-             :IrradiationAbsorptionCharacteristic
-             :IrradiationCharacteristic
-             :MicrostructureEvolutionCharacteristic
-             :SolidMechanicsCharacteristic
-           )
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :CylindricalDistribution
+                :GaussianDistribution
+                :PointSourceDistribution
+              )
 ] .
 
 
