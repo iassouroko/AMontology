@@ -22,7 +22,7 @@
 #################################################################
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##hasCharacteristic
+###  http://siam.nist.gov/AM-Ontology_v2#hasCharacteristic
 
 :hasCharacteristic rdf:type owl:ObjectProperty ;
                    
@@ -32,35 +32,35 @@
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##influences
+###  http://siam.nist.gov/AM-Ontology_v2#influences
 
 :influences rdf:type owl:ObjectProperty ;
             
-            rdfs:domain :Characteristic ;
-            
             rdfs:range :Characteristic ;
+            
+            rdfs:domain :Characteristic ;
             
             owl:inverseOf :isInfluencedBy .
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##isFunctionOf
+###  http://siam.nist.gov/AM-Ontology_v2#isFunctionOf
 
 :isFunctionOf rdf:type owl:ObjectProperty ;
               
-              rdfs:domain :Characteristic ;
+              rdfs:range :Characteristic ;
               
-              rdfs:range :Characteristic .
+              rdfs:domain :Characteristic .
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##isInfluencedBy
+###  http://siam.nist.gov/AM-Ontology_v2#isInfluencedBy
 
 :isInfluencedBy rdf:type owl:ObjectProperty .
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##isProvidedBy
+###  http://siam.nist.gov/AM-Ontology_v2#isProvidedBy
 
 :isProvidedBy rdf:type owl:ObjectProperty ;
               
@@ -68,13 +68,13 @@
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##partOf
+###  http://siam.nist.gov/AM-Ontology_v2#partOf
 
 :partOf rdf:type owl:ObjectProperty .
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##provides
+###  http://siam.nist.gov/AM-Ontology_v2#provides
 
 :provides rdf:type owl:ObjectProperty ;
           
@@ -86,7 +86,7 @@
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##relates
+###  http://siam.nist.gov/AM-Ontology_v2#relates
 
 :relates rdf:type owl:ObjectProperty ;
          
@@ -98,7 +98,7 @@
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##represents
+###  http://siam.nist.gov/AM-Ontology_v2#represents
 
 :represents rdf:type owl:ObjectProperty ;
             
@@ -108,7 +108,7 @@
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##requires
+###  http://siam.nist.gov/AM-Ontology_v2#requires
 
 :requires rdf:type owl:ObjectProperty ;
           
@@ -118,7 +118,7 @@
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##requiresApproximation
+###  http://siam.nist.gov/AM-Ontology_v2#requiresApproximation
 
 :requiresApproximation rdf:type owl:ObjectProperty ;
                        
@@ -126,7 +126,7 @@
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##requiresAssumption
+###  http://siam.nist.gov/AM-Ontology_v2#requiresAssumption
 
 :requiresAssumption rdf:type owl:ObjectProperty ;
                     
@@ -134,7 +134,7 @@
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##requiresCharacteristic
+###  http://siam.nist.gov/AM-Ontology_v2#requiresCharacteristic
 
 :requiresCharacteristic rdf:type owl:ObjectProperty ;
                         
@@ -151,7 +151,227 @@
 #################################################################
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##AbsorptionCoefficient
+###  http://siam.nist.gov/AM-Ontology-v2#AdiabaticBC
+
+<http://siam.nist.gov/AM-Ontology-v2#AdiabaticBC> rdf:type owl:Class ;
+                                                  
+                                                  rdfs:subClassOf <http://siam.nist.gov/AM-Ontology-v2#NeumannBC> .
+
+
+
+###  http://siam.nist.gov/AM-Ontology-v2#BedRadiation
+
+<http://siam.nist.gov/AM-Ontology-v2#BedRadiation> rdf:type owl:Class ;
+                                                   
+                                                   rdfs:subClassOf <http://siam.nist.gov/AM-Ontology-v2#BoundaryHeatFlux> .
+
+
+
+###  http://siam.nist.gov/AM-Ontology-v2#BeerLambertLaw
+
+<http://siam.nist.gov/AM-Ontology-v2#BeerLambertLaw> rdf:type owl:Class ;
+                                                     
+                                                     rdfs:subClassOf <http://siam.nist.gov/AM-Ontology-v2#LawOfPhysics> .
+
+
+
+###  http://siam.nist.gov/AM-Ontology-v2#BottomBoundaryCondition
+
+<http://siam.nist.gov/AM-Ontology-v2#BottomBoundaryCondition> rdf:type owl:Class ;
+                                                              
+                                                              owl:equivalentClass [ rdf:type owl:Class ;
+                                                                                    owl:unionOf ( <http://siam.nist.gov/AM-Ontology-v2#DirichletBC>
+                                                                                                  <http://siam.nist.gov/AM-Ontology-v2#NeumannBC>
+                                                                                                )
+                                                                                  ] ;
+                                                              
+                                                              rdfs:subClassOf <http://siam.nist.gov/AM-Ontology-v2#ThermalBoundaryCondition> .
+
+
+
+###  http://siam.nist.gov/AM-Ontology-v2#BottomConduction
+
+<http://siam.nist.gov/AM-Ontology-v2#BottomConduction> rdf:type owl:Class ;
+                                                       
+                                                       rdfs:subClassOf <http://siam.nist.gov/AM-Ontology-v2#BoundaryHeatFlux> .
+
+
+
+###  http://siam.nist.gov/AM-Ontology-v2#BoundaryHeatFlux
+
+<http://siam.nist.gov/AM-Ontology-v2#BoundaryHeatFlux> rdf:type owl:Class ;
+                                                       
+                                                       rdfs:subClassOf :Prediction .
+
+
+
+###  http://siam.nist.gov/AM-Ontology-v2#DirichletBC
+
+<http://siam.nist.gov/AM-Ontology-v2#DirichletBC> rdf:type owl:Class ;
+                                                  
+                                                  owl:equivalentClass [ rdf:type owl:Class ;
+                                                                        owl:unionOf ( <http://siam.nist.gov/AM-Ontology-v2#IsoThermalBC>
+                                                                                      <http://siam.nist.gov/AM-Ontology-v2#SemiInfiniteBC>
+                                                                                    )
+                                                                      ] ;
+                                                  
+                                                  rdfs:subClassOf <http://siam.nist.gov/AM-Ontology-v2#BottomBoundaryCondition> ,
+                                                                  <http://siam.nist.gov/AM-Ontology-v2#SideBoundaryCondition> .
+
+
+
+###  http://siam.nist.gov/AM-Ontology-v2#FouriersLaw
+
+<http://siam.nist.gov/AM-Ontology-v2#FouriersLaw> rdf:type owl:Class ;
+                                                  
+                                                  rdfs:subClassOf <http://siam.nist.gov/AM-Ontology-v2#LawOfPhysics> .
+
+
+
+###  http://siam.nist.gov/AM-Ontology-v2#HeatFluxBC
+
+<http://siam.nist.gov/AM-Ontology-v2#HeatFluxBC> rdf:type owl:Class ;
+                                                 
+                                                 rdfs:subClassOf <http://siam.nist.gov/AM-Ontology-v2#NeumannBC> .
+
+
+
+###  http://siam.nist.gov/AM-Ontology-v2#IsoThermalBC
+
+<http://siam.nist.gov/AM-Ontology-v2#IsoThermalBC> rdf:type owl:Class ;
+                                                   
+                                                   rdfs:subClassOf <http://siam.nist.gov/AM-Ontology-v2#DirichletBC> .
+
+
+
+###  http://siam.nist.gov/AM-Ontology-v2#LawOfPhysics
+
+<http://siam.nist.gov/AM-Ontology-v2#LawOfPhysics> rdf:type owl:Class ;
+                                                   
+                                                   rdfs:subClassOf :ModelElement .
+
+
+
+###  http://siam.nist.gov/AM-Ontology-v2#MixedBC
+
+<http://siam.nist.gov/AM-Ontology-v2#MixedBC> rdf:type owl:Class ;
+                                              
+                                              rdfs:subClassOf <http://siam.nist.gov/AM-Ontology-v2#TopBoundaryCondition> ,
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :isFunctionOf ;
+                                                                owl:someValuesFrom :SurfaceDistributionOfAbsorbedHeat
+                                                              ] ,
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :isFunctionOf ;
+                                                                owl:someValuesFrom <http://siam.nist.gov/AM-Ontology-v2#SurfaceConvection>
+                                                              ] ,
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :isFunctionOf ;
+                                                                owl:someValuesFrom <http://siam.nist.gov/AM-Ontology-v2#BedRadiation>
+                                                              ] .
+
+
+
+###  http://siam.nist.gov/AM-Ontology-v2#NeumannBC
+
+<http://siam.nist.gov/AM-Ontology-v2#NeumannBC> rdf:type owl:Class ;
+                                                
+                                                owl:equivalentClass [ rdf:type owl:Class ;
+                                                                      owl:unionOf ( <http://siam.nist.gov/AM-Ontology-v2#AdiabaticBC>
+                                                                                    <http://siam.nist.gov/AM-Ontology-v2#HeatFluxBC>
+                                                                                  )
+                                                                    ] ;
+                                                
+                                                rdfs:subClassOf <http://siam.nist.gov/AM-Ontology-v2#BottomBoundaryCondition> ,
+                                                                <http://siam.nist.gov/AM-Ontology-v2#SideBoundaryCondition> .
+
+
+
+###  http://siam.nist.gov/AM-Ontology-v2#SemiInfiniteBC
+
+<http://siam.nist.gov/AM-Ontology-v2#SemiInfiniteBC> rdf:type owl:Class ;
+                                                     
+                                                     rdfs:subClassOf <http://siam.nist.gov/AM-Ontology-v2#DirichletBC> .
+
+
+
+###  http://siam.nist.gov/AM-Ontology-v2#SideBoundaryCondition
+
+<http://siam.nist.gov/AM-Ontology-v2#SideBoundaryCondition> rdf:type owl:Class ;
+                                                            
+                                                            rdfs:subClassOf <http://siam.nist.gov/AM-Ontology-v2#ThermalBoundaryCondition> .
+
+
+
+###  http://siam.nist.gov/AM-Ontology-v2#SidewayConduction
+
+<http://siam.nist.gov/AM-Ontology-v2#SidewayConduction> rdf:type owl:Class ;
+                                                        
+                                                        rdfs:subClassOf <http://siam.nist.gov/AM-Ontology-v2#BoundaryHeatFlux> .
+
+
+
+###  http://siam.nist.gov/AM-Ontology-v2#SubstrateModelingAssumption
+
+<http://siam.nist.gov/AM-Ontology-v2#SubstrateModelingAssumption> rdf:type owl:Class ;
+                                                                  
+                                                                  rdfs:subClassOf :HeatTransferModelingAssumption .
+
+
+
+###  http://siam.nist.gov/AM-Ontology-v2#SurfaceConvection
+
+<http://siam.nist.gov/AM-Ontology-v2#SurfaceConvection> rdf:type owl:Class ;
+                                                        
+                                                        rdfs:subClassOf <http://siam.nist.gov/AM-Ontology-v2#BoundaryHeatFlux> .
+
+
+
+###  http://siam.nist.gov/AM-Ontology-v2#ThermalBoundaryCondition
+
+<http://siam.nist.gov/AM-Ontology-v2#ThermalBoundaryCondition> rdf:type owl:Class ;
+                                                               
+                                                               rdfs:subClassOf :HeatTransferModelingAssumption ;
+                                                               
+                                                               rdfs:comment "Boundary condition for heat transfer model, as given by a specific temperature or heat flux on a certain surface." .
+
+
+
+###  http://siam.nist.gov/AM-Ontology-v2#ThermalConductivity
+
+<http://siam.nist.gov/AM-Ontology-v2#ThermalConductivity> rdf:type owl:Class ;
+                                                          
+                                                          rdfs:subClassOf :MaterialProperty .
+
+
+
+###  http://siam.nist.gov/AM-Ontology-v2#ThermalConductivityOfTheBulkMaterial
+
+<http://siam.nist.gov/AM-Ontology-v2#ThermalConductivityOfTheBulkMaterial> rdf:type owl:Class ;
+                                                                           
+                                                                           rdfs:subClassOf <http://siam.nist.gov/AM-Ontology-v2#ThermalConductivity> .
+
+
+
+###  http://siam.nist.gov/AM-Ontology-v2#ThermalInitialCondition
+
+<http://siam.nist.gov/AM-Ontology-v2#ThermalInitialCondition> rdf:type owl:Class ;
+                                                              
+                                                              rdfs:subClassOf :HeatTransferModelingAssumption ;
+                                                              
+                                                              rdfs:comment "Initial condition for thermal model, defined by the initial distribution of temperature or enthalpy in \"the powder bed\"." .
+
+
+
+###  http://siam.nist.gov/AM-Ontology-v2#TopBoundaryCondition
+
+<http://siam.nist.gov/AM-Ontology-v2#TopBoundaryCondition> rdf:type owl:Class ;
+                                                           
+                                                           rdfs:subClassOf <http://siam.nist.gov/AM-Ontology-v2#ThermalBoundaryCondition> .
+
+
+
+###  http://siam.nist.gov/AM-Ontology_v2#AbsorptionCoefficient
 
 :AbsorptionCoefficient rdf:type owl:Class ;
                        
@@ -159,7 +379,15 @@
                                        :IrradiationAbsorptionSignature ,
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty :isFunctionOf ;
+                                         owl:someValuesFrom :ParticleSize
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :isFunctionOf ;
                                          owl:someValuesFrom :BeamWavelength
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :isFunctionOf ;
+                                         owl:someValuesFrom :HeatSourcePower
                                        ] ,
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty :isFunctionOf ;
@@ -168,21 +396,13 @@
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty :isFunctionOf ;
                                          owl:someValuesFrom :RadiativePropertyOfBulkMaterial
-                                       ] ,
-                                       [ rdf:type owl:Restriction ;
-                                         owl:onProperty :isFunctionOf ;
-                                         owl:someValuesFrom :ParticleSize
-                                       ] ,
-                                       [ rdf:type owl:Restriction ;
-                                         owl:onProperty :isFunctionOf ;
-                                         owl:someValuesFrom :HeatSourcePower
                                        ] ;
                        
                        rdfs:comment "The absorption coefficient quantifies the amount of irradiation that is absorbed by the powder bed. Its value can be determined experimentally or through computational simulation." .
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##Absorptivity
+###  http://siam.nist.gov/AM-Ontology_v2#Absorptivity
 
 :Absorptivity rdf:type owl:Class ;
               
@@ -213,7 +433,7 @@ Those terms differ from \"absorption coefficient\" that has units of per unit le
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##Abstract
+###  http://siam.nist.gov/AM-Ontology_v2#Abstract
 
 :Abstract rdf:type owl:Class ;
           
@@ -221,7 +441,7 @@ Those terms differ from \"absorption coefficient\" that has units of per unit le
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##AdditiveManufacturingProcess
+###  http://siam.nist.gov/AM-Ontology_v2#AdditiveManufacturingProcess
 
 :AdditiveManufacturingProcess rdf:type owl:Class ;
                               
@@ -231,7 +451,7 @@ Those terms differ from \"absorption coefficient\" that has units of per unit le
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##BeamSize
+###  http://siam.nist.gov/AM-Ontology_v2#BeamSize
 
 :BeamSize rdf:type owl:Class ;
           
@@ -241,7 +461,7 @@ Those terms differ from \"absorption coefficient\" that has units of per unit le
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##BeamType
+###  http://siam.nist.gov/AM-Ontology_v2#BeamType
 
 :BeamType rdf:type owl:Class ;
           
@@ -251,7 +471,7 @@ Those terms differ from \"absorption coefficient\" that has units of per unit le
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##BeamWavelength
+###  http://siam.nist.gov/AM-Ontology_v2#BeamWavelength
 
 :BeamWavelength rdf:type owl:Class ;
                 
@@ -259,19 +479,31 @@ Those terms differ from \"absorption coefficient\" that has units of per unit le
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##BedEmissivity
+###  http://siam.nist.gov/AM-Ontology_v2#BedEmissivity
 
 :BedEmissivity rdf:type owl:Class ;
                
-               rdfs:subClassOf :PowderCharacteristic .
+               rdfs:subClassOf :PowderCharacteristic ,
+                               :RadiationCharacteristic .
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##BeerLambertEquation
+###  http://siam.nist.gov/AM-Ontology_v2#BeerLambertEquation
 
 :BeerLambertEquation rdf:type owl:Class ;
                      
                      rdfs:subClassOf :Equation ,
+                                     [ rdf:type owl:Class ;
+                                       owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :isFunctionOf ;
+                                                              owl:someValuesFrom :AbsorptionCoefficient
+                                                            ]
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :isFunctionOf ;
+                                                              owl:someValuesFrom :ExtinctionCoefficient
+                                                            ]
+                                                          )
+                                     ] ,
                                      [ rdf:type owl:Class ;
                                        owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                               owl:onProperty :requiresAssumption ;
@@ -287,17 +519,6 @@ Those terms differ from \"absorption coefficient\" that has units of per unit le
                                                             ]
                                                           )
                                      ] ,
-                                     [ rdf:type owl:Class ;
-                                       owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                              owl:onProperty :isFunctionOf ;
-                                                              owl:someValuesFrom :AbsorptionCoefficient
-                                                            ]
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty :isFunctionOf ;
-                                                              owl:someValuesFrom :ExtinctionCoefficient
-                                                            ]
-                                                          )
-                                     ] ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty :provides ;
                                        owl:someValuesFrom :VolumetricDistributionOfAbsorbedHeat
@@ -305,7 +526,7 @@ Those terms differ from \"absorption coefficient\" that has units of per unit le
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##BuildChamberParameter
+###  http://siam.nist.gov/AM-Ontology_v2#BuildChamberParameter
 
 :BuildChamberParameter rdf:type owl:Class ;
                        
@@ -315,7 +536,7 @@ Those terms differ from \"absorption coefficient\" that has units of per unit le
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##BuoyancyEffectsCharacteristic
+###  http://siam.nist.gov/AM-Ontology_v2#BuoyancyEffectsCharacteristic
 
 :BuoyancyEffectsCharacteristic rdf:type owl:Class ;
                                
@@ -325,7 +546,7 @@ Those terms differ from \"absorption coefficient\" that has units of per unit le
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##CellularAutomataEquation
+###  http://siam.nist.gov/AM-Ontology_v2#CellularAutomataEquation
 
 :CellularAutomataEquation rdf:type owl:Class ;
                           
@@ -333,7 +554,7 @@ Those terms differ from \"absorption coefficient\" that has units of per unit le
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##ChamberTemperature
+###  http://siam.nist.gov/AM-Ontology_v2#ChamberTemperature
 
 :ChamberTemperature rdf:type owl:Class ;
                     
@@ -341,7 +562,7 @@ Those terms differ from \"absorption coefficient\" that has units of per unit le
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##Characteristic
+###  http://siam.nist.gov/AM-Ontology_v2#Characteristic
 
 :Characteristic rdf:type owl:Class ;
                 
@@ -351,7 +572,7 @@ Those terms differ from \"absorption coefficient\" that has units of per unit le
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##ChemicalComposition
+###  http://siam.nist.gov/AM-Ontology_v2#ChemicalComposition
 
 :ChemicalComposition rdf:type owl:Class ;
                      
@@ -361,7 +582,7 @@ Those terms differ from \"absorption coefficient\" that has units of per unit le
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##Consolidation
+###  http://siam.nist.gov/AM-Ontology_v2#Consolidation
 
 :Consolidation rdf:type owl:Class ;
                
@@ -371,7 +592,7 @@ Those terms differ from \"absorption coefficient\" that has units of per unit le
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##ConsolidationByMelting
+###  http://siam.nist.gov/AM-Ontology_v2#ConsolidationByMelting
 
 :ConsolidationByMelting rdf:type owl:Class ;
                         
@@ -381,15 +602,11 @@ Those terms differ from \"absorption coefficient\" that has units of per unit le
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##ConsolidationByMeltingCharacteristic
+###  http://siam.nist.gov/AM-Ontology_v2#ConsolidationByMeltingCharacteristic
 
 :ConsolidationByMeltingCharacteristic rdf:type owl:Class ;
                                       
                                       rdfs:subClassOf :ConsolidationCharacteristic ,
-                                                      [ rdf:type owl:Restriction ;
-                                                        owl:onProperty :influences ;
-                                                        owl:someValuesFrom :MicrostructureEvolution
-                                                      ] ,
                                                       [ rdf:type owl:Restriction ;
                                                         owl:onProperty :influences ;
                                                         owl:someValuesFrom :SolidMechanics
@@ -397,13 +614,17 @@ Those terms differ from \"absorption coefficient\" that has units of per unit le
                                                       [ rdf:type owl:Restriction ;
                                                         owl:onProperty :influences ;
                                                         owl:someValuesFrom :FluidMechanics
+                                                      ] ,
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :influences ;
+                                                        owl:someValuesFrom :MicrostructureEvolution
                                                       ] ;
                                       
                                       rdfs:comment "A set of characteristics that define a melting process. Most melting models are simple, as they assume that melting occurs instantaneously. The only characteristic necessary in such scenarios is a function describing how density is expected to change as a function of temperature." .
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##ConsolidationBySintering
+###  http://siam.nist.gov/AM-Ontology_v2#ConsolidationBySintering
 
 :ConsolidationBySintering rdf:type owl:Class ;
                           
@@ -413,7 +634,7 @@ Those terms differ from \"absorption coefficient\" that has units of per unit le
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##ConsolidationBySinteringCharacteristic
+###  http://siam.nist.gov/AM-Ontology_v2#ConsolidationBySinteringCharacteristic
 
 :ConsolidationBySinteringCharacteristic rdf:type owl:Class ;
                                         
@@ -427,7 +648,7 @@ Those terms differ from \"absorption coefficient\" that has units of per unit le
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##ConsolidationCharacteristic
+###  http://siam.nist.gov/AM-Ontology_v2#ConsolidationCharacteristic
 
 :ConsolidationCharacteristic rdf:type owl:Class ;
                              
@@ -441,7 +662,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##ConsolidationMathematicalModel
+###  http://siam.nist.gov/AM-Ontology_v2#ConsolidationMathematicalModel
 
 :ConsolidationMathematicalModel rdf:type owl:Class ;
                                 
@@ -451,7 +672,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##ConsolidationModelPrediction
+###  http://siam.nist.gov/AM-Ontology_v2#ConsolidationModelPrediction
 
 :ConsolidationModelPrediction rdf:type owl:Class ;
                               
@@ -465,7 +686,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##ConstantMeltingTemperature
+###  http://siam.nist.gov/AM-Ontology_v2#ConstantMeltingTemperature
 
 :ConstantMeltingTemperature rdf:type owl:Class ;
                             
@@ -473,7 +694,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##Continum
+###  http://siam.nist.gov/AM-Ontology_v2#Continum
 
 :Continum rdf:type owl:Class ;
           
@@ -483,18 +704,18 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##ConvectionCharacteristic
+###  http://siam.nist.gov/AM-Ontology_v2#ConvectionCharacteristic
 
 :ConvectionCharacteristic rdf:type owl:Class ;
                           
                           rdfs:subClassOf :HeatDissipationCharacteristic ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty :isFunctionOf ;
-                                            owl:someValuesFrom :SurfaceConvectionCoefficient
+                                            owl:someValuesFrom :ChamberTemperature
                                           ] ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty :isFunctionOf ;
-                                            owl:someValuesFrom :ChamberTemperature
+                                            owl:someValuesFrom :SurfaceConvectionCoefficient
                                           ] ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty :isFunctionOf ;
@@ -503,7 +724,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##CylindricalDistribution
+###  http://siam.nist.gov/AM-Ontology_v2#CylindricalDistribution
 
 :CylindricalDistribution rdf:type owl:Class ;
                          
@@ -511,7 +732,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##DeformationCharacteristic
+###  http://siam.nist.gov/AM-Ontology_v2#DeformationCharacteristic
 
 :DeformationCharacteristic rdf:type owl:Class ;
                            
@@ -519,7 +740,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##DendriteGrainOrientation
+###  http://siam.nist.gov/AM-Ontology_v2#DendriteGrainOrientation
 
 :DendriteGrainOrientation rdf:type owl:Class ;
                           
@@ -527,7 +748,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##DendriteOrientation
+###  http://siam.nist.gov/AM-Ontology_v2#DendriteOrientation
 
 :DendriteOrientation rdf:type owl:Class ;
                      
@@ -538,7 +759,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##DendriticGrainSize
+###  http://siam.nist.gov/AM-Ontology_v2#DendriticGrainSize
 
 :DendriticGrainSize rdf:type owl:Class ;
                     
@@ -548,7 +769,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##DendriticGrainSizeDistribution
+###  http://siam.nist.gov/AM-Ontology_v2#DendriticGrainSizeDistribution
 
 :DendriticGrainSizeDistribution rdf:type owl:Class ;
                                 
@@ -556,7 +777,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##DensityDistribution
+###  http://siam.nist.gov/AM-Ontology_v2#DensityDistribution
 
 :DensityDistribution rdf:type owl:Class ;
                      
@@ -566,7 +787,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##DensityOfBulkMaterial
+###  http://siam.nist.gov/AM-Ontology_v2#DensityOfBulkMaterial
 
 :DensityOfBulkMaterial rdf:type owl:Class ;
                        
@@ -574,7 +795,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##DensityVariationEquation
+###  http://siam.nist.gov/AM-Ontology_v2#DensityVariationEquation
 
 :DensityVariationEquation rdf:type owl:Class ;
                           
@@ -582,7 +803,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##DentriticGrainSize
+###  http://siam.nist.gov/AM-Ontology_v2#DentriticGrainSize
 
 :DentriticGrainSize rdf:type owl:Class ;
                     
@@ -590,7 +811,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##DeterministicIrradiation
+###  http://siam.nist.gov/AM-Ontology_v2#DeterministicIrradiation
 
 :DeterministicIrradiation rdf:type owl:Class ;
                           
@@ -600,7 +821,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##DimensionalityOfAbsorbedHeat
+###  http://siam.nist.gov/AM-Ontology_v2#DimensionalityOfAbsorbedHeat
 
 :DimensionalityOfAbsorbedHeat rdf:type owl:Class ;
                               
@@ -609,7 +830,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##DimensionalityOfPhysicalSystem
+###  http://siam.nist.gov/AM-Ontology_v2#DimensionalityOfPhysicalSystem
 
 :DimensionalityOfPhysicalSystem rdf:type owl:Class ;
                                 
@@ -618,7 +839,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##DirectMetalLaserMelting
+###  http://siam.nist.gov/AM-Ontology_v2#DirectMetalLaserMelting
 
 :DirectMetalLaserMelting rdf:type owl:Class ;
                          
@@ -626,7 +847,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##DirectMetalLaserSintering
+###  http://siam.nist.gov/AM-Ontology_v2#DirectMetalLaserSintering
 
 :DirectMetalLaserSintering rdf:type owl:Class ;
                            
@@ -634,7 +855,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##ElasticDeformationCharacteristic
+###  http://siam.nist.gov/AM-Ontology_v2#ElasticDeformationCharacteristic
 
 :ElasticDeformationCharacteristic rdf:type owl:Class ;
                                   
@@ -642,7 +863,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##ElasticModulus
+###  http://siam.nist.gov/AM-Ontology_v2#ElasticModulus
 
 :ElasticModulus rdf:type owl:Class ;
                 
@@ -650,7 +871,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##ElectronBeamMelting
+###  http://siam.nist.gov/AM-Ontology_v2#ElectronBeamMelting
 
 :ElectronBeamMelting rdf:type owl:Class ;
                      
@@ -658,7 +879,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##EmpiricalModel
+###  http://siam.nist.gov/AM-Ontology_v2#EmpiricalModel
 
 :EmpiricalModel rdf:type owl:Class ;
                 
@@ -668,7 +889,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##EnthalpyDistribution
+###  http://siam.nist.gov/AM-Ontology_v2#EnthalpyDistribution
 
 :EnthalpyDistribution rdf:type owl:Class ;
                       
@@ -676,7 +897,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##Equation
+###  http://siam.nist.gov/AM-Ontology_v2#Equation
 
 :Equation rdf:type owl:Class ;
           
@@ -688,7 +909,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##EvaporationModelingAssumption
+###  http://siam.nist.gov/AM-Ontology_v2#EvaporationModelingAssumption
 
 :EvaporationModelingAssumption rdf:type owl:Class ;
                                
@@ -696,14 +917,18 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##ExtinctionCoefficient
+###  http://siam.nist.gov/AM-Ontology_v2#ExtinctionCoefficient
 
 :ExtinctionCoefficient rdf:type owl:Class ;
                        
                        rdfs:subClassOf :IrradiationAbsorptionCharacteristic ,
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty :isFunctionOf ;
-                                         owl:someValuesFrom :BeamSize
+                                         owl:someValuesFrom :RadiativePropertyOfBulkMaterial
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :isFunctionOf ;
+                                         owl:someValuesFrom :BeamWavelength
                                        ] ,
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty :isFunctionOf ;
@@ -715,11 +940,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
                                        ] ,
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty :isFunctionOf ;
-                                         owl:someValuesFrom :RadiativePropertyOfBulkMaterial
-                                       ] ,
-                                       [ rdf:type owl:Restriction ;
-                                         owl:onProperty :isFunctionOf ;
-                                         owl:someValuesFrom :BeamWavelength
+                                         owl:someValuesFrom :BeamSize
                                        ] ,
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty :isFunctionOf ;
@@ -730,7 +951,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##FluidMechanics
+###  http://siam.nist.gov/AM-Ontology_v2#FluidMechanics
 
 :FluidMechanics rdf:type owl:Class ;
                 
@@ -740,25 +961,25 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##FluidMechanicsCharacteristic
+###  http://siam.nist.gov/AM-Ontology_v2#FluidMechanicsCharacteristic
 
 :FluidMechanicsCharacteristic rdf:type owl:Class ;
                               
                               rdfs:subClassOf :PhenomenonCharacteristic ,
                                               [ rdf:type owl:Restriction ;
                                                 owl:onProperty :influences ;
-                                                owl:someValuesFrom :MicrostructureEvolution
+                                                owl:someValuesFrom :SolidMechanics
                                               ] ,
                                               [ rdf:type owl:Restriction ;
                                                 owl:onProperty :influences ;
-                                                owl:someValuesFrom :SolidMechanics
+                                                owl:someValuesFrom :MicrostructureEvolution
                                               ] ;
                               
                               rdfs:comment "Characteristics that determine the free-surface dynamics in powder bed fusion processes. They only appear when melting (going above the liquidus temperature) as there is no liquid otherwise. Flows are dominated by recoil pressure, surface tensions and buoyancy effects." .
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##FluidMechanicsMathematicalModel
+###  http://siam.nist.gov/AM-Ontology_v2#FluidMechanicsMathematicalModel
 
 :FluidMechanicsMathematicalModel rdf:type owl:Class ;
                                  
@@ -768,7 +989,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##FluidMechanicsModelPrediction
+###  http://siam.nist.gov/AM-Ontology_v2#FluidMechanicsModelPrediction
 
 :FluidMechanicsModelPrediction rdf:type owl:Class ;
                                
@@ -776,7 +997,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##FluidVelocity
+###  http://siam.nist.gov/AM-Ontology_v2#FluidVelocity
 
 :FluidVelocity rdf:type owl:Class ;
                
@@ -786,15 +1007,15 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##FouriersEquation
+###  http://siam.nist.gov/AM-Ontology_v2#FourierEquation
 
-:FouriersEquation rdf:type owl:Class ;
-                  
-                  rdfs:subClassOf :Equation .
+:FourierEquation rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :Equation .
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##FullMelting
+###  http://siam.nist.gov/AM-Ontology_v2#FullMelting
 
 :FullMelting rdf:type owl:Class ;
              
@@ -804,7 +1025,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##Fusion
+###  http://siam.nist.gov/AM-Ontology_v2#Fusion
 
 :Fusion rdf:type owl:Class ;
         
@@ -814,7 +1035,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##FusionCharacteristic
+###  http://siam.nist.gov/AM-Ontology_v2#FusionCharacteristic
 
 :FusionCharacteristic rdf:type owl:Class ;
                       
@@ -822,7 +1043,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##GasComposition
+###  http://siam.nist.gov/AM-Ontology_v2#GasComposition
 
 :GasComposition rdf:type owl:Class ;
                 
@@ -830,7 +1051,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##GasPressure
+###  http://siam.nist.gov/AM-Ontology_v2#GasPressure
 
 :GasPressure rdf:type owl:Class ;
              
@@ -838,7 +1059,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##GaussianDistribution
+###  http://siam.nist.gov/AM-Ontology_v2#GaussianDistribution
 
 :GaussianDistribution rdf:type owl:Class ;
                       
@@ -846,7 +1067,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##HeatDissipation
+###  http://siam.nist.gov/AM-Ontology_v2#HeatDissipation
 
 :HeatDissipation rdf:type owl:Class ;
                  
@@ -856,26 +1077,18 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##HeatDissipationCharacteristic
+###  http://siam.nist.gov/AM-Ontology_v2#HeatDissipationCharacteristic
 
 :HeatDissipationCharacteristic rdf:type owl:Class ;
                                
                                rdfs:subClassOf :HeatTransferCharacteristic ,
                                                [ rdf:type owl:Restriction ;
-                                                 owl:onProperty :isFunctionOf ;
-                                                 owl:someValuesFrom :RadiationCharacteristic
+                                                 owl:onProperty :influences ;
+                                                 owl:someValuesFrom :Consolidation
                                                ] ,
                                                [ rdf:type owl:Restriction ;
                                                  owl:onProperty :isFunctionOf ;
                                                  owl:someValuesFrom :ThermalDiffusivityCharacteristic
-                                               ] ,
-                                               [ rdf:type owl:Restriction ;
-                                                 owl:onProperty :influences ;
-                                                 owl:someValuesFrom :FluidMechanics
-                                               ] ,
-                                               [ rdf:type owl:Restriction ;
-                                                 owl:onProperty :influences ;
-                                                 owl:someValuesFrom :Consolidation
                                                ] ,
                                                [ rdf:type owl:Restriction ;
                                                  owl:onProperty :isFunctionOf ;
@@ -883,14 +1096,22 @@ Consolidation characteristics also include the type of consolidation mechanism u
                                                ] ,
                                                [ rdf:type owl:Restriction ;
                                                  owl:onProperty :isFunctionOf ;
+                                                 owl:someValuesFrom :RadiationCharacteristic
+                                               ] ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :isFunctionOf ;
                                                  owl:someValuesFrom :ThermalConductivityOfTheSubstrate
+                                               ] ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :influences ;
+                                                 owl:someValuesFrom :FluidMechanics
                                                ] ;
                                
                                rdfs:comment "Characteristics that determine how easily heat is transmitted in a medium. They include thermal conductivity, density, heat capacity (all of which can be summarized in the form of thermal diffusivity); convection and radiation coefficients for the surface of the powder bed, and conductivity of the substrate." .
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##HeatSourceParameter
+###  http://siam.nist.gov/AM-Ontology_v2#HeatSourceParameter
 
 :HeatSourceParameter rdf:type owl:Class ;
                      
@@ -900,7 +1121,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##HeatSourcePower
+###  http://siam.nist.gov/AM-Ontology_v2#HeatSourcePower
 
 :HeatSourcePower rdf:type owl:Class ;
                  
@@ -911,7 +1132,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##HeatTransfer
+###  http://siam.nist.gov/AM-Ontology_v2#HeatTransfer
 
 :HeatTransfer rdf:type owl:Class ;
               
@@ -921,7 +1142,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##HeatTransferCharacteristic
+###  http://siam.nist.gov/AM-Ontology_v2#HeatTransferCharacteristic
 
 :HeatTransferCharacteristic rdf:type owl:Class ;
                             
@@ -931,7 +1152,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##HeatTransferMathematicalModel
+###  http://siam.nist.gov/AM-Ontology_v2#HeatTransferMathematicalModel
 
 :HeatTransferMathematicalModel rdf:type owl:Class ;
                                
@@ -949,7 +1170,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##HeatTransferModelPrediction
+###  http://siam.nist.gov/AM-Ontology_v2#HeatTransferModelPrediction
 
 :HeatTransferModelPrediction rdf:type owl:Class ;
                              
@@ -964,7 +1185,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##HeatTransferModelingAssumption
+###  http://siam.nist.gov/AM-Ontology_v2#HeatTransferModelingAssumption
 
 :HeatTransferModelingAssumption rdf:type owl:Class ;
                                 
@@ -972,7 +1193,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##InitialPorosity
+###  http://siam.nist.gov/AM-Ontology_v2#InitialPorosity
 
 :InitialPorosity rdf:type owl:Class ;
                  
@@ -980,7 +1201,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##InitialPowderDensity
+###  http://siam.nist.gov/AM-Ontology_v2#InitialPowderDensity
 
 :InitialPowderDensity rdf:type owl:Class ;
                       
@@ -990,7 +1211,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##IrradiationAbsorption
+###  http://siam.nist.gov/AM-Ontology_v2#IrradiationAbsorption
 
 :IrradiationAbsorption rdf:type owl:Class ;
                        
@@ -1000,33 +1221,33 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##IrradiationAbsorptionCharacteristic
+###  http://siam.nist.gov/AM-Ontology_v2#IrradiationAbsorptionCharacteristic
 
 :IrradiationAbsorptionCharacteristic rdf:type owl:Class ;
                                      
                                      rdfs:subClassOf :PhenomenonCharacteristic ,
                                                      [ rdf:type owl:Restriction ;
                                                        owl:onProperty :isFunctionOf ;
-                                                       owl:someValuesFrom :AbsorptionCoefficient
-                                                     ] ,
-                                                     [ rdf:type owl:Restriction ;
-                                                       owl:onProperty :influences ;
-                                                       owl:someValuesFrom :HeatDissipation
-                                                     ] ,
-                                                     [ rdf:type owl:Restriction ;
-                                                       owl:onProperty :isFunctionOf ;
                                                        owl:someValuesFrom :ExtinctionCoefficient
                                                      ] ,
                                                      [ rdf:type owl:Restriction ;
                                                        owl:onProperty :isFunctionOf ;
+                                                       owl:someValuesFrom :AbsorptionCoefficient
+                                                     ] ,
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :isFunctionOf ;
                                                        owl:someValuesFrom :IrradiationCharacteristic
+                                                     ] ,
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :influences ;
+                                                       owl:someValuesFrom :HeatDissipation
                                                      ] ;
                                      
                                      rdfs:comment "Distinguishing features or properties of how irradiation is absorbed by the powder bed." .
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##IrradiationAbsorptionMathematicalModel
+###  http://siam.nist.gov/AM-Ontology_v2#IrradiationAbsorptionMathematicalModel
 
 :IrradiationAbsorptionMathematicalModel rdf:type owl:Class ;
                                         
@@ -1056,7 +1277,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##IrradiationAbsorptionModelPrediction
+###  http://siam.nist.gov/AM-Ontology_v2#IrradiationAbsorptionModelPrediction
 
 :IrradiationAbsorptionModelPrediction rdf:type owl:Class ;
                                       
@@ -1064,7 +1285,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##IrradiationAbsorptionModelingAssumption
+###  http://siam.nist.gov/AM-Ontology_v2#IrradiationAbsorptionModelingAssumption
 
 :IrradiationAbsorptionModelingAssumption rdf:type owl:Class ;
                                          
@@ -1072,7 +1293,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##IrradiationAbsorptionSignature
+###  http://siam.nist.gov/AM-Ontology_v2#IrradiationAbsorptionSignature
 
 :IrradiationAbsorptionSignature rdf:type owl:Class ;
                                 
@@ -1080,7 +1301,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##IrradiationCharacteristic
+###  http://siam.nist.gov/AM-Ontology_v2#IrradiationCharacteristic
 
 :IrradiationCharacteristic rdf:type owl:Class ;
                            
@@ -1094,7 +1315,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##LaserIrradiation
+###  http://siam.nist.gov/AM-Ontology_v2#LaserIrradiation
 
 :LaserIrradiation rdf:type owl:Class ;
                   
@@ -1104,7 +1325,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##LaserIrradiationModelingAssumption
+###  http://siam.nist.gov/AM-Ontology_v2#LaserIrradiationModelingAssumption
 
 :LaserIrradiationModelingAssumption rdf:type owl:Class ;
                                     
@@ -1112,7 +1333,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##LatentHeatOfFusionModelingAssumption
+###  http://siam.nist.gov/AM-Ontology_v2#LatentHeatOfFusionModelingAssumption
 
 :LatentHeatOfFusionModelingAssumption rdf:type owl:Class ;
                                       
@@ -1120,7 +1341,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##LayerThickness
+###  http://siam.nist.gov/AM-Ontology_v2#LayerThickness
 
 :LayerThickness rdf:type owl:Class ;
                 
@@ -1130,7 +1351,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##LiquidStateSintering
+###  http://siam.nist.gov/AM-Ontology_v2#LiquidStateSintering
 
 :LiquidStateSintering rdf:type owl:Class ;
                       
@@ -1140,7 +1361,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##MachineEquipmentParameter
+###  http://siam.nist.gov/AM-Ontology_v2#MachineEquipmentParameter
 
 :MachineEquipmentParameter rdf:type owl:Class ;
                            
@@ -1150,7 +1371,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##MarangoniEffectCharacteristic
+###  http://siam.nist.gov/AM-Ontology_v2#MarangoniEffectCharacteristic
 
 :MarangoniEffectCharacteristic rdf:type owl:Class ;
                                
@@ -1160,7 +1381,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##MassTransferEquation
+###  http://siam.nist.gov/AM-Ontology_v2#MassTransferEquation
 
 :MassTransferEquation rdf:type owl:Class ;
                       
@@ -1168,7 +1389,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##Material
+###  http://siam.nist.gov/AM-Ontology_v2#Material
 
 :Material rdf:type owl:Class ;
           
@@ -1176,7 +1397,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##MaterialDistributionModelingAssumption
+###  http://siam.nist.gov/AM-Ontology_v2#MaterialDistributionModelingAssumption
 
 :MaterialDistributionModelingAssumption rdf:type owl:Class ;
                                         
@@ -1185,7 +1406,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##MaterialProperty
+###  http://siam.nist.gov/AM-Ontology_v2#MaterialProperty
 
 :MaterialProperty rdf:type owl:Class ;
                   
@@ -1195,7 +1416,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##MathematicalModel
+###  http://siam.nist.gov/AM-Ontology_v2#MathematicalModel
 
 :MathematicalModel rdf:type owl:Class ;
                    
@@ -1205,18 +1426,18 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##MaximumResidualStress
+###  http://siam.nist.gov/AM-Ontology_v2#MaximumResidualStress
 
 :MaximumResidualStress rdf:type owl:Class ;
                        
                        rdfs:subClassOf :ProcessSignature ,
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty :isInfluencedBy ;
-                                         owl:someValuesFrom :Shrinkage
+                                         owl:someValuesFrom :ScanningTrackPattern
                                        ] ,
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty :isInfluencedBy ;
-                                         owl:someValuesFrom :ScanningTrackPattern
+                                         owl:someValuesFrom :Shrinkage
                                        ] ,
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty :isInfluencedBy ;
@@ -1229,7 +1450,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##MeltPoolDepth
+###  http://siam.nist.gov/AM-Ontology_v2#MeltPoolDepth
 
 :MeltPoolDepth rdf:type owl:Class ;
                
@@ -1237,7 +1458,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##MeltPoolLength
+###  http://siam.nist.gov/AM-Ontology_v2#MeltPoolLength
 
 :MeltPoolLength rdf:type owl:Class ;
                 
@@ -1245,7 +1466,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##MeltPoolMaximumTemperature
+###  http://siam.nist.gov/AM-Ontology_v2#MeltPoolMaximumTemperature
 
 :MeltPoolMaximumTemperature rdf:type owl:Class ;
                             
@@ -1253,7 +1474,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##MeltPoolShape
+###  http://siam.nist.gov/AM-Ontology_v2#MeltPoolShape
 
 :MeltPoolShape rdf:type owl:Class ;
                
@@ -1262,14 +1483,14 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##MeltPoolSignature
+###  http://siam.nist.gov/AM-Ontology_v2#MeltPoolSignature
 
 :MeltPoolSignature rdf:type owl:Class ;
                    
                    rdfs:subClassOf :ProcessSignature ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty :isInfluencedBy ;
-                                     owl:someValuesFrom :BeamSize
+                                     owl:someValuesFrom :PowderSizeDistribution
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty :isInfluencedBy ;
@@ -1277,19 +1498,15 @@ Consolidation characteristics also include the type of consolidation mechanism u
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty :isInfluencedBy ;
-                                     owl:someValuesFrom :HeatSourcePower
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty :isInfluencedBy ;
                                      owl:someValuesFrom :LayerThickness
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty :isInfluencedBy ;
-                                     owl:someValuesFrom :ThermalConductivityOfTheSubstrate
+                                     owl:someValuesFrom :HeatSourcePower
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty :isInfluencedBy ;
-                                     owl:someValuesFrom :Absorptivity
+                                     owl:someValuesFrom :BeamSize
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty :isInfluencedBy ;
@@ -1297,12 +1514,16 @@ Consolidation characteristics also include the type of consolidation mechanism u
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty :isInfluencedBy ;
-                                     owl:someValuesFrom :PowderSizeDistribution
+                                     owl:someValuesFrom :Absorptivity
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :isInfluencedBy ;
+                                     owl:someValuesFrom :ThermalConductivityOfTheSubstrate
                                    ] .
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##MeltPoolTemperature
+###  http://siam.nist.gov/AM-Ontology_v2#MeltPoolTemperature
 
 :MeltPoolTemperature rdf:type owl:Class ;
                      
@@ -1310,7 +1531,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##MeltPoolTemperatureGradient
+###  http://siam.nist.gov/AM-Ontology_v2#MeltPoolTemperatureGradient
 
 :MeltPoolTemperatureGradient rdf:type owl:Class ;
                              
@@ -1318,7 +1539,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##MeltPoolWidth
+###  http://siam.nist.gov/AM-Ontology_v2#MeltPoolWidth
 
 :MeltPoolWidth rdf:type owl:Class ;
                
@@ -1326,7 +1547,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##MeltingModelingAssumption
+###  http://siam.nist.gov/AM-Ontology_v2#MeltingModelingAssumption
 
 :MeltingModelingAssumption rdf:type owl:Class ;
                            
@@ -1334,7 +1555,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##MicrostructuralMathematicalModel
+###  http://siam.nist.gov/AM-Ontology_v2#MicrostructuralMathematicalModel
 
 :MicrostructuralMathematicalModel rdf:type owl:Class ;
                                   
@@ -1344,7 +1565,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##MicrostructuralModelPrediction
+###  http://siam.nist.gov/AM-Ontology_v2#MicrostructuralModelPrediction
 
 :MicrostructuralModelPrediction rdf:type owl:Class ;
                                 
@@ -1352,7 +1573,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##MicrostructureDistribution
+###  http://siam.nist.gov/AM-Ontology_v2#MicrostructureDistribution
 
 :MicrostructureDistribution rdf:type owl:Class ;
                             
@@ -1361,7 +1582,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##MicrostructureEvolution
+###  http://siam.nist.gov/AM-Ontology_v2#MicrostructureEvolution
 
 :MicrostructureEvolution rdf:type owl:Class ;
                          
@@ -1371,7 +1592,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##MicrostructureEvolutionCharacteristic
+###  http://siam.nist.gov/AM-Ontology_v2#MicrostructureEvolutionCharacteristic
 
 :MicrostructureEvolutionCharacteristic rdf:type owl:Class ;
                                        
@@ -1381,18 +1602,18 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##Microsturcture
+###  http://siam.nist.gov/AM-Ontology_v2#Microsturcture
 
 :Microsturcture rdf:type owl:Class ;
                 
                 rdfs:subClassOf :ProcessSignature ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty :isInfluencedBy ;
-                                  owl:someValuesFrom :ScanningSpeed
+                                  owl:someValuesFrom :MeltPoolTemperatureGradient
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty :isInfluencedBy ;
-                                  owl:someValuesFrom :MeltPoolTemperatureGradient
+                                  owl:someValuesFrom :ScanningSpeed
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty :isInfluencedBy ;
@@ -1401,7 +1622,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##Model
+###  http://siam.nist.gov/AM-Ontology_v2#Model
 
 :Model rdf:type owl:Class ;
        
@@ -1411,7 +1632,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##ModelElement
+###  http://siam.nist.gov/AM-Ontology_v2#ModelElement
 
 :ModelElement rdf:type owl:Class ;
               
@@ -1421,7 +1642,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##ModelingAssumption
+###  http://siam.nist.gov/AM-Ontology_v2#ModelingAssumption
 
 :ModelingAssumption rdf:type owl:Class ;
                     
@@ -1433,7 +1654,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##MonteCarloMethod
+###  http://siam.nist.gov/AM-Ontology_v2#MonteCarloMethod
 
 :MonteCarloMethod rdf:type owl:Class ;
                   
@@ -1441,7 +1662,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##NavierStokesEquation
+###  http://siam.nist.gov/AM-Ontology_v2#NavierStokesEquation
 
 :NavierStokesEquation rdf:type owl:Class ;
                       
@@ -1449,7 +1670,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##NumericalApproximation
+###  http://siam.nist.gov/AM-Ontology_v2#NumericalApproximation
 
 :NumericalApproximation rdf:type owl:Class ;
                         
@@ -1459,7 +1680,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##NumericalModel
+###  http://siam.nist.gov/AM-Ontology_v2#NumericalModel
 
 :NumericalModel rdf:type owl:Class ;
                 
@@ -1469,7 +1690,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##OpticalProperty
+###  http://siam.nist.gov/AM-Ontology_v2#OpticalProperty
 
 :OpticalProperty rdf:type owl:Class ;
                  
@@ -1477,7 +1698,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##PackingDensity
+###  http://siam.nist.gov/AM-Ontology_v2#PackingDensity
 
 :PackingDensity rdf:type owl:Class ;
                 
@@ -1485,7 +1706,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##Particle
+###  http://siam.nist.gov/AM-Ontology_v2#Particle
 
 :Particle rdf:type owl:Class ;
           
@@ -1493,7 +1714,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##ParticleSize
+###  http://siam.nist.gov/AM-Ontology_v2#ParticleSize
 
 :ParticleSize rdf:type owl:Class ;
               
@@ -1503,7 +1724,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##PhaseFieldEquation
+###  http://siam.nist.gov/AM-Ontology_v2#PhaseFieldEquation
 
 :PhaseFieldEquation rdf:type owl:Class ;
                     
@@ -1511,7 +1732,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##PhaseTransformation
+###  http://siam.nist.gov/AM-Ontology_v2#PhaseTransformation
 
 :PhaseTransformation rdf:type owl:Class ;
                      
@@ -1521,7 +1742,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##PhaseTransformationCharacteristic
+###  http://siam.nist.gov/AM-Ontology_v2#PhaseTransformationCharacteristic
 
 :PhaseTransformationCharacteristic rdf:type owl:Class ;
                                    
@@ -1531,7 +1752,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##Phenomenon
+###  http://siam.nist.gov/AM-Ontology_v2#Phenomenon
 
 :Phenomenon rdf:type owl:Class ;
             
@@ -1545,7 +1766,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##PhenomenonCharacteristic
+###  http://siam.nist.gov/AM-Ontology_v2#PhenomenonCharacteristic
 
 :PhenomenonCharacteristic rdf:type owl:Class ;
                           
@@ -1555,7 +1776,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##Physical
+###  http://siam.nist.gov/AM-Ontology_v2#Physical
 
 :Physical rdf:type owl:Class ;
           
@@ -1563,7 +1784,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##PhysicsBasedModel
+###  http://siam.nist.gov/AM-Ontology_v2#PhysicsBasedModel
 
 :PhysicsBasedModel rdf:type owl:Class ;
                    
@@ -1581,7 +1802,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##PlasticDeformationCharacteristic
+###  http://siam.nist.gov/AM-Ontology_v2#PlasticDeformationCharacteristic
 
 :PlasticDeformationCharacteristic rdf:type owl:Class ;
                                   
@@ -1589,7 +1810,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##PointSourceDistribution
+###  http://siam.nist.gov/AM-Ontology_v2#PointSourceDistribution
 
 :PointSourceDistribution rdf:type owl:Class ;
                          
@@ -1597,7 +1818,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##PoissonsRatio
+###  http://siam.nist.gov/AM-Ontology_v2#PoissonsRatio
 
 :PoissonsRatio rdf:type owl:Class ;
                
@@ -1605,7 +1826,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##PorosityDistribution
+###  http://siam.nist.gov/AM-Ontology_v2#PorosityDistribution
 
 :PorosityDistribution rdf:type owl:Class ;
                       
@@ -1613,7 +1834,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##PowderBedFusionProcess
+###  http://siam.nist.gov/AM-Ontology_v2#PowderBedFusionProcess
 
 :PowderBedFusionProcess rdf:type owl:Class ;
                         
@@ -1627,7 +1848,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##PowderBedFusionProcessParameter
+###  http://siam.nist.gov/AM-Ontology_v2#PowderBedFusionProcessParameter
 
 :PowderBedFusionProcessParameter rdf:type owl:Class ;
                                  
@@ -1637,7 +1858,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##PowderCharacteristic
+###  http://siam.nist.gov/AM-Ontology_v2#PowderCharacteristic
 
 :PowderCharacteristic rdf:type owl:Class ;
                       
@@ -1647,7 +1868,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##PowderSizeDistribution
+###  http://siam.nist.gov/AM-Ontology_v2#PowderSizeDistribution
 
 :PowderSizeDistribution rdf:type owl:Class ;
                         
@@ -1655,7 +1876,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##Prediction
+###  http://siam.nist.gov/AM-Ontology_v2#Prediction
 
 :Prediction rdf:type owl:Class ;
             
@@ -1663,7 +1884,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##ProcessParameter
+###  http://siam.nist.gov/AM-Ontology_v2#ProcessParameter
 
 :ProcessParameter rdf:type owl:Class ;
                   
@@ -1673,7 +1894,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##ProcessSignature
+###  http://siam.nist.gov/AM-Ontology_v2#ProcessSignature
 
 :ProcessSignature rdf:type owl:Class ;
                   
@@ -1681,14 +1902,14 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##RadiationCharacteristic
+###  http://siam.nist.gov/AM-Ontology_v2#RadiationCharacteristic
 
 :RadiationCharacteristic rdf:type owl:Class ;
                          
                          rdfs:subClassOf :HeatDissipationCharacteristic ,
                                          [ rdf:type owl:Restriction ;
                                            owl:onProperty :isFunctionOf ;
-                                           owl:someValuesFrom :ChamberTemperature
+                                           owl:someValuesFrom :BedEmissivity
                                          ] ,
                                          [ rdf:type owl:Restriction ;
                                            owl:onProperty :isFunctionOf ;
@@ -1696,24 +1917,20 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
                                          ] ,
                                          [ rdf:type owl:Restriction ;
                                            owl:onProperty :isFunctionOf ;
-                                           owl:someValuesFrom :RadiationCoefficient
+                                           owl:someValuesFrom :ChamberTemperature
                                          ] .
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##RadiationCoefficient
-
-:RadiationCoefficient rdf:type owl:Class ;
-                      
-                      rdfs:subClassOf :RadiationCharacteristic .
-
-
-
-###  http://siam.nist.gov/AM-Ontology-v2##RadiationTransferEquation
+###  http://siam.nist.gov/AM-Ontology_v2#RadiationTransferEquation
 
 :RadiationTransferEquation rdf:type owl:Class ;
                            
                            rdfs:subClassOf :Equation ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :requiresApproximation ;
+                                             owl:someValuesFrom :TwoFluxMethod
+                                           ] ,
                                            [ rdf:type owl:Class ;
                                              owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                     owl:onProperty :requiresAssumption ;
@@ -1732,15 +1949,11 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
                                            [ rdf:type owl:Restriction ;
                                              owl:onProperty :provides ;
                                              owl:someValuesFrom :VolumetricDistributionOfAbsorbedHeat
-                                           ] ,
-                                           [ rdf:type owl:Restriction ;
-                                             owl:onProperty :requiresApproximation ;
-                                             owl:someValuesFrom :TwoFluxMethod
                                            ] .
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##RadiativeProperty
+###  http://siam.nist.gov/AM-Ontology_v2#RadiativeProperty
 
 :RadiativeProperty rdf:type owl:Class ;
                    
@@ -1748,7 +1961,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##RadiativePropertyOfBulkMaterial
+###  http://siam.nist.gov/AM-Ontology_v2#RadiativePropertyOfBulkMaterial
 
 :RadiativePropertyOfBulkMaterial rdf:type owl:Class ;
                                  
@@ -1756,15 +1969,11 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##RayTracingEquation
+###  http://siam.nist.gov/AM-Ontology_v2#RayTracingEquation
 
 :RayTracingEquation rdf:type owl:Class ;
                     
                     rdfs:subClassOf :Equation ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty :provides ;
-                                      owl:someValuesFrom :VolumetricDistributionOfAbsorbedHeat
-                                    ] ,
                                     [ rdf:type owl:Class ;
                                       owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                              owl:onProperty :requiresAssumption ;
@@ -1785,13 +1994,17 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
                                                          )
                                     ] ,
                                     [ rdf:type owl:Restriction ;
+                                      owl:onProperty :provides ;
+                                      owl:someValuesFrom :VolumetricDistributionOfAbsorbedHeat
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
                                       owl:onProperty :requiresApproximation ;
                                       owl:someValuesFrom :MonteCarloMethod
                                     ] .
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##RecoilPressureCharacteristic
+###  http://siam.nist.gov/AM-Ontology_v2#RecoilPressureCharacteristic
 
 :RecoilPressureCharacteristic rdf:type owl:Class ;
                               
@@ -1801,7 +2014,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##ResidualStressCharacteristic
+###  http://siam.nist.gov/AM-Ontology_v2#ResidualStressCharacteristic
 
 :ResidualStressCharacteristic rdf:type owl:Class ;
                               
@@ -1809,7 +2022,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##ResidualStressDistribution
+###  http://siam.nist.gov/AM-Ontology_v2#ResidualStressDistribution
 
 :ResidualStressDistribution rdf:type owl:Class ;
                             
@@ -1817,7 +2030,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##ScanningSpeed
+###  http://siam.nist.gov/AM-Ontology_v2#ScanningSpeed
 
 :ScanningSpeed rdf:type owl:Class ;
                
@@ -1827,7 +2040,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##ScanningTrackPattern
+###  http://siam.nist.gov/AM-Ontology_v2#ScanningTrackPattern
 
 :ScanningTrackPattern rdf:type owl:Class ;
                       
@@ -1835,7 +2048,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##SelectiveLaserMelting
+###  http://siam.nist.gov/AM-Ontology_v2#SelectiveLaserMelting
 
 :SelectiveLaserMelting rdf:type owl:Class ;
                        
@@ -1843,7 +2056,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##SelectiveLaserSintering
+###  http://siam.nist.gov/AM-Ontology_v2#SelectiveLaserSintering
 
 :SelectiveLaserSintering rdf:type owl:Class ;
                          
@@ -1851,7 +2064,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##Shrinkage
+###  http://siam.nist.gov/AM-Ontology_v2#Shrinkage
 
 :Shrinkage rdf:type owl:Class ;
            
@@ -1867,7 +2080,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##SolidMechanics
+###  http://siam.nist.gov/AM-Ontology_v2#SolidMechanics
 
 :SolidMechanics rdf:type owl:Class ;
                 
@@ -1877,7 +2090,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##SolidMechanicsCharacteristic
+###  http://siam.nist.gov/AM-Ontology_v2#SolidMechanicsCharacteristic
 
 :SolidMechanicsCharacteristic rdf:type owl:Class ;
                               
@@ -1887,7 +2100,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##SolidMechanicsEquation
+###  http://siam.nist.gov/AM-Ontology_v2#SolidMechanicsEquation
 
 :SolidMechanicsEquation rdf:type owl:Class ;
                         
@@ -1895,7 +2108,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##SolidMechanicsMathematicalModel
+###  http://siam.nist.gov/AM-Ontology_v2#SolidMechanicsMathematicalModel
 
 :SolidMechanicsMathematicalModel rdf:type owl:Class ;
                                  
@@ -1905,7 +2118,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##SolidMechanicsModelPrediction
+###  http://siam.nist.gov/AM-Ontology_v2#SolidMechanicsModelPrediction
 
 :SolidMechanicsModelPrediction rdf:type owl:Class ;
                                
@@ -1913,7 +2126,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##SolidStateSintering
+###  http://siam.nist.gov/AM-Ontology_v2#SolidStateSintering
 
 :SolidStateSintering rdf:type owl:Class ;
                      
@@ -1923,7 +2136,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##StatisticalAssumptionOfIrradiationDistribution
+###  http://siam.nist.gov/AM-Ontology_v2#StatisticalAssumptionOfIrradiationDistribution
 
 :StatisticalAssumptionOfIrradiationDistribution rdf:type owl:Class ;
                                                 
@@ -1931,7 +2144,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##StochasticIrradiation
+###  http://siam.nist.gov/AM-Ontology_v2#StochasticIrradiation
 
 :StochasticIrradiation rdf:type owl:Class ;
                        
@@ -1939,7 +2152,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##StrainDistribution
+###  http://siam.nist.gov/AM-Ontology_v2#StrainDistribution
 
 :StrainDistribution rdf:type owl:Class ;
                     
@@ -1947,7 +2160,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##Surface
+###  http://siam.nist.gov/AM-Ontology_v2#Surface
 
 :Surface rdf:type owl:Class ;
          
@@ -1957,7 +2170,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##SurfaceConvectionCoefficient
+###  http://siam.nist.gov/AM-Ontology_v2#SurfaceConvectionCoefficient
 
 :SurfaceConvectionCoefficient rdf:type owl:Class ;
                               
@@ -1965,7 +2178,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##SurfaceDistributionOfAbsorbedHeat
+###  http://siam.nist.gov/AM-Ontology_v2#SurfaceDistributionOfAbsorbedHeat
 
 :SurfaceDistributionOfAbsorbedHeat rdf:type owl:Class ;
                                    
@@ -1983,7 +2196,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##SurfaceDistributionOfHeatSource
+###  http://siam.nist.gov/AM-Ontology_v2#SurfaceDistributionOfHeatSource
 
 :SurfaceDistributionOfHeatSource rdf:type owl:Class ;
                                  
@@ -1991,7 +2204,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##SurfaceEnergyCharacteristic
+###  http://siam.nist.gov/AM-Ontology_v2#SurfaceEnergyCharacteristic
 
 :SurfaceEnergyCharacteristic rdf:type owl:Class ;
                              
@@ -2001,7 +2214,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##SurfaceTensionEffectCharacteristic
+###  http://siam.nist.gov/AM-Ontology_v2#SurfaceTensionEffectCharacteristic
 
 :SurfaceTensionEffectCharacteristic rdf:type owl:Class ;
                                     
@@ -2011,7 +2224,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##TemperatureFieldDistribution
+###  http://siam.nist.gov/AM-Ontology_v2#TemperatureFieldDistribution
 
 :TemperatureFieldDistribution rdf:type owl:Class ;
                               
@@ -2019,7 +2232,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##TemperatureRange
+###  http://siam.nist.gov/AM-Ontology_v2#TemperatureRange
 
 :TemperatureRange rdf:type owl:Class ;
                   
@@ -2027,7 +2240,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##ThermalConductivityEquation
+###  http://siam.nist.gov/AM-Ontology_v2#ThermalConductivityEquation
 
 :ThermalConductivityEquation rdf:type owl:Class ;
                              
@@ -2035,15 +2248,15 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##ThermalConductivityOfTheSubstrate
+###  http://siam.nist.gov/AM-Ontology_v2#ThermalConductivityOfTheSubstrate
 
 :ThermalConductivityOfTheSubstrate rdf:type owl:Class ;
                                    
-                                   rdfs:subClassOf :MaterialProperty .
+                                   rdfs:subClassOf <http://siam.nist.gov/AM-Ontology-v2#ThermalConductivity> .
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##ThermalDiffusivityCharacteristic
+###  http://siam.nist.gov/AM-Ontology_v2#ThermalDiffusivityCharacteristic
 
 :ThermalDiffusivityCharacteristic rdf:type owl:Class ;
                                   
@@ -2055,7 +2268,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##ThreeDimensional
+###  http://siam.nist.gov/AM-Ontology_v2#ThreeDimensional
 
 :ThreeDimensional rdf:type owl:Class ;
                   
@@ -2065,7 +2278,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##TwoDimensional
+###  http://siam.nist.gov/AM-Ontology_v2#TwoDimensional
 
 :TwoDimensional rdf:type owl:Class ;
                 
@@ -2073,7 +2286,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##TwoFluxMethod
+###  http://siam.nist.gov/AM-Ontology_v2#TwoFluxMethod
 
 :TwoFluxMethod rdf:type owl:Class ;
                
@@ -2081,7 +2294,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##Vaporization
+###  http://siam.nist.gov/AM-Ontology_v2#Vaporization
 
 :Vaporization rdf:type owl:Class ;
               
@@ -2091,7 +2304,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##VaporizationCharacteristic
+###  http://siam.nist.gov/AM-Ontology_v2#VaporizationCharacteristic
 
 :VaporizationCharacteristic rdf:type owl:Class ;
                             
@@ -2099,7 +2312,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##Void
+###  http://siam.nist.gov/AM-Ontology_v2#Void
 
 :Void rdf:type owl:Class ;
       
@@ -2115,7 +2328,7 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##Volumetric
+###  http://siam.nist.gov/AM-Ontology_v2#Volumetric
 
 :Volumetric rdf:type owl:Class ;
             
@@ -2123,22 +2336,18 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##VolumetricDistributionOfAbsorbedHeat
+###  http://siam.nist.gov/AM-Ontology_v2#VolumetricDistributionOfAbsorbedHeat
 
 :VolumetricDistributionOfAbsorbedHeat rdf:type owl:Class ;
                                       
                                       rdfs:subClassOf :IrradiationAbsorptionModelPrediction ,
                                                       [ rdf:type owl:Restriction ;
                                                         owl:onProperty :isFunctionOf ;
-                                                        owl:someValuesFrom :ExtinctionCoefficient
-                                                      ] ,
-                                                      [ rdf:type owl:Restriction ;
-                                                        owl:onProperty :isFunctionOf ;
-                                                        owl:someValuesFrom :AbsorptionCoefficient
-                                                      ] ,
-                                                      [ rdf:type owl:Restriction ;
-                                                        owl:onProperty :isFunctionOf ;
                                                         owl:someValuesFrom :BeamSize
+                                                      ] ,
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :isFunctionOf ;
+                                                        owl:someValuesFrom :ExtinctionCoefficient
                                                       ] ,
                                                       [ rdf:type owl:Restriction ;
                                                         owl:onProperty :isFunctionOf ;
@@ -2147,6 +2356,10 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
                                                       [ rdf:type owl:Restriction ;
                                                         owl:onProperty :isFunctionOf ;
                                                         owl:someValuesFrom :ScanningSpeed
+                                                      ] ,
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :isFunctionOf ;
+                                                        owl:someValuesFrom :AbsorptionCoefficient
                                                       ] .
 
 
@@ -2160,13 +2373,13 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 #################################################################
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##ThreeDimensional
+###  http://siam.nist.gov/AM-Ontology_v2#ThreeDimensional
 
 :ThreeDimensional rdf:type owl:NamedIndividual .
 
 
 
-###  http://siam.nist.gov/AM-Ontology-v2##TwoDimensional
+###  http://siam.nist.gov/AM-Ontology_v2#TwoDimensional
 
 :TwoDimensional rdf:type owl:NamedIndividual .
 
@@ -2182,6 +2395,12 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 
 
 [ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :CylindricalDistribution
+                :GaussianDistribution
+                :PointSourceDistribution
+              )
+] .
+[ rdf:type owl:AllDisjointClasses ;
   owl:members ( :ConsolidationCharacteristic
                 :FluidMechanicsCharacteristic
                 :HeatTransferCharacteristic
@@ -2189,12 +2408,6 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
                 :IrradiationCharacteristic
                 :MicrostructureEvolutionCharacteristic
                 :SolidMechanicsCharacteristic
-              )
-] .
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :CylindricalDistribution
-                :GaussianDistribution
-                :PointSourceDistribution
               )
 ] .
 
