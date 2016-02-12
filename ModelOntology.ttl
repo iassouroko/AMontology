@@ -1216,20 +1216,20 @@ Heat Transfer Equation is a type of Transport Equation""" ,
        
        rdfs:subClassOf :ModelEntity ,
                        [ rdf:type owl:Restriction ;
-                         owl:onProperty :hasParameter ;
-                         owl:someValuesFrom [ rdf:type owl:Class ;
-                                              owl:intersectionOf ( :ModelInputParameter
-                                                                   :ModelOutputParameter
-                                                                 )
-                                            ]
+                         owl:onProperty :hasFunction ;
+                         owl:someValuesFrom :FunctionOfModel
                        ] ,
                        [ rdf:type owl:Restriction ;
                          owl:onProperty :hasComponent ;
                          owl:someValuesFrom :ModelComponent
                        ] ,
                        [ rdf:type owl:Restriction ;
-                         owl:onProperty :hasFunction ;
-                         owl:someValuesFrom :FunctionOfModel
+                         owl:onProperty :hasParameter ;
+                         owl:someValuesFrom [ rdf:type owl:Class ;
+                                              owl:intersectionOf ( :ModelInputParameter
+                                                                   :ModelOutputParameter
+                                                                 )
+                                            ]
                        ] ,
                        [ rdf:type owl:Restriction ;
                          owl:onProperty :hasAssumption ;
