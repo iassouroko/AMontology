@@ -292,11 +292,11 @@
                                                    rdfs:subClassOf <http://siam.nist.gov/AM-Ontology-v2#BoundaryHeatFlux> ,
                                                                    [ rdf:type owl:Restriction ;
                                                                      owl:onProperty :functionOf ;
-                                                                     owl:someValuesFrom :TemperatureFieldDistribution
+                                                                     owl:someValuesFrom :Emissivity
                                                                    ] ,
                                                                    [ rdf:type owl:Restriction ;
                                                                      owl:onProperty :functionOf ;
-                                                                     owl:someValuesFrom :Emissivity
+                                                                     owl:someValuesFrom :TemperatureFieldDistribution
                                                                    ] ,
                                                                    [ rdf:type owl:Restriction ;
                                                                      owl:onProperty :functionOf ;
@@ -425,6 +425,14 @@
                                                   
                                                   rdfs:subClassOf <http://siam.nist.gov/AM-Ontology-v2#BottomBoundaryCondition> ,
                                                                   <http://siam.nist.gov/AM-Ontology-v2#SideBoundaryCondition> .
+
+
+
+###  http://siam.nist.gov/AM-Ontology-v2#EnergyConservationLaw
+
+<http://siam.nist.gov/AM-Ontology-v2#EnergyConservationLaw> rdf:type owl:Class ;
+                                                            
+                                                            rdfs:subClassOf <http://siam.nist.gov/AM-Ontology-v2#LawOfPhysics> .
 
 
 
@@ -591,11 +599,11 @@
                                                               ] ,
                                                               [ rdf:type owl:Restriction ;
                                                                 owl:onProperty :functionOf ;
-                                                                owl:someValuesFrom <http://siam.nist.gov/AM-Ontology-v2#SurfaceConvection>
+                                                                owl:someValuesFrom <http://siam.nist.gov/AM-Ontology-v2#BedRadiation>
                                                               ] ,
                                                               [ rdf:type owl:Restriction ;
                                                                 owl:onProperty :functionOf ;
-                                                                owl:someValuesFrom <http://siam.nist.gov/AM-Ontology-v2#BedRadiation>
+                                                                owl:someValuesFrom <http://siam.nist.gov/AM-Ontology-v2#SurfaceConvection>
                                                               ] .
 
 
@@ -663,6 +671,17 @@ Should be called PHYSICAL PROPERTY. It is defined in relation to the material bu
 
 
 
+###  http://siam.nist.gov/AM-Ontology-v2#RosenthalBasedTransportEquation
+
+<http://siam.nist.gov/AM-Ontology-v2#RosenthalBasedTransportEquation> rdf:type owl:Class ;
+                                                                      
+                                                                      rdfs:subClassOf :FourierEquation ;
+                                                                      
+                                                                      rdfs:comment """---------------- Check the consistency---------------
+Find a defintion""" .
+
+
+
 ###  http://siam.nist.gov/AM-Ontology-v2#SemiInfiniteBC
 
 <http://siam.nist.gov/AM-Ontology-v2#SemiInfiniteBC> rdf:type owl:Class ;
@@ -710,15 +729,15 @@ Should be called PHYSICAL PROPERTY. It is defined in relation to the material bu
                                                     rdfs:subClassOf <http://siam.nist.gov/AM-Ontology-v2#ModelVariable> ,
                                                                     [ rdf:type owl:Restriction ;
                                                                       owl:onProperty :functionOf ;
-                                                                      owl:someValuesFrom :TemperatureFieldDistribution
-                                                                    ] ,
-                                                                    [ rdf:type owl:Restriction ;
-                                                                      owl:onProperty :functionOf ;
                                                                       owl:someValuesFrom <http://siam.nist.gov/AM-Ontology-v2#SinteringActivationEnergy>
                                                                     ] ,
                                                                     [ rdf:type owl:Restriction ;
                                                                       owl:onProperty :functionOf ;
                                                                       owl:someValuesFrom <http://siam.nist.gov/AM-Ontology-v2#Viscosity>
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :functionOf ;
+                                                                      owl:someValuesFrom :TemperatureFieldDistribution
                                                                     ] ;
                                                     
                                                     rdfs:comment "Rate at which particles are sintered together when temperature is increased." .
@@ -795,15 +814,15 @@ Should be called PHYSICAL PROPERTY. It is defined in relation to the material bu
                                                         rdfs:subClassOf <http://siam.nist.gov/AM-Ontology-v2#BoundaryHeatFlux> ,
                                                                         [ rdf:type owl:Restriction ;
                                                                           owl:onProperty :functionOf ;
-                                                                          owl:someValuesFrom :TemperatureFieldDistribution
-                                                                        ] ,
-                                                                        [ rdf:type owl:Restriction ;
-                                                                          owl:onProperty :functionOf ;
                                                                           owl:someValuesFrom :ChamberTemperature
                                                                         ] ,
                                                                         [ rdf:type owl:Restriction ;
                                                                           owl:onProperty :functionOf ;
                                                                           owl:someValuesFrom :SurfaceConvectionCoefficient
+                                                                        ] ,
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :functionOf ;
+                                                                          owl:someValuesFrom :TemperatureFieldDistribution
                                                                         ] .
 
 
@@ -914,6 +933,22 @@ Should be called PHYSICAL PROPERTY. It is defined in relation to the material bu
 
 
 
+###  http://siam.nist.gov/AM-Ontology-v2#TransportEquationForLatentHeat
+
+<http://siam.nist.gov/AM-Ontology-v2#TransportEquationForLatentHeat> rdf:type owl:Class ;
+                                                                     
+                                                                     rdfs:subClassOf :FourierEquation .
+
+
+
+###  http://siam.nist.gov/AM-Ontology-v2#TransportEquationForSensibleHeat
+
+<http://siam.nist.gov/AM-Ontology-v2#TransportEquationForSensibleHeat> rdf:type owl:Class ;
+                                                                       
+                                                                       rdfs:subClassOf :FourierEquation .
+
+
+
 ###  http://siam.nist.gov/AM-Ontology-v2#Viscosity
 
 <http://siam.nist.gov/AM-Ontology-v2#Viscosity> rdf:type owl:Class ;
@@ -929,10 +964,6 @@ Should be called PHYSICAL PROPERTY. It is defined in relation to the material bu
 :AbsorptionCoefficient rdf:type owl:Class ;
                        
                        rdfs:subClassOf :IrradiationAbsorptionCharacteristic ,
-                                       [ rdf:type owl:Restriction ;
-                                         owl:onProperty :functionOf ;
-                                         owl:someValuesFrom :PowderSizeDistribution
-                                       ] ,
                                        [ rdf:type owl:Class ;
                                          owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                 owl:onProperty :requiresAssumption ;
@@ -954,7 +985,11 @@ Should be called PHYSICAL PROPERTY. It is defined in relation to the material bu
                                        ] ,
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty :functionOf ;
-                                         owl:someValuesFrom :HeatSourcePower
+                                         owl:someValuesFrom :PowderSizeDistribution
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :functionOf ;
+                                         owl:someValuesFrom :BeamSize
                                        ] ,
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty :functionOf ;
@@ -962,7 +997,7 @@ Should be called PHYSICAL PROPERTY. It is defined in relation to the material bu
                                        ] ,
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty :functionOf ;
-                                         owl:someValuesFrom :BeamSize
+                                         owl:someValuesFrom :HeatSourcePower
                                        ] ;
                        
                        rdfs:comment "The absorption coefficient quantifies the amount of irradiation that is absorbed by the powder bed. Its value can be determined experimentally or through computational simulation." .
@@ -1034,6 +1069,10 @@ Should be called PHYSICAL PROPERTY. It is defined in relation to the material bu
 :BeerLambertEquation rdf:type owl:Class ;
                      
                      rdfs:subClassOf :Equation ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :provides ;
+                                       owl:someValuesFrom :VolumetricDistributionOfAbsorbedHeat
+                                     ] ,
                                      [ rdf:type owl:Class ;
                                        owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                               owl:onProperty :functionOf ;
@@ -1059,10 +1098,6 @@ Should be called PHYSICAL PROPERTY. It is defined in relation to the material bu
                                                               owl:someValuesFrom :VolumetricDistributionOfAbsorbedHeat
                                                             ]
                                                           )
-                                     ] ,
-                                     [ rdf:type owl:Restriction ;
-                                       owl:onProperty :provides ;
-                                       owl:someValuesFrom :VolumetricDistributionOfAbsorbedHeat
                                      ] .
 
 
@@ -1153,15 +1188,15 @@ All of them could have the same composition, or a combination of different compo
                                       rdfs:subClassOf :ConsolidationCharacteristic ,
                                                       [ rdf:type owl:Restriction ;
                                                         owl:onProperty :influences ;
+                                                        owl:someValuesFrom :SolidMechanics
+                                                      ] ,
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :influences ;
                                                         owl:someValuesFrom :FluidMechanics
                                                       ] ,
                                                       [ rdf:type owl:Restriction ;
                                                         owl:onProperty :influences ;
                                                         owl:someValuesFrom :MicrostructureEvolution
-                                                      ] ,
-                                                      [ rdf:type owl:Restriction ;
-                                                        owl:onProperty :influences ;
-                                                        owl:someValuesFrom :SolidMechanics
                                                       ] ;
                                       
                                       rdfs:comment "A set of characteristics that define a melting process. Most melting models are simple, as they assume that melting occurs instantaneously. The only characteristic necessary in such scenarios is a function describing how density is expected to change as a function of temperature." .
@@ -1255,7 +1290,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
                           rdfs:subClassOf :HeatDissipationCharacteristic ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty :functionOf ;
-                                            owl:someValuesFrom :SurfaceConvectionCoefficient
+                                            owl:someValuesFrom :ChamberTemperature
                                           ] ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty :functionOf ;
@@ -1263,7 +1298,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
                                           ] ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty :functionOf ;
-                                            owl:someValuesFrom :ChamberTemperature
+                                            owl:someValuesFrom :SurfaceConvectionCoefficient
                                           ] .
 
 
@@ -1487,14 +1522,6 @@ Consolidation characteristics also include the type of consolidation mechanism u
                        
                        rdfs:subClassOf :IrradiationAbsorptionCharacteristic ,
                                        [ rdf:type owl:Restriction ;
-                                         owl:onProperty :providedBy ;
-                                         owl:someValuesFrom :BeerLambertEquation
-                                       ] ,
-                                       [ rdf:type owl:Restriction ;
-                                         owl:onProperty :functionOf ;
-                                         owl:someValuesFrom :BeamWavelength
-                                       ] ,
-                                       [ rdf:type owl:Restriction ;
                                          owl:onProperty :functionOf ;
                                          owl:someValuesFrom :HeatSourcePower
                                        ] ,
@@ -1503,8 +1530,16 @@ Consolidation characteristics also include the type of consolidation mechanism u
                                          owl:someValuesFrom :BeamSize
                                        ] ,
                                        [ rdf:type owl:Restriction ;
+                                         owl:onProperty :providedBy ;
+                                         owl:someValuesFrom :BeerLambertEquation
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
                                          owl:onProperty :functionOf ;
                                          owl:someValuesFrom :RadiativeProperty
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :functionOf ;
+                                         owl:someValuesFrom :BeamWavelength
                                        ] ,
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty :functionOf ;
@@ -1662,27 +1697,27 @@ Consolidation characteristics also include the type of consolidation mechanism u
                                rdfs:subClassOf :HeatTransferCharacteristic ,
                                                [ rdf:type owl:Restriction ;
                                                  owl:onProperty :functionOf ;
-                                                 owl:someValuesFrom :ThermalConductivityOfTheSubstrate
-                                               ] ,
-                                               [ rdf:type owl:Restriction ;
-                                                 owl:onProperty :functionOf ;
                                                  owl:someValuesFrom :ConvectionCharacteristic
-                                               ] ,
-                                               [ rdf:type owl:Restriction ;
-                                                 owl:onProperty :influences ;
-                                                 owl:someValuesFrom :FluidMechanics
-                                               ] ,
-                                               [ rdf:type owl:Restriction ;
-                                                 owl:onProperty :functionOf ;
-                                                 owl:someValuesFrom :ThermalDiffusionCharacteristic
                                                ] ,
                                                [ rdf:type owl:Restriction ;
                                                  owl:onProperty :functionOf ;
                                                  owl:someValuesFrom :RadiationCharacteristic
                                                ] ,
                                                [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :functionOf ;
+                                                 owl:someValuesFrom :ThermalConductivityOfTheSubstrate
+                                               ] ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :functionOf ;
+                                                 owl:someValuesFrom :ThermalDiffusionCharacteristic
+                                               ] ,
+                                               [ rdf:type owl:Restriction ;
                                                  owl:onProperty :influences ;
                                                  owl:someValuesFrom :Consolidation
+                                               ] ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :influences ;
+                                                 owl:someValuesFrom :FluidMechanics
                                                ] ;
                                
                                rdfs:comment "Characteristics that determine how easily heat is transmitted in a medium. They include thermal conductivity, density, heat capacity (all of which can be summarized in the form of thermal diffusivity); convection and radiation coefficients for the surface of the powder bed, and conductivity of the substrate." .
@@ -1796,11 +1831,11 @@ Consolidation characteristics also include the type of consolidation mechanism u
                                                      ] ,
                                                      [ rdf:type owl:Restriction ;
                                                        owl:onProperty :functionOf ;
-                                                       owl:someValuesFrom :IrradiationCharacteristic
+                                                       owl:someValuesFrom :AbsorptionCoefficient
                                                      ] ,
                                                      [ rdf:type owl:Restriction ;
                                                        owl:onProperty :functionOf ;
-                                                       owl:someValuesFrom :AbsorptionCoefficient
+                                                       owl:someValuesFrom :IrradiationCharacteristic
                                                      ] ;
                                      
                                      rdfs:comment "Distinguishing features or properties of how irradiation is absorbed by the powder bed." .
@@ -1872,14 +1907,6 @@ Consolidation characteristics also include the type of consolidation mechanism u
 :LaserIrradiationModelingAssumption rdf:type owl:Class ;
                                     
                                     rdfs:subClassOf :IrradiationAbsorptionModelingAssumption .
-
-
-
-###  http://siam.nist.gov/AM-Ontology_v2#LatentHeatOfFusionModelingAssumption
-
-:LatentHeatOfFusionModelingAssumption rdf:type owl:Class ;
-                                      
-                                      rdfs:subClassOf <http://siam.nist.gov/AM-Ontology-v2#PhaseTransformationAssumption> .
 
 
 
@@ -2002,6 +2029,22 @@ Consolidation characteristics also include the type of consolidation mechanism u
                    rdfs:subClassOf :ProcessSignature ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty :influencedBy ;
+                                     owl:someValuesFrom :PowderSizeDistribution
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :influencedBy ;
+                                     owl:someValuesFrom :LayerThickness
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :influencedBy ;
+                                     owl:someValuesFrom :HeatSourcePower
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :influencedBy ;
+                                     owl:someValuesFrom :ScanningSpeed
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :influencedBy ;
                                      owl:someValuesFrom :BeamSize
                                    ] ,
                                    [ rdf:type owl:Restriction ;
@@ -2010,27 +2053,11 @@ Consolidation characteristics also include the type of consolidation mechanism u
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty :influencedBy ;
-                                     owl:someValuesFrom :PackingDensity
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty :influencedBy ;
-                                     owl:someValuesFrom :LayerThickness
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty :influencedBy ;
-                                     owl:someValuesFrom :PowderSizeDistribution
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty :influencedBy ;
-                                     owl:someValuesFrom :ScanningSpeed
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty :influencedBy ;
-                                     owl:someValuesFrom :HeatSourcePower
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty :influencedBy ;
                                      owl:someValuesFrom :ThermalConductivityOfTheSubstrate
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :influencedBy ;
+                                     owl:someValuesFrom :PackingDensity
                                    ] .
 
 
@@ -2096,7 +2123,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
                 rdfs:subClassOf :ProcessSignature ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty :influencedBy ;
-                                  owl:someValuesFrom :MeltPoolMaximumTemperature
+                                  owl:someValuesFrom :MeltPoolTemperatureGradient
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty :influencedBy ;
@@ -2104,7 +2131,7 @@ Consolidation characteristics also include the type of consolidation mechanism u
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty :influencedBy ;
-                                  owl:someValuesFrom :MeltPoolTemperatureGradient
+                                  owl:someValuesFrom :MeltPoolMaximumTemperature
                                 ] .
 
 
@@ -2298,12 +2325,12 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
                    
                    rdfs:subClassOf :Model ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty :provides ;
-                                     owl:someValuesFrom :Characteristic
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty :represents ;
                                      owl:someValuesFrom :Phenomenon
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :provides ;
+                                     owl:someValuesFrom :Characteristic
                                    ] ;
                    
                    rdfs:comment "A computational model obtained from first-principles (laws of physics)." .
@@ -2409,15 +2436,15 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
                          rdfs:subClassOf :HeatDissipationCharacteristic ,
                                          [ rdf:type owl:Restriction ;
                                            owl:onProperty :functionOf ;
+                                           owl:someValuesFrom :Emissivity
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :functionOf ;
                                            owl:someValuesFrom :ChamberTemperature
                                          ] ,
                                          [ rdf:type owl:Restriction ;
                                            owl:onProperty :functionOf ;
                                            owl:someValuesFrom :TemperatureFieldDistribution
-                                         ] ,
-                                         [ rdf:type owl:Restriction ;
-                                           owl:onProperty :functionOf ;
-                                           owl:someValuesFrom :Emissivity
                                          ] .
 
 
@@ -2466,6 +2493,10 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
 :RayTracingEquation rdf:type owl:Class ;
                     
                     rdfs:subClassOf :Equation ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :provides ;
+                                      owl:someValuesFrom :VolumetricDistributionOfAbsorbedHeat
+                                    ] ,
                                     [ rdf:type owl:Class ;
                                       owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                              owl:onProperty :requiresAssumption ;
@@ -2484,10 +2515,6 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
                                                                                 ]
                                                            ]
                                                          )
-                                    ] ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty :provides ;
-                                      owl:someValuesFrom :VolumetricDistributionOfAbsorbedHeat
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty :requiresApproximation ;
@@ -2522,11 +2549,11 @@ Modeling assumptions can be geometric, physical, or statistical. Geometric assum
                                             :SolidMechanicsModelPrediction ,
                                             [ rdf:type owl:Restriction ;
                                               owl:onProperty :influencedBy ;
-                                              owl:someValuesFrom :ScanningSpeed
+                                              owl:someValuesFrom :MeltPoolTemperatureGradient
                                             ] ,
                                             [ rdf:type owl:Restriction ;
                                               owl:onProperty :influencedBy ;
-                                              owl:someValuesFrom :MeltPoolTemperatureGradient
+                                              owl:someValuesFrom :ScanningSpeed
                                             ] ,
                                             [ rdf:type owl:Restriction ;
                                               owl:onProperty :influencedBy ;
@@ -2850,15 +2877,7 @@ Several different categories (Roberts, 2012) : Point source, Cylindrical, Gaussi
                                       rdfs:subClassOf :IrradiationAbsorptionModelPrediction ,
                                                       [ rdf:type owl:Restriction ;
                                                         owl:onProperty :functionOf ;
-                                                        owl:someValuesFrom :BeamSize
-                                                      ] ,
-                                                      [ rdf:type owl:Restriction ;
-                                                        owl:onProperty :functionOf ;
-                                                        owl:someValuesFrom :ScanningSpeed
-                                                      ] ,
-                                                      [ rdf:type owl:Restriction ;
-                                                        owl:onProperty :functionOf ;
-                                                        owl:someValuesFrom :SurfaceDistributionOfAbsorbedHeat
+                                                        owl:someValuesFrom :AbsorptionCoefficient
                                                       ] ,
                                                       [ rdf:type owl:Restriction ;
                                                         owl:onProperty :functionOf ;
@@ -2866,7 +2885,15 @@ Several different categories (Roberts, 2012) : Point source, Cylindrical, Gaussi
                                                       ] ,
                                                       [ rdf:type owl:Restriction ;
                                                         owl:onProperty :functionOf ;
-                                                        owl:someValuesFrom :AbsorptionCoefficient
+                                                        owl:someValuesFrom :BeamSize
+                                                      ] ,
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :functionOf ;
+                                                        owl:someValuesFrom :SurfaceDistributionOfAbsorbedHeat
+                                                      ] ,
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :functionOf ;
+                                                        owl:someValuesFrom :ScanningSpeed
                                                       ] .
 
 
