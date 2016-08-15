@@ -225,13 +225,25 @@
         <Class IRI="LatentHeat"/>
     </Declaration>
     <Declaration>
+        <Class IRI="LawOfPhysics"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="LawOfPhysicsForConsolidation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="LawOfPhysicsForFluidMechanics"/>
     </Declaration>
     <Declaration>
         <Class IRI="LawOfPhysicsForHeatTransfer"/>
     </Declaration>
     <Declaration>
         <Class IRI="LawOfPhysicsForIrradiationAbsorption"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="LawOfPhysicsForMicrostructuralPhenomenon"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="LawOfPhysicsForSolidMechanics"/>
     </Declaration>
     <Declaration>
         <Class IRI="LiquidusTemperature"/>
@@ -2046,8 +2058,24 @@
         <Class abbreviatedIRI="NIST:FusionCharacteristic"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="LawOfPhysics"/>
+        <Class abbreviatedIRI="NIST:ModelElement"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="LawOfPhysicsForConsolidation"/>
         <Class IRI="ConsolidationAssumption"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="LawOfPhysicsForConsolidation"/>
+        <Class IRI="LawOfPhysics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="LawOfPhysicsForFluidMechanics"/>
+        <Class IRI="LawOfPhysics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="LawOfPhysicsForHeatTransfer"/>
+        <Class IRI="LawOfPhysics"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="LawOfPhysicsForHeatTransfer"/>
@@ -2055,7 +2083,19 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="LawOfPhysicsForIrradiationAbsorption"/>
+        <Class IRI="LawOfPhysics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="LawOfPhysicsForIrradiationAbsorption"/>
         <Class abbreviatedIRI="NIST:IrradiationAbsorptionModelingAssumption"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="LawOfPhysicsForMicrostructuralPhenomenon"/>
+        <Class IRI="LawOfPhysics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="LawOfPhysicsForSolidMechanics"/>
+        <Class IRI="LawOfPhysics"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="LiquidusTemperature"/>

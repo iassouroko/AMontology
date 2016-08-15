@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="http://www.semanticweb.org/administrator/ontologies/2015/6/untitled-ontology-28" uri="Laser-Thermal-Mircostructure.owl"/>
     <uri id="User Entered Import Resolution" name="http://siam.nist.gov/Model-Ontology" uri="ModelOntology.ttl"/>
     <uri id="User Entered Import Resolution" name="http://siam.nist.gov/AM-Process-Ontology" uri="AMProcessOntology.ttl"/>
-    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base=""/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1471270820154" name="http://siam.nist.gov/AM-Ontology-v2#" uri="AMOntology_v3.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1471270820154" name="http://www.semanticweb.org/administrator/ontologies/2015/6/PennState-Ontology" uri="Laser-Thermal-Mircostructure.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1471270820154" name="http://www.semanticweb.org/ina3/ontologies/2016/2/untitled-ontology-122" uri="AMOntology-vFinal1.owl"/>
+    </group>
 </catalog>
