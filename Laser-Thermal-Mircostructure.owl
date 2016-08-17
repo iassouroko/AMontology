@@ -24,40 +24,37 @@
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Prefix name="ace_lexicon" IRI="http://attempto.ifi.uzh.ch/ace_lexicon#"/>
     <Declaration>
-        <Class IRI="#Absorbed_laser_power"/>
+        <Class IRI="#AbsorbedLaserPower"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Ambient_Temperature"/>
+        <Class IRI="#BuoyancyEffect"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Buoyancy_effect"/>
+        <Class IRI="#ConductionModel"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Conduction_model"/>
+        <Class IRI="#ConservationEquationForEnergy"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Conservation_equation_for_energy"/>
+        <Class IRI="#ConservationEquationForMass"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Conservation_equation_for_mass"/>
+        <Class IRI="#ConservationEquationForMomentum"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Conservation_equation_for_momentum"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Convection_model"/>
+        <Class IRI="#ConvectionModel"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Crystal"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Defocused_radius_of_laser_beam"/>
+        <Class IRI="#DefocusedRadiusOfLaserBeam"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Distance_along_the_i_direction"/>
+        <Class IRI="#DistanceAlongThe_i_Direction"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Effective_radius_of_laser_beam"/>
+        <Class IRI="#EffectiveRadiusOfLaserBeam"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Effective_viscosity"/>
@@ -69,121 +66,118 @@
         <Class IRI="#FluidFlowEffect"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Fluid_flow_model"/>
+        <Class IRI="#FluidFlowModel"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Gravitational_acceleration"/>
+        <Class IRI="#GravitationalAcceleration"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Hardness_Vickers"/>
+        <Class IRI="#HardnessVickers"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Heat_flux_of_constant_density"/>
+        <Class IRI="#HeatFluxOfConstantDensity"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Heat_flux_of_double_ellipsoid_density"/>
+        <Class IRI="#HeatFluxOfDoubleEllipsoidDensity"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Heat_flux_of_gaussian_density"/>
+        <Class IRI="#HeatFluxVector"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Heat_flux_vector"/>
+        <Class IRI="#KeyholeModeLaserMelting"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Keyhole-mode_laser_melting"/>
+        <Class IRI="#LagFactor"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Lag_factor"/>
+        <Class IRI="#LaserIntensity"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Laser_intensity"/>
+        <Class IRI="#LengthForSurfaceTension"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Length_for_surface_tension"/>
+        <Class IRI="#LengthForTheBuoyancyForce"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Length_for_the_buoyancy_force"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Length_of_laser_beam"/>
+        <Class IRI="#LengthOfLaserBeam"/>
     </Declaration>
     <Declaration>
         <Class IRI="#MaximumFluidVelocity"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Mechanical_property"/>
+        <Class IRI="#MechanicalProperty"/>
     </Declaration>
     <Declaration>
         <Class IRI="#MeltPoolAreal"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Melting_with_shrinkage_stage_model"/>
+        <Class IRI="#MeltingWithShrinkageStageModel"/>
     </Declaration>
     <Declaration>
         <Class IRI="#PartDensity"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Particle_density"/>
+        <Class IRI="#ParticleDensity"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Phase_composition"/>
+        <Class IRI="#PhaseComposition"/>
     </Declaration>
     <Declaration>
         <Class IRI="#PorosityInPart"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Preheating_stage_model"/>
+        <Class IRI="#PreheatingStageModel"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Radiation_model"/>
+        <Class IRI="#RadiationModel"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Resolidification_stage_model"/>
+        <Class IRI="#ResolidificationStageModel"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Rosenthal_model"/>
+        <Class IRI="#RosenthalModel"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Sensible_heat"/>
+        <Class IRI="#SensibleHeat"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Solidification_rate"/>
+        <Class IRI="#SolidificationRate"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Source_term_for_the_j_component_momentum_equation"/>
+        <Class IRI="#SourceTermForThe_j_ComponentMomentumEquation"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Surface_roughness"/>
+        <Class IRI="#SurfaceRoughness"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Temperature_at_time_t"/>
+        <Class IRI="#TemperatureAtTime_t"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Temperature_difference"/>
+        <Class IRI="#TemperatureDifference"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Tensile_strength"/>
+        <Class IRI="#TensileStrength"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Thermal_expansion_coefficient"/>
+        <Class IRI="#ThermalExpansionCoefficient"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Time"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Type_of_microstructure_growth"/>
+        <Class IRI="#TypeOfMicrostructureGrowth"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Velocity_component_along_the_i_direction"/>
+        <Class IRI="#VelocityComponentAlongThe_i_Direction"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Velocity_component_along_the_j_direction"/>
+        <Class IRI="#VelocityComponentAlongThe_j_Direction"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Width_of_laser_beam"/>
+        <Class IRI="#WidthOfLaserBeam"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Yield_strength"/>
+        <Class IRI="#YieldStrength"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Beam_distribution_parameter(d)"/>
@@ -279,226 +273,226 @@
         <AnnotationProperty abbreviatedIRI="ace_lexicon:TV_vbg"/>
     </Declaration>
     <SubClassOf>
-        <Class IRI="#Absorbed_laser_power"/>
+        <Class IRI="#AbsorbedLaserPower"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
             <Class IRI="http://siam.nist.gov/AM-Ontology_v2#Absorptivity"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Absorbed_laser_power"/>
+        <Class IRI="#AbsorbedLaserPower"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
             <Class IRI="http://siam.nist.gov/AM-Ontology_v2#HeatSourcePower"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Buoyancy_effect"/>
+        <Class IRI="#BuoyancyEffect"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#InfluencedBy"/>
-            <Class IRI="#Gravitational_acceleration"/>
+            <Class IRI="#GravitationalAcceleration"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Buoyancy_effect"/>
+        <Class IRI="#BuoyancyEffect"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#InfluencedBy"/>
-            <Class IRI="#Length_for_the_buoyancy_force"/>
+            <Class IRI="#LengthForTheBuoyancyForce"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Buoyancy_effect"/>
+        <Class IRI="#BuoyancyEffect"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#InfluencedBy"/>
-            <Class IRI="#Particle_density"/>
+            <Class IRI="#ParticleDensity"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Buoyancy_effect"/>
+        <Class IRI="#BuoyancyEffect"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#InfluencedBy"/>
-            <Class IRI="#Temperature_difference"/>
+            <Class IRI="#TemperatureDifference"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Buoyancy_effect"/>
+        <Class IRI="#BuoyancyEffect"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#InfluencedBy"/>
-            <Class IRI="#Thermal_expansion_coefficient"/>
+            <Class IRI="#ThermalExpansionCoefficient"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Conduction_model"/>
+        <Class IRI="#ConductionModel"/>
         <Class IRI="http://siam.nist.gov/AM-Ontology_v2#HeatTransferModel"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Conduction_model"/>
+        <Class IRI="#ConductionModel"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
             <Class IRI="http://siam.nist.gov/AM-Ontology-v2#SpecificHeat"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Conduction_model"/>
+        <Class IRI="#ConductionModel"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
             <Class IRI="http://siam.nist.gov/AM-Ontology-v2#Temperature"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Conduction_model"/>
+        <Class IRI="#ConductionModel"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
-            <Class IRI="#Heat_flux_vector"/>
+            <Class IRI="#HeatFluxVector"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Conduction_model"/>
+        <Class IRI="#ConductionModel"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
             <ObjectIntersectionOf>
                 <Class IRI="http://siam.nist.gov/AM-Ontology-v2#PowderDensity"/>
-                <Class IRI="#Particle_density"/>
+                <Class IRI="#ParticleDensity"/>
             </ObjectIntersectionOf>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Conservation_equation_for_energy"/>
-        <Class IRI="#Fluid_flow_model"/>
+        <Class IRI="#ConservationEquationForEnergy"/>
+        <Class IRI="#FluidFlowModel"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Conservation_equation_for_energy"/>
+        <Class IRI="#ConservationEquationForEnergy"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
             <Class IRI="http://siam.nist.gov/AM-Ontology-v2#SpecificHeat"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Conservation_equation_for_energy"/>
+        <Class IRI="#ConservationEquationForEnergy"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
             <Class IRI="http://siam.nist.gov/AM-Ontology-v2#ThermalConductivityInPowderBed"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Conservation_equation_for_energy"/>
+        <Class IRI="#ConservationEquationForEnergy"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
-            <Class IRI="#Distance_along_the_i_direction"/>
+            <Class IRI="#DistanceAlongThe_i_Direction"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Conservation_equation_for_energy"/>
+        <Class IRI="#ConservationEquationForEnergy"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
-            <Class IRI="#Particle_density"/>
+            <Class IRI="#ParticleDensity"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Conservation_equation_for_energy"/>
+        <Class IRI="#ConservationEquationForEnergy"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
-            <Class IRI="#Sensible_heat"/>
+            <Class IRI="#SensibleHeat"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Conservation_equation_for_energy"/>
+        <Class IRI="#ConservationEquationForEnergy"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
             <Class IRI="#Time"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Conservation_equation_for_energy"/>
+        <Class IRI="#ConservationEquationForEnergy"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
-            <Class IRI="#Velocity_component_along_the_i_direction"/>
+            <Class IRI="#VelocityComponentAlongThe_i_Direction"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Conservation_equation_for_mass"/>
-        <Class IRI="#Fluid_flow_model"/>
+        <Class IRI="#ConservationEquationForMass"/>
+        <Class IRI="#FluidFlowModel"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Conservation_equation_for_mass"/>
+        <Class IRI="#ConservationEquationForMass"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
-            <Class IRI="#Distance_along_the_i_direction"/>
+            <Class IRI="#DistanceAlongThe_i_Direction"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Conservation_equation_for_mass"/>
+        <Class IRI="#ConservationEquationForMass"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
-            <Class IRI="#Particle_density"/>
+            <Class IRI="#ParticleDensity"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Conservation_equation_for_mass"/>
+        <Class IRI="#ConservationEquationForMass"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
-            <Class IRI="#Velocity_component_along_the_i_direction"/>
+            <Class IRI="#VelocityComponentAlongThe_i_Direction"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Conservation_equation_for_momentum"/>
-        <Class IRI="#Fluid_flow_model"/>
+        <Class IRI="#ConservationEquationForMomentum"/>
+        <Class IRI="#FluidFlowModel"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Conservation_equation_for_momentum"/>
+        <Class IRI="#ConservationEquationForMomentum"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
-            <Class IRI="#Distance_along_the_i_direction"/>
+            <Class IRI="#DistanceAlongThe_i_Direction"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Conservation_equation_for_momentum"/>
+        <Class IRI="#ConservationEquationForMomentum"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
             <Class IRI="#Effective_viscosity"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Conservation_equation_for_momentum"/>
+        <Class IRI="#ConservationEquationForMomentum"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
-            <Class IRI="#Particle_density"/>
+            <Class IRI="#ParticleDensity"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Conservation_equation_for_momentum"/>
+        <Class IRI="#ConservationEquationForMomentum"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
-            <Class IRI="#Source_term_for_the_j_component_momentum_equation"/>
+            <Class IRI="#SourceTermForThe_j_ComponentMomentumEquation"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Conservation_equation_for_momentum"/>
+        <Class IRI="#ConservationEquationForMomentum"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
             <Class IRI="#Time"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Conservation_equation_for_momentum"/>
+        <Class IRI="#ConservationEquationForMomentum"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
-            <Class IRI="#Velocity_component_along_the_i_direction"/>
+            <Class IRI="#VelocityComponentAlongThe_i_Direction"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Conservation_equation_for_momentum"/>
+        <Class IRI="#ConservationEquationForMomentum"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
-            <Class IRI="#Velocity_component_along_the_j_direction"/>
+            <Class IRI="#VelocityComponentAlongThe_j_Direction"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Convection_model"/>
+        <Class IRI="#ConvectionModel"/>
         <Class IRI="http://siam.nist.gov/AM-Ontology_v2#HeatTransferModel"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Convection_model"/>
+        <Class IRI="#ConvectionModel"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
             <Class IRI="http://siam.nist.gov/AM-Ontology-v2#SurfaceConvection"/>
@@ -522,25 +516,25 @@
         <Class IRI="#Crystal"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#InfluencedBy"/>
-            <Class IRI="#Absorbed_laser_power"/>
+            <Class IRI="#AbsorbedLaserPower"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Distance_along_the_i_direction"/>
+        <Class IRI="#DistanceAlongThe_i_Direction"/>
         <Class IRI="http://siam.nist.gov/AM-Ontology-v2#ModelVariable"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Effective_radius_of_laser_beam"/>
+        <Class IRI="#EffectiveRadiusOfLaserBeam"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
             <Class IRI="http://siam.nist.gov/AM-Ontology_v2#BeamWavelength"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Effective_radius_of_laser_beam"/>
+        <Class IRI="#EffectiveRadiusOfLaserBeam"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
-            <Class IRI="#Defocused_radius_of_laser_beam"/>
+            <Class IRI="#DefocusedRadiusOfLaserBeam"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -549,141 +543,120 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Elongation"/>
-        <Class IRI="#Mechanical_property"/>
+        <Class IRI="#MechanicalProperty"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Fluid_flow_model"/>
+        <Class IRI="#FluidFlowModel"/>
         <Class IRI="http://siam.nist.gov/AM-Ontology-v2#FluidMechanicsModel"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Gravitational_acceleration"/>
+        <Class IRI="#GravitationalAcceleration"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#Influences"/>
-            <Class IRI="#Buoyancy_effect"/>
+            <Class IRI="#BuoyancyEffect"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Hardness_Vickers"/>
-        <Class IRI="#Mechanical_property"/>
+        <Class IRI="#HardnessVickers"/>
+        <Class IRI="#MechanicalProperty"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Heat_flux_of_constant_density"/>
+        <Class IRI="#HeatFluxOfConstantDensity"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
-            <Class IRI="#Absorbed_laser_power"/>
+            <Class IRI="#AbsorbedLaserPower"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Heat_flux_of_constant_density"/>
+        <Class IRI="#HeatFluxOfConstantDensity"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
-            <Class IRI="#Length_of_laser_beam"/>
+            <Class IRI="#LengthOfLaserBeam"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Heat_flux_of_constant_density"/>
+        <Class IRI="#HeatFluxOfConstantDensity"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
-            <Class IRI="#Width_of_laser_beam"/>
+            <Class IRI="#WidthOfLaserBeam"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Heat_flux_of_double_ellipsoid_density"/>
+        <Class IRI="#HeatFluxOfDoubleEllipsoidDensity"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
-            <Class IRI="#Lag_factor"/>
+            <Class IRI="#LagFactor"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Heat_flux_of_double_ellipsoid_density"/>
+        <Class IRI="#HeatFluxOfDoubleEllipsoidDensity"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
             <Class IRI="#Time"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Heat_flux_of_double_ellipsoid_density"/>
+        <Class IRI="#HeatFluxOfDoubleEllipsoidDensity"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
             <Class IRI="#Radius_of_flux_distribution(Ra)"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Heat_flux_of_double_ellipsoid_density"/>
+        <Class IRI="#HeatFluxOfDoubleEllipsoidDensity"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
             <Class IRI="#Radius_of_flux_distribution(Rb)"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Heat_flux_of_double_ellipsoid_density"/>
+        <Class IRI="#HeatFluxOfDoubleEllipsoidDensity"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
             <Class IRI="#Radius_of_flux_distribution(Rc)"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Heat_flux_of_gaussian_density"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#functionOf"/>
-            <Class IRI="#Absorbed_laser_power"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Heat_flux_of_gaussian_density"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#functionOf"/>
-            <Class IRI="#Effective_radius_of_laser_beam"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Heat_flux_of_gaussian_density"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#functionOf"/>
-            <Class IRI="#Beam_distribution_parameter(d)"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Heat_flux_vector"/>
+        <Class IRI="#HeatFluxVector"/>
         <Class IRI="http://siam.nist.gov/AM-Ontology-v2#ModelVariable"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Heat_flux_vector"/>
+        <Class IRI="#HeatFluxVector"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
             <Class IRI="http://siam.nist.gov/AM-Ontology-v2#Temperature"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Heat_flux_vector"/>
+        <Class IRI="#HeatFluxVector"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
             <Class IRI="http://siam.nist.gov/AM-Ontology-v2#ThermalConductivityInPowderBed"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Keyhole-mode_laser_melting"/>
+        <Class IRI="#KeyholeModeLaserMelting"/>
         <Class IRI="http://siam.nist.gov/AM-Ontology-v2#ConsolidationByMeltingModel"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Keyhole-mode_laser_melting"/>
+        <Class IRI="#KeyholeModeLaserMelting"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
             <Class IRI="http://siam.nist.gov/AM-Ontology-v2#Temperature"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Laser_intensity"/>
+        <Class IRI="#LaserIntensity"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#Influences"/>
             <Class IRI="http://siam.nist.gov/AM-Ontology-v2#Temperature"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Length_for_the_buoyancy_force"/>
+        <Class IRI="#LengthForTheBuoyancyForce"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#Influences"/>
-            <Class IRI="#Buoyancy_effect"/>
+            <Class IRI="#BuoyancyEffect"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -704,14 +677,14 @@
         <Class IRI="#MaximumFluidVelocity"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
-            <Class IRI="#Particle_density"/>
+            <Class IRI="#ParticleDensity"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#MaximumFluidVelocity"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
-            <Class IRI="#Temperature_difference"/>
+            <Class IRI="#TemperatureDifference"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -722,32 +695,32 @@
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Melting_with_shrinkage_stage_model"/>
+        <Class IRI="#MeltingWithShrinkageStageModel"/>
         <Class IRI="http://siam.nist.gov/AM-Ontology-v2#ConsolidationByMeltingModel"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Melting_with_shrinkage_stage_model"/>
+        <Class IRI="#MeltingWithShrinkageStageModel"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
             <Class IRI="http://siam.nist.gov/AM-Ontology-v2#LiquidusTemperature"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Melting_with_shrinkage_stage_model"/>
+        <Class IRI="#MeltingWithShrinkageStageModel"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
             <Class IRI="http://siam.nist.gov/AM-Ontology-v2#ThermalDiffusivity"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Melting_with_shrinkage_stage_model"/>
+        <Class IRI="#MeltingWithShrinkageStageModel"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
             <Class IRI="http://siam.nist.gov/AM-Ontology_v2#FluidVelocity"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Melting_with_shrinkage_stage_model"/>
+        <Class IRI="#MeltingWithShrinkageStageModel"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
             <Class IRI="#Time"/>
@@ -755,7 +728,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#PartDensity"/>
-        <Class IRI="#Mechanical_property"/>
+        <Class IRI="#MechanicalProperty"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#PartDensity"/>
@@ -768,253 +741,253 @@
         <Class IRI="#PartDensity"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#InfluencedBy"/>
-            <Class IRI="#Absorbed_laser_power"/>
+            <Class IRI="#AbsorbedLaserPower"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Particle_density"/>
+        <Class IRI="#ParticleDensity"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#Influences"/>
-            <Class IRI="#Buoyancy_effect"/>
+            <Class IRI="#BuoyancyEffect"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Particle_density"/>
+        <Class IRI="#ParticleDensity"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#Influences"/>
-            <Class IRI="#Conduction_model"/>
+            <Class IRI="#ConductionModel"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Particle_density"/>
+        <Class IRI="#ParticleDensity"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#Influences"/>
-            <Class IRI="#Conservation_equation_for_energy"/>
+            <Class IRI="#ConservationEquationForEnergy"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Particle_density"/>
+        <Class IRI="#ParticleDensity"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#Influences"/>
-            <Class IRI="#Conservation_equation_for_mass"/>
+            <Class IRI="#ConservationEquationForMass"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Particle_density"/>
+        <Class IRI="#ParticleDensity"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#Influences"/>
-            <Class IRI="#Conservation_equation_for_momentum"/>
+            <Class IRI="#ConservationEquationForMomentum"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Phase_composition"/>
+        <Class IRI="#PhaseComposition"/>
         <Class IRI="http://siam.nist.gov/AM-Ontology-v2#MicrostructuralCharacteristic"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#PorosityInPart"/>
-        <Class IRI="#Mechanical_property"/>
+        <Class IRI="#MechanicalProperty"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#PorosityInPart"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
-            <Class IRI="#Absorbed_laser_power"/>
+            <Class IRI="#AbsorbedLaserPower"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Preheating_stage_model"/>
+        <Class IRI="#PreheatingStageModel"/>
         <Class IRI="http://siam.nist.gov/AM-Ontology-v2#ThermalModel"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Preheating_stage_model"/>
+        <Class IRI="#PreheatingStageModel"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#InfluencedBy"/>
             <Class IRI="http://siam.nist.gov/AM-Ontology-v2#InitialDistributionOfTemperature"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Preheating_stage_model"/>
+        <Class IRI="#PreheatingStageModel"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#InfluencedBy"/>
             <Class IRI="http://siam.nist.gov/AM-Ontology-v2#ThermalDiffusivity"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Preheating_stage_model"/>
+        <Class IRI="#PreheatingStageModel"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#InfluencedBy"/>
             <Class IRI="#Time"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Radiation_model"/>
+        <Class IRI="#RadiationModel"/>
         <Class IRI="http://siam.nist.gov/AM-Ontology_v2#HeatTransferModel"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Radiation_model"/>
+        <Class IRI="#RadiationModel"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
             <Class IRI="http://siam.nist.gov/AM-Ontology-v2#BedRadiation"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Resolidification_stage_model"/>
+        <Class IRI="#ResolidificationStageModel"/>
         <Class IRI="http://siam.nist.gov/AM-Ontology-v2#MicrostructuralModel"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Resolidification_stage_model"/>
+        <Class IRI="#ResolidificationStageModel"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
             <Class IRI="http://siam.nist.gov/AM-Ontology-v2#LiquidusTemperature"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Resolidification_stage_model"/>
+        <Class IRI="#ResolidificationStageModel"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
             <Class IRI="http://siam.nist.gov/AM-Ontology-v2#ThermalDiffusivity"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Resolidification_stage_model"/>
+        <Class IRI="#ResolidificationStageModel"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
             <Class IRI="#Time"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Rosenthal_model"/>
+        <Class IRI="#RosenthalModel"/>
         <Class IRI="http://siam.nist.gov/AM-Ontology-v2#ThermalModel"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Rosenthal_model"/>
+        <Class IRI="#RosenthalModel"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#InfluencedBy"/>
-            <Class IRI="#Temperature_at_time_t"/>
+            <Class IRI="#TemperatureAtTime_t"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Sensible_heat"/>
+        <Class IRI="#SensibleHeat"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#Influences"/>
-            <Class IRI="#Conservation_equation_for_energy"/>
+            <Class IRI="#ConservationEquationForEnergy"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Source_term_for_the_j_component_momentum_equation"/>
+        <Class IRI="#SourceTermForThe_j_ComponentMomentumEquation"/>
         <Class IRI="http://siam.nist.gov/AM-Ontology-v2#ModelVariable"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Source_term_for_the_j_component_momentum_equation"/>
+        <Class IRI="#SourceTermForThe_j_ComponentMomentumEquation"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#Influences"/>
-            <Class IRI="#Conservation_equation_for_momentum"/>
+            <Class IRI="#ConservationEquationForMomentum"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Surface_roughness"/>
-        <Class IRI="#Mechanical_property"/>
+        <Class IRI="#SurfaceRoughness"/>
+        <Class IRI="#MechanicalProperty"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Surface_roughness"/>
+        <Class IRI="#SurfaceRoughness"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
-            <Class IRI="#Heat_flux_of_constant_density"/>
+            <Class IRI="http://siam.nist.gov/AM-Ontology_v2#GaussianDistribution"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Surface_roughness"/>
+        <Class IRI="#SurfaceRoughness"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
-            <Class IRI="#Heat_flux_of_double_ellipsoid_density"/>
+            <Class IRI="#HeatFluxOfConstantDensity"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Surface_roughness"/>
+        <Class IRI="#SurfaceRoughness"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
-            <Class IRI="#Heat_flux_of_gaussian_density"/>
+            <Class IRI="#HeatFluxOfDoubleEllipsoidDensity"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Temperature_at_time_t"/>
+        <Class IRI="#TemperatureAtTime_t"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#Influences"/>
-            <Class IRI="#Rosenthal_model"/>
+            <Class IRI="#RosenthalModel"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Temperature_at_time_t"/>
+        <Class IRI="#TemperatureAtTime_t"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
             <Class IRI="http://siam.nist.gov/AM-Ontology-v2#BedRadiation"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Temperature_at_time_t"/>
+        <Class IRI="#TemperatureAtTime_t"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
             <Class IRI="http://siam.nist.gov/AM-Ontology-v2#InitialDistributionOfTemperature"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Temperature_at_time_t"/>
+        <Class IRI="#TemperatureAtTime_t"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
             <Class IRI="http://siam.nist.gov/AM-Ontology-v2#SpecificHeat"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Temperature_at_time_t"/>
+        <Class IRI="#TemperatureAtTime_t"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
             <Class IRI="http://siam.nist.gov/AM-Ontology-v2#Temperature"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Temperature_at_time_t"/>
+        <Class IRI="#TemperatureAtTime_t"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
             <Class IRI="http://siam.nist.gov/AM-Ontology-v2#ThermalConductivityInPowderBed"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Temperature_at_time_t"/>
+        <Class IRI="#TemperatureAtTime_t"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
             <Class IRI="http://siam.nist.gov/AM-Ontology_v2#Absorptivity"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Temperature_at_time_t"/>
+        <Class IRI="#TemperatureAtTime_t"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
             <Class IRI="http://siam.nist.gov/AM-Ontology_v2#HeatSourcePower"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Temperature_at_time_t"/>
+        <Class IRI="#TemperatureAtTime_t"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
             <Class IRI="http://siam.nist.gov/AM-Ontology_v2#ScanningSpeed"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Temperature_at_time_t"/>
+        <Class IRI="#TemperatureAtTime_t"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#functionOf"/>
-            <Class IRI="#Particle_density"/>
+            <Class IRI="#ParticleDensity"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Tensile_strength"/>
-        <Class IRI="#Mechanical_property"/>
+        <Class IRI="#TensileStrength"/>
+        <Class IRI="#MechanicalProperty"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Thermal_expansion_coefficient"/>
+        <Class IRI="#ThermalExpansionCoefficient"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#Influences"/>
-            <Class IRI="#Buoyancy_effect"/>
+            <Class IRI="#BuoyancyEffect"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -1022,27 +995,27 @@
         <Class IRI="http://siam.nist.gov/AM-Ontology-v2#ModelVariable"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Type_of_microstructure_growth"/>
+        <Class IRI="#TypeOfMicrostructureGrowth"/>
         <Class IRI="http://siam.nist.gov/AM-Ontology-v2#MicrostructuralCharacteristic"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Type_of_microstructure_growth"/>
+        <Class IRI="#TypeOfMicrostructureGrowth"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#InfluencedBy"/>
             <Class IRI="#Crystal"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Velocity_component_along_the_i_direction"/>
+        <Class IRI="#VelocityComponentAlongThe_i_Direction"/>
         <Class IRI="http://siam.nist.gov/AM-Ontology-v2#ModelVariable"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Velocity_component_along_the_j_direction"/>
+        <Class IRI="#VelocityComponentAlongThe_j_Direction"/>
         <Class IRI="http://siam.nist.gov/AM-Ontology-v2#ModelVariable"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Yield_strength"/>
-        <Class IRI="#Mechanical_property"/>
+        <Class IRI="#YieldStrength"/>
+        <Class IRI="#MechanicalProperty"/>
     </SubClassOf>
     <ClassAssertion>
         <Class IRI="#Crystal"/>
@@ -1057,7 +1030,7 @@
         <NamedIndividual IRI="#Mixed_with_equiaxed_and_columnar"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Phase_composition"/>
+        <Class IRI="#PhaseComposition"/>
         <NamedIndividual IRI="#Phase_composition_of_Ti_alloy"/>
     </ClassAssertion>
     <ObjectPropertyAssertion>
@@ -1109,7 +1082,7 @@
     </TransitiveObjectProperty>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#Influences"/>
-        <Class IRI="#Conduction_model"/>
+        <Class IRI="#ConductionModel"/>
     </ObjectPropertyRange>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:PN_sg"/>
@@ -1118,12 +1091,12 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_pl"/>
-        <IRI>#Buoyancy_effect</IRI>
+        <IRI>#BuoyancyEffect</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Buoyancy_effects</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_sg"/>
-        <IRI>#Buoyancy_effect</IRI>
+        <IRI>#BuoyancyEffect</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Buoyancy_effect</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
@@ -1133,52 +1106,52 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_pl"/>
-        <IRI>#Conduction_model</IRI>
+        <IRI>#ConductionModel</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Conductions</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_sg"/>
-        <IRI>#Conduction_model</IRI>
+        <IRI>#ConductionModel</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Conduction</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_pl"/>
-        <IRI>#Conservation_equation_for_energy</IRI>
+        <IRI>#ConservationEquationForEnergy</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Conservation_equation_for_energies</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_sg"/>
-        <IRI>#Conservation_equation_for_energy</IRI>
+        <IRI>#ConservationEquationForEnergy</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Conservation_equation_for_energy</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_pl"/>
-        <IRI>#Conservation_equation_for_mass</IRI>
+        <IRI>#ConservationEquationForMass</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Conservation_equation_for_masses</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_sg"/>
-        <IRI>#Conservation_equation_for_mass</IRI>
+        <IRI>#ConservationEquationForMass</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Conservation_equation_for_mass</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_pl"/>
-        <IRI>#Conservation_equation_for_momentum</IRI>
+        <IRI>#ConservationEquationForMomentum</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Conservation_equation_for_momentums</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_sg"/>
-        <IRI>#Conservation_equation_for_momentum</IRI>
+        <IRI>#ConservationEquationForMomentum</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Conservation_equation_for_momentum</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_pl"/>
-        <IRI>#Convection_model</IRI>
+        <IRI>#ConvectionModel</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Convections</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_sg"/>
-        <IRI>#Convection_model</IRI>
+        <IRI>#ConvectionModel</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Convection</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
@@ -1208,22 +1181,22 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_pl"/>
-        <IRI>#Fluid_flow_model</IRI>
+        <IRI>#FluidFlowModel</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Fluid_flow_models</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_sg"/>
-        <IRI>#Fluid_flow_model</IRI>
+        <IRI>#FluidFlowModel</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Fluid_flow_model</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_pl"/>
-        <IRI>#Hardness_Vickers</IRI>
+        <IRI>#HardnessVickers</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Hardness_Vickerses</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_sg"/>
-        <IRI>#Hardness_Vickers</IRI>
+        <IRI>#HardnessVickers</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Hardness_Vickers</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
@@ -1243,32 +1216,32 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_pl"/>
-        <IRI>#Keyhole-mode_laser_melting</IRI>
+        <IRI>#KeyholeModeLaserMelting</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Keyhole-mode_laser_meltings</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_sg"/>
-        <IRI>#Keyhole-mode_laser_melting</IRI>
+        <IRI>#KeyholeModeLaserMelting</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Keyhole-mode_laser_melting</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_pl"/>
-        <IRI>#Mechanical_property</IRI>
+        <IRI>#MechanicalProperty</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Mechanical_propertieses</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_sg"/>
-        <IRI>#Mechanical_property</IRI>
+        <IRI>#MechanicalProperty</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Mechanical_properties</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_pl"/>
-        <IRI>#Melting_with_shrinkage_stage_model</IRI>
+        <IRI>#MeltingWithShrinkageStageModel</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Melting_with_shrinkage_stages</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_sg"/>
-        <IRI>#Melting_with_shrinkage_stage_model</IRI>
+        <IRI>#MeltingWithShrinkageStageModel</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Melting_with_shrinkage_stage</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
@@ -1288,12 +1261,12 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_pl"/>
-        <IRI>#Phase_composition</IRI>
+        <IRI>#PhaseComposition</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Phases</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_sg"/>
-        <IRI>#Phase_composition</IRI>
+        <IRI>#PhaseComposition</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Phase</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
@@ -1313,62 +1286,62 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_pl"/>
-        <IRI>#Preheating_stage_model</IRI>
+        <IRI>#PreheatingStageModel</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Preheating_stages</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_sg"/>
-        <IRI>#Preheating_stage_model</IRI>
+        <IRI>#PreheatingStageModel</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Preheating_stage</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_pl"/>
-        <IRI>#Radiation_model</IRI>
+        <IRI>#RadiationModel</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Radiations</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_sg"/>
-        <IRI>#Radiation_model</IRI>
+        <IRI>#RadiationModel</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Radiation</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_pl"/>
-        <IRI>#Resolidification_stage_model</IRI>
+        <IRI>#ResolidificationStageModel</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Resolidification_stages</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_sg"/>
-        <IRI>#Resolidification_stage_model</IRI>
+        <IRI>#ResolidificationStageModel</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Resolidification_stage</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_pl"/>
-        <IRI>#Rosenthal_model</IRI>
+        <IRI>#RosenthalModel</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Rosenthal_models</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_sg"/>
-        <IRI>#Rosenthal_model</IRI>
+        <IRI>#RosenthalModel</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Rosenthal_model</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_pl"/>
-        <IRI>#Surface_roughness</IRI>
+        <IRI>#SurfaceRoughness</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Surface_roughnesses</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_sg"/>
-        <IRI>#Surface_roughness</IRI>
+        <IRI>#SurfaceRoughness</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Surface_roughness</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_pl"/>
-        <IRI>#Tensile_strength</IRI>
+        <IRI>#TensileStrength</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Tensile_strengths</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_sg"/>
-        <IRI>#Tensile_strength</IRI>
+        <IRI>#TensileStrength</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Tensile_strength</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
@@ -1378,12 +1351,12 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_pl"/>
-        <IRI>#Type_of_microstructure_growth</IRI>
+        <IRI>#TypeOfMicrostructureGrowth</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Type_of_microstructure_growths</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_sg"/>
-        <IRI>#Type_of_microstructure_growth</IRI>
+        <IRI>#TypeOfMicrostructureGrowth</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Type_of_microstructure_growth</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
@@ -1393,12 +1366,12 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_pl"/>
-        <IRI>#Yield_strength</IRI>
+        <IRI>#YieldStrength</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Yield_strengths</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="ace_lexicon:CN_sg"/>
-        <IRI>#Yield_strength</IRI>
+        <IRI>#YieldStrength</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Yield_strength</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
