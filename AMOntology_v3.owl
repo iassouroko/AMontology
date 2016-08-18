@@ -981,16 +981,28 @@
         <NamedIndividual IRI="ConstantPreheatTemperature"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="DeterministicLaserHeatFlux"/>
-    </Declaration>
-    <Declaration>
         <NamedIndividual IRI="GaussianSurfaceDistributionOfHeat"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="Kolossov-SpotRadius"/>
+        <NamedIndividual IRI="Kolossov_AbsorptionCoefficient"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Kolossov_AbsorptionModel"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Kolossov_AbsorptionPhenomenon"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="Kolossov_AveragePower"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Kolossov_AverageSpecificHeat"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Kolossov_CalibrationParameter"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Kolossov_ConsolidationInitialCondition"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="Kolossov_ConsolidationModel"/>
@@ -999,16 +1011,43 @@
         <NamedIndividual IRI="Kolossov_ConsolidationPhenomenon"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="Kolossov_ConvectionCoefficient"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Kolossov_DeterministicLaserRadiation"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Kolossov_FiniteElementMethodWithChernoffScheme"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Kolossov_GaussianDistribution"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Kolossov_HeatTransferBoundaryCondition"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Kolossov_HeatTransferInitialCondition"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="Kolossov_HeatTransferModel"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="Kolossov_HeatTransferModelingAssumption"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="Kolossov_HeatTransferPhenomenon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Kolossov_IrradiationAbsorptionModelingAssumption"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="Kolossov_LaserSpotSpeed"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="Kolossov_MaximumTemperatureForSingleTrack"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Kolossov_PhaseTransformationAssumption"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="Kolossov_PowderLayerThickness"/>
@@ -1020,10 +1059,58 @@
         <NamedIndividual IRI="Kolossov_RadiationAbsorptionPhenomenon"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="Kolossov_SLSProcess"/>
+        <NamedIndividual IRI="Kolossov_RadiationPenetrationDepth"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Kolossov_SLS-SingleTrack-Process"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Kolossov_SinteringPotential"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Kolossov_SinteringPotentialDistribution"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Kolossov_SinteringRate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Kolossov_SinteringTemperature"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Kolossov_SpecificHeat"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Kolossov_SpotRadius"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Kolossov_SurfaceHeatFlux"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Kolossov_SurfaceTension"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Kolossov_TemperatureField"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Kolossov_TemperatureOfTheEnvironment"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Kolossov_TemperatureProfiles"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Kolossov_ThermalConductivityOfTheBulk"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Kolossov_ThermalConductivityOfThePowderBed"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Kolossov_ThermalModel"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="Kolossov_Ti6Al4V"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Kolossov_Ti6Al4V-Viscosity"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="LiMa_AbsorptionCoeffcientOfThePowderLayer"/>
@@ -1033,9 +1120,6 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="LiMa_BottomBoundaryCondition"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="LiMa_BoundaryCondition"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="LiMa_ConsolidationInitialCondition"/>
@@ -1059,10 +1143,19 @@
         <NamedIndividual IRI="LiMa_DensityOfTheSolidMaterial"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="LiMa_DeterministicLaserHeatFlux"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="LiMa_Emissivity"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="LiMa_FiniteElementMethod"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="LiMa_GaussianDistribution"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="LiMa_HeatConductionBoundaryCondition"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="LiMa_HeatConductionInitialCondition"/>
@@ -1200,10 +1293,16 @@
         <NamedIndividual IRI="TemperatureDependentFouriersLaw"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="TemperatureDependentSinteringRate"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="TemperatutreDependentPowderPackingRatio"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="3_3DimensionalModel"/>
+        <NamedIndividual IRI="ThermalExchangeCoefficient"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="3ThreeDimensionalModel"/>
     </Declaration>
     <EquivalentClasses>
         <Class IRI="BottomBoundaryCondition"/>
@@ -4366,20 +4465,28 @@
         <NamedIndividual IRI="ConstantPreheatTemperature"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI="NIST:DeterministicIrradiation"/>
-        <NamedIndividual IRI="DeterministicLaserHeatFlux"/>
-    </ClassAssertion>
-    <ClassAssertion>
         <Class abbreviatedIRI="NIST:GaussianDistribution"/>
         <NamedIndividual IRI="GaussianSurfaceDistributionOfHeat"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI="NIST:BeamSize"/>
-        <NamedIndividual IRI="Kolossov-SpotRadius"/>
+        <Class IRI="PhysicalProperty"/>
+        <NamedIndividual IRI="Kolossov_AbsorptionCoefficient"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class abbreviatedIRI="NIST:HeatSourcePower"/>
         <NamedIndividual IRI="Kolossov_AveragePower"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="ModelVariable"/>
+        <NamedIndividual IRI="Kolossov_AverageSpecificHeat"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="PhysicalProperty"/>
+        <NamedIndividual IRI="Kolossov_CalibrationParameter"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="ConsolidationInitialCondition"/>
+        <NamedIndividual IRI="Kolossov_ConsolidationInitialCondition"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="ConsolidationByMeltingModel"/>
@@ -4390,12 +4497,36 @@
         <NamedIndividual IRI="Kolossov_ConsolidationPhenomenon"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="PhysicalProperty"/>
+        <NamedIndividual IRI="Kolossov_ConvectionCoefficient"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="HeatTransferNumericalMethod"/>
+        <NamedIndividual IRI="Kolossov_FiniteElementMethodWithChernoffScheme"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="NIST:GaussianDistribution"/>
+        <NamedIndividual IRI="Kolossov_GaussianDistribution"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="ThermalInitialCondition"/>
+        <NamedIndividual IRI="Kolossov_HeatTransferInitialCondition"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class abbreviatedIRI="NIST:HeatTransferModel"/>
         <NamedIndividual IRI="Kolossov_HeatTransferModel"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class abbreviatedIRI="NIST:HeatTransferModelingAssumption"/>
+        <NamedIndividual IRI="Kolossov_HeatTransferModelingAssumption"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class abbreviatedIRI="NIST:HeatTransfer"/>
         <NamedIndividual IRI="Kolossov_HeatTransferPhenomenon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="NIST:IrradiationAbsorptionModelingAssumption"/>
+        <NamedIndividual IRI="Kolossov_IrradiationAbsorptionModelingAssumption"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class abbreviatedIRI="NIST:ScanningSpeed"/>
@@ -4404,6 +4535,10 @@
     <ClassAssertion>
         <Class abbreviatedIRI="NIST:MeltPoolMaximumTemperature"/>
         <NamedIndividual IRI="Kolossov_MaximumTemperatureForSingleTrack"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="PhaseTransformationAssumption"/>
+        <NamedIndividual IRI="Kolossov_PhaseTransformationAssumption"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class abbreviatedIRI="NIST:LayerThickness"/>
@@ -4418,12 +4553,72 @@
         <NamedIndividual IRI="Kolossov_RadiationAbsorptionPhenomenon"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="IrradiationAbsorptionProperty"/>
+        <NamedIndividual IRI="Kolossov_RadiationPenetrationDepth"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class abbreviatedIRI="NIST:SelectiveLaserSintering"/>
-        <NamedIndividual IRI="Kolossov_SLSProcess"/>
+        <NamedIndividual IRI="Kolossov_SLS-SingleTrack-Process"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="NIST:Prediction"/>
+        <NamedIndividual IRI="Kolossov_SinteringPotentialDistribution"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="ConsolidationPhysicalProperty"/>
+        <NamedIndividual IRI="Kolossov_SinteringTemperature"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="ModelVariable"/>
+        <NamedIndividual IRI="Kolossov_SpecificHeat"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="NIST:BeamSize"/>
+        <NamedIndividual IRI="Kolossov_SpotRadius"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="NIST:Prediction"/>
+        <NamedIndividual IRI="Kolossov_SurfaceHeatFlux"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="NIST:SurfaceDistributionOfAbsorbedHeat"/>
+        <NamedIndividual IRI="Kolossov_SurfaceHeatFlux"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="ConsolidationPhysicalProperty"/>
+        <NamedIndividual IRI="Kolossov_SurfaceTension"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="ModelVariable"/>
+        <NamedIndividual IRI="Kolossov_TemperatureField"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="NIST:ChamberTemperature"/>
+        <NamedIndividual IRI="Kolossov_TemperatureOfTheEnvironment"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="NIST:Prediction"/>
+        <NamedIndividual IRI="Kolossov_TemperatureProfiles"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="NIST:TimeHistoryOfTemperature"/>
+        <NamedIndividual IRI="Kolossov_TemperatureProfiles"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="ThermalConductivityOfTheBulkMaterial"/>
+        <NamedIndividual IRI="Kolossov_ThermalConductivityOfTheBulk"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="ThermalModel"/>
+        <NamedIndividual IRI="Kolossov_ThermalModel"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="MetalAlloy"/>
         <NamedIndividual IRI="Kolossov_Ti6Al4V"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="ConsolidationPhysicalProperty"/>
+        <NamedIndividual IRI="Kolossov_Ti6Al4V-Viscosity"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="PhysicalProperty"/>
@@ -4436,10 +4631,6 @@
     <ClassAssertion>
         <Class IRI="BottomBoundaryCondition"/>
         <NamedIndividual IRI="LiMa_BottomBoundaryCondition"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="ThermalBoundaryCondition"/>
-        <NamedIndividual IRI="LiMa_BoundaryCondition"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="ConsolidationInitialCondition"/>
@@ -4474,12 +4665,24 @@
         <NamedIndividual IRI="LiMa_DensityOfTheSolidMaterial"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class abbreviatedIRI="NIST:DeterministicIrradiation"/>
+        <NamedIndividual IRI="LiMa_DeterministicLaserHeatFlux"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class abbreviatedIRI="NIST:BedEmissivity"/>
         <NamedIndividual IRI="LiMa_Emissivity"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="HeatTransferNumericalMethod"/>
+        <NamedIndividual IRI="LiMa_FiniteElementMethod"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class abbreviatedIRI="NIST:GaussianDistribution"/>
         <NamedIndividual IRI="LiMa_GaussianDistribution"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="ThermalBoundaryCondition"/>
+        <NamedIndividual IRI="LiMa_HeatConductionBoundaryCondition"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="ThermalInitialCondition"/>
@@ -4622,7 +4825,7 @@
         <NamedIndividual IRI="LiMa_ThermalConductivityOfThePowderBed"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI="NIST:HeatTransferModel"/>
+        <Class IRI="ThermalModel"/>
         <NamedIndividual IRI="LiMa_ThermalModel"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -4675,12 +4878,22 @@
     </ClassAssertion>
     <ClassAssertion>
         <Class abbreviatedIRI="NIST:ThreeDimensional"/>
-        <NamedIndividual IRI="3_3DimensionalModel"/>
+        <NamedIndividual IRI="3ThreeDimensionalModel"/>
     </ClassAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="NIST:partOf"/>
         <NamedIndividual IRI="ConstantAbsorptivity"/>
         <NamedIndividual IRI="LiMa_IrradiationAbsorptionModelingAssumption"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:partOf"/>
+        <NamedIndividual IRI="ConstantAbsorptivity"/>
+        <NamedIndividual IRI="Kolossov_IrradiationAbsorptionModelingAssumption"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="defines"/>
+        <NamedIndividual IRI="ConstantPreheatTemperature"/>
+        <NamedIndividual IRI="Kolossov_HeatTransferInitialCondition"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="defines"/>
@@ -4689,13 +4902,98 @@
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="NIST:partOf"/>
-        <NamedIndividual IRI="DeterministicLaserHeatFlux"/>
-        <NamedIndividual IRI="LiMa_HeatConductionModelingAssumption"/>
+        <NamedIndividual IRI="GaussianSurfaceDistributionOfHeat"/>
+        <NamedIndividual IRI="LiMa_IrradiationAbsorptionModelingAssumption"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="NIST:partOf"/>
         <NamedIndividual IRI="GaussianSurfaceDistributionOfHeat"/>
-        <NamedIndividual IRI="LiMa_IrradiationAbsorptionModelingAssumption"/>
+        <NamedIndividual IRI="Kolossov_IrradiationAbsorptionModelingAssumption"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="requiresInput"/>
+        <NamedIndividual IRI="Kolossov_AbsorptionModel"/>
+        <NamedIndividual IRI="Kolossov_AveragePower"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="requiresInput"/>
+        <NamedIndividual IRI="Kolossov_AbsorptionModel"/>
+        <NamedIndividual IRI="Kolossov_AbsorptionCoefficient"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="requiresInput"/>
+        <NamedIndividual IRI="Kolossov_AbsorptionModel"/>
+        <NamedIndividual IRI="Kolossov_GaussianDistribution"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="requiresInput"/>
+        <NamedIndividual IRI="Kolossov_AbsorptionModel"/>
+        <NamedIndividual IRI="Kolossov_SpotRadius"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:partOf"/>
+        <NamedIndividual IRI="Kolossov_AbsorptionModel"/>
+        <NamedIndividual IRI="Kolossov_ThermalModel"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:provides"/>
+        <NamedIndividual IRI="Kolossov_AbsorptionModel"/>
+        <NamedIndividual IRI="Kolossov_SurfaceHeatFlux"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:requiresAssumption"/>
+        <NamedIndividual IRI="Kolossov_AbsorptionModel"/>
+        <NamedIndividual IRI="Kolossov_AbsorptionCoefficient"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:requiresAssumption"/>
+        <NamedIndividual IRI="Kolossov_AbsorptionModel"/>
+        <NamedIndividual IRI="GaussianSurfaceDistributionOfHeat"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:requiresAssumption"/>
+        <NamedIndividual IRI="Kolossov_AbsorptionModel"/>
+        <NamedIndividual IRI="ConstantAbsorptivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="representedBy"/>
+        <NamedIndividual IRI="Kolossov_AbsorptionPhenomenon"/>
+        <NamedIndividual IRI="Kolossov_AbsorptionModel"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:partOf"/>
+        <NamedIndividual IRI="Kolossov_AbsorptionPhenomenon"/>
+        <NamedIndividual IRI="Kolossov_SLS-SingleTrack-Process"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="requiresInput"/>
+        <NamedIndividual IRI="Kolossov_ConsolidationModel"/>
+        <NamedIndividual IRI="Kolossov_TemperatureField"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="requiresInput"/>
+        <NamedIndividual IRI="Kolossov_ConsolidationModel"/>
+        <NamedIndividual IRI="Kolossov_SinteringTemperature"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="requiresInput"/>
+        <NamedIndividual IRI="Kolossov_ConsolidationModel"/>
+        <NamedIndividual IRI="Kolossov_CalibrationParameter"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:provides"/>
+        <NamedIndividual IRI="Kolossov_ConsolidationModel"/>
+        <NamedIndividual IRI="Kolossov_SinteringPotentialDistribution"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:requiresAssumption"/>
+        <NamedIndividual IRI="Kolossov_ConsolidationModel"/>
+        <NamedIndividual IRI="Kolossov_ConsolidationInitialCondition"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:requiresAssumption"/>
+        <NamedIndividual IRI="Kolossov_ConsolidationModel"/>
+        <NamedIndividual IRI="TemperatureDependentSinteringRate"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="representedBy"/>
@@ -4705,7 +5003,127 @@
     <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="NIST:partOf"/>
         <NamedIndividual IRI="Kolossov_ConsolidationPhenomenon"/>
-        <NamedIndividual IRI="Kolossov_SLSProcess"/>
+        <NamedIndividual IRI="Kolossov_SLS-SingleTrack-Process"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:partOf"/>
+        <NamedIndividual IRI="Kolossov_DeterministicLaserRadiation"/>
+        <NamedIndividual IRI="Kolossov_HeatTransferModelingAssumption"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="definedBy"/>
+        <NamedIndividual IRI="Kolossov_HeatTransferBoundaryCondition"/>
+        <NamedIndividual IRI="Kolossov_TemperatureOfTheEnvironment"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="definedBy"/>
+        <NamedIndividual IRI="Kolossov_HeatTransferBoundaryCondition"/>
+        <NamedIndividual IRI="Kolossov_SurfaceHeatFlux"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="definedBy"/>
+        <NamedIndividual IRI="Kolossov_HeatTransferBoundaryCondition"/>
+        <NamedIndividual IRI="ThermalExchangeCoefficient"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="definedBy"/>
+        <NamedIndividual IRI="Kolossov_HeatTransferInitialCondition"/>
+        <NamedIndividual IRI="ConstantPreheatTemperature"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="requiresInput"/>
+        <NamedIndividual IRI="Kolossov_HeatTransferModel"/>
+        <NamedIndividual IRI="Kolossov_AbsorptionCoefficient"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="requiresInput"/>
+        <NamedIndividual IRI="Kolossov_HeatTransferModel"/>
+        <NamedIndividual IRI="Kolossov_TemperatureOfTheEnvironment"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="requiresInput"/>
+        <NamedIndividual IRI="Kolossov_HeatTransferModel"/>
+        <NamedIndividual IRI="Kolossov_AveragePower"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="requiresInput"/>
+        <NamedIndividual IRI="Kolossov_HeatTransferModel"/>
+        <NamedIndividual IRI="Kolossov_ConvectionCoefficient"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="requiresInput"/>
+        <NamedIndividual IRI="Kolossov_HeatTransferModel"/>
+        <NamedIndividual IRI="Kolossov_SpecificHeat"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="requiresInput"/>
+        <NamedIndividual IRI="Kolossov_HeatTransferModel"/>
+        <NamedIndividual IRI="Kolossov_SinteringPotential"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="requiresInput"/>
+        <NamedIndividual IRI="Kolossov_HeatTransferModel"/>
+        <NamedIndividual IRI="Kolossov_ThermalConductivityOfThePowderBed"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="requiresInput"/>
+        <NamedIndividual IRI="Kolossov_HeatTransferModel"/>
+        <NamedIndividual IRI="Kolossov_ThermalConductivityOfTheBulk"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="requiresInput"/>
+        <NamedIndividual IRI="Kolossov_HeatTransferModel"/>
+        <NamedIndividual IRI="Kolossov_LaserSpotSpeed"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:partOf"/>
+        <NamedIndividual IRI="Kolossov_HeatTransferModel"/>
+        <NamedIndividual IRI="Kolossov_ThermalModel"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:provides"/>
+        <NamedIndividual IRI="Kolossov_HeatTransferModel"/>
+        <NamedIndividual IRI="Kolossov_TemperatureProfiles"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:requiresApproximation"/>
+        <NamedIndividual IRI="Kolossov_HeatTransferModel"/>
+        <NamedIndividual IRI="Kolossov_FiniteElementMethodWithChernoffScheme"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:requiresAssumption"/>
+        <NamedIndividual IRI="Kolossov_HeatTransferModel"/>
+        <NamedIndividual IRI="Kolossov_HeatTransferBoundaryCondition"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:requiresAssumption"/>
+        <NamedIndividual IRI="Kolossov_HeatTransferModel"/>
+        <NamedIndividual IRI="TemperatureDependentFouriersLaw"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:requiresAssumption"/>
+        <NamedIndividual IRI="Kolossov_HeatTransferModel"/>
+        <NamedIndividual IRI="Kolossov_DeterministicLaserRadiation"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:requiresAssumption"/>
+        <NamedIndividual IRI="Kolossov_HeatTransferModel"/>
+        <NamedIndividual IRI="SurfaceHeatAbsorption"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:requiresAssumption"/>
+        <NamedIndividual IRI="Kolossov_HeatTransferModel"/>
+        <NamedIndividual IRI="Kolossov_PhaseTransformationAssumption"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:requiresAssumption"/>
+        <NamedIndividual IRI="Kolossov_HeatTransferModel"/>
+        <NamedIndividual IRI="Kolossov_HeatTransferInitialCondition"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:requiresAssumption"/>
+        <NamedIndividual IRI="Kolossov_HeatTransferModel"/>
+        <NamedIndividual IRI="3ThreeDimensionalModel"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="representedBy"/>
@@ -4715,7 +5133,7 @@
     <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="NIST:partOf"/>
         <NamedIndividual IRI="Kolossov_HeatTransferPhenomenon"/>
-        <NamedIndividual IRI="Kolossov_SLSProcess"/>
+        <NamedIndividual IRI="Kolossov_SLS-SingleTrack-Process"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="representedBy"/>
@@ -4725,7 +5143,62 @@
     <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="NIST:partOf"/>
         <NamedIndividual IRI="Kolossov_RadiationAbsorptionPhenomenon"/>
-        <NamedIndividual IRI="Kolossov_SLSProcess"/>
+        <NamedIndividual IRI="Kolossov_SLS-SingleTrack-Process"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:influencedBy"/>
+        <NamedIndividual IRI="Kolossov_SLS-SingleTrack-Process"/>
+        <NamedIndividual IRI="Kolossov_Ti6Al4V"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:influencedBy"/>
+        <NamedIndividual IRI="Kolossov_SLS-SingleTrack-Process"/>
+        <NamedIndividual IRI="Kolossov_SpotRadius"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:influencedBy"/>
+        <NamedIndividual IRI="Kolossov_SLS-SingleTrack-Process"/>
+        <NamedIndividual IRI="Kolossov_LaserSpotSpeed"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:influencedBy"/>
+        <NamedIndividual IRI="Kolossov_SLS-SingleTrack-Process"/>
+        <NamedIndividual IRI="Kolossov_AveragePower"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:influencedBy"/>
+        <NamedIndividual IRI="Kolossov_SLS-SingleTrack-Process"/>
+        <NamedIndividual IRI="Kolossov_PowderLayerThickness"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:functionOf"/>
+        <NamedIndividual IRI="Kolossov_SinteringPotential"/>
+        <NamedIndividual IRI="Kolossov_SinteringRate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:functionOf"/>
+        <NamedIndividual IRI="Kolossov_SinteringPotential"/>
+        <NamedIndividual IRI="Kolossov_TemperatureField"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:functionOf"/>
+        <NamedIndividual IRI="Kolossov_SinteringRate"/>
+        <NamedIndividual IRI="Kolossov_Ti6Al4V-Viscosity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:functionOf"/>
+        <NamedIndividual IRI="Kolossov_SinteringRate"/>
+        <NamedIndividual IRI="Kolossov_SurfaceTension"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:functionOf"/>
+        <NamedIndividual IRI="Kolossov_ThermalConductivityOfThePowderBed"/>
+        <NamedIndividual IRI="Kolossov_TemperatureField"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:functionOf"/>
+        <NamedIndividual IRI="Kolossov_ThermalConductivityOfThePowderBed"/>
+        <NamedIndividual IRI="Kolossov_SinteringPotential"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="NIST:partOf"/>
@@ -4745,12 +5218,7 @@
     <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="NIST:partOf"/>
         <NamedIndividual IRI="LiMa_BottomBoundaryCondition"/>
-        <NamedIndividual IRI="LiMa_BoundaryCondition"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI="NIST:partOf"/>
-        <NamedIndividual IRI="LiMa_BoundaryCondition"/>
-        <NamedIndividual IRI="LiMa_HeatConductionModelingAssumption"/>
+        <NamedIndividual IRI="LiMa_HeatConductionBoundaryCondition"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="definedBy"/>
@@ -4858,6 +5326,11 @@
         <NamedIndividual IRI="LiMa_TemperatureField"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:partOf"/>
+        <NamedIndividual IRI="LiMa_DeterministicLaserHeatFlux"/>
+        <NamedIndividual IRI="LiMa_HeatConductionModelingAssumption"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="sameAs"/>
         <NamedIndividual IRI="LiMa_Emissivity"/>
         <NamedIndividual IRI="LiMa_ThermalPhysicalProperty"/>
@@ -4866,6 +5339,11 @@
         <ObjectProperty abbreviatedIRI="NIST:functionOf"/>
         <NamedIndividual IRI="LiMa_GaussianDistribution"/>
         <NamedIndividual IRI="LiMa_RadiusOfTheLaserBeam"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:partOf"/>
+        <NamedIndividual IRI="LiMa_HeatConductionBoundaryCondition"/>
+        <NamedIndividual IRI="LiMa_HeatConductionModelingAssumption"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="definedBy"/>
@@ -4938,14 +5416,19 @@
         <NamedIndividual IRI="LiMa_TemperatureHistoryOutput"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI="NIST:requiresAssumption"/>
+        <ObjectProperty abbreviatedIRI="NIST:requiresApproximation"/>
         <NamedIndividual IRI="LiMa_HeatConductionModel"/>
-        <NamedIndividual IRI="DeterministicLaserHeatFlux"/>
+        <NamedIndividual IRI="LiMa_FiniteElementMethod"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="NIST:requiresAssumption"/>
         <NamedIndividual IRI="LiMa_HeatConductionModel"/>
-        <NamedIndividual IRI="LiMa_BoundaryCondition"/>
+        <NamedIndividual IRI="3ThreeDimensionalModel"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:requiresAssumption"/>
+        <NamedIndividual IRI="LiMa_HeatConductionModel"/>
+        <NamedIndividual IRI="LiMa_DeterministicLaserHeatFlux"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="NIST:requiresAssumption"/>
@@ -4960,7 +5443,7 @@
     <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="NIST:requiresAssumption"/>
         <NamedIndividual IRI="LiMa_HeatConductionModel"/>
-        <NamedIndividual IRI="3_3DimensionalModel"/>
+        <NamedIndividual IRI="LiMa_HeatConductionBoundaryCondition"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="NIST:requiresAssumption"/>
@@ -5160,7 +5643,7 @@
     <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="NIST:partOf"/>
         <NamedIndividual IRI="LiMa_SideBoundaryCondition"/>
-        <NamedIndividual IRI="LiMa_BoundaryCondition"/>
+        <NamedIndividual IRI="LiMa_HeatConductionBoundaryCondition"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="sameAs"/>
@@ -5215,7 +5698,32 @@
     <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="NIST:partOf"/>
         <NamedIndividual IRI="LiMa_TopBoundaryCondition"/>
-        <NamedIndividual IRI="LiMa_BoundaryCondition"/>
+        <NamedIndividual IRI="LiMa_HeatConductionBoundaryCondition"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:influencedBy"/>
+        <NamedIndividual IRI="Roberts_LaserMeltingOfMetalPowdersProcess"/>
+        <NamedIndividual IRI="Roberts_ScanSpeed"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:influencedBy"/>
+        <NamedIndividual IRI="Roberts_LaserMeltingOfMetalPowdersProcess"/>
+        <NamedIndividual IRI="Roberts_SpotSize"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:influencedBy"/>
+        <NamedIndividual IRI="Roberts_LaserMeltingOfMetalPowdersProcess"/>
+        <NamedIndividual IRI="Roberts_LaserPower"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:influencedBy"/>
+        <NamedIndividual IRI="Roberts_LaserMeltingOfMetalPowdersProcess"/>
+        <NamedIndividual IRI="Roberts_PowderSize"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:influencedBy"/>
+        <NamedIndividual IRI="Roberts_LaserMeltingOfMetalPowdersProcess"/>
+        <NamedIndividual IRI="Roberts_Ti6Al4V"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="NIST:partOf"/>
@@ -5229,8 +5737,13 @@
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="NIST:partOf"/>
-        <NamedIndividual IRI="3_3DimensionalModel"/>
+        <NamedIndividual IRI="3ThreeDimensionalModel"/>
         <NamedIndividual IRI="LiMa_HeatConductionModelingAssumption"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:partOf"/>
+        <NamedIndividual IRI="3ThreeDimensionalModel"/>
+        <NamedIndividual IRI="Kolossov_HeatTransferModelingAssumption"/>
     </ObjectPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="hasValue"/>
