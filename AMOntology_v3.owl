@@ -987,12 +987,6 @@
         <NamedIndividual IRI="Kolossov_AbsorptionCoefficient"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="Kolossov_AbsorptionModel"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="Kolossov_AbsorptionPhenomenon"/>
-    </Declaration>
-    <Declaration>
         <NamedIndividual IRI="Kolossov_AveragePower"/>
     </Declaration>
     <Declaration>
@@ -1039,6 +1033,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="Kolossov_IrradiationAbsorptionModelingAssumption"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Kolossov_LaserPBF-ProcessSignature"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="Kolossov_LaserSpotSpeed"/>
@@ -1266,10 +1263,79 @@
         <NamedIndividual IRI="LiMa_TopBoundaryCondition"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="Roberts_LaserMeltingOfMetalPowdersProcess"/>
+        <NamedIndividual IRI="Robert_PreheatTemperature"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Roberts_Absorptance"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Roberts_ConsolidationInitialCondition"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Roberts_ConsolidationModel"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Roberts_ConsolidationPhenomenon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Roberts_ConvectionHeatTransferCoefficient"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Roberts_DensityOfThePowderBed"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Roberts_DeterministicLaserIrradiation"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Roberts_Emissivity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Roberts_FiniteElementMethod"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Roberts_GaussianDistribution"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Roberts_HeatTransferBoundaryCondition"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Roberts_HeatTransferInitialCondition"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Roberts_HeatTransferModel"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Roberts_HeatTransferPhenomenon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Roberts_InitialPowderPorosity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Roberts_InputHeatFlux"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Roberts_IrradiationAbsorptionModel"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Roberts_IrradiationAbsorptionPhenomenon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Roberts_LaserMeltingProcessOfMetalMultiLayerPowders"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Roberts_LaserPBF-ProcessParameter"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Roberts_LaserPBF-ProcessSignature"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="Roberts_LaserPower"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Roberts_LaserSurfaceHeatFlux"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Roberts_PhaseChangeAssumption"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="Roberts_PowderSize"/>
@@ -1278,7 +1344,28 @@
         <NamedIndividual IRI="Roberts_ScanSpeed"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="Roberts_SpecificHeatCapacity"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="Roberts_SpotSize"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Roberts_SurfaceConvection"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Roberts_TemperatureDependentDensityOfTheSolid"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Roberts_TemperatureFieldDistribution"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Roberts_ThermalConductivityOfThePowderBed"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Roberts_ThermalHistoryOfPart"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Roberts_ThermalModel"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="Roberts_Ti6Al4V"/>
@@ -4545,14 +4632,6 @@
         <NamedIndividual IRI="Kolossov_PowderLayerThickness"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI="NIST:IrradiationAbsorptionModel"/>
-        <NamedIndividual IRI="Kolossov_RadiationAbsorptionModel"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class abbreviatedIRI="NIST:IrradiationAbsorption"/>
-        <NamedIndividual IRI="Kolossov_RadiationAbsorptionPhenomenon"/>
-    </ClassAssertion>
-    <ClassAssertion>
         <Class IRI="IrradiationAbsorptionProperty"/>
         <NamedIndividual IRI="Kolossov_RadiationPenetrationDepth"/>
     </ClassAssertion>
@@ -4575,14 +4654,6 @@
     <ClassAssertion>
         <Class abbreviatedIRI="NIST:BeamSize"/>
         <NamedIndividual IRI="Kolossov_SpotRadius"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class abbreviatedIRI="NIST:Prediction"/>
-        <NamedIndividual IRI="Kolossov_SurfaceHeatFlux"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class abbreviatedIRI="NIST:SurfaceDistributionOfAbsorbedHeat"/>
-        <NamedIndividual IRI="Kolossov_SurfaceHeatFlux"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="ConsolidationPhysicalProperty"/>
@@ -4837,8 +4908,16 @@
         <NamedIndividual IRI="LiMa_TopBoundaryCondition"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class abbreviatedIRI="NIST:Prediction"/>
+        <NamedIndividual IRI="Roberts_HeatTransferModel"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="NIST:SurfaceDistributionOfAbsorbedHeat"/>
+        <NamedIndividual IRI="Roberts_HeatTransferModel"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class abbreviatedIRI="NIST:DirectMetalLaserMelting"/>
-        <NamedIndividual IRI="Roberts_LaserMeltingOfMetalPowdersProcess"/>
+        <NamedIndividual IRI="Roberts_LaserMeltingProcessOfMetalMultiLayerPowders"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class abbreviatedIRI="NIST:HeatSourcePower"/>
@@ -4909,61 +4988,6 @@
         <ObjectProperty abbreviatedIRI="NIST:partOf"/>
         <NamedIndividual IRI="GaussianSurfaceDistributionOfHeat"/>
         <NamedIndividual IRI="Kolossov_IrradiationAbsorptionModelingAssumption"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="requiresInput"/>
-        <NamedIndividual IRI="Kolossov_AbsorptionModel"/>
-        <NamedIndividual IRI="Kolossov_AveragePower"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="requiresInput"/>
-        <NamedIndividual IRI="Kolossov_AbsorptionModel"/>
-        <NamedIndividual IRI="Kolossov_AbsorptionCoefficient"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="requiresInput"/>
-        <NamedIndividual IRI="Kolossov_AbsorptionModel"/>
-        <NamedIndividual IRI="Kolossov_GaussianDistribution"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="requiresInput"/>
-        <NamedIndividual IRI="Kolossov_AbsorptionModel"/>
-        <NamedIndividual IRI="Kolossov_SpotRadius"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI="NIST:partOf"/>
-        <NamedIndividual IRI="Kolossov_AbsorptionModel"/>
-        <NamedIndividual IRI="Kolossov_ThermalModel"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI="NIST:provides"/>
-        <NamedIndividual IRI="Kolossov_AbsorptionModel"/>
-        <NamedIndividual IRI="Kolossov_SurfaceHeatFlux"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI="NIST:requiresAssumption"/>
-        <NamedIndividual IRI="Kolossov_AbsorptionModel"/>
-        <NamedIndividual IRI="Kolossov_AbsorptionCoefficient"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI="NIST:requiresAssumption"/>
-        <NamedIndividual IRI="Kolossov_AbsorptionModel"/>
-        <NamedIndividual IRI="GaussianSurfaceDistributionOfHeat"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI="NIST:requiresAssumption"/>
-        <NamedIndividual IRI="Kolossov_AbsorptionModel"/>
-        <NamedIndividual IRI="ConstantAbsorptivity"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="representedBy"/>
-        <NamedIndividual IRI="Kolossov_AbsorptionPhenomenon"/>
-        <NamedIndividual IRI="Kolossov_AbsorptionModel"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI="NIST:partOf"/>
-        <NamedIndividual IRI="Kolossov_AbsorptionPhenomenon"/>
-        <NamedIndividual IRI="Kolossov_SLS-SingleTrack-Process"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="requiresInput"/>
@@ -5136,6 +5160,56 @@
         <NamedIndividual IRI="Kolossov_SLS-SingleTrack-Process"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="definedBy"/>
+        <NamedIndividual IRI="Kolossov_LaserPBF-ProcessSignature"/>
+        <NamedIndividual IRI="Kolossov_MaximumTemperatureForSingleTrack"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="requiresInput"/>
+        <NamedIndividual IRI="Kolossov_RadiationAbsorptionModel"/>
+        <NamedIndividual IRI="Kolossov_AbsorptionCoefficient"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="requiresInput"/>
+        <NamedIndividual IRI="Kolossov_RadiationAbsorptionModel"/>
+        <NamedIndividual IRI="Kolossov_AveragePower"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="requiresInput"/>
+        <NamedIndividual IRI="Kolossov_RadiationAbsorptionModel"/>
+        <NamedIndividual IRI="Kolossov_GaussianDistribution"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="requiresInput"/>
+        <NamedIndividual IRI="Kolossov_RadiationAbsorptionModel"/>
+        <NamedIndividual IRI="Kolossov_SpotRadius"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:partOf"/>
+        <NamedIndividual IRI="Kolossov_RadiationAbsorptionModel"/>
+        <NamedIndividual IRI="Kolossov_ThermalModel"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:provides"/>
+        <NamedIndividual IRI="Kolossov_RadiationAbsorptionModel"/>
+        <NamedIndividual IRI="Kolossov_SurfaceHeatFlux"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:requiresAssumption"/>
+        <NamedIndividual IRI="Kolossov_RadiationAbsorptionModel"/>
+        <NamedIndividual IRI="Kolossov_AbsorptionCoefficient"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:requiresAssumption"/>
+        <NamedIndividual IRI="Kolossov_RadiationAbsorptionModel"/>
+        <NamedIndividual IRI="ConstantAbsorptivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:requiresAssumption"/>
+        <NamedIndividual IRI="Kolossov_RadiationAbsorptionModel"/>
+        <NamedIndividual IRI="GaussianSurfaceDistributionOfHeat"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="representedBy"/>
         <NamedIndividual IRI="Kolossov_RadiationAbsorptionPhenomenon"/>
         <NamedIndividual IRI="Kolossov_RadiationAbsorptionModel"/>
@@ -5228,17 +5302,17 @@
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="requiresInput"/>
         <NamedIndividual IRI="LiMa_ConsolidationModel"/>
+        <NamedIndividual IRI="LiMa_TemperatureField"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="requiresInput"/>
+        <NamedIndividual IRI="LiMa_ConsolidationModel"/>
         <NamedIndividual IRI="LiMa_InitialPowderPackingRatio"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="requiresInput"/>
         <NamedIndividual IRI="LiMa_ConsolidationModel"/>
         <NamedIndividual IRI="LiMa_DensityOfTheSolidMaterial"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="requiresInput"/>
-        <NamedIndividual IRI="LiMa_ConsolidationModel"/>
-        <NamedIndividual IRI="LiMa_TemperatureField"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="requiresInput"/>
@@ -5701,29 +5775,254 @@
         <NamedIndividual IRI="LiMa_HeatConductionBoundaryCondition"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI="NIST:influencedBy"/>
-        <NamedIndividual IRI="Roberts_LaserMeltingOfMetalPowdersProcess"/>
+        <ObjectProperty IRI="definedBy"/>
+        <NamedIndividual IRI="Roberts_ConsolidationInitialCondition"/>
+        <NamedIndividual IRI="Roberts_InitialPowderPorosity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="requiresInput"/>
+        <NamedIndividual IRI="Roberts_ConsolidationModel"/>
+        <NamedIndividual IRI="Roberts_TemperatureFieldDistribution"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="requiresInput"/>
+        <NamedIndividual IRI="Roberts_ConsolidationModel"/>
+        <NamedIndividual IRI="Roberts_InitialPowderPorosity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="requiresInput"/>
+        <NamedIndividual IRI="Roberts_ConsolidationModel"/>
+        <NamedIndividual IRI="Roberts_TemperatureDependentDensityOfTheSolid"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:provides"/>
+        <NamedIndividual IRI="Roberts_ConsolidationModel"/>
+        <NamedIndividual IRI="Roberts_DensityOfThePowderBed"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:requiresAssumption"/>
+        <NamedIndividual IRI="Roberts_ConsolidationModel"/>
+        <NamedIndividual IRI="Roberts_ConsolidationInitialCondition"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:requiresAssumption"/>
+        <NamedIndividual IRI="Roberts_ConsolidationModel"/>
+        <NamedIndividual IRI="TemperatutreDependentPowderPackingRatio"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="representedBy"/>
+        <NamedIndividual IRI="Roberts_ConsolidationPhenomenon"/>
+        <NamedIndividual IRI="Roberts_ConsolidationModel"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:partOf"/>
+        <NamedIndividual IRI="Roberts_ConsolidationPhenomenon"/>
+        <NamedIndividual IRI="Roberts_LaserMeltingProcessOfMetalMultiLayerPowders"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="definedBy"/>
+        <NamedIndividual IRI="Roberts_HeatTransferBoundaryCondition"/>
+        <NamedIndividual IRI="Roberts_SurfaceConvection"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="definedBy"/>
+        <NamedIndividual IRI="Roberts_HeatTransferBoundaryCondition"/>
+        <NamedIndividual IRI="ConstantPreheatTemperature"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="definedBy"/>
+        <NamedIndividual IRI="Roberts_HeatTransferBoundaryCondition"/>
+        <NamedIndividual IRI="Roberts_InputHeatFlux"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="definedBy"/>
+        <NamedIndividual IRI="Roberts_HeatTransferInitialCondition"/>
+        <NamedIndividual IRI="ConstantPreheatTemperature"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="requiresInput"/>
+        <NamedIndividual IRI="Roberts_HeatTransferModel"/>
+        <NamedIndividual IRI="Roberts_ConvectionHeatTransferCoefficient"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="requiresInput"/>
+        <NamedIndividual IRI="Roberts_HeatTransferModel"/>
+        <NamedIndividual IRI="Robert_PreheatTemperature"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="requiresInput"/>
+        <NamedIndividual IRI="Roberts_HeatTransferModel"/>
         <NamedIndividual IRI="Roberts_ScanSpeed"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI="NIST:influencedBy"/>
-        <NamedIndividual IRI="Roberts_LaserMeltingOfMetalPowdersProcess"/>
-        <NamedIndividual IRI="Roberts_SpotSize"/>
+        <ObjectProperty IRI="requiresInput"/>
+        <NamedIndividual IRI="Roberts_HeatTransferModel"/>
+        <NamedIndividual IRI="Roberts_SpecificHeatCapacity"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI="NIST:influencedBy"/>
-        <NamedIndividual IRI="Roberts_LaserMeltingOfMetalPowdersProcess"/>
+        <ObjectProperty IRI="requiresInput"/>
+        <NamedIndividual IRI="Roberts_HeatTransferModel"/>
+        <NamedIndividual IRI="Roberts_ThermalConductivityOfThePowderBed"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="requiresInput"/>
+        <NamedIndividual IRI="Roberts_HeatTransferModel"/>
+        <NamedIndividual IRI="Roberts_DensityOfThePowderBed"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="requiresInput"/>
+        <NamedIndividual IRI="Roberts_HeatTransferModel"/>
         <NamedIndividual IRI="Roberts_LaserPower"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="requiresInput"/>
+        <NamedIndividual IRI="Roberts_HeatTransferModel"/>
+        <NamedIndividual IRI="Roberts_Absorptance"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="requiresInput"/>
+        <NamedIndividual IRI="Roberts_HeatTransferModel"/>
+        <NamedIndividual IRI="Roberts_Emissivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:partOf"/>
+        <NamedIndividual IRI="Roberts_HeatTransferModel"/>
+        <NamedIndividual IRI="Roberts_ThermalModel"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:provides"/>
+        <NamedIndividual IRI="Roberts_HeatTransferModel"/>
+        <NamedIndividual IRI="Roberts_TemperatureFieldDistribution"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:requiresApproximation"/>
+        <NamedIndividual IRI="Roberts_HeatTransferModel"/>
+        <NamedIndividual IRI="Roberts_FiniteElementMethod"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:requiresAssumption"/>
+        <NamedIndividual IRI="Roberts_HeatTransferModel"/>
+        <NamedIndividual IRI="SurfaceHeatAbsorption"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:requiresAssumption"/>
+        <NamedIndividual IRI="Roberts_HeatTransferModel"/>
+        <NamedIndividual IRI="Roberts_HeatTransferBoundaryCondition"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:requiresAssumption"/>
+        <NamedIndividual IRI="Roberts_HeatTransferModel"/>
+        <NamedIndividual IRI="Roberts_HeatTransferInitialCondition"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:requiresAssumption"/>
+        <NamedIndividual IRI="Roberts_HeatTransferModel"/>
+        <NamedIndividual IRI="Roberts_DeterministicLaserIrradiation"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:requiresAssumption"/>
+        <NamedIndividual IRI="Roberts_HeatTransferModel"/>
+        <NamedIndividual IRI="3ThreeDimensionalModel"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:requiresAssumption"/>
+        <NamedIndividual IRI="Roberts_HeatTransferModel"/>
+        <NamedIndividual IRI="TemperatureDependentFouriersLaw"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:requiresAssumption"/>
+        <NamedIndividual IRI="Roberts_HeatTransferModel"/>
+        <NamedIndividual IRI="Roberts_PhaseChangeAssumption"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="representedBy"/>
+        <NamedIndividual IRI="Roberts_HeatTransferPhenomenon"/>
+        <NamedIndividual IRI="Roberts_HeatTransferModel"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:partOf"/>
+        <NamedIndividual IRI="Roberts_HeatTransferPhenomenon"/>
+        <NamedIndividual IRI="Roberts_LaserMeltingProcessOfMetalMultiLayerPowders"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="requiresInput"/>
+        <NamedIndividual IRI="Roberts_IrradiationAbsorptionModel"/>
+        <NamedIndividual IRI="Roberts_SpotSize"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="requiresInput"/>
+        <NamedIndividual IRI="Roberts_IrradiationAbsorptionModel"/>
+        <NamedIndividual IRI="Roberts_LaserPower"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="requiresInput"/>
+        <NamedIndividual IRI="Roberts_IrradiationAbsorptionModel"/>
+        <NamedIndividual IRI="Roberts_GaussianDistribution"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="requiresInput"/>
+        <NamedIndividual IRI="Roberts_IrradiationAbsorptionModel"/>
+        <NamedIndividual IRI="Roberts_Absorptance"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:provides"/>
+        <NamedIndividual IRI="Roberts_IrradiationAbsorptionModel"/>
+        <NamedIndividual IRI="Roberts_LaserSurfaceHeatFlux"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:requiresAssumption"/>
+        <NamedIndividual IRI="Roberts_IrradiationAbsorptionModel"/>
+        <NamedIndividual IRI="GaussianSurfaceDistributionOfHeat"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:requiresAssumption"/>
+        <NamedIndividual IRI="Roberts_IrradiationAbsorptionModel"/>
+        <NamedIndividual IRI="Roberts_Absorptance"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:requiresAssumption"/>
+        <NamedIndividual IRI="Roberts_IrradiationAbsorptionModel"/>
+        <NamedIndividual IRI="ConstantAbsorptivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="representedBy"/>
+        <NamedIndividual IRI="Roberts_IrradiationAbsorptionPhenomenon"/>
+        <NamedIndividual IRI="Roberts_IrradiationAbsorptionModel"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:partOf"/>
+        <NamedIndividual IRI="Roberts_IrradiationAbsorptionPhenomenon"/>
+        <NamedIndividual IRI="Roberts_LaserMeltingProcessOfMetalMultiLayerPowders"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="NIST:influencedBy"/>
-        <NamedIndividual IRI="Roberts_LaserMeltingOfMetalPowdersProcess"/>
+        <NamedIndividual IRI="Roberts_LaserMeltingProcessOfMetalMultiLayerPowders"/>
         <NamedIndividual IRI="Roberts_PowderSize"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="NIST:influencedBy"/>
-        <NamedIndividual IRI="Roberts_LaserMeltingOfMetalPowdersProcess"/>
+        <NamedIndividual IRI="Roberts_LaserMeltingProcessOfMetalMultiLayerPowders"/>
         <NamedIndividual IRI="Roberts_Ti6Al4V"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:influencedBy"/>
+        <NamedIndividual IRI="Roberts_LaserMeltingProcessOfMetalMultiLayerPowders"/>
+        <NamedIndividual IRI="Roberts_SpotSize"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:influencedBy"/>
+        <NamedIndividual IRI="Roberts_LaserMeltingProcessOfMetalMultiLayerPowders"/>
+        <NamedIndividual IRI="Roberts_LaserPower"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="NIST:influencedBy"/>
+        <NamedIndividual IRI="Roberts_LaserMeltingProcessOfMetalMultiLayerPowders"/>
+        <NamedIndividual IRI="Roberts_ScanSpeed"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="definedBy"/>
+        <NamedIndividual IRI="Roberts_LaserPBF-ProcessSignature"/>
+        <NamedIndividual IRI="Roberts_ThermalHistoryOfPart"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="NIST:partOf"/>
