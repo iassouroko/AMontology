@@ -4,7 +4,7 @@ This repository contains an OWL ontology of concepts of additive manufacturing p
 
 The AM ontology has been developed following two major milestones. The ontology developed within the first milestone includes AMProcessOntology, ModelOntology and AMOntology files. AMProcessOntology contains the set of entities used to capture knowledge about additive manufacturing processes. ModelOntology contains the set of entities used to capture knowledge about modeling concepts that represent (possibly) multi-physics multi-scale processes. AMOntology uses AMProcessOntology and ModelOntology files to describe entities that capture knowledge about characteristics of computational models for AM processes.
 
-The AM ontology developed in the second milestone, under the file AMOntology-vFinal1, focus more on a formal explicit representation of the assumptions and approximations used along the development of computational models for AM. It also provides insight into potential qualitative indicators of the fidelity of these models. 
+The AM ontology developed in the second milestone, under the file AMOntology-vFinal1, focuses more on a formal explicit representation of the assumptions and approximations used along the development of computational models for AM. It also provides insight into potential qualitative indicators of the fidelity of these models. 
 
 The only one ontology file that matters for future work, in the current repository, is the file AMOntology-vFinal1, which uses AMOntology_v3 and Laser-Thermal-Microstructure files, by direct import.
 
